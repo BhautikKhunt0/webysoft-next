@@ -32,7 +32,7 @@ export default function Navbar() {
       >
         <div className="container mx-auto px-4 relative">
           {isScrolled ? (
-            <div className="mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 px-8 flex items-center shadow-lg">
+            <div className="mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 px-8 flex items-center shadow-lg pr-16 md:pr-8">
               {/* Logo */}
               <Link href="/" className="flex items-center mr-12">
                 <span className="text-xl font-display font-bold text-glow text-white">
@@ -89,7 +89,7 @@ export default function Navbar() {
           
           {/* Mobile Menu Button - Always visible on mobile */}
           <button 
-            className="md:hidden text-white focus:outline-none absolute top-1/2 right-4 transform -translate-y-1/2 z-50"
+            className="md:hidden text-white focus:outline-none absolute top-1/2 right-6 transform -translate-y-1/2 z-50 p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
