@@ -1,0 +1,187 @@
+Design a long, ultra-modern, animated landing page for “WebySoft” – a company specializing in creative, conversion-focused landing pages. The design should be visually heavy, full of smooth, professional-grade animations, modern interactions, and a high-end creative aesthetic.
+
+Visual Style:
+
+Dark mode base (deep gray, black, or charcoal) with glowing accents (neon blues, purples, cyans)
+
+Modern 3D and glassmorphism elements
+
+Uses scroll-based animations (GSAP/Framer Motion inspired)
+
+Responsive, pixel-perfect design
+
+Include the following sections:
+
+🔥 Hero Section
+Huge bold headline: “Turn Ideas Into High-Converting Experiences”
+
+Subheadline: “We build cutting-edge landing pages that don't just look amazing — they convert.”
+
+Floating CTA Buttons: “Get Started” and “Try Demo”
+
+Background: interactive or animated 3D shapes / particle animation
+
+Subtle hover motion on text + parallax depth on mouse move
+
+💡 Problem/Solution Section
+Headline: “Your Website Might Be the Problem”
+
+Left: Common website issues (slow, boring, no conversions)
+
+Right: WebySoft’s solutions (fast, beautiful, designed to sell)
+
+Smooth scroll-in comparison animations (side-by-side fade or swipe reveal)
+
+🚀 Features Section
+Headline: “Designed to Perform”
+
+Grid of 6 animated feature cards:
+
+Conversion-Optimized
+
+Mobile Responsive
+
+Motion-Enhanced
+
+SEO Ready
+
+Fast Loading
+
+Easy to Integrate
+
+Each icon animates on scroll or hover
+
+🎯 Target Audience Section
+Headline: “Perfect For”
+
+Horizontal scroll or carousel showing ideal users:
+
+Startup founders
+
+Agencies
+
+SaaS companies
+
+Creators & Influencers
+
+Marketers
+
+Icons + subtle animations for each user group
+
+💰 Pricing Section
+Title: “One Simple Plan”
+
+Toggle: Monthly / Yearly
+
+Monthly: $150 first month → $25/month
+
+Yearly: $300 flat
+
+Highlight yearly plan with a glowing badge
+
+Pricing cards with 3D hover tilt or glow on select
+
+🎥 Live Demo Preview Section
+Embedded animated preview of landing page in action
+
+Interactive mockup inside a floating browser window
+
+Smoothly scrolls as user scrolls page (parallax demo)
+
+🧠 How It Works Section
+3-4 step animated process:
+
+Choose a style
+
+We build
+
+You launch
+
+Timeline-style or card flip animations
+
+💬 Testimonials Section
+Carousel slider or grid with animated quotes
+
+Avatars and 5-star rating visuals
+
+Optional video testimonials (hover-to-play)
+
+🧰 Tech Stack / Tools Section
+Logos of tools used (GSAP, Webflow, Figma, Framer)
+
+Animated icons with pulse/glow on hover
+
+Headline: “Built With the Best Tools in the Game”
+
+🧪 A/B Tested Results Section
+Real stats with animated counters:
+
++43% Conversion Increase
+
+2.1s Load Time
+
+98 Lighthouse Score
+
+Animated graph or line chart visualizing performance
+
+🎨 Template Gallery Section
+Headline: “Need Inspiration?”
+
+Grid of template thumbnails
+
+Hover to preview interaction
+
+CTA: “Use a Template” or “Customize Yours”
+
+🧑‍💼 About WebySoft Section
+Founder's story + mission
+
+Subtle background animation or looping video
+
+Clean card layout with “Why We’re Different”
+
+📩 Newsletter & CTA Section
+“Stay Inspired” newsletter signup
+
+Animated floating label form inputs
+
+CTA: “Get Weekly Design Inspo”
+
+📱 Mobile Showcase Section
+Rotating/scrolling phone mockups with UI previews
+
+Headline: “Your Landing Page. Mobile-Ready.”
+
+Parallax phone reveal, hover interaction on tap
+
+🔄 FAQ Section
+Expandable accordion-style cards
+
+Smooth open/close animations
+
+Fun micro-interactions on hover (icon bounce or rotate)
+
+🧭 Final CTA Section
+Massive call to action with animated glow
+
+Text: “Ready to Build Something Amazing?”
+
+2 Buttons: “Let’s Talk” & “See Templates”
+
+Background: animated gradient, pulsing effect, particles
+
+🔗 Footer
+Modern, minimalist
+
+Social icons (animated on hover)
+
+Navigation links
+
+“Made with ❤️ by WebySoft” with hover animation
+
+🔄 Navbar Interaction
+Normal sticky navbar (glass-style, full width)
+
+On scroll: transforms into rounded floating pill-style, centered at top of screen
+
+Includes animation on transform (ease in/out + shadow + backdrop blur)
