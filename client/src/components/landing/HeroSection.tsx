@@ -25,24 +25,17 @@ export default function HeroSection() {
           </motion.p>
           
           <motion.div 
-            className="flex flex-col sm:flex-row justify-center gap-4 mb-16"
+            className="flex justify-center mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6 }}
           >
             <a 
               href="#get-started" 
-              className="bg-primary hover:bg-opacity-90 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-primary/30 flex items-center justify-center"
+              className="bg-primary hover:bg-opacity-90 text-white px-10 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-primary/30 flex items-center justify-center"
             >
               <span>Get Started</span>
               <i className="ri-arrow-right-line ml-2"></i>
-            </a>
-            <a 
-              href="#demo" 
-              className="bg-secondary border border-primary/30 hover:border-primary/50 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center"
-            >
-              <span>Try Demo</span>
-              <i className="ri-play-circle-line ml-2"></i>
             </a>
           </motion.div>
         </div>
