@@ -24,9 +24,7 @@ export default function Navbar() {
     <>
       <motion.nav
         className={`fixed top-0 z-50 w-full transition-all duration-500 ${
-          isScrolled 
-            ? 'backdrop-blur-lg bg-background/80 py-3 shadow-lg shadow-black/10' 
-            : 'bg-transparent py-6'
+          isScrolled ? 'py-3' : 'py-6'
         }`}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -34,7 +32,7 @@ export default function Navbar() {
       >
         <div className="container mx-auto px-4 relative">
           {isScrolled ? (
-            <div className="mx-auto glass max-w-6xl rounded-full border border-white/10 bg-glow py-3 px-8 flex items-center">
+            <div className="mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 px-8 flex items-center shadow-lg">
               {/* Logo */}
               <Link href="/" className="flex items-center mr-12">
                 <span className="text-xl font-display font-bold text-glow text-white">
@@ -104,7 +102,7 @@ export default function Navbar() {
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div 
-              className="md:hidden glass p-6 absolute w-full left-0 shadow-lg border-t border-white/10 bg-background/90 backdrop-blur-xl"
+              className="md:hidden p-6 absolute w-full left-0 shadow-lg border-t border-white/10 bg-background/90 backdrop-blur-lg"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
