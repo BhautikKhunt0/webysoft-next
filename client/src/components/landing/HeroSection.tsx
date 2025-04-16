@@ -9,17 +9,30 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden gradient-bg">
+      {/* Royal decoration elements */}
+      <div className="absolute top-16 left-6 lg:left-16 w-32 h-32 md:w-40 md:h-40 opacity-15 rounded-full bg-primary/20 blur-3xl"></div>
+      <div className="absolute bottom-16 right-6 lg:right-16 w-32 h-32 md:w-64 md:h-64 opacity-15 rounded-full bg-accent/10 blur-3xl"></div>
+      
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-16">
+          <motion.div
+            className="mb-4 flex justify-center"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="w-24 h-1 bg-accent mb-2 rounded-full"></div>
+          </motion.div>
+          
           <motion.h1 
-            className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6 leading-tight"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <span className="block">Turn <span className="text-glow text-primary">Ideas</span> Into</span>
-            <span className="block">High-Converting <span className="gradient-text">Experiences</span></span>
+            <span className="block">Transform <span className="text-glow text-primary">Visions</span> Into</span>
+            <span className="block">Premium <span className="gradient-text">Experiences</span></span>
           </motion.h1>
           
           <motion.p 
@@ -28,7 +41,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
           >
-            We build cutting-edge landing pages that don't just look amazing — they convert.
+            We craft sophisticated and royal landing pages that command attention and deliver exceptional conversions.
           </motion.p>
           
           <motion.div 
@@ -43,7 +56,7 @@ export default function HeroSection() {
                 e.preventDefault();
                 scrollToSection('contact');
               }}
-              className="bg-primary hover:bg-opacity-90 text-white px-10 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-primary/30 flex items-center justify-center"
+              className="royal-border bg-primary hover:bg-primary/90 text-white px-12 py-4 rounded-md font-medium text-lg transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-primary/30 flex items-center justify-center"
             >
               <span>Get Started</span>
               <i className="ri-arrow-right-line ml-2"></i>
@@ -58,15 +71,15 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <div className="glass rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-            <div className="bg-secondary p-3 border-b border-white/10 flex items-center">
+          <div className="glass rounded-xl overflow-hidden border border-primary/20 shadow-2xl royal-border">
+            <div className="bg-secondary p-3 border-b border-primary/20 flex items-center">
               <div className="flex space-x-2">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
               </div>
               <div className="mx-auto bg-background/50 rounded-full px-4 py-1 text-xs text-foreground/70">
-                www.youramazingsite.com
+                <span className="text-primary">www.</span>youramazingsite<span className="text-primary">.com</span>
               </div>
             </div>
             <img 
@@ -76,6 +89,20 @@ export default function HeroSection() {
               loading="eager"
             />
           </div>
+          
+          {/* Decorative corner accents */}
+          <motion.div 
+            className="absolute -top-2 -left-2 w-10 h-10 border-t-2 border-l-2 border-accent"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 1.2 }}
+          ></motion.div>
+          <motion.div 
+            className="absolute -bottom-2 -right-2 w-10 h-10 border-b-2 border-r-2 border-accent"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 1.2 }}
+          ></motion.div>
         </motion.div>
         
         {/* Scroll Indicator - Now Clickable */}
@@ -98,7 +125,9 @@ export default function HeroSection() {
           }}
         >
           <span className="text-sm text-foreground/60 mb-2">Scroll to explore</span>
-          <i className="ri-arrow-down-line text-2xl text-primary"></i>
+          <div className="w-8 h-8 rounded-full flex items-center justify-center border border-primary/30 bg-primary/10">
+            <i className="ri-arrow-down-line text-lg text-primary"></i>
+          </div>
         </motion.div>
       </div>
     </section>
