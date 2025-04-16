@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'wouter';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
+import { useScreenSize } from '@/hooks/use-mobile';
 
 // Menu items for navigation
 const MENU_ITEMS = [
@@ -16,6 +17,10 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const scrollY = useScrollPosition();
   const isScrolled = scrollY > 100;
+  const screenSize = useScreenSize();
+  
+  const isTabletOrMobile = screenSize === 'mobile' || screenSize === 'tablet';
+  const isMobileOnly = screenSize === 'mobile';
   
   // Close mobile menu on navigation or resize
   useEffect(() => {
@@ -57,11 +62,11 @@ export default function Navbar() {
             className="w-full"
           >
             {isScrolled ? (
-              <div className="mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 px-8 flex items-center shadow-lg pr-16 md:pr-8">
+              <div className="mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 px-6 lg:px-8 flex items-center shadow-lg pr-16 md:pr-6 lg:pr-8">
                 {/* Logo */}
                 <Link href="/">
                   <motion.span 
-                    className="text-xl font-display font-bold text-glow text-white flex items-center mr-12"
+                    className="text-xl font-display font-bold text-glow text-white flex items-center mr-4 lg:mr-12"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -69,26 +74,24 @@ export default function Navbar() {
                   </motion.span>
                 </Link>
                 
-                {/* Desktop Navigation - Centered */}
-                <div className="hidden md:flex items-center justify-center flex-1 space-x-8">
+                {/* Navigation - Centerd (adapts for tablet) */}
+                <div className={`hidden ${isMobileOnly ? 'md:flex' : 'md:flex'} items-center justify-center flex-1 md:space-x-4 lg:space-x-8`}>
                   {MENU_ITEMS.map((item) => (
                     <motion.a
                       key={item.id}
                       href={`#${item.id}`}
-                      className="text-base font-medium text-foreground hover:text-primary py-2 px-3 relative"
+                      className="text-base font-medium text-foreground hover:text-primary py-2 px-1 lg:px-3 relative whitespace-nowrap"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.2 }}
                     >
                       {item.label}
                     </motion.a>
                   ))}
-                </div>
-                
-                {/* CTA Button */}
-                <div className="hidden md:block ml-auto">
+                  
+                  {/* CTA Button - For tablets and above - Only shows in scrolled state */}
                   <motion.a 
                     href="#contact" 
-                    className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-medium shadow-lg"
+                    className="bg-primary hover:bg-primary/90 text-white px-4 md:px-5 lg:px-6 py-2 rounded-full font-medium shadow-lg ml-2 md:ml-4 lg:ml-6 whitespace-nowrap"
                     whileHover={{ 
                       scale: 1.05,
                       boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
@@ -113,12 +116,12 @@ export default function Navbar() {
                 </Link>
                 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex items-center space-x-8">
+                <div className="hidden md:flex items-center md:space-x-4 lg:space-x-8">
                   {MENU_ITEMS.map((item) => (
                     <motion.a
                       key={item.id}
                       href={`#${item.id}`}
-                      className="text-base font-medium text-foreground hover:text-primary py-2 px-3 relative"
+                      className="text-base font-medium text-foreground hover:text-primary py-2 px-1 lg:px-3 relative whitespace-nowrap"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.2 }}
                     >
@@ -129,7 +132,7 @@ export default function Navbar() {
                   {/* CTA Button */}
                   <motion.a 
                     href="#contact" 
-                    className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-medium shadow-lg ml-4"
+                    className="bg-primary hover:bg-primary/90 text-white px-4 md:px-5 lg:px-6 py-2 rounded-full font-medium shadow-lg ml-2 md:ml-4 lg:ml-6 whitespace-nowrap"
                     whileHover={{ 
                       scale: 1.05,
                       boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
@@ -144,7 +147,7 @@ export default function Navbar() {
           </motion.div>
         </AnimatePresence>
         
-        {/* Mobile Menu Button - Always visible on mobile */}
+        {/* Mobile Menu Button - Only visible on mobile screens */}
         <button 
           className="md:hidden text-white focus:outline-none absolute top-1/2 right-6 transform -translate-y-1/2 z-50 p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
