@@ -1,39 +1,49 @@
 import { motion } from 'framer-motion';
 import GlassCard from './GlassCard';
+import { 
+  HiOutlineChartBar, 
+  HiOutlineDeviceMobile, 
+  HiOutlineSearch,
+  HiOutlineSparkles 
+} from 'react-icons/hi';
+import { 
+  IoRocketOutline, 
+  IoCodeSlashOutline 
+} from 'react-icons/io5';
 
 const features = [
   {
-    icon: "ri-line-chart-line",
+    icon: HiOutlineChartBar,
     color: "primary",
     title: "Conversion-Optimized",
     description: "Strategic CTA placement and user flows designed to maximize conversions at every step."
   },
   {
-    icon: "ri-smartphone-line",
+    icon: HiOutlineDeviceMobile,
     color: "accent",
     title: "Mobile Responsive",
     description: "Pixel-perfect across all devices, from desktop to mobile, ensuring no visitor is left behind."
   },
   {
-    icon: "ri-animation-line",
+    icon: HiOutlineSparkles,
     color: "cyan",
     title: "Motion-Enhanced",
     description: "Subtle animations and micro-interactions that guide attention and elevate the experience."
   },
   {
-    icon: "ri-search-line",
+    icon: HiOutlineSearch,
     color: "green",
     title: "SEO Ready",
     description: "Built with search engines in mind, helping your page rank and drive organic traffic."
   },
   {
-    icon: "ri-rocket-line",
+    icon: IoRocketOutline,
     color: "primary",
     title: "Fast Loading",
     description: "Optimized assets and code to ensure lightning-fast load times and smooth performance."
   },
   {
-    icon: "ri-code-s-slash-line",
+    icon: IoCodeSlashOutline,
     color: "accent",
     title: "Easy to Integrate",
     description: "Simple to connect with your existing tools, from CMS to analytics and marketing platforms."
@@ -92,8 +102,9 @@ export default function FeaturesSection() {
               delay={0.1 * index}
               className="p-8 border border-white/10"
             >
-              <div className={`w-14 h-14 ${colorClasses[feature.color as keyof typeof colorClasses].bg} rounded-lg flex items-center justify-center mb-6`}>
-                <i className={`${feature.icon} text-3xl ${colorClasses[feature.color as keyof typeof colorClasses].text}`}></i>
+              <div className={`w-14 h-14 ${colorClasses[feature.color as keyof typeof colorClasses].bg} rounded-lg flex items-center justify-center mb-6 relative overflow-hidden group transition-all duration-300 hover:scale-105`}>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-white rounded-lg transition-opacity duration-300"></div>
+                <feature.icon className={`w-7 h-7 ${colorClasses[feature.color as keyof typeof colorClasses].text} transition-transform duration-300 group-hover:scale-110`} />
               </div>
               <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
               <p className="text-foreground/70">{feature.description}</p>
