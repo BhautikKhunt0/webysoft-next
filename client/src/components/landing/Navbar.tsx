@@ -62,11 +62,11 @@ export default function Navbar() {
             className="w-full"
           >
             {isScrolled ? (
-              <div className="mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 px-6 lg:px-8 flex items-center shadow-lg pr-16 md:pr-6 lg:pr-8">
+              <div className="mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 md:py-3 lg:py-3 px-5 md:px-5 lg:px-8 flex items-center justify-between shadow-lg">
                 {/* Logo */}
                 <Link href="/">
                   <motion.span 
-                    className="text-xl font-display font-bold text-glow text-white flex items-center mr-4 lg:mr-12"
+                    className="text-xl font-display font-bold text-glow text-white flex items-center mr-3 md:mr-2 lg:mr-6"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -74,24 +74,26 @@ export default function Navbar() {
                   </motion.span>
                 </Link>
                 
-                {/* Navigation - Centerd (adapts for tablet) */}
-                <div className={`hidden ${isMobileOnly ? 'md:flex' : 'md:flex'} items-center justify-center flex-1 md:space-x-4 lg:space-x-8`}>
-                  {MENU_ITEMS.map((item) => (
-                    <motion.a
-                      key={item.id}
-                      href={`#${item.id}`}
-                      className="text-base font-medium text-foreground hover:text-primary py-2 px-1 lg:px-3 relative whitespace-nowrap"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      {item.label}
-                    </motion.a>
-                  ))}
+                {/* Navigation - Centered (adapts for tablet) */}
+                <div className="hidden md:flex items-center justify-between flex-1">
+                  <div className="flex items-center md:space-x-2 lg:space-x-8">
+                    {MENU_ITEMS.map((item, index) => (
+                      <motion.a
+                        key={item.id}
+                        href={`#${item.id}`}
+                        className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {item.label}
+                      </motion.a>
+                    ))}
+                  </div>
                   
-                  {/* CTA Button - For tablets and above - Only shows in scrolled state */}
+                  {/* CTA Button - For tablets and above - Always visible */}
                   <motion.a 
                     href="#contact" 
-                    className="bg-primary hover:bg-primary/90 text-white px-4 md:px-5 lg:px-6 py-2 rounded-full font-medium shadow-lg ml-2 md:ml-4 lg:ml-6 whitespace-nowrap"
+                    className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg whitespace-nowrap"
                     whileHover={{ 
                       scale: 1.05,
                       boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
@@ -116,23 +118,25 @@ export default function Navbar() {
                 </Link>
                 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex items-center md:space-x-4 lg:space-x-8">
-                  {MENU_ITEMS.map((item) => (
-                    <motion.a
-                      key={item.id}
-                      href={`#${item.id}`}
-                      className="text-base font-medium text-foreground hover:text-primary py-2 px-1 lg:px-3 relative whitespace-nowrap"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      {item.label}
-                    </motion.a>
-                  ))}
+                <div className="hidden md:flex items-center justify-between">
+                  <div className="flex items-center md:space-x-2 lg:space-x-8">
+                    {MENU_ITEMS.map((item, index) => (
+                      <motion.a
+                        key={item.id}
+                        href={`#${item.id}`}
+                        className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {item.label}
+                      </motion.a>
+                    ))}
+                  </div>
                   
                   {/* CTA Button */}
                   <motion.a 
                     href="#contact" 
-                    className="bg-primary hover:bg-primary/90 text-white px-4 md:px-5 lg:px-6 py-2 rounded-full font-medium shadow-lg ml-2 md:ml-4 lg:ml-6 whitespace-nowrap"
+                    className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg ml-3 md:ml-4 lg:ml-6 whitespace-nowrap"
                     whileHover={{ 
                       scale: 1.05,
                       boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
