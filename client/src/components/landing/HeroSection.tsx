@@ -1,6 +1,13 @@
 import { motion } from 'framer-motion';
 
 export default function HeroSection() {
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
@@ -31,7 +38,11 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.6 }}
           >
             <a 
-              href="#get-started" 
+              href="#contact" 
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('contact');
+              }}
               className="bg-primary hover:bg-opacity-90 text-white px-10 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-primary/30 flex items-center justify-center"
             >
               <span>Get Started</span>
@@ -65,58 +76,25 @@ export default function HeroSection() {
               loading="eager"
             />
           </div>
-          
-          {/* Floating UI Elements */}
-          <motion.div 
-            className="absolute -right-10 top-1/3 bg-accent text-white p-3 rounded-lg glass"
-            animate={{ y: [0, -20, 0] }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          >
-            <div className="flex items-center">
-              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mr-2">
-                <i className="ri-user-line"></i>
-              </div>
-              <div>
-                <div className="text-xs text-white/80">New Signup</div>
-                <div className="text-sm font-medium">John from NYC</div>
-              </div>
-            </div>
-          </motion.div>
-          
-          <motion.div 
-            className="absolute -left-12 bottom-1/4 bg-[#10B981] text-white p-3 rounded-lg glass"
-            animate={{ y: [0, -20, 0] }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1.5
-            }}
-          >
-            <div className="flex items-center">
-              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mr-2">
-                <i className="ri-shopping-cart-line"></i>
-              </div>
-              <div>
-                <div className="text-xs text-white/80">New Purchase</div>
-                <div className="text-sm font-medium">$150 Plan</div>
-              </div>
-            </div>
-          </motion.div>
         </motion.div>
         
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator - Now Clickable */}
         <motion.div 
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer"
           animate={{ y: [0, 10, 0] }}
           transition={{
             duration: 2,
             repeat: Infinity,
             ease: "easeInOut"
+          }}
+          onClick={() => scrollToSection('problem-solution')}
+          role="button"
+          aria-label="Scroll to explore content"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              scrollToSection('problem-solution');
+            }
           }}
         >
           <span className="text-sm text-foreground/60 mb-2">Scroll to explore</span>

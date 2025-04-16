@@ -3,7 +3,7 @@ import GlassCard from './GlassCard';
 
 export default function ProblemSolutionSection() {
   return (
-    <section className="py-20 bg-background/80">
+    <section id="problem-solution" className="py-20 bg-background/80">
       <div className="container mx-auto px-4">
         <motion.h2 
           className="text-3xl md:text-5xl font-display font-bold text-center mb-16"
@@ -30,25 +30,54 @@ export default function ProblemSolutionSection() {
               Common Website Issues
             </motion.h3>
             
-            <div className="space-y-6">
+            <div className="space-y-4">
               <GlassCard borderGlow="red" delay={0.1}>
                 <div className="p-6">
-                  <h4 className="text-xl font-medium mb-2 text-white">Slow &amp; Frustrating</h4>
-                  <p className="text-foreground/70">Visitors leave after waiting more than 3 seconds for your page to load.</p>
+                  <h4 className="text-xl font-medium mb-2 text-white flex items-center">
+                    <i className="ri-loader-line text-red-400 mr-2"></i>
+                    Slow &amp; Frustrating
+                  </h4>
+                  <p className="text-foreground/70">Visitors abandon your site after waiting just 3 seconds for pages to load, costing you valuable leads.</p>
                 </div>
               </GlassCard>
               
               <GlassCard borderGlow="red" delay={0.2}>
                 <div className="p-6">
-                  <h4 className="text-xl font-medium mb-2 text-white">Boring &amp; Generic</h4>
-                  <p className="text-foreground/70">Templated websites that look like everyone else's fail to make an impression.</p>
+                  <h4 className="text-xl font-medium mb-2 text-white flex items-center">
+                    <i className="ri-file-copy-line text-red-400 mr-2"></i>
+                    Boring &amp; Generic
+                  </h4>
+                  <p className="text-foreground/70">Cookie-cutter templates make your business forgettable and fail to build brand recognition.</p>
                 </div>
               </GlassCard>
               
               <GlassCard borderGlow="red" delay={0.3}>
                 <div className="p-6">
-                  <h4 className="text-xl font-medium mb-2 text-white">No Conversions</h4>
-                  <p className="text-foreground/70">Beautiful but ineffective designs that don't actually drive business results.</p>
+                  <h4 className="text-xl font-medium mb-2 text-white flex items-center">
+                    <i className="ri-close-circle-line text-red-400 mr-2"></i>
+                    Poor Conversion Rates
+                  </h4>
+                  <p className="text-foreground/70">Visually appealing but poorly structured sites that don't guide visitors toward taking action.</p>
+                </div>
+              </GlassCard>
+
+              <GlassCard borderGlow="red" delay={0.4}>
+                <div className="p-6">
+                  <h4 className="text-xl font-medium mb-2 text-white flex items-center">
+                    <i className="ri-smartphone-line text-red-400 mr-2"></i>
+                    Not Mobile-Friendly
+                  </h4>
+                  <p className="text-foreground/70">Broken layouts on phones and tablets alienate over 60% of your potential customers.</p>
+                </div>
+              </GlassCard>
+
+              <GlassCard borderGlow="red" delay={0.5}>
+                <div className="p-6">
+                  <h4 className="text-xl font-medium mb-2 text-white flex items-center">
+                    <i className="ri-ghost-line text-red-400 mr-2"></i>
+                    Invisible to Search Engines
+                  </h4>
+                  <p className="text-foreground/70">Poor SEO practices keep your site buried on page 10 where no one will ever find it.</p>
                 </div>
               </GlassCard>
             </div>
@@ -68,25 +97,54 @@ export default function ProblemSolutionSection() {
               WebySoft Solutions
             </motion.h3>
             
-            <div className="space-y-6">
+            <div className="space-y-4">
               <GlassCard borderGlow="green" delay={0.1}>
                 <div className="p-6">
-                  <h4 className="text-xl font-medium mb-2 text-white">Lightning Fast</h4>
-                  <p className="text-foreground/70">Optimized for speed with 90+ PageSpeed scores and sub-2 second load times.</p>
+                  <h4 className="text-xl font-medium mb-2 text-white flex items-center">
+                    <i className="ri-rocket-line text-[#10B981] mr-2"></i>
+                    Lightning Fast
+                  </h4>
+                  <p className="text-foreground/70">Optimized code and advanced caching systems that achieve 90+ PageSpeed scores and sub-1 second load times.</p>
                 </div>
               </GlassCard>
               
               <GlassCard borderGlow="green" delay={0.2}>
                 <div className="p-6">
-                  <h4 className="text-xl font-medium mb-2 text-white">Beautiful &amp; Unique</h4>
-                  <p className="text-foreground/70">Custom animations and interactions that create memorable experiences.</p>
+                  <h4 className="text-xl font-medium mb-2 text-white flex items-center">
+                    <i className="ri-star-line text-[#10B981] mr-2"></i>
+                    Beautiful &amp; Unique
+                  </h4>
+                  <p className="text-foreground/70">Custom-designed interfaces with subtle animations that create memorable brand experiences.</p>
                 </div>
               </GlassCard>
               
               <GlassCard borderGlow="green" delay={0.3}>
                 <div className="p-6">
-                  <h4 className="text-xl font-medium mb-2 text-white">Designed to Sell</h4>
-                  <p className="text-foreground/70">Strategic design patterns that guide visitors toward conversion actions.</p>
+                  <h4 className="text-xl font-medium mb-2 text-white flex items-center">
+                    <i className="ri-award-line text-[#10B981] mr-2"></i>
+                    Conversion-Optimized
+                  </h4>
+                  <p className="text-foreground/70">Strategic user journey mapping and psychology-driven design patterns that boost conversion rates by 40-130%.</p>
+                </div>
+              </GlassCard>
+
+              <GlassCard borderGlow="green" delay={0.4}>
+                <div className="p-6">
+                  <h4 className="text-xl font-medium mb-2 text-white flex items-center">
+                    <i className="ri-device-line text-[#10B981] mr-2"></i>
+                    Device-Perfect
+                  </h4>
+                  <p className="text-foreground/70">Responsive layouts that work flawlessly on any device, from desktop to mobile and everything in between.</p>
+                </div>
+              </GlassCard>
+
+              <GlassCard borderGlow="green" delay={0.5}>
+                <div className="p-6">
+                  <h4 className="text-xl font-medium mb-2 text-white flex items-center">
+                    <i className="ri-search-line text-[#10B981] mr-2"></i>
+                    Search Engine Optimized
+                  </h4>
+                  <p className="text-foreground/70">Built with SEO best practices to help your business get found organically by your ideal customers.</p>
                 </div>
               </GlassCard>
             </div>
