@@ -2,18 +2,23 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import GlassCard from './GlassCard';
 
-// Define features for our pricing plan
+import { HiOutlineDesktopComputer } from 'react-icons/hi';
+import { FiSmartphone, FiActivity } from 'react-icons/fi';
+import { MdOutlineMarkEmailRead, MdOutlineSupportAgent, MdOutlineAnalytics } from 'react-icons/md';
+import { BsSpeedometer, BsSearch, BsFileEarmarkBarGraph } from 'react-icons/bs';
+
+// Define features for our pricing plan with modern React icons
 const features = [
-  { title: 'Custom designed landing page', icon: 'ri-layout-grid-line' },
-  { title: 'Mobile & tablet responsive design', icon: 'ri-device-line' },
-  { title: 'Advanced animations & effects', icon: 'ri-film-line' },
-  { title: 'Contact forms with validation', icon: 'ri-mail-check-line' },
-  { title: 'Analytics integration', icon: 'ri-line-chart-line' },
-  { title: 'SEO optimization', icon: 'ri-search-line' },
-  { title: 'A/B testing capabilities', icon: 'ri-split-cells-horizontal' },
-  { title: 'Priority customer support', icon: 'ri-customer-service-2-line' },
-  { title: 'Custom integrations', icon: 'ri-plug-2-line' },
-  { title: 'Monthly performance reports', icon: 'ri-file-chart-line' }
+  { title: 'Custom designed landing page', icon: HiOutlineDesktopComputer },
+  { title: 'Mobile & tablet responsive design', icon: FiSmartphone },
+  { title: 'Advanced animations & effects', icon: FiActivity },
+  { title: 'Contact forms with validation', icon: MdOutlineMarkEmailRead },
+  { title: 'Analytics integration', icon: MdOutlineAnalytics },
+  { title: 'SEO optimization', icon: BsSearch },
+  { title: 'Performance optimization', icon: BsSpeedometer },
+  { title: 'Priority customer support', icon: MdOutlineSupportAgent },
+  { title: 'Social media integration', icon: BsSearch },
+  { title: 'Monthly performance reports', icon: BsFileEarmarkBarGraph }
 ];
 
 export default function PricingToggle() {
@@ -38,13 +43,13 @@ export default function PricingToggle() {
           transition={{ duration: 0.5 }}
         >
           <button 
-            className={`py-3 px-6 md:px-8 rounded-full font-medium transition-all ${!isYearly ? 'bg-primary text-white shadow-lg' : 'text-foreground hover:text-primary'}`}
+            className={`py-3 px-8 md:px-10 rounded-full font-medium transition-all duration-300 ${!isYearly ? 'bg-primary text-white shadow-lg' : 'text-foreground hover:text-primary'}`}
             onClick={() => setIsYearly(false)}
           >
             Monthly
           </button>
           <button 
-            className={`py-3 px-6 md:px-8 rounded-full font-medium transition-all ${isYearly ? 'bg-primary text-white shadow-lg' : 'text-foreground hover:text-primary'}`}
+            className={`py-3 px-8 md:px-10 rounded-full font-medium transition-all duration-300 ${isYearly ? 'bg-[#10B981] text-white shadow-lg' : 'text-foreground hover:text-[#10B981]'}`}
             onClick={() => setIsYearly(true)}
           >
             Yearly
@@ -59,57 +64,64 @@ export default function PricingToggle() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
+          className="transition-all duration-300"
         >
           <GlassCard 
-            className="flex flex-col h-full w-full relative overflow-hidden border-2 border-primary"
+            className="flex flex-col h-full w-full relative overflow-hidden border-2 transition-all duration-500"
             is3D={true}
-            borderGlow="primary"
+            borderGlow={isYearly ? "green" : "primary"}
           >
-            <div className="absolute top-0 right-0 bg-primary text-white px-4 py-1 text-sm font-medium rounded-bl-lg z-10">
-              PROFESSIONAL PLAN
+            {/* Highlight badge */}
+            <div className={`absolute top-0 right-0 ${isYearly ? 'bg-[#10B981]' : 'bg-primary'} text-white px-4 py-2 text-sm font-medium rounded-bl-lg z-10 transition-colors duration-500`}>
+              {isYearly ? 'BEST VALUE' : 'PROFESSIONAL PLAN'}
             </div>
             
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary/20 to-transparent -z-0"></div>
+            {/* Background gradient that changes with plan type */}
+            <div className={`absolute top-0 left-0 w-full h-full bg-gradient-to-b ${isYearly ? 'from-[#10B981]/20' : 'from-primary/20'} to-transparent -z-0 transition-colors duration-500`}></div>
             
             <div className="p-8 flex-grow relative z-10">
               <div className="text-center mb-8">
-                <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
+                <div className={`inline-block ${isYearly ? 'bg-[#10B981]/10 text-[#10B981]' : 'bg-primary/10 text-primary'} px-4 py-1.5 rounded-full text-sm font-medium mb-4 transition-colors duration-500`}>
                   WebySoft Professional
                 </div>
                 
                 <div className="flex items-center justify-center mb-2">
-                  <span className="text-5xl font-bold">
+                  <span className={`text-6xl font-bold ${isYearly ? 'text-[#10B981]' : 'text-primary'} transition-colors duration-500`}>
                     ${isYearly ? yearlyPrice : monthlyPrice}
                   </span>
-                  <span className="text-foreground/60 ml-2">
-                    {isYearly ? '/year' : ' for first month'}
+                  <span className="text-foreground/60 ml-2 text-lg">
+                    {isYearly ? '/year' : ' first month'}
                   </span>
                 </div>
                 
                 {!isYearly && (
-                  <div className="text-lg text-primary">
-                    ${monthlyOngoing}/month after first month
+                  <div className="text-lg text-primary mt-1">
+                    ${monthlyOngoing} afterwards
                   </div>
                 )}
                 
                 {isYearly && (
-                  <div className="text-lg text-primary">
-                    Save ${(monthlyOngoing * 12) - yearlyPrice} compared to monthly plan
+                  <div className="text-lg text-[#10B981] mt-1">
+                    Save ${(monthlyOngoing * 12) - yearlyPrice} compared to monthly
                   </div>
                 )}
               </div>
               
-              <p className="text-foreground/70 mb-8 text-center text-lg max-w-2xl mx-auto">
+              <div className={`h-1 w-24 mx-auto ${isYearly ? 'bg-[#10B981]' : 'bg-primary'} rounded-full mb-8 transition-colors duration-500`}></div>
+              
+              <p className="text-foreground/80 mb-10 text-center text-lg max-w-2xl mx-auto">
                 Get everything you need to create a high-converting landing page that drives business growth
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                 {features.map((feature, i) => (
-                  <div key={i} className="flex items-start">
-                    <div className="flex items-center justify-center bg-primary/10 rounded-full w-8 h-8 mr-3 mt-0.5 flex-shrink-0">
-                      <i className={`${feature.icon} text-primary text-base`}></i>
+                  <div key={i} className="flex items-start group">
+                    <div className={`flex items-center justify-center ${isYearly ? 'bg-[#10B981]/10' : 'bg-primary/10'} rounded-full w-10 h-10 mr-3 mt-0.5 flex-shrink-0 transition-all duration-300 group-hover:scale-110`}>
+                      <feature.icon className={`w-5 h-5 ${isYearly ? 'text-[#10B981]' : 'text-primary'} transition-colors duration-500`} />
                     </div>
-                    <span>{feature.title}</span>
+                    <div>
+                      <span className="font-medium">{feature.title}</span>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -125,7 +137,7 @@ export default function PricingToggle() {
                     contactSection.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="w-full block text-center rounded-lg py-4 px-4 font-medium text-white transition transform hover:scale-[1.02] bg-primary hover:bg-primary/90 text-lg cursor-pointer"
+                className={`w-full block text-center rounded-lg py-4 px-6 font-medium text-white transition-all transform hover:scale-[1.02] ${isYearly ? 'bg-[#10B981] hover:bg-[#10B981]/90 hover:shadow-[#10B981]/20' : 'bg-primary hover:bg-primary/90 hover:shadow-primary/20'} text-lg cursor-pointer shadow-lg hover:shadow-xl`}
               >
                 Get Started Now
               </a>
@@ -137,14 +149,14 @@ export default function PricingToggle() {
         </motion.div>
         
         <motion.div 
-          className="text-center mt-8 bg-white/5 backdrop-blur-sm rounded-lg p-4 max-w-lg mx-auto"
+          className="text-center mt-10 bg-white/5 backdrop-blur-sm rounded-xl p-5 max-w-lg mx-auto border border-white/10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <p className="text-foreground/70">
-            Have questions? <a href="#contact" className="text-primary hover:underline">Contact our team</a> for more information.
+            Have questions? <a href="#contact" className={`${isYearly ? 'text-[#10B981]' : 'text-primary'} hover:underline transition-colors duration-500`}>Contact our team</a> for more information.
           </p>
         </motion.div>
       </div>
