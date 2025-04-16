@@ -116,11 +116,19 @@ export default function PricingToggle() {
             </div>
             
             <div className="p-8 pt-0 relative z-10">
-              <button 
-                className="w-full rounded-lg py-4 px-4 font-medium text-white transition transform hover:scale-[1.02] bg-primary hover:bg-primary/90 text-lg"
+              <a 
+                href="#contact" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="w-full block text-center rounded-lg py-4 px-4 font-medium text-white transition transform hover:scale-[1.02] bg-primary hover:bg-primary/90 text-lg cursor-pointer"
               >
                 Get Started Now
-              </button>
+              </a>
               <p className="text-center text-sm mt-4 text-foreground/60">
                 No credit card required. Start your journey today.
               </p>
