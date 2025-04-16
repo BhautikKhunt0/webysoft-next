@@ -76,7 +76,7 @@ export default function Navbar() {
                 
                 {/* Navigation - Centered (adapts for tablet) */}
                 <div className="hidden md:flex items-center justify-between flex-1">
-                  <div className="flex items-center md:space-x-2 lg:space-x-8">
+                  <div className="flex items-center gap-8 ml-12">
                     {MENU_ITEMS.map((item, index) => (
                       <motion.a
                         key={item.id}
