@@ -66,7 +66,7 @@ export default function Navbar() {
                 {/* Logo */}
                 <Link href="/">
                   <motion.span 
-                    className="text-xl font-display font-bold text-glow text-white flex items-center mr-3 md:mr-2 lg:mr-6"
+                    className="text-xl font-display font-bold text-glow text-white flex items-center"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -75,25 +75,23 @@ export default function Navbar() {
                 </Link>
                 
                 {/* Navigation - Centered (adapts for tablet) */}
-                <div className="hidden md:flex items-center justify-between flex-1">
-                  <div className="flex items-center gap-8 ml-12">
-                    {MENU_ITEMS.map((item, index) => (
-                      <motion.a
-                        key={item.id}
-                        href={`#${item.id}`}
-                        className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        {item.label}
-                      </motion.a>
-                    ))}
-                  </div>
+                <div className="hidden md:flex items-center justify-center flex-1 gap-8">
+                  {MENU_ITEMS.map((item, index) => (
+                    <motion.a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      className="text-base font-medium text-foreground hover:text-primary py-2 whitespace-nowrap"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {item.label}
+                    </motion.a>
+                  ))}
                   
-                  {/* CTA Button - For tablets and above - Always visible */}
+                  {/* CTA Button */}
                   <motion.a 
                     href="#contact" 
-                    className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg whitespace-nowrap"
+                    className="bg-primary hover:bg-primary/90 text-white px-4 py-1.5 rounded-full font-medium shadow-lg whitespace-nowrap"
                     whileHover={{ 
                       scale: 1.05,
                       boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
