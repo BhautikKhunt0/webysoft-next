@@ -75,7 +75,7 @@ export default function Navbar() {
                 </Link>
                 
                 {/* Navigation - Centered (adapts for tablet) */}
-                <div className="hidden md:flex items-center justify-center flex-1 gap-8">
+                <div className="hidden md:flex items-center justify-center gap-8">
                   {MENU_ITEMS.map((item, index) => (
                     <motion.a
                       key={item.id}
@@ -87,19 +87,20 @@ export default function Navbar() {
                       {item.label}
                     </motion.a>
                   ))}
-                  
-                  {/* CTA Button */}
-                  <motion.a 
-                    href="#contact" 
-                    className="bg-primary hover:bg-primary/90 text-white px-4 py-1.5 rounded-full font-medium shadow-lg whitespace-nowrap"
-                    whileHover={{ 
-                      scale: 1.05,
-                      boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
-                    }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    Get Started
-                  </motion.a>
+                </div>
+                
+                {/* CTA Button */}
+                <motion.a 
+                  href="#contact" 
+                  className="hidden md:flex bg-primary hover:bg-primary/90 text-white px-4 py-1.5 rounded-full font-medium shadow-lg whitespace-nowrap ml-8"
+                  whileHover={{ 
+                    scale: 1.05,
+                    boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
+                  }}
+                  transition={{ duration: 0.2 }}
+                >
+                  Get Started
+                </motion.a>
                 </div>
               </div>
             ) : (
