@@ -3,6 +3,15 @@ import { Link } from 'wouter';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 
+// Menu items for navigation
+const MENU_ITEMS = [
+  { id: 'features', label: 'Features' },
+  { id: 'how-it-works', label: 'How It Works' },
+  { id: 'pricing', label: 'Pricing' },
+  { id: 'testimonials', label: 'Testimonials' },
+  { id: 'faq', label: 'FAQ' }
+];
+
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const scrollY = useScrollPosition();
@@ -21,150 +30,172 @@ export default function Navbar() {
   }, []);
   
   return (
-    <>
-      <motion.nav
-        className={`fixed top-0 z-50 w-full transition-all duration-500 ${
-          isScrolled ? 'py-3' : 'py-6'
-        }`}
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+    <motion.nav
+      className="fixed top-0 z-50 w-full"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <motion.div 
+        className="container mx-auto px-4 relative"
+        animate={{ 
+          paddingTop: isScrolled ? "0.75rem" : "1.5rem",
+          paddingBottom: isScrolled ? "0.75rem" : "1.5rem" 
+        }}
+        transition={{ 
+          duration: 0.4, 
+          ease: [0.22, 1, 0.36, 1] // custom bezier curve for smooth transition
+        }}
       >
-        <div className="container mx-auto px-4 relative">
-          {isScrolled ? (
-            <div className="mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 px-8 flex items-center shadow-lg pr-16 md:pr-8">
-              {/* Logo */}
-              <Link href="/" className="flex items-center mr-12">
-                <span className="text-xl font-display font-bold text-glow text-white">
-                  Weby<span className="text-primary">Soft</span>
-                </span>
-              </Link>
-              
-              {/* Desktop Navigation - Centered */}
-              <div className="hidden md:flex items-center justify-center flex-1 space-x-8">
-                <a href="#features" className="text-base font-medium hover:text-primary transition-colors py-2 px-3">Features</a>
-                <a href="#how-it-works" className="text-base font-medium hover:text-primary transition-colors py-2 px-3">How It Works</a>
-                <a href="#pricing" className="text-base font-medium hover:text-primary transition-colors py-2 px-3">Pricing</a>
-                <a href="#testimonials" className="text-base font-medium hover:text-primary transition-colors py-2 px-3">Testimonials</a>
-                <a href="#faq" className="text-base font-medium hover:text-primary transition-colors py-2 px-3">FAQ</a>
-              </div>
-              
-              {/* CTA Button */}
-              <div className="hidden md:block ml-auto">
-                <a 
-                  href="#contact" 
-                  className="bg-primary hover:bg-opacity-90 text-white px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg hover:shadow-xl hover:shadow-primary/30"
-                >
-                  Get Started
-                </a>
-              </div>
-            </div>
-          ) : (
-            <div className="flex items-center justify-between">
-              {/* Logo */}
-              <Link href="/" className="flex items-center">
-                <span className="text-2xl font-display font-bold text-glow text-white">
-                  Weby<span className="text-primary">Soft</span>
-                </span>
-              </Link>
-              
-              {/* Desktop Navigation */}
-              <div className="hidden md:flex items-center space-x-8">
-                <a href="#features" className="text-base font-medium hover:text-primary transition-colors py-2 px-3">Features</a>
-                <a href="#how-it-works" className="text-base font-medium hover:text-primary transition-colors py-2 px-3">How It Works</a>
-                <a href="#pricing" className="text-base font-medium hover:text-primary transition-colors py-2 px-3">Pricing</a>
-                <a href="#testimonials" className="text-base font-medium hover:text-primary transition-colors py-2 px-3">Testimonials</a>
-                <a href="#faq" className="text-base font-medium hover:text-primary transition-colors py-2 px-3">FAQ</a>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={isScrolled ? "scrolled" : "top"}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="w-full"
+          >
+            {isScrolled ? (
+              <div className="mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 px-8 flex items-center shadow-lg pr-16 md:pr-8">
+                {/* Logo */}
+                <Link href="/">
+                  <motion.span 
+                    className="text-xl font-display font-bold text-glow text-white flex items-center mr-12"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    Weby<span className="text-primary">Soft</span>
+                  </motion.span>
+                </Link>
+                
+                {/* Desktop Navigation - Centered */}
+                <div className="hidden md:flex items-center justify-center flex-1 space-x-8">
+                  {MENU_ITEMS.map((item) => (
+                    <motion.a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      className="text-base font-medium text-foreground hover:text-primary py-2 px-3 relative"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {item.label}
+                    </motion.a>
+                  ))}
+                </div>
                 
                 {/* CTA Button */}
+                <div className="hidden md:block ml-auto">
+                  <motion.a 
+                    href="#contact" 
+                    className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-medium shadow-lg"
+                    whileHover={{ 
+                      scale: 1.05,
+                      boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
+                    }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    Get Started
+                  </motion.a>
+                </div>
+              </div>
+            ) : (
+              <div className="flex items-center justify-between">
+                {/* Logo */}
+                <Link href="/">
+                  <motion.span 
+                    className="text-2xl font-display font-bold text-glow text-white"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    Weby<span className="text-primary">Soft</span>
+                  </motion.span>
+                </Link>
+                
+                {/* Desktop Navigation */}
+                <div className="hidden md:flex items-center space-x-8">
+                  {MENU_ITEMS.map((item) => (
+                    <motion.a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      className="text-base font-medium text-foreground hover:text-primary py-2 px-3 relative"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {item.label}
+                    </motion.a>
+                  ))}
+                  
+                  {/* CTA Button */}
+                  <motion.a 
+                    href="#contact" 
+                    className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-medium shadow-lg ml-4"
+                    whileHover={{ 
+                      scale: 1.05,
+                      boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
+                    }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    Get Started
+                  </motion.a>
+                </div>
+              </div>
+            )}
+          </motion.div>
+        </AnimatePresence>
+        
+        {/* Mobile Menu Button - Always visible on mobile */}
+        <button 
+          className="md:hidden text-white focus:outline-none absolute top-1/2 right-6 transform -translate-y-1/2 z-50 p-2"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileMenuOpen}
+        >
+          <i className={`ri-${mobileMenuOpen ? 'close' : 'menu'}-line text-2xl`}></i>
+        </button>
+      </motion.div>
+      
+      {/* Mobile Navigation */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div 
+            className="md:hidden p-6 absolute w-full left-0 shadow-lg border-t border-white/10 bg-background/90 backdrop-blur-lg"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="flex flex-col space-y-4 mt-2">
+              {MENU_ITEMS.map((item) => (
+                <a 
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+              <a 
+                href="#contact" 
+                className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contact
+              </a>
+              <div className="pt-4">
                 <a 
                   href="#contact" 
-                  className="bg-primary hover:bg-opacity-90 text-white px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg hover:shadow-xl hover:shadow-primary/30 ml-4"
+                  className="bg-primary hover:bg-opacity-90 text-white px-6 py-3 rounded-full font-medium text-center block w-full"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   Get Started
                 </a>
               </div>
             </div>
-          )}
-          
-          {/* Mobile Menu Button - Always visible on mobile */}
-          <button 
-            className="md:hidden text-white focus:outline-none absolute top-1/2 right-6 transform -translate-y-1/2 z-50 p-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileMenuOpen}
-          >
-            <i className={`ri-${mobileMenuOpen ? 'close' : 'menu'}-line text-2xl`}></i>
-          </button>
-        </div>
-        
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div 
-              className="md:hidden p-6 absolute w-full left-0 shadow-lg border-t border-white/10 bg-background/90 backdrop-blur-lg"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="flex flex-col space-y-4 mt-2">
-                <a 
-                  href="#features" 
-                  className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Features
-                </a>
-                <a 
-                  href="#how-it-works" 
-                  className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  How It Works
-                </a>
-                <a 
-                  href="#pricing" 
-                  className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Pricing
-                </a>
-                <a 
-                  href="#testimonials" 
-                  className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Testimonials
-                </a>
-                <a 
-                  href="#faq" 
-                  className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  FAQ
-                </a>
-                <a 
-                  href="#contact" 
-                  className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Contact
-                </a>
-                <div className="pt-4">
-                  <a 
-                    href="#contact" 
-                    className="bg-primary hover:bg-opacity-90 text-white px-6 py-3 rounded-full font-medium text-center block w-full"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Get Started
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.nav>
-    </>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
 }

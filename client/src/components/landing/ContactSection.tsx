@@ -12,11 +12,43 @@ import GlassCard from './GlassCard';
 import { apiRequest } from '@/lib/queryClient';
 
 const contactSchema = z.object({
-  name: z.string().min(2, { message: 'Name must be at least 2 characters long' }),
-  email: z.string().email({ message: 'Please enter a valid email address' }),
-  phone: z.string().optional(),
-  subject: z.string().min(3, { message: 'Subject is required' }),
-  message: z.string().min(10, { message: 'Message must be at least 10 characters long' }),
+  name: z.string()
+    .min(2, { message: 'Name must be at least 2 characters long' })
+    .max(100, { message: 'Name cannot exceed 100 characters' })
+    .refine(name => /^[a-zA-Z\s'-]+$/.test(name), {
+      message: 'Name should only contain letters, spaces, hyphens, and apostrophes'
+    }),
+  email: z.string()
+    .email({ message: 'Please enter a valid email address' })
+    .min(5, { message: 'Email is too short' })
+    .max(254, { message: 'Email cannot exceed 254 characters' })
+    .refine(email => {
+      // Basic email format validation (more thorough than the built-in email validation)
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }, { message: 'Please enter a valid email address' }),
+  phone: z.string()
+    .optional()
+    .refine(phone => !phone || /^[0-9+\-\s()]{7,20}$/.test(phone), {
+      message: 'Please enter a valid phone number'
+    }),
+  subject: z.string()
+    .min(3, { message: 'Subject must be at least 3 characters long' })
+    .max(150, { message: 'Subject cannot exceed 150 characters' })
+    .refine(subject => !/^\s*$/.test(subject), { 
+      message: 'Subject cannot be only whitespace'
+    }),
+  message: z.string()
+    .min(10, { message: 'Message must be at least 10 characters long' })
+    .max(5000, { message: 'Message is too long (maximum 5000 characters)' })
+    .refine(message => !/^\s*$/.test(message), {
+      message: 'Message cannot be only whitespace'
+    })
+    .refine(message => {
+      // Checking for repetitive characters that might indicate spam
+      const repeatedCharRegex = /(.)\1{10,}/;
+      return !repeatedCharRegex.test(message);
+    }, { message: 'Message contains too many repeated characters' }),
 });
 
 type ContactFormValues = z.infer<typeof contactSchema>;
