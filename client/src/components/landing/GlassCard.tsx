@@ -25,10 +25,10 @@ export default function GlassCard({
   delay = 0
 }: GlassCardProps) {
   const borderClasses = {
-    'primary': 'border-primary/20',
-    'accent': 'border-accent/20',
-    'green': 'border-[#10B981]/20',
-    'red': 'border-red-500/20',
+    'primary': 'border-primary/30 shadow-[0_0_15px_rgba(99,102,241,0.2)]',
+    'accent': 'border-accent/30 shadow-[0_0_15px_rgba(236,72,153,0.2)]',
+    'green': 'border-[#10B981]/30 shadow-[0_0_15px_rgba(16,185,129,0.2)]',
+    'red': 'border-red-500/30 shadow-[0_0_15px_rgba(239,68,68,0.2)]',
     'none': 'border-white/10'
   };
   
