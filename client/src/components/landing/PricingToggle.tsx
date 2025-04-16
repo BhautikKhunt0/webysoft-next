@@ -102,7 +102,7 @@ export default function PricingToggle() {
                 
                 {isYearly && (
                   <div className="text-lg text-[#10B981] mt-1">
-                    Save ${(monthlyOngoing * 12) - yearlyPrice} compared to monthly
+                    Save $125 compared to monthly
                   </div>
                 )}
               </div>
