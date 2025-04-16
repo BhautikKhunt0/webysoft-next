@@ -41,7 +41,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
           >
-            We craft sophisticated and royal landing pages that command attention and deliver exceptional conversions.
+            We create visually stunning and conversion-focused landing pages that elevate your brand and captivate your audience.
           </motion.p>
           
           <motion.div 
