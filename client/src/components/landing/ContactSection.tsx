@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import GlassCard from './GlassCard';
+import { apiRequest } from '@/lib/queryClient';
 
 const contactSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters long' }),
@@ -38,16 +39,26 @@ export default function ContactSection() {
   async function onSubmit(data: ContactFormValues) {
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      // Send form data to the API
+      await apiRequest('POST', '/api/contact', data);
+      
       toast({
         title: "Message sent successfully!",
         description: "We'll get back to you as soon as possible.",
       });
       
       form.reset();
+    } catch (error) {
+      console.error('Contact form submission error:', error);
+      toast({
+        title: "Message failed to send",
+        description: "Please try again later or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   }
   
   return (
