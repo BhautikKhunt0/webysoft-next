@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'wouter';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import { useScreenSize } from '@/hooks/use-mobile';
 
@@ -13,37 +13,40 @@ const MENU_ITEMS = [
   { id: 'faq', label: 'FAQ' }
 ];
 
-// Animation settings for smooth transitions
-const navTransitionScrollDown = {
-  type: "spring",
-  stiffness: 380, // Higher stiffness = faster snap
-  damping: 25,
-  duration: 0.25 // Shorter duration for faster transition
-};
-
-const navTransitionScrollUp = {
-  type: "spring",
-  stiffness: 260,
-  damping: 20,
-  duration: 0.4
-};
-
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const scrollY = useScrollPosition();
   const isScrolled = scrollY > 100;
   const screenSize = useScreenSize();
-  
-  // Track previous scroll state to determine direction
-  const [prevScrollState, setPrevScrollState] = useState(false);
-  
-  // Update previous scroll state when current state changes
-  useEffect(() => {
-    setPrevScrollState(isScrolled);
-  }, [isScrolled]);
+  const lastScrollDirectionRef = useRef('none');
   
   const isTabletOrMobile = screenSize === 'mobile' || screenSize === 'tablet';
   const isMobileOnly = screenSize === 'mobile';
+  
+  // Smooth transition settings based on scroll direction
+  const transitionProps = {
+    // When scrolling down (showing compact navbar), use faster animation
+    down: {
+      type: "tween",
+      ease: "easeOut",
+      duration: 0.15
+    },
+    // When scrolling up (showing full navbar), use slightly slower animation
+    up: {
+      type: "tween",
+      ease: "easeOut",
+      duration: 0.3
+    }
+  };
+  
+  // Determine transition to use based on scroll direction
+  useEffect(() => {
+    if (isScrolled) {
+      lastScrollDirectionRef.current = 'down';
+    } else {
+      lastScrollDirectionRef.current = 'up';
+    }
+  }, [isScrolled]);
   
   // Close mobile menu on navigation or resize
   useEffect(() => {
@@ -58,117 +61,76 @@ export default function Navbar() {
   }, []);
   
   return (
-    <motion.nav
-      className="fixed top-0 z-50 w-full"
-      transition={isScrolled && !prevScrollState ? navTransitionScrollDown : navTransitionScrollUp}
-    >
-      <motion.div 
-        className="container mx-auto px-4 relative"
-        animate={{ 
-          paddingTop: isScrolled ? "0.75rem" : "1.5rem",
-          paddingBottom: isScrolled ? "0.75rem" : "1.5rem" 
-        }}
-        transition={isScrolled && !prevScrollState ? navTransitionScrollDown : navTransitionScrollUp}
-      >
-        <motion.div 
-          layout
-          className={isScrolled 
-            ? "mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 md:py-3 lg:py-3 px-5 md:px-5 lg:px-8 flex items-center justify-between shadow-lg" 
-            : "flex items-center justify-between"
-          }
-          transition={isScrolled && !prevScrollState ? navTransitionScrollDown : navTransitionScrollUp}
+    <div className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
+      <div className="container mx-auto px-4 relative pointer-events-auto">
+        <motion.div
+          animate={{
+            paddingTop: isScrolled ? "0.75rem" : "1.5rem",
+            paddingBottom: isScrolled ? "0.75rem" : "1.5rem"
+          }}
+          transition={isScrolled ? transitionProps.down : transitionProps.up}
         >
-          {/* Logo */}
-          <motion.div 
-            layout 
-            transition={isScrolled && !prevScrollState ? navTransitionScrollDown : navTransitionScrollUp}
-          >
-            <Link href="/">
-              <motion.span 
-                className={isScrolled 
-                  ? "text-xl font-display font-bold text-glow text-white flex items-center mr-3 md:mr-2 lg:mr-6"
-                  : "text-2xl font-display font-bold text-glow text-white"
-                }
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-                layout
-              >
-                Weby<span className="text-primary">Soft</span>
-              </motion.span>
-            </Link>
-          </motion.div>
-          
-          {/* Navigation */}
-          <motion.div 
-            layout
+          <motion.div
             className={isScrolled 
+              ? "mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 md:py-3 lg:py-3 px-5 md:px-5 lg:px-8 flex items-center justify-between shadow-lg" 
+              : "flex items-center justify-between"
+            }
+            transition={isScrolled ? transitionProps.down : transitionProps.up}
+          >
+            {/* Logo */}
+            <Link href="/">
+              <span className={isScrolled 
+                ? "text-xl font-display font-bold text-glow text-white flex items-center mr-3 md:mr-2 lg:mr-6"
+                : "text-2xl font-display font-bold text-glow text-white"
+              }>
+                Weby<span className="text-primary">Soft</span>
+              </span>
+            </Link>
+            
+            {/* Navigation */}
+            <div className={isScrolled 
               ? "hidden md:flex items-center justify-between flex-1" 
               : "hidden md:flex items-center justify-between"
-            }
-            transition={isScrolled && !prevScrollState ? navTransitionScrollDown : navTransitionScrollUp}
-          >
-            <motion.div 
-              layout
-              className={isScrolled 
+            }>
+              <div className={isScrolled 
                 ? "flex items-center gap-8 ml-12" 
                 : "flex items-center md:space-x-2 lg:space-x-8"
-              }
-              transition={isScrolled && !prevScrollState ? navTransitionScrollDown : navTransitionScrollUp}
-            >
-              {MENU_ITEMS.map((item, index) => (
-                <motion.a
-                  layout
-                  key={item.id}
-                  href={`#${item.id}`}
-                  className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
-                  whileHover={{ scale: 1.05 }}
-                  transition={isScrolled && !prevScrollState ? navTransitionScrollDown : navTransitionScrollUp}
-                >
-                  {item.label}
-                </motion.a>
-              ))}
-            </motion.div>
-            
-            {/* CTA Button */}
-            <motion.a 
-              layout
-              href="#contact" 
-              className={isScrolled
-                ? "bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg whitespace-nowrap"
-                : "bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg ml-3 md:ml-4 lg:ml-6 whitespace-nowrap"
-              }
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
-              }}
-              transition={isScrolled && !prevScrollState ? navTransitionScrollDown : navTransitionScrollUp}
-            >
-              Get Started
-            </motion.a>
+              }>
+                {MENU_ITEMS.map((item, index) => (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap transition-all duration-200`}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+              
+              {/* CTA Button */}
+              <a 
+                href="#contact" 
+                className={`bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg whitespace-nowrap transition-all duration-200 ${isScrolled ? '' : 'ml-3 md:ml-4 lg:ml-6'}`}
+              >
+                Get Started
+              </a>
+            </div>
           </motion.div>
+          
+          {/* Mobile Menu Button - Only visible on mobile screens */}
+          <button 
+            className="md:hidden text-white focus:outline-none absolute top-1/2 right-6 transform -translate-y-1/2 z-50 p-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
+          >
+            <i className={`ri-${mobileMenuOpen ? 'close' : 'menu'}-line text-2xl`}></i>
+          </button>
         </motion.div>
         
-        {/* Mobile Menu Button - Only visible on mobile screens */}
-        <button 
-          className="md:hidden text-white focus:outline-none absolute top-1/2 right-6 transform -translate-y-1/2 z-50 p-2"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={mobileMenuOpen}
-        >
-          <i className={`ri-${mobileMenuOpen ? 'close' : 'menu'}-line text-2xl`}></i>
-        </button>
-      </motion.div>
-      
-      {/* Mobile Navigation */}
-      <AnimatePresence>
+        {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <motion.div 
-            className="md:hidden p-6 absolute w-full left-0 shadow-lg border-t border-white/10 bg-background/90 backdrop-blur-lg"
-            initial={{ height: 0 }}
-            animate={{ height: 'auto' }}
-            exit={{ height: 0 }}
-            transition={{ duration: 0.3 }}
-          >
+          <div className="md:hidden p-6 absolute w-full left-0 shadow-lg border-t border-white/10 bg-background/90 backdrop-blur-lg">
             <div className="flex flex-col space-y-4 mt-2">
               {MENU_ITEMS.map((item) => (
                 <a 
@@ -197,9 +159,9 @@ export default function Navbar() {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
-    </motion.nav>
+      </div>
+    </div>
   );
 }
