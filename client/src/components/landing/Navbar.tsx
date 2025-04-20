@@ -14,7 +14,14 @@ const MENU_ITEMS = [
 ];
 
 // Animation settings for smooth transitions
-const navTransition = {
+const navTransitionScrollDown = {
+  type: "spring",
+  stiffness: 380, // Higher stiffness = faster snap
+  damping: 25,
+  duration: 0.25 // Shorter duration for faster transition
+};
+
+const navTransitionScrollUp = {
   type: "spring",
   stiffness: 260,
   damping: 20,
@@ -26,6 +33,14 @@ export default function Navbar() {
   const scrollY = useScrollPosition();
   const isScrolled = scrollY > 100;
   const screenSize = useScreenSize();
+  
+  // Track previous scroll state to determine direction
+  const [prevScrollState, setPrevScrollState] = useState(false);
+  
+  // Update previous scroll state when current state changes
+  useEffect(() => {
+    setPrevScrollState(isScrolled);
+  }, [isScrolled]);
   
   const isTabletOrMobile = screenSize === 'mobile' || screenSize === 'tablet';
   const isMobileOnly = screenSize === 'mobile';
@@ -45,7 +60,7 @@ export default function Navbar() {
   return (
     <motion.nav
       className="fixed top-0 z-50 w-full"
-      transition={navTransition}
+      transition={isScrolled && !prevScrollState ? navTransitionScrollDown : navTransitionScrollUp}
     >
       <motion.div 
         className="container mx-auto px-4 relative"
@@ -53,7 +68,7 @@ export default function Navbar() {
           paddingTop: isScrolled ? "0.75rem" : "1.5rem",
           paddingBottom: isScrolled ? "0.75rem" : "1.5rem" 
         }}
-        transition={navTransition}
+        transition={isScrolled && !prevScrollState ? navTransitionScrollDown : navTransitionScrollUp}
       >
         <motion.div 
           layout
@@ -61,10 +76,13 @@ export default function Navbar() {
             ? "mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 md:py-3 lg:py-3 px-5 md:px-5 lg:px-8 flex items-center justify-between shadow-lg" 
             : "flex items-center justify-between"
           }
-          transition={navTransition}
+          transition={isScrolled && !prevScrollState ? navTransitionScrollDown : navTransitionScrollUp}
         >
           {/* Logo */}
-          <motion.div layout transition={navTransition}>
+          <motion.div 
+            layout 
+            transition={isScrolled && !prevScrollState ? navTransitionScrollDown : navTransitionScrollUp}
+          >
             <Link href="/">
               <motion.span 
                 className={isScrolled 
@@ -87,7 +105,7 @@ export default function Navbar() {
               ? "hidden md:flex items-center justify-between flex-1" 
               : "hidden md:flex items-center justify-between"
             }
-            transition={navTransition}
+            transition={isScrolled && !prevScrollState ? navTransitionScrollDown : navTransitionScrollUp}
           >
             <motion.div 
               layout
@@ -95,7 +113,7 @@ export default function Navbar() {
                 ? "flex items-center gap-8 ml-12" 
                 : "flex items-center md:space-x-2 lg:space-x-8"
               }
-              transition={navTransition}
+              transition={isScrolled && !prevScrollState ? navTransitionScrollDown : navTransitionScrollUp}
             >
               {MENU_ITEMS.map((item, index) => (
                 <motion.a
@@ -104,7 +122,7 @@ export default function Navbar() {
                   href={`#${item.id}`}
                   className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
                   whileHover={{ scale: 1.05 }}
-                  transition={navTransition}
+                  transition={isScrolled && !prevScrollState ? navTransitionScrollDown : navTransitionScrollUp}
                 >
                   {item.label}
                 </motion.a>
@@ -123,7 +141,7 @@ export default function Navbar() {
                 scale: 1.05,
                 boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
               }}
-              transition={navTransition}
+              transition={isScrolled && !prevScrollState ? navTransitionScrollDown : navTransitionScrollUp}
             >
               Get Started
             </motion.a>
