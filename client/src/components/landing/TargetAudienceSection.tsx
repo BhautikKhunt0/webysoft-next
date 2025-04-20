@@ -153,11 +153,6 @@ const TargetAudienceSection: React.FC = () => {
                   animate={{ opacity: index === activeIndex ? 1 : 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  {/* Decorative corner accent */}
-                  <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden">
-                    <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl ${index % 2 === 0 ? 'from-primary/30' : 'from-accent/30'} to-transparent -rotate-45 transform origin-top-right`}></div>
-                  </div>
-                  
                   <div className={`w-24 h-24 ${colorClasses[audience.color as keyof typeof colorClasses].bg} rounded-full flex items-center justify-center mb-8 shadow-lg border border-white/10`}>
                     <i className={`${audience.icon} text-4xl ${colorClasses[audience.color as keyof typeof colorClasses].text}`}></i>
                   </div>
