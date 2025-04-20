@@ -37,9 +37,6 @@ export default function Navbar() {
   return (
     <motion.nav
       className="fixed top-0 z-50 w-full"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
     >
       <motion.div 
         className="container mx-auto px-4 relative"
@@ -48,108 +45,97 @@ export default function Navbar() {
           paddingBottom: isScrolled ? "0.75rem" : "1.5rem" 
         }}
         transition={{ 
-          duration: 0.4, 
-          ease: [0.22, 1, 0.36, 1] // custom bezier curve for smooth transition
+          duration: 0.3, 
+          ease: "linear"
         }}
       >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={isScrolled ? "scrolled" : "top"}
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="w-full"
-          >
-            {isScrolled ? (
-              <div className="mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 md:py-3 lg:py-3 px-5 md:px-5 lg:px-8 flex items-center justify-between shadow-lg">
-                {/* Logo */}
-                <Link href="/">
-                  <motion.span 
-                    className="text-xl font-display font-bold text-glow text-white flex items-center mr-3 md:mr-2 lg:mr-6"
+        {isScrolled ? (
+          <div className="mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 md:py-3 lg:py-3 px-5 md:px-5 lg:px-8 flex items-center justify-between shadow-lg">
+            {/* Logo */}
+            <Link href="/">
+              <motion.span 
+                className="text-xl font-display font-bold text-glow text-white flex items-center mr-3 md:mr-2 lg:mr-6"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                Weby<span className="text-primary">Soft</span>
+              </motion.span>
+            </Link>
+            
+            {/* Navigation - Centered (adapts for tablet) */}
+            <div className="hidden md:flex items-center justify-between flex-1">
+              <div className="flex items-center gap-8 ml-12">
+                {MENU_ITEMS.map((item, index) => (
+                  <motion.a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                   >
-                    Weby<span className="text-primary">Soft</span>
-                  </motion.span>
-                </Link>
-                
-                {/* Navigation - Centered (adapts for tablet) */}
-                <div className="hidden md:flex items-center justify-between flex-1">
-                  <div className="flex items-center gap-8 ml-12">
-                    {MENU_ITEMS.map((item, index) => (
-                      <motion.a
-                        key={item.id}
-                        href={`#${item.id}`}
-                        className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        {item.label}
-                      </motion.a>
-                    ))}
-                  </div>
-                  
-                  {/* CTA Button - For tablets and above - Always visible */}
-                  <motion.a 
-                    href="#contact" 
-                    className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg whitespace-nowrap"
-                    whileHover={{ 
-                      scale: 1.05,
-                      boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
-                    }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    Get Started
+                    {item.label}
                   </motion.a>
-                </div>
+                ))}
               </div>
-            ) : (
-              <div className="flex items-center justify-between">
-                {/* Logo */}
-                <Link href="/">
-                  <motion.span 
-                    className="text-2xl font-display font-bold text-glow text-white"
+              
+              {/* CTA Button - For tablets and above - Always visible */}
+              <motion.a 
+                href="#contact" 
+                className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg whitespace-nowrap"
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
+                }}
+                transition={{ duration: 0.2 }}
+              >
+                Get Started
+              </motion.a>
+            </div>
+          </div>
+        ) : (
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <Link href="/">
+              <motion.span 
+                className="text-2xl font-display font-bold text-glow text-white"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                Weby<span className="text-primary">Soft</span>
+              </motion.span>
+            </Link>
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center justify-between">
+              <div className="flex items-center md:space-x-2 lg:space-x-8">
+                {MENU_ITEMS.map((item, index) => (
+                  <motion.a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                   >
-                    Weby<span className="text-primary">Soft</span>
-                  </motion.span>
-                </Link>
-                
-                {/* Desktop Navigation */}
-                <div className="hidden md:flex items-center justify-between">
-                  <div className="flex items-center md:space-x-2 lg:space-x-8">
-                    {MENU_ITEMS.map((item, index) => (
-                      <motion.a
-                        key={item.id}
-                        href={`#${item.id}`}
-                        className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        {item.label}
-                      </motion.a>
-                    ))}
-                  </div>
-                  
-                  {/* CTA Button */}
-                  <motion.a 
-                    href="#contact" 
-                    className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg ml-3 md:ml-4 lg:ml-6 whitespace-nowrap"
-                    whileHover={{ 
-                      scale: 1.05,
-                      boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
-                    }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    Get Started
+                    {item.label}
                   </motion.a>
-                </div>
+                ))}
               </div>
-            )}
-          </motion.div>
-        </AnimatePresence>
+              
+              {/* CTA Button */}
+              <motion.a 
+                href="#contact" 
+                className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg ml-3 md:ml-4 lg:ml-6 whitespace-nowrap"
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
+                }}
+                transition={{ duration: 0.2 }}
+              >
+                Get Started
+              </motion.a>
+            </div>
+          </div>
+        )}
         
         {/* Mobile Menu Button - Only visible on mobile screens */}
         <button 
@@ -167,9 +153,9 @@ export default function Navbar() {
         {mobileMenuOpen && (
           <motion.div 
             className="md:hidden p-6 absolute w-full left-0 shadow-lg border-t border-white/10 bg-background/90 backdrop-blur-lg"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ height: 0 }}
+            animate={{ height: 'auto' }}
+            exit={{ height: 0 }}
             transition={{ duration: 0.3 }}
           >
             <div className="flex flex-col space-y-4 mt-2">
