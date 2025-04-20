@@ -64,27 +64,15 @@ export default function Navbar() {
             {isScrolled ? (
               <div className="mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 md:py-3 lg:py-3 px-5 md:px-5 lg:px-8 flex items-center justify-between shadow-lg">
                 {/* Logo */}
-                <div className="flex items-center justify-between flex-1 md:flex-none md:justify-start">
-                  <Link href="/">
-                    <motion.span 
-                      className="text-xl font-display font-bold text-glow text-white flex items-center mr-3 md:mr-2 lg:mr-6"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      Weby<span className="text-primary">Soft</span>
-                    </motion.span>
-                  </Link>
-                  
-                  {/* Mobile CTA Button - Only visible on mobile */}
-                  <motion.a 
-                    href="#contact" 
-                    className="md:hidden bg-primary hover:bg-primary/90 text-white px-4 py-1.5 rounded-full font-medium shadow-lg whitespace-nowrap text-sm"
+                <Link href="/">
+                  <motion.span 
+                    className="text-xl font-display font-bold text-glow text-white flex items-center mr-3 md:mr-2 lg:mr-6"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                   >
-                    Get Started
-                  </motion.a>
-                </div>
+                    Weby<span className="text-primary">Soft</span>
+                  </motion.span>
+                </Link>
                 
                 {/* Navigation - Centered (adapts for tablet) */}
                 <div className="hidden md:flex items-center justify-between flex-1">
