@@ -13,6 +13,14 @@ const MENU_ITEMS = [
   { id: 'faq', label: 'FAQ' }
 ];
 
+// Animation settings for smooth transitions
+const navTransition = {
+  type: "spring",
+  stiffness: 260,
+  damping: 20,
+  duration: 0.4
+};
+
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const scrollY = useScrollPosition();
@@ -37,6 +45,7 @@ export default function Navbar() {
   return (
     <motion.nav
       className="fixed top-0 z-50 w-full"
+      transition={navTransition}
     >
       <motion.div 
         className="container mx-auto px-4 relative"
@@ -44,98 +53,82 @@ export default function Navbar() {
           paddingTop: isScrolled ? "0.75rem" : "1.5rem",
           paddingBottom: isScrolled ? "0.75rem" : "1.5rem" 
         }}
-        transition={{ 
-          duration: 0.3, 
-          ease: "linear"
-        }}
+        transition={navTransition}
       >
-        {isScrolled ? (
-          <div className="mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 md:py-3 lg:py-3 px-5 md:px-5 lg:px-8 flex items-center justify-between shadow-lg">
-            {/* Logo */}
+        <motion.div 
+          layout
+          className={isScrolled 
+            ? "mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 md:py-3 lg:py-3 px-5 md:px-5 lg:px-8 flex items-center justify-between shadow-lg" 
+            : "flex items-center justify-between"
+          }
+          transition={navTransition}
+        >
+          {/* Logo */}
+          <motion.div layout transition={navTransition}>
             <Link href="/">
               <motion.span 
-                className="text-xl font-display font-bold text-glow text-white flex items-center mr-3 md:mr-2 lg:mr-6"
+                className={isScrolled 
+                  ? "text-xl font-display font-bold text-glow text-white flex items-center mr-3 md:mr-2 lg:mr-6"
+                  : "text-2xl font-display font-bold text-glow text-white"
+                }
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
+                layout
               >
                 Weby<span className="text-primary">Soft</span>
               </motion.span>
             </Link>
+          </motion.div>
+          
+          {/* Navigation */}
+          <motion.div 
+            layout
+            className={isScrolled 
+              ? "hidden md:flex items-center justify-between flex-1" 
+              : "hidden md:flex items-center justify-between"
+            }
+            transition={navTransition}
+          >
+            <motion.div 
+              layout
+              className={isScrolled 
+                ? "flex items-center gap-8 ml-12" 
+                : "flex items-center md:space-x-2 lg:space-x-8"
+              }
+              transition={navTransition}
+            >
+              {MENU_ITEMS.map((item, index) => (
+                <motion.a
+                  layout
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
+                  whileHover={{ scale: 1.05 }}
+                  transition={navTransition}
+                >
+                  {item.label}
+                </motion.a>
+              ))}
+            </motion.div>
             
-            {/* Navigation - Centered (adapts for tablet) */}
-            <div className="hidden md:flex items-center justify-between flex-1">
-              <div className="flex items-center gap-8 ml-12">
-                {MENU_ITEMS.map((item, index) => (
-                  <motion.a
-                    key={item.id}
-                    href={`#${item.id}`}
-                    className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {item.label}
-                  </motion.a>
-                ))}
-              </div>
-              
-              {/* CTA Button - For tablets and above - Always visible */}
-              <motion.a 
-                href="#contact" 
-                className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg whitespace-nowrap"
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
-                }}
-                transition={{ duration: 0.2 }}
-              >
-                Get Started
-              </motion.a>
-            </div>
-          </div>
-        ) : (
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <Link href="/">
-              <motion.span 
-                className="text-2xl font-display font-bold text-glow text-white"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                Weby<span className="text-primary">Soft</span>
-              </motion.span>
-            </Link>
-            
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center justify-between">
-              <div className="flex items-center md:space-x-2 lg:space-x-8">
-                {MENU_ITEMS.map((item, index) => (
-                  <motion.a
-                    key={item.id}
-                    href={`#${item.id}`}
-                    className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {item.label}
-                  </motion.a>
-                ))}
-              </div>
-              
-              {/* CTA Button */}
-              <motion.a 
-                href="#contact" 
-                className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg ml-3 md:ml-4 lg:ml-6 whitespace-nowrap"
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
-                }}
-                transition={{ duration: 0.2 }}
-              >
-                Get Started
-              </motion.a>
-            </div>
-          </div>
-        )}
+            {/* CTA Button */}
+            <motion.a 
+              layout
+              href="#contact" 
+              className={isScrolled
+                ? "bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg whitespace-nowrap"
+                : "bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg ml-3 md:ml-4 lg:ml-6 whitespace-nowrap"
+              }
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
+              }}
+              transition={navTransition}
+            >
+              Get Started
+            </motion.a>
+          </motion.div>
+        </motion.div>
         
         {/* Mobile Menu Button - Only visible on mobile screens */}
         <button 
