@@ -83,126 +83,171 @@ const TargetAudienceSection: React.FC = () => {
   }, []);
   
   return (
-    <section className="py-20 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-secondary/50 -z-10"></div>
-      <div className="absolute -left-20 top-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
-      <div className="absolute -right-20 bottom-20 w-60 h-60 bg-accent/10 rounded-full blur-3xl"></div>
+    <section id="target-audience" className="py-24 relative overflow-hidden">
+      {/* Enhanced Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-secondary/40 -z-10"></div>
+      <div className="absolute -left-32 top-40 w-96 h-96 bg-primary/10 rounded-full blur-[120px] opacity-60"></div>
+      <div className="absolute -right-32 bottom-40 w-96 h-96 bg-accent/15 rounded-full blur-[100px] opacity-70 animate-pulse-slow"></div>
+      <div className="absolute left-1/2 top-1/3 w-64 h-64 bg-cyan-500/10 rounded-full blur-[80px] opacity-30 animate-pulse-slow animate-delay-2"></div>
       
-      <div className="container mx-auto px-4">
-        {/* Section Title */}
-        <motion.h2 
-          className="text-3xl md:text-5xl font-display font-bold text-center mb-6"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+
+        {/* Section Header with enhanced styling */}
+        <motion.div
+          className="text-center max-w-3xl mx-auto mb-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7 }}
+        >
+          <motion.h2 
+            className="text-4xl md:text-6xl font-display font-bold mb-6 tracking-tight"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="text-primary text-glow relative">
+              Perfect
+              <span className="absolute -bottom-2 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent"></span>
+            </span> For
+          </motion.h2>
+          
+          <motion.p 
+            className="text-xl md:text-2xl text-foreground/70 mb-6 leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            Designed for visionaries who understand that exceptional design drives exceptional results
+          </motion.p>
+          
+          <motion.div 
+            className="w-20 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto"
+            initial={{ opacity: 0, width: 0 }}
+            whileInView={{ opacity: 1, width: 80 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          ></motion.div>
+        </motion.div>
+        
+        {/* Mobile View - Improved Card Design with Pagination */}
+        <motion.div 
+          className="md:hidden"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <span className="text-primary text-glow">Perfect</span> For
-        </motion.h2>
-        
-        {/* Section Description */}
-        <motion.p 
-          className="text-xl text-foreground/70 text-center mb-10 md:mb-16 max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          Designed for professionals who value both aesthetics and results.
-        </motion.p>
-        
-        {/* Mobile View - Vertical Cards with Pagination */}
-        <div className="md:hidden">
           <div className="relative overflow-hidden">
-            {/* Mobile Carousel */}
-            <motion.div 
-              className="flex flex-col items-center justify-center"
-              initial={{ opacity: 1 }}
-              animate={{ opacity: 1 }}
-            >
+            <div className="flex flex-col items-center">
               {audiences.map((audience, index) => (
-                <div 
+                <motion.div 
                   key={index}
-                  className={`w-full max-w-sm mx-auto glass p-8 border border-white/10 rounded-xl flex flex-col items-center text-center transition-all duration-500 ${index === activeIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-95 hidden'}`}
+                  className={`w-full max-w-sm mx-auto glass p-8 border border-white/10 rounded-2xl flex flex-col items-center text-center transition-all duration-500 shadow-xl backdrop-blur-md relative
+                    ${index === activeIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-95 hidden'}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: index === activeIndex ? 1 : 0 }}
+                  transition={{ duration: 0.5 }}
                 >
-                  <div className={`w-20 h-20 ${colorClasses[audience.color as keyof typeof colorClasses].bg} rounded-full flex items-center justify-center mb-6`}>
+                  {/* Decorative corner accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden">
+                    <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl ${index % 2 === 0 ? 'from-primary/30' : 'from-accent/30'} to-transparent -rotate-45 transform origin-top-right`}></div>
+                  </div>
+                  
+                  <div className={`w-24 h-24 ${colorClasses[audience.color as keyof typeof colorClasses].bg} rounded-full flex items-center justify-center mb-8 shadow-lg border border-white/10`}>
                     <i className={`${audience.icon} text-4xl ${colorClasses[audience.color as keyof typeof colorClasses].text}`}></i>
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{audience.title}</h3>
-                  <p className="text-foreground/70">{audience.description}</p>
-                </div>
+                  
+                  <h3 className="text-2xl font-bold mb-4 font-display">{audience.title}</h3>
+                  <p className="text-lg text-foreground/80 leading-relaxed">{audience.description}</p>
+                  
+                  {/* Visual indicator at bottom of card */}
+                  <div className="w-16 h-1 bg-gradient-to-r from-transparent via-primary/70 to-transparent mt-6"></div>
+                </motion.div>
               ))}
-            </motion.div>
+            </div>
             
-            {/* Mobile Navigation Controls */}
-            <div className="flex justify-between items-center mt-6">
-              <button 
+            {/* Enhanced Mobile Navigation Controls */}
+            <div className="flex justify-between items-center mt-8">
+              <motion.button 
                 onClick={prevSlide}
-                className="w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center border border-white/10 text-foreground hover:bg-primary/20 transition-colors"
+                className="w-12 h-12 rounded-full bg-background/40 backdrop-blur-lg flex items-center justify-center border border-white/20 text-foreground hover:bg-primary/30 transition-all hover:scale-110 shadow-lg"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <i className="ri-arrow-left-s-line text-xl"></i>
-              </button>
+                <i className="ri-arrow-left-s-line text-2xl"></i>
+              </motion.button>
               
-              {/* Dots Indicator */}
-              <div className="flex space-x-2 justify-center">
+              {/* Improved Dots Indicator */}
+              <div className="flex space-x-3 justify-center">
                 {audiences.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setActiveIndex(index)}
-                    className={`w-2.5 h-2.5 rounded-full transition-all ${index === activeIndex ? 'bg-primary w-6' : 'bg-foreground/30'}`}
+                    className={`transition-all duration-300 ${
+                      index === activeIndex 
+                        ? 'w-10 h-3 bg-primary rounded-full shadow-md shadow-primary/40' 
+                        : 'w-3 h-3 bg-foreground/30 rounded-full hover:bg-foreground/50'
+                    }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
                 ))}
               </div>
               
-              <button 
+              <motion.button 
                 onClick={nextSlide}
-                className="w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center border border-white/10 text-foreground hover:bg-primary/20 transition-colors"
+                className="w-12 h-12 rounded-full bg-background/40 backdrop-blur-lg flex items-center justify-center border border-white/20 text-foreground hover:bg-primary/30 transition-all hover:scale-110 shadow-lg"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <i className="ri-arrow-right-s-line text-xl"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        
-        {/* Desktop View - Horizontal Scroll */}
-        <div className="hidden md:block relative">
-          <div 
-            ref={scrollRef}
-            className="overflow-x-auto scrollbar-hide pb-8"
-          >
-            <div className="flex space-x-6 min-w-max px-4">
-              {audiences.map((audience, index) => (
-                <motion.div 
-                  key={index}
-                  className="w-[280px] glass p-8 border border-white/10 rounded-xl flex flex-col items-center text-center transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/5 duration-300"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.5, delay: 0.1 * index }}
-                >
-                  <div className={`w-20 h-20 ${colorClasses[audience.color as keyof typeof colorClasses].bg} rounded-full flex items-center justify-center mb-6`}>
-                    <i className={`${audience.icon} text-4xl ${colorClasses[audience.color as keyof typeof colorClasses].text}`}></i>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">{audience.title}</h3>
-                  <p className="text-foreground/70">{audience.description}</p>
-                </motion.div>
-              ))}
+                <i className="ri-arrow-right-s-line text-2xl"></i>
+              </motion.button>
             </div>
           </div>
           
-          {/* Scroll Indicators */}
-          <div className="flex justify-between absolute top-1/2 left-0 right-0 -translate-y-1/2 pointer-events-none">
-            <div className="w-16 h-full bg-gradient-to-r from-secondary/90 to-transparent"></div>
-            <div className="w-16 h-full bg-gradient-to-l from-secondary/90 to-transparent"></div>
+          {/* Improved swipe instructions */}
+          <div className="flex items-center justify-center mt-8 text-sm text-foreground/60 bg-primary/5 py-2 px-4 rounded-full backdrop-blur-sm border border-white/5 shadow-inner">
+            <i className="ri-swipe-line mr-2"></i>
+            <span>Swipe or tap arrows to explore more audiences</span>
           </div>
-        </div>
+        </motion.div>
         
-        {/* Swipe Instructions for Mobile */}
-        <div className="flex items-center justify-center mt-6 text-sm text-foreground/50 md:hidden">
-          <i className="ri-swipe-line mr-2"></i>
-          <span>Swipe or tap arrows to navigate</span>
+        {/* Desktop View - Enhanced Card Grid Layout */}
+        <div className="hidden md:block relative">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {audiences.map((audience, index) => (
+              <motion.div 
+                key={index}
+                className="royal-border glass p-8 border border-white/10 rounded-2xl flex flex-col items-center text-center transition-all hover:shadow-2xl hover:shadow-primary/10 duration-500 backdrop-blur-md relative group"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: 0.1 * index }}
+                whileHover={{ 
+                  y: -10,
+                  transition: { duration: 0.3 } 
+                }}
+              >
+                {/* Animated hover accent */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
+                
+                {/* Icon with enhanced styling */}
+                <div className={`w-24 h-24 ${colorClasses[audience.color as keyof typeof colorClasses].bg} rounded-full flex items-center justify-center mb-6 shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-500 border border-white/10`}>
+                  <i className={`${audience.icon} text-4xl ${colorClasses[audience.color as keyof typeof colorClasses].text} group-hover:scale-125 transition-transform duration-500`}></i>
+                </div>
+                
+                <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors duration-300 font-display">{audience.title}</h3>
+                <p className="text-foreground/70 group-hover:text-foreground/90 transition-colors duration-300">{audience.description}</p>
+                
+                {/* Animated underline that appears on hover */}
+                <div className="w-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent mt-6 group-hover:w-24 transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
