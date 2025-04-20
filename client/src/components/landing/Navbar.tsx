@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'wouter';
 import { motion } from 'framer-motion';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
@@ -18,35 +18,9 @@ export default function Navbar() {
   const scrollY = useScrollPosition();
   const isScrolled = scrollY > 100;
   const screenSize = useScreenSize();
-  const lastScrollDirectionRef = useRef('none');
   
   const isTabletOrMobile = screenSize === 'mobile' || screenSize === 'tablet';
   const isMobileOnly = screenSize === 'mobile';
-  
-  // Smooth transition settings based on scroll direction
-  const transitionProps = {
-    // When scrolling down (showing compact navbar), use faster animation
-    down: {
-      type: "tween",
-      ease: "easeOut",
-      duration: 0.15
-    },
-    // When scrolling up (showing full navbar), use slightly slower animation
-    up: {
-      type: "tween",
-      ease: "easeOut",
-      duration: 0.3
-    }
-  };
-  
-  // Determine transition to use based on scroll direction
-  useEffect(() => {
-    if (isScrolled) {
-      lastScrollDirectionRef.current = 'down';
-    } else {
-      lastScrollDirectionRef.current = 'up';
-    }
-  }, [isScrolled]);
   
   // Close mobile menu on navigation or resize
   useEffect(() => {
@@ -60,62 +34,168 @@ export default function Navbar() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
   
+  // Variants for navbar container
+  const navContainerVariants = {
+    expanded: {
+      paddingTop: "1.5rem",
+      paddingBottom: "1.5rem",
+      transition: { 
+        duration: 0.3,
+        ease: [0.25, 1, 0.5, 1]
+      }
+    },
+    collapsed: {
+      paddingTop: "0.75rem",
+      paddingBottom: "0.75rem",
+      transition: { 
+        duration: 0.15,
+        ease: [0.25, 1, 0.5, 1]
+      }
+    }
+  };
+  
+  // Variants for navbar
+  const navVariants = {
+    expanded: {
+      borderRadius: "0px",
+      backgroundColor: "rgba(0, 0, 0, 0)",
+      backdropFilter: "blur(0px)",
+      boxShadow: "0px 0px 0px rgba(0, 0, 0, 0)",
+      transition: {
+        duration: 0.3,
+        ease: [0.25, 1, 0.5, 1]
+      }
+    },
+    collapsed: {
+      borderRadius: "9999px",
+      backgroundColor: "rgba(10, 10, 18, 0.8)",
+      backdropFilter: "blur(8px)",
+      boxShadow: "0px 4px 25px rgba(0, 0, 0, 0.15)",
+      transition: {
+        duration: 0.15,
+        ease: [0.25, 1, 0.5, 1]
+      }
+    }
+  };
+  
+  // Variants for logo element
+  const logoVariants = {
+    expanded: {
+      fontSize: "1.5rem",
+      marginRight: "0px",
+      transition: {
+        duration: 0.3,
+        ease: [0.25, 1, 0.5, 1]
+      }
+    },
+    collapsed: {
+      fontSize: "1.25rem",
+      marginRight: "1.5rem",
+      transition: {
+        duration: 0.15,
+        ease: [0.25, 1, 0.5, 1]
+      }
+    }
+  };
+  
+  // Variants for menu items container
+  const menuContainerVariants = {
+    expanded: {
+      marginLeft: "0px",
+      transition: {
+        duration: 0.3,
+        ease: [0.25, 1, 0.5, 1]
+      }
+    },
+    collapsed: {
+      marginLeft: "3rem",
+      transition: {
+        duration: 0.15,
+        ease: [0.25, 1, 0.5, 1]
+      }
+    }
+  };
+  
+  // Variants for CTA button
+  const ctaButtonVariants = {
+    expanded: {
+      marginLeft: "1.5rem",
+      transition: {
+        duration: 0.3,
+        ease: [0.25, 1, 0.5, 1]
+      }
+    },
+    collapsed: {
+      marginLeft: "0rem",
+      transition: {
+        duration: 0.15,
+        ease: [0.25, 1, 0.5, 1]
+      }
+    }
+  };
+  
   return (
     <div className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
-      <div className="container mx-auto px-4 relative pointer-events-auto">
+      <motion.div 
+        className="container mx-auto px-4 relative pointer-events-auto"
+        variants={navContainerVariants}
+        initial="expanded"
+        animate={isScrolled ? "collapsed" : "expanded"}
+      >
         <motion.div
-          animate={{
-            paddingTop: isScrolled ? "0.75rem" : "1.5rem",
-            paddingBottom: isScrolled ? "0.75rem" : "1.5rem"
-          }}
-          transition={isScrolled ? transitionProps.down : transitionProps.up}
+          className="mx-auto max-w-6xl flex items-center justify-between border border-white/10"
+          variants={navVariants}
+          initial="expanded"
+          animate={isScrolled ? "collapsed" : "expanded"}
         >
+          {/* Logo */}
           <motion.div
-            className={isScrolled 
-              ? "mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 md:py-3 lg:py-3 px-5 md:px-5 lg:px-8 flex items-center justify-between shadow-lg" 
-              : "flex items-center justify-between"
-            }
-            transition={isScrolled ? transitionProps.down : transitionProps.up}
+            variants={logoVariants}
+            initial="expanded"
+            animate={isScrolled ? "collapsed" : "expanded"}
+            className="py-3 px-5"
           >
-            {/* Logo */}
             <Link href="/">
-              <span className={isScrolled 
-                ? "text-xl font-display font-bold text-glow text-white flex items-center mr-3 md:mr-2 lg:mr-6"
-                : "text-2xl font-display font-bold text-glow text-white"
-              }>
+              <span className="font-display font-bold text-glow text-white">
                 Weby<span className="text-primary">Soft</span>
               </span>
             </Link>
+          </motion.div>
+          
+          {/* Navigation */}
+          <div className="hidden md:flex items-center justify-between flex-1">
+            <motion.div
+              className="flex items-center"
+              variants={menuContainerVariants}
+              initial="expanded"
+              animate={isScrolled ? "collapsed" : "expanded"}
+            >
+              {MENU_ITEMS.map((item, index) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className="text-base font-medium text-foreground hover:text-primary py-2 px-3 relative whitespace-nowrap transition-all duration-200"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </motion.div>
             
-            {/* Navigation */}
-            <div className={isScrolled 
-              ? "hidden md:flex items-center justify-between flex-1" 
-              : "hidden md:flex items-center justify-between"
-            }>
-              <div className={isScrolled 
-                ? "flex items-center gap-8 ml-12" 
-                : "flex items-center md:space-x-2 lg:space-x-8"
-              }>
-                {MENU_ITEMS.map((item, index) => (
-                  <a
-                    key={item.id}
-                    href={`#${item.id}`}
-                    className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap transition-all duration-200`}
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-              
-              {/* CTA Button */}
+            {/* CTA Button */}
+            <motion.div
+              variants={ctaButtonVariants}
+              initial="expanded"
+              animate={isScrolled ? "collapsed" : "expanded"}
+              className="py-3 px-5"
+            >
               <a 
                 href="#contact" 
-                className={`bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg whitespace-nowrap transition-all duration-200 ${isScrolled ? '' : 'ml-3 md:ml-4 lg:ml-6'}`}
+                className="bg-primary hover:bg-primary/90 text-white px-4 lg:px-6 py-2 rounded-full font-medium shadow-lg whitespace-nowrap transition-all duration-200"
               >
                 Get Started
               </a>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
           
           {/* Mobile Menu Button - Only visible on mobile screens */}
           <button 
@@ -161,7 +241,7 @@ export default function Navbar() {
             </div>
           </div>
         )}
-      </div>
+      </motion.div>
     </div>
   );
 }
