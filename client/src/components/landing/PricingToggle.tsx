@@ -49,7 +49,7 @@ export default function PricingToggle() {
               x: isYearly ? '100%' : '0%'
             }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            style={{ width: '50%', transform: isYearly ? 'translateX(-100%)' : 'translateX(0%)' }}
+            style={{ width: '48%', transform: isYearly ? 'translateX(-100%)' : 'translateX(0%)', marginRight: '2%' }}
           />
           
           <button 
