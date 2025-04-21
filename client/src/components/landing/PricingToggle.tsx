@@ -36,7 +36,7 @@ export default function PricingToggle() {
       {/* Billing toggle */}
       <div className="flex flex-col items-center mb-12">
         <motion.div 
-          className="glass rounded-full p-1.5 inline-flex mb-10 shadow-lg relative overflow-hidden"
+          className="glass rounded-full p-1.5 inline-flex mb-10 shadow-lg relative overflow-hidden w-full max-w-xs"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -52,13 +52,13 @@ export default function PricingToggle() {
           />
           
           <button 
-            className={`py-3 px-8 md:px-10 rounded-full font-medium transition-all duration-300 relative z-10 ${!isYearly ? 'text-white' : 'text-foreground hover:text-primary'}`}
+            className={`py-3 px-8 md:px-10 rounded-full font-medium transition-all duration-300 relative z-10 flex-1 ${!isYearly ? 'text-white' : 'text-foreground hover:text-primary'}`}
             onClick={() => setIsYearly(false)}
           >
             Monthly
           </button>
           <button 
-            className={`py-3 px-8 md:px-10 rounded-full font-medium transition-all duration-300 relative z-10 ${isYearly ? 'text-white' : 'text-foreground hover:text-[#10B981]'}`}
+            className={`py-3 px-8 md:px-10 rounded-full font-medium transition-all duration-300 relative z-10 flex-1 ${isYearly ? 'text-white' : 'text-foreground hover:text-[#10B981]'}`}
             onClick={() => setIsYearly(true)}
           >
             Yearly
