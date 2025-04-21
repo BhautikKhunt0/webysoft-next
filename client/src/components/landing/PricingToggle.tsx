@@ -46,8 +46,8 @@ export default function PricingToggle() {
           <motion.div 
             className={`absolute inset-1.5 rounded-full ${isYearly ? 'bg-[#10B981]' : 'bg-primary'} z-0 transition-colors duration-500`}
             animate={{ 
-              x: isYearly ? '50%' : '0%',
-              translateX: isYearly ? '0%' : '-0%'
+              x: isYearly ? '100%' : '0%',
+              translateX: isYearly ? '-50%' : '0%'
             }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             style={{ width: '50%' }}
