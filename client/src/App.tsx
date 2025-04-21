@@ -2,6 +2,7 @@ import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
+import ScrollToTop from "@/components/common/ScrollToTop";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
 
@@ -18,6 +19,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Router />
+      <ScrollToTop />
       <Toaster />
     </QueryClientProvider>
   );

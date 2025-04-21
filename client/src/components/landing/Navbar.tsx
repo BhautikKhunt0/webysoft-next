@@ -22,6 +22,13 @@ export default function Navbar() {
   const isTabletOrMobile = screenSize === 'mobile' || screenSize === 'tablet';
   const isMobileOnly = screenSize === 'mobile';
   
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+  
   // Close mobile menu on navigation or resize
   useEffect(() => {
     const handleResize = () => {
@@ -64,15 +71,14 @@ export default function Navbar() {
             {isScrolled ? (
               <div className="mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 md:py-3 lg:py-3 px-5 md:px-5 lg:px-8 flex items-center justify-between shadow-lg">
                 {/* Logo */}
-                <Link href="/">
-                  <motion.span 
-                    className="text-xl font-display font-bold text-glow text-white flex items-center mr-3 md:mr-2 lg:mr-6"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    Weby<span className="text-primary">Soft</span>
-                  </motion.span>
-                </Link>
+                <motion.button 
+                  onClick={scrollToTop}
+                  className="text-xl font-display font-bold text-glow text-white flex items-center mr-3 md:mr-2 lg:mr-6 cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  Weby<span className="text-primary">Soft</span>
+                </motion.button>
                 
                 {/* Navigation - Centered (adapts for tablet) */}
                 <div className="hidden md:flex items-center justify-between flex-1">
@@ -107,15 +113,14 @@ export default function Navbar() {
             ) : (
               <div className="flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/">
-                  <motion.span 
-                    className="text-2xl font-display font-bold text-glow text-white"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    Weby<span className="text-primary">Soft</span>
-                  </motion.span>
-                </Link>
+                <motion.button
+                  onClick={scrollToTop}
+                  className="text-2xl font-display font-bold text-glow text-white cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  Weby<span className="text-primary">Soft</span>
+                </motion.button>
                 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center justify-between">

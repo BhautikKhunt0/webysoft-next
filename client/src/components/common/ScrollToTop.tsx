@@ -6,10 +6,16 @@ import { ArrowUp } from 'lucide-react';
 export default function ScrollToTop() {
   const scrollY = useScrollPosition();
   const [showButton, setShowButton] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   
   // Show button after scrolling down 300px
   useEffect(() => {
     setShowButton(scrollY > 300);
+    
+    // Calculate scroll progress percentage for filling animation
+    const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = Math.min(scrollY / documentHeight, 1);
+    setScrollProgress(progress);
   }, [scrollY]);
   
   const scrollToTop = () => {
@@ -23,7 +29,7 @@ export default function ScrollToTop() {
     <AnimatePresence>
       {showButton && (
         <motion.button
-          className="fixed z-50 bottom-6 right-6 bg-primary text-white rounded-full p-3 shadow-lg hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+          className="fixed z-50 bottom-6 right-6 bg-background text-white rounded-full p-3 shadow-lg hover:bg-background/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 border border-primary/30 overflow-hidden"
           onClick={scrollToTop}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -31,8 +37,25 @@ export default function ScrollToTop() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           aria-label="Scroll to top"
+          style={{
+            width: 48,
+            height: 48,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
         >
+          {/* Circle fill background based on scroll progress */}
+          <div 
+            className="absolute inset-0 bg-primary rounded-full"
+            style={{ 
+              clipPath: `inset(${100 - scrollProgress * 100}% 0 0 0)`,
+              transition: 'clip-path 0.3s ease-out'
+            }}
+          />
+          
           <motion.div
+            className="relative z-10"
             animate={{ 
               y: [0, -3, 0],
             }}

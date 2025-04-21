@@ -4,6 +4,13 @@ import NewsletterForm from "./NewsletterForm";
 import GlassCard from "./GlassCard";
 
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+  
   return (
     <footer className="py-16 relative overflow-hidden">
       {/* Gradient Background */}
@@ -37,11 +44,16 @@ export default function Footer() {
             <div className="mb-16 border-b border-white/10 pb-12">
               <div className="flex flex-col md:flex-row items-center justify-between gap-10">
                 <div className="text-center md:text-left w-full md:w-auto">
-                  <Link href="/" className="inline-block mb-4">
+                  <motion.button 
+                    onClick={scrollToTop}
+                    className="inline-block mb-4 cursor-pointer"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <span className="text-3xl font-display font-bold text-glow text-white">
                       Weby<span className="text-primary">Soft</span>
                     </span>
-                  </Link>
+                  </motion.button>
                   <p className="text-foreground/70 max-w-md mx-auto md:mx-0">
                     Transform your ideas into high-converting digital
                     experiences with our premium landing page solutions.
@@ -386,8 +398,42 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Animated Border Divider */}
-            <div className="relative h-[2px] w-full bg-gradient-to-r from-transparent via-primary/50 to-transparent my-8 overflow-hidden">
+            {/* Social Media Icons */}
+            <div className="flex justify-center mb-12">
+              <div className="flex space-x-6">
+                <a
+                  href="#"
+                  aria-label="Twitter"
+                  className="text-foreground/70 hover:text-primary transition-colors"
+                >
+                  <i className="ri-twitter-fill text-2xl"></i>
+                </a>
+                <a
+                  href="#"
+                  aria-label="Facebook"
+                  className="text-foreground/70 hover:text-primary transition-colors"
+                >
+                  <i className="ri-facebook-fill text-2xl"></i>
+                </a>
+                <a
+                  href="#"
+                  aria-label="Instagram"
+                  className="text-foreground/70 hover:text-primary transition-colors"
+                >
+                  <i className="ri-instagram-fill text-2xl"></i>
+                </a>
+                <a
+                  href="#"
+                  aria-label="LinkedIn"
+                  className="text-foreground/70 hover:text-primary transition-colors"
+                >
+                  <i className="ri-linkedin-fill text-2xl"></i>
+                </a>
+              </div>
+            </div>
+
+            {/* Separator */}
+            <div className="relative h-px w-full max-w-4xl mx-auto mb-10 bg-gradient-to-r from-transparent via-foreground/20 to-transparent overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent animate-shimmer"></div>
             </div>
 
@@ -395,7 +441,13 @@ export default function Footer() {
             <div className="flex flex-col md:flex-row justify-between items-center mt-8">
               <p className="text-foreground/60 text-center md:text-left mb-8 md:mb-0 order-2 md:order-1">
                 © {new Date().getFullYear()}{" "}
-                <span className="text-white">WebySoft</span>. All rights
+                <motion.button 
+                  onClick={scrollToTop}
+                  className="text-white cursor-pointer hover:text-primary transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  WebySoft
+                </motion.button>. All rights
                 reserved.
               </p>
 
