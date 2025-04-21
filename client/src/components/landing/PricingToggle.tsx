@@ -36,7 +36,7 @@ export default function PricingToggle() {
       {/* Billing toggle */}
       <div className="flex flex-col items-center mb-12">
         <motion.div 
-          className="glass rounded-full p-1.5 inline-flex mb-10 shadow-lg relative overflow-hidden w-full max-w-xs"
+          className="glass rounded-full p-1.5 flex mb-10 shadow-lg relative overflow-hidden w-full max-w-xs"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -45,20 +45,21 @@ export default function PricingToggle() {
           {/* Moving background highlight */}
           <motion.div 
             className={`absolute inset-1.5 rounded-full ${isYearly ? 'bg-[#10B981]' : 'bg-primary'} z-0 transition-colors duration-500`}
-            initial={{ x: 0 }}
-            animate={{ x: isYearly ? '100%' : 0 }}
+            animate={{ 
+              x: isYearly ? '50%' : '0%'
+            }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            style={{ x: isYearly ? '50%' : '0%', width: '50%' }}
+            style={{ width: '50%' }}
           />
           
           <button 
-            className={`py-3 px-8 md:px-10 rounded-full font-medium transition-all duration-300 relative z-10 flex-1 ${!isYearly ? 'text-white' : 'text-foreground hover:text-primary'}`}
+            className={`py-3 px-6 md:px-8 rounded-full font-medium transition-all duration-300 relative z-10 flex-1 min-w-0 text-center ${!isYearly ? 'text-white' : 'text-foreground hover:text-primary'}`}
             onClick={() => setIsYearly(false)}
           >
             Monthly
           </button>
           <button 
-            className={`py-3 px-8 md:px-10 rounded-full font-medium transition-all duration-300 relative z-10 flex-1 ${isYearly ? 'text-white' : 'text-foreground hover:text-[#10B981]'}`}
+            className={`py-3 px-6 md:px-8 rounded-full font-medium transition-all duration-300 relative z-10 flex-1 min-w-0 text-center ${isYearly ? 'text-white' : 'text-foreground hover:text-[#10B981]'}`}
             onClick={() => setIsYearly(true)}
           >
             Yearly
