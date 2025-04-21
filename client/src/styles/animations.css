@@ -19,11 +19,6 @@
   50% { transform: translateY(-15px); }
 }
 
-@keyframes waterWave {
-  0%, 100% { transform: translateY(-1px) scaleX(1.05); }
-  50% { transform: translateY(1px) scaleX(0.95); }
-}
-
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
@@ -34,10 +29,6 @@
 
 .animate-bounce-slow {
   animation: bounce-slow 3s infinite;
-}
-
-.animate-water-wave {
-  animation: waterWave 2s infinite ease-in-out;
 }
 
 .animate-delay-1 {
