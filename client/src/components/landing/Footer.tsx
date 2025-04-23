@@ -2,13 +2,15 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import NewsletterForm from "./NewsletterForm";
 import GlassCard from "./GlassCard";
+import { smoothScrollToTop, smoothScrollToElement } from '@/utils/smoothScroll';
 
 export default function Footer() {
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    smoothScrollToTop(800);
+  };
+  
+  const handleNavigationClick = (id: string) => {
+    smoothScrollToElement(id, 800, 80); // smooth scroll with offset
   };
   
   return (
