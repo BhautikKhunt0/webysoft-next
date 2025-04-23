@@ -3,7 +3,6 @@ import { Link } from 'wouter';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import { useScreenSize } from '@/hooks/use-mobile';
-import { smoothScrollToTop, smoothScrollToElement } from '@/utils/smoothScroll';
 
 // Menu items for navigation
 const MENU_ITEMS = [
@@ -24,14 +23,10 @@ export default function Navbar() {
   const isMobileOnly = screenSize === 'mobile';
   
   const scrollToTop = () => {
-    smoothScrollToTop(800);
-  };
-  
-  const handleNavigationClick = (id: string) => {
-    smoothScrollToElement(id, 800, 80); // smooth scroll with offset for navbar
-    if (mobileMenuOpen) {
-      setMobileMenuOpen(false);
-    }
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
   
   // Close mobile menu on navigation or resize
@@ -89,22 +84,22 @@ export default function Navbar() {
                 <div className="hidden md:flex items-center justify-between flex-1">
                   <div className="flex items-center gap-8 ml-12">
                     {MENU_ITEMS.map((item, index) => (
-                      <motion.button
+                      <motion.a
                         key={item.id}
-                        onClick={() => handleNavigationClick(item.id)}
-                        className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap cursor-pointer`}
+                        href={`#${item.id}`}
+                        className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.2 }}
                       >
                         {item.label}
-                      </motion.button>
+                      </motion.a>
                     ))}
                   </div>
                   
                   {/* CTA Button - For tablets and above - Always visible */}
-                  <motion.button 
-                    onClick={() => handleNavigationClick('contact')}
-                    className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg whitespace-nowrap cursor-pointer"
+                  <motion.a 
+                    href="#contact" 
+                    className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg whitespace-nowrap"
                     whileHover={{ 
                       scale: 1.05,
                       boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
@@ -112,7 +107,7 @@ export default function Navbar() {
                     transition={{ duration: 0.2 }}
                   >
                     Get Started
-                  </motion.button>
+                  </motion.a>
                 </div>
               </div>
             ) : (
@@ -131,22 +126,22 @@ export default function Navbar() {
                 <div className="hidden md:flex items-center justify-between">
                   <div className="flex items-center md:space-x-2 lg:space-x-8">
                     {MENU_ITEMS.map((item, index) => (
-                      <motion.button
+                      <motion.a
                         key={item.id}
-                        onClick={() => handleNavigationClick(item.id)}
-                        className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap cursor-pointer`}
+                        href={`#${item.id}`}
+                        className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.2 }}
                       >
                         {item.label}
-                      </motion.button>
+                      </motion.a>
                     ))}
                   </div>
                   
                   {/* CTA Button */}
-                  <motion.button 
-                    onClick={() => handleNavigationClick('contact')}
-                    className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg ml-3 md:ml-4 lg:ml-6 whitespace-nowrap cursor-pointer"
+                  <motion.a 
+                    href="#contact" 
+                    className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg ml-3 md:ml-4 lg:ml-6 whitespace-nowrap"
                     whileHover={{ 
                       scale: 1.05,
                       boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
@@ -154,7 +149,7 @@ export default function Navbar() {
                     transition={{ duration: 0.2 }}
                   >
                     Get Started
-                  </motion.button>
+                  </motion.a>
                 </div>
               </div>
             )}
@@ -184,27 +179,30 @@ export default function Navbar() {
           >
             <div className="flex flex-col space-y-4 mt-2">
               {MENU_ITEMS.map((item) => (
-                <button 
+                <a 
                   key={item.id}
-                  onClick={() => handleNavigationClick(item.id)}
-                  className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10 text-left"
+                  href={`#${item.id}`}
+                  className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.label}
-                </button>
+                </a>
               ))}
-              <button 
-                onClick={() => handleNavigationClick('contact')}
-                className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10 text-left"
+              <a 
+                href="#contact" 
+                className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 Contact
-              </button>
+              </a>
               <div className="pt-4">
-                <button 
-                  onClick={() => handleNavigationClick('contact')}
+                <a 
+                  href="#contact" 
                   className="bg-primary hover:bg-opacity-90 text-white px-6 py-3 rounded-full font-medium text-center block w-full"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   Get Started
-                </button>
+                </a>
               </div>
             </div>
           </motion.div>
