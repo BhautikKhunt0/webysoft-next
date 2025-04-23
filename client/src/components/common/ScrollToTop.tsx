@@ -1,12 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import { ArrowUp } from 'lucide-react';
+import { smoothScrollToTop } from '@/utils/smoothScroll';
 
 export default function ScrollToTop() {
   const scrollY = useScrollPosition();
   const [showButton, setShowButton] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const wavingRef = useRef<HTMLDivElement>(null);
   
   // Show button after scrolling down 300px
   useEffect(() => {
@@ -19,10 +21,7 @@ export default function ScrollToTop() {
   }, [scrollY]);
   
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    smoothScrollToTop(600); // Use our optimized smooth scroll function
   };
   
   return (
@@ -45,14 +44,23 @@ export default function ScrollToTop() {
             alignItems: 'center',
           }}
         >
-          {/* Circle fill background based on scroll progress */}
+          {/* Water filling effect background based on scroll progress */}
           <div 
             className="absolute inset-0 bg-primary rounded-full"
             style={{ 
               clipPath: `inset(${100 - scrollProgress * 100}% 0 0 0)`,
-              transition: 'clip-path 0.3s ease-out'
+              transition: 'clip-path 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
             }}
-          />
+          >
+            {/* Animated water surface effect */}
+            <div 
+              ref={wavingRef}
+              className="absolute top-0 inset-x-0 h-2 bg-primary/30 animate-water-wave"
+              style={{
+                borderRadius: '50%',
+              }}
+            />
+          </div>
           
           <motion.div
             className="relative z-10"
