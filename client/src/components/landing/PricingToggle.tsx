@@ -164,11 +164,11 @@ export default function PricingToggle() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                 {features.map((feature, i) => (
-                  <div key={i} className="flex items-start group">
+                  <div key={i} className="flex items-center group">
                     <div
                       className={`flex items-center justify-center ${
                         isYearly ? "bg-[#10B981]/10" : "bg-primary/10"
-                      } rounded-full w-10 h-10 mr-3 mt-0.5 flex-shrink-0 transition-all duration-300 group-hover:scale-110`}
+                      } rounded-full w-10 h-10 mr-3 flex-shrink-0 transition-all duration-300 group-hover:scale-110`}
                     >
                       <feature.icon
                         className={`w-5 h-5 ${
@@ -176,7 +176,7 @@ export default function PricingToggle() {
                         } transition-colors duration-500`}
                       />
                     </div>
-                    <div>
+                    <div className="flex items-center">
                       <span className="font-medium">{feature.title}</span>
                     </div>
                   </div>
