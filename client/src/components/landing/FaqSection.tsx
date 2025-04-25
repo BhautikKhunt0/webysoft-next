@@ -19,11 +19,6 @@ const faqs = [
       "We provide 30 days of technical support after launch to ensure everything is working perfectly. Your subscription includes ongoing hosting, maintenance, and minor updates. For major redesigns or new pages, additional charges may apply.",
   },
   {
-    question: "Can I integrate with my existing tools?",
-    answer:
-      "Absolutely! Our landing pages integrate seamlessly with most popular marketing tools including Mailchimp, HubSpot, ActiveCampaign, Google Analytics, Facebook Pixel, and many more. If you have a specific tool you need to connect, just let us know.",
-  },
-  {
     question: "Is there a limit to how many revisions I can request?",
     answer:
       "We offer up to 5 revisions during the design and development phase to ensure you're completely satisfied with the final result. We want your landing page to be perfect before it goes live.",
