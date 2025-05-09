@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FaWhatsapp } from "react-icons/fa"; // Import WhatsApp Icon
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
@@ -52,7 +53,7 @@ export default function HeroSection() {
           </motion.p>
 
           <motion.div
-            className="flex justify-center mb-16"
+            className="flex justify-center gap-4 mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6 }}
@@ -68,6 +69,15 @@ export default function HeroSection() {
               <span>Get Started</span>
               <i className="ri-arrow-right-line ml-2"></i>
             </a>
+            <button
+              onClick={() => window.open("https://wa.me/918849990393", "_blank")}
+              className="whatsapp-button font-medium text-lg"
+            >
+              <span className="whatsapp-icon">
+                <FaWhatsapp className="text-xl" />
+              </span>
+              <span className="button-text">Chat Now</span>
+            </button>
           </motion.div>
         </div>
 
