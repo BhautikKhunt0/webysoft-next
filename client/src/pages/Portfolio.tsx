@@ -25,22 +25,93 @@ export default function Portfolio() {
     setFilteredItems(filtered);
   }, [selectedType]);
   
-  // Update document metadata
+  // Update document metadata with enhanced SEO
   useEffect(() => {
-    document.title = "WebySoft Portfolio - Our Latest Projects";
+    // Set page title with keywords
+    document.title = "WebySoft Portfolio | Professional Website Examples & Case Studies";
     
-    // Create meta description if it doesn't exist
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.setAttribute('name', 'description');
-      document.head.appendChild(metaDescription);
+    // Helper function to create or update meta tags
+    const setMetaTag = (name: string, content: string) => {
+      let metaTag = document.querySelector(`meta[name="${name}"]`);
+      if (!metaTag) {
+        metaTag = document.createElement('meta');
+        metaTag.setAttribute('name', name);
+        document.head.appendChild(metaTag);
+      }
+      metaTag.setAttribute('content', content);
+    };
+    
+    // Helper function for Open Graph and Twitter tags
+    const setSocialMetaTag = (property: string, content: string) => {
+      let metaTag = document.querySelector(`meta[property="${property}"]`);
+      if (!metaTag) {
+        metaTag = document.createElement('meta');
+        metaTag.setAttribute('property', property);
+        document.head.appendChild(metaTag);
+      }
+      metaTag.setAttribute('content', content);
+    };
+    
+    // Set primary meta description - expanded and keyword rich
+    setMetaTag('description', 
+      'Explore WebySoft\'s professional portfolio featuring stunning websites for service businesses, legal firms, local shops, and educational academies. View our web design work and case studies.');
+    
+    // Set keywords meta tag
+    setMetaTag('keywords', 
+      'web design portfolio, website examples, professional websites, service business websites, legal websites, local business websites, educational websites, WebySoft case studies');
+    
+    // Add canonical URL to prevent duplicate content issues
+    let canonicalTag = document.querySelector('link[rel="canonical"]');
+    if (!canonicalTag) {
+      canonicalTag = document.createElement('link');
+      canonicalTag.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalTag);
     }
-    metaDescription.setAttribute('content', 'Browse WebySoft\'s diverse portfolio of websites across service businesses, legal websites, local shops, and educational academies.');
+    canonicalTag.setAttribute('href', window.location.origin + '/portfolio');
+    
+    // Open Graph tags for better social sharing
+    setSocialMetaTag('og:title', 'WebySoft Portfolio | Professional Website Examples');
+    setSocialMetaTag('og:description', 'Browse our collection of professionally designed websites across multiple industries.');
+    setSocialMetaTag('og:url', window.location.origin + '/portfolio');
+    setSocialMetaTag('og:type', 'website');
+    setSocialMetaTag('og:image', window.location.origin + '/favicon.png');
+    
+    // Twitter Card tags
+    setMetaTag('twitter:card', 'summary_large_image');
+    setMetaTag('twitter:title', 'WebySoft Portfolio | Website Design Examples');
+    setMetaTag('twitter:description', 'See our collection of professionally designed websites for various businesses and organizations.');
+    setMetaTag('twitter:image', window.location.origin + '/favicon.png');
+    
+    // Add structured data for better search engine understanding (JSON-LD)
+    const structuredData = {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      'name': 'WebySoft Portfolio',
+      'description': 'Collection of professional websites designed and developed by WebySoft',
+      'url': window.location.origin + '/portfolio',
+      'mainEntity': {
+        '@type': 'ItemList',
+        'itemListElement': portfolioItems.map((item, index) => ({
+          '@type': 'ListItem',
+          'position': index + 1,
+          'url': window.location.origin + '/portfolio#' + item.id,
+          'name': item.title
+        }))
+      }
+    };
+    
+    // Add or update the JSON-LD script
+    let scriptTag = document.querySelector('script[type="application/ld+json"]');
+    if (!scriptTag) {
+      scriptTag = document.createElement('script');
+      scriptTag.setAttribute('type', 'application/ld+json');
+      document.head.appendChild(scriptTag);
+    }
+    scriptTag.textContent = JSON.stringify(structuredData);
     
     // Always scroll to top when portfolio page loads
     window.scrollTo(0, 0);
-  }, []);
+  }, [selectedType, filteredItems.length]);
   
   return (
     <motion.div 
@@ -52,8 +123,8 @@ export default function Portfolio() {
       <BackgroundParticles />
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 relative">
+      {/* Hero Section with semantic header */}
+      <header className="pt-32 pb-16 relative">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-background to-background/50 -z-10"></div>
         <div className="container mx-auto px-4">
           <motion.div
@@ -66,24 +137,28 @@ export default function Portfolio() {
               Our <span className="text-primary text-glow">Portfolio</span>
             </h1>
             <p className="text-xl text-foreground/70 mb-8">
-              Explore our creative collection of service websites, legal platforms, local shops, and educational academies we've designed with excellence.
+              Explore our creative collection of <strong>service websites</strong>, <strong>legal platforms</strong>, <strong>local shops</strong>, and <strong>educational academies</strong> we've designed with excellence.
             </p>
           </motion.div>
         </div>
-      </section>
+      </header>
       
-      {/* Portfolio Section */}
-      <section className="py-16">
+      {/* Portfolio Section with improved semantics and SEO */}
+      <main className="py-16">
         <div className="container mx-auto px-4">
-          {/* Filters */}
-          <PortfolioFilters 
-            selectedType={selectedType} 
-            onTypeChange={setSelectedType}
-          />
+          {/* Filters with proper ARIA labels */}
+          <section aria-labelledby="filter-heading">
+            <h2 id="filter-heading" className="sr-only">Portfolio filters</h2>
+            <PortfolioFilters 
+              selectedType={selectedType} 
+              onTypeChange={setSelectedType}
+            />
+          </section>
           
-          {/* Empty state */}
+          {/* Empty state with semantic markup */}
           {filteredItems.length === 0 && (
-            <motion.div 
+            <motion.section
+              aria-live="polite" 
               className="text-center py-16"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -96,28 +171,45 @@ export default function Portfolio() {
               <button
                 onClick={() => setSelectedType('All')}
                 className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-medium"
+                aria-label="Reset filters to view all projects"
               >
                 Reset Filters
               </button>
-            </motion.div>
+            </motion.section>
           )}
           
-          {/* Portfolio grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredItems.map((item, index) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <PortfolioCard item={item} index={index} />
-              </motion.div>
-            ))}
-          </div>
+          {/* Portfolio grid with semantic list structure and count */}
+          <section aria-labelledby="portfolio-heading">
+            <h2 id="portfolio-heading" className="sr-only">
+              Our portfolio of {filteredItems.length} projects
+              {selectedType !== 'All' ? ` in ${selectedType}` : ''}
+            </h2>
+            
+            <p className="text-lg mb-8 text-center">
+              {filteredItems.length > 0 ? (
+                <>
+                  Displaying <span className="font-semibold">{filteredItems.length}</span> projects
+                  {selectedType !== 'All' ? <> in the <span className="font-semibold">{selectedType}</span> category</> : ''}
+                </>
+              ) : null}
+            </p>
+            
+            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 list-none pl-0" role="list">
+              {filteredItems.map((item, index) => (
+                <motion.li
+                  key={item.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <PortfolioCard item={item} index={index} />
+                </motion.li>
+              ))}
+            </ul>
+          </section>
         </div>
-      </section>
+      </main>
       
       <Footer />
     </motion.div>
