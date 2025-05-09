@@ -1,14 +1,33 @@
 import { motion } from "framer-motion";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import NewsletterForm from "./NewsletterForm";
 import GlassCard from "./GlassCard";
 
 export default function Footer() {
+  const [location] = useLocation();
+  const isPortfolioPage = location === '/portfolio';
+  
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
+  };
+  
+  // Helper function to handle navigation
+  const navigateToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    
+    if (isPortfolioPage) {
+      // From portfolio to home section
+      window.location.href = `/#${sectionId}`;
+    } else {
+      // Already on home page, scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
   
   return (
@@ -98,6 +117,7 @@ export default function Footer() {
                         <a
                           href="#features"
                           className="text-foreground/70 hover:text-primary transition-colors inline-block py-1"
+                          onClick={(e) => navigateToSection(e, 'features')}
                         >
                           Features
                         </a>
