@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'wouter';
 import { portfolioItems, PortfolioItemType } from '@/data/portfolio';
 import PortfolioCard from '@/components/portfolio/PortfolioCard';
 import PortfolioFilters from '@/components/portfolio/PortfolioFilters';
@@ -41,7 +42,7 @@ export default function Portfolio() {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'Browse WebySoft\'s diverse portfolio of websites across ecommerce, service businesses, corporate firms, and local shops.');
+    metaDescription.setAttribute('content', 'Browse WebySoft\'s diverse portfolio of websites across service businesses, legal websites, local shops, and educational academies.');
   }, []);
   
   return (
@@ -68,7 +69,7 @@ export default function Portfolio() {
               Our <span className="text-primary text-glow">Portfolio</span>
             </h1>
             <p className="text-xl text-foreground/70 mb-8">
-              Explore our diverse collection of websites we've created for businesses across various industries.
+              Explore our creative collection of service websites, legal platforms, local shops, and educational academies we've designed with excellence.
             </p>
           </motion.div>
         </div>
@@ -143,17 +144,20 @@ export default function Portfolio() {
             <p className="text-xl text-foreground/70 mb-8">
               Get in touch with us today to discuss how we can help you create a stunning website that engages your audience and drives results.
             </p>
-            <motion.a
-              href="#contact"
-              className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-medium shadow-lg inline-block"
+            <motion.div
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
               }}
               transition={{ duration: 0.2 }}
             >
-              Start Your Project
-            </motion.a>
+              <Link 
+                to="/#contact"
+                className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-medium shadow-lg inline-block"
+              >
+                Start Your Project
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>
