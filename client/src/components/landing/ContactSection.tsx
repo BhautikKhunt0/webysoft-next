@@ -6,10 +6,6 @@ import { useToast } from "@/hooks/use-toast";
 import { FiMap, FiMail, FiClock, FiGlobe, FiNavigation2 } from "react-icons/fi";
 import {
   BiSolidTimeFive,
-  BiLogoLinkedin,
-  BiLogoTwitter,
-  BiLogoInstagram,
-  BiLogoFacebook,
   BiSolidQuoteLeft,
   BiSolidQuoteRight,
 } from "react-icons/bi";
@@ -73,19 +69,8 @@ const contactMethods = [
   },
 ];
 
-// Social media links
-const socialLinks = [
-  { id: 1, icon: <BiLogoLinkedin />, href: "#", name: "LinkedIn", delay: 0 },
-  { id: 2, icon: <BiLogoTwitter />, href: "#", name: "Twitter", delay: 0.1 },
-  {
-    id: 3,
-    icon: <BiLogoInstagram />,
-    href: "#",
-    name: "Instagram",
-    delay: 0.2,
-  },
-  { id: 4, icon: <BiLogoFacebook />, href: "#", name: "Facebook", delay: 0.3 },
-];
+// No social media links per client request
+const socialLinks: any[] = [];
 
 // Office locations across India
 const officeLocations = [
@@ -554,26 +539,7 @@ export default function ContactSection() {
                     </div>
                   </div>
 
-                  <div className="mt-6 pt-6 border-t border-white/10">
-                    <h4 className="text-sm font-semibold uppercase tracking-wider mb-3 text-primary/70">
-                      Connect with us
-                    </h4>
-                    <div className="flex space-x-3">
-                      {socialLinks.map((link) => (
-                        <motion.a
-                          key={link.id}
-                          href={link.href}
-                          className="w-10 h-10 bg-white/5 hover:bg-white/10 rounded-full flex items-center justify-center text-foreground/70 hover:text-primary transition-colors"
-                          whileHover={{ scale: 1.1 }}
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: link.delay }}
-                        >
-                          {link.icon}
-                        </motion.a>
-                      ))}
-                    </div>
-                  </div>
+                  {/* Social media links removed as requested */}
                 </motion.div>
               </div>
             </div>
