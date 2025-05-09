@@ -295,7 +295,7 @@ export default function ContactSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {contactMethods.map((method) => (
+          {allContactMethods.map((method) => (
             <motion.div
               key={method.id}
               className="group"
