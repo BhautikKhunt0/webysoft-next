@@ -4,7 +4,7 @@ import { Link } from 'wouter';
 import { portfolioItems, PortfolioItemType } from '@/data/portfolio';
 import PortfolioCard from '@/components/portfolio/PortfolioCard';
 import PortfolioFilters from '@/components/portfolio/PortfolioFilters';
-import Navbar from '@/components/landing/Navbar';
+import Navbar from '@/components/landing/NavbarNew';
 import Footer from '@/components/landing/Footer';
 import BackgroundParticles from '@/components/landing/BackgroundParticles';
 

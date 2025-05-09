@@ -25,6 +25,7 @@ export default function Navbar() {
   const isMobileOnly = screenSize === 'mobile';
   const isPortfolioPage = location === '/portfolio';
   
+  // Scroll to top of the page
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -32,6 +33,7 @@ export default function Navbar() {
     });
   };
   
+  // Handle logo click based on current page
   const handleLogoClick = () => {
     if (isPortfolioPage) {
       // Navigate to home page if on portfolio page
@@ -45,9 +47,8 @@ export default function Navbar() {
   // Better navigation handling to sections
   const navigateToSection = (sectionId: string) => {
     if (isPortfolioPage) {
-      // From portfolio page to home page section - use full URL replacement for reliable hash navigation
-      const homeUrl = window.location.origin + `/#${sectionId}`;
-      window.location.href = homeUrl;
+      // From portfolio page to home page section
+      window.location.href = `/#${sectionId}`;
     } else {
       // Already on home page, just scroll to section
       const element = document.getElementById(sectionId);
@@ -57,11 +58,11 @@ export default function Navbar() {
     }
   };
   
+  // Handle contact section navigation
   const handleContactClick = (e: React.MouseEvent) => {
     e.preventDefault();
     if (isPortfolioPage) {
-      const contactUrl = window.location.origin + '/#contact';
-      window.location.href = contactUrl;
+      window.location.href = '/#contact';
     } else {
       const element = document.getElementById('contact');
       if (element) {
@@ -81,6 +82,70 @@ export default function Navbar() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+  
+  // Render section link based on item
+  const renderSectionLink = (item: typeof MENU_ITEMS[0], index: number) => {
+    if (item.isPageLink && item.path) {
+      return (
+        <motion.div key={`page-${item.path}`}>
+          <Link 
+            to={item.path}
+            className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
+          >
+            <motion.span
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
+              {item.label}
+            </motion.span>
+          </Link>
+        </motion.div>
+      );
+    } else if (item.id) {
+      return (
+        <motion.button
+          key={`section-${item.id}`}
+          className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.2 }}
+          onClick={() => navigateToSection(item.id as string)}
+        >
+          {item.label}
+        </motion.button>
+      );
+    }
+    return null;
+  };
+  
+  // Render mobile section link
+  const renderMobileSectionLink = (item: typeof MENU_ITEMS[0]) => {
+    if (item.isPageLink && item.path) {
+      return (
+        <Link 
+          key={`mobile-${item.path}`}
+          to={item.path}
+          className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10"
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          {item.label}
+        </Link>
+      );
+    } else if (item.id) {
+      return (
+        <button 
+          key={`mobile-${item.id}`}
+          className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10 w-full text-left"
+          onClick={() => {
+            setMobileMenuOpen(false);
+            if (item.id) navigateToSection(item.id);
+          }}
+        >
+          {item.label}
+        </button>
+      );
+    }
+    return null;
+  };
   
   return (
     <motion.nav
@@ -124,59 +189,21 @@ export default function Navbar() {
                 {/* Navigation - Centered (adapts for tablet) */}
                 <div className="hidden md:flex items-center justify-between flex-1">
                   <div className="flex items-center gap-8 ml-12">
-                    {MENU_ITEMS.map((item, index) => (
-                      item.isPageLink ? (
-                        <motion.div key={`page-${item.path}`}>
-                          <Link 
-                            to={item.path}
-                            className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
-                          >
-                            <motion.span
-                              whileHover={{ scale: 1.05 }}
-                              transition={{ duration: 0.2 }}
-                            >
-                              {item.label}
-                            </motion.span>
-                          </Link>
-                        </motion.div>
-                      ) : (
-                        <motion.a
-                          key={`section-${item.id}`}
-                          href={isPortfolioPage ? `/` : `#${item.id}`}
-                          className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ duration: 0.2 }}
-                          onClick={(e) => {
-                            if (isPortfolioPage) {
-                              e.preventDefault();
-                              window.location.href = `/#${item.id}`;
-                            }
-                          }}
-                        >
-                          {item.label}
-                        </motion.a>
-                      )
-                    ))}
+                    {MENU_ITEMS.map((item, index) => renderSectionLink(item, index))}
                   </div>
                   
                   {/* CTA Button - For tablets and above - Always visible */}
-                  <motion.a 
-                    href={isPortfolioPage ? "/" : "#contact"}
+                  <motion.button 
                     className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg whitespace-nowrap"
                     whileHover={{ 
                       scale: 1.05,
                       boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
                     }}
                     transition={{ duration: 0.2 }}
-                    onClick={(e) => {
-                      if (isPortfolioPage) {
-                        e.preventDefault();
-                        window.location.href = "/#contact";
-                      }
-                    }}
+                    onClick={handleContactClick}
                   >
                     Get Started
-                  </motion.a>
+                  </motion.button>
                 </div>
               </div>
             ) : (
@@ -194,59 +221,21 @@ export default function Navbar() {
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center justify-between">
                   <div className="flex items-center md:space-x-2 lg:space-x-8">
-                    {MENU_ITEMS.map((item, index) => (
-                      item.isPageLink ? (
-                        <motion.div key={`page-${item.path}`}>
-                          <Link 
-                            to={item.path}
-                            className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
-                          >
-                            <motion.span
-                              whileHover={{ scale: 1.05 }}
-                              transition={{ duration: 0.2 }}
-                            >
-                              {item.label}
-                            </motion.span>
-                          </Link>
-                        </motion.div>
-                      ) : (
-                        <motion.a
-                          key={`section-${item.id}`}
-                          href={isPortfolioPage ? `/` : `#${item.id}`}
-                          className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ duration: 0.2 }}
-                          onClick={(e) => {
-                            if (isPortfolioPage) {
-                              e.preventDefault();
-                              window.location.href = `/#${item.id}`;
-                            }
-                          }}
-                        >
-                          {item.label}
-                        </motion.a>
-                      )
-                    ))}
+                    {MENU_ITEMS.map((item, index) => renderSectionLink(item, index))}
                   </div>
                   
                   {/* CTA Button */}
-                  <motion.a 
-                    href={isPortfolioPage ? "/" : "#contact"}
+                  <motion.button 
                     className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg ml-3 md:ml-4 lg:ml-6 whitespace-nowrap"
                     whileHover={{ 
                       scale: 1.05,
                       boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
                     }}
                     transition={{ duration: 0.2 }}
-                    onClick={(e) => {
-                      if (isPortfolioPage) {
-                        e.preventDefault();
-                        window.location.href = "/#contact";
-                      }
-                    }}
+                    onClick={handleContactClick}
                   >
                     Get Started
-                  </motion.a>
+                  </motion.button>
                 </div>
               </div>
             )}
@@ -275,60 +264,26 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
           >
             <div className="flex flex-col space-y-4 mt-2">
-              {MENU_ITEMS.map((item) => (
-                item.isPageLink ? (
-                  <Link 
-                    key={`mobile-${item.path}`}
-                    to={item.path}
-                    className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ) : (
-                  <a 
-                    key={`mobile-${item.id}`}
-                    href={isPortfolioPage ? `/` : `#${item.id}`}
-                    className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10"
-                    onClick={(e) => {
-                      setMobileMenuOpen(false);
-                      if (isPortfolioPage) {
-                        e.preventDefault();
-                        window.location.href = `/#${item.id}`;
-                      }
-                    }}
-                  >
-                    {item.label}
-                  </a>
-                )
-              ))}
-              <a 
-                href={isPortfolioPage ? "/" : "#contact"} 
-                className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10"
-                onClick={(e) => {
+              {MENU_ITEMS.map(item => renderMobileSectionLink(item))}
+              <button 
+                className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10 w-full text-left"
+                onClick={() => {
                   setMobileMenuOpen(false);
-                  if (isPortfolioPage) {
-                    e.preventDefault();
-                    window.location.href = "/#contact";
-                  }
+                  handleContactClick({ preventDefault: () => {} } as React.MouseEvent);
                 }}
               >
                 Contact
-              </a>
+              </button>
               <div className="pt-4">
-                <a 
-                  href={isPortfolioPage ? "/" : "#contact"} 
+                <button 
                   className="bg-primary hover:bg-opacity-90 text-white px-6 py-3 rounded-full font-medium text-center block w-full"
-                  onClick={(e) => {
+                  onClick={() => {
                     setMobileMenuOpen(false);
-                    if (isPortfolioPage) {
-                      e.preventDefault();
-                      window.location.href = "/#contact";
-                    }
+                    handleContactClick({ preventDefault: () => {} } as React.MouseEvent);
                   }}
                 >
                   Get Started
-                </a>
+                </button>
               </div>
             </div>
           </motion.div>
