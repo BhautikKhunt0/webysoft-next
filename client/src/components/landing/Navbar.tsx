@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import { useScreenSize } from '@/hooks/use-mobile';
@@ -19,15 +19,27 @@ export default function Navbar() {
   const scrollY = useScrollPosition();
   const isScrolled = scrollY > 100;
   const screenSize = useScreenSize();
+  const [location] = useLocation();
   
   const isTabletOrMobile = screenSize === 'mobile' || screenSize === 'tablet';
   const isMobileOnly = screenSize === 'mobile';
+  const isPortfolioPage = location === '/portfolio';
   
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
+  };
+  
+  const handleLogoClick = () => {
+    if (isPortfolioPage) {
+      // Navigate to home page if on portfolio page
+      window.location.href = '/';
+    } else {
+      // Just scroll to top if already on home page
+      scrollToTop();
+    }
   };
   
   // Close mobile menu on navigation or resize
@@ -73,7 +85,7 @@ export default function Navbar() {
               <div className="mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 md:py-3 lg:py-3 px-5 md:px-5 lg:px-8 flex items-center justify-between shadow-lg">
                 {/* Logo */}
                 <motion.button 
-                  onClick={scrollToTop}
+                  onClick={handleLogoClick}
                   className="text-xl font-display font-bold text-glow text-white flex items-center mr-3 md:mr-2 lg:mr-6 cursor-pointer"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
@@ -102,10 +114,16 @@ export default function Navbar() {
                       ) : (
                         <motion.a
                           key={`section-${item.id}`}
-                          href={`#${item.id}`}
+                          href={isPortfolioPage ? `/` : `#${item.id}`}
                           className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
                           whileHover={{ scale: 1.05 }}
                           transition={{ duration: 0.2 }}
+                          onClick={(e) => {
+                            if (isPortfolioPage) {
+                              e.preventDefault();
+                              window.location.href = `/#${item.id}`;
+                            }
+                          }}
                         >
                           {item.label}
                         </motion.a>
@@ -131,7 +149,7 @@ export default function Navbar() {
               <div className="flex items-center justify-between">
                 {/* Logo */}
                 <motion.button
-                  onClick={scrollToTop}
+                  onClick={handleLogoClick}
                   className="text-2xl font-display font-bold text-glow text-white cursor-pointer"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
@@ -160,10 +178,16 @@ export default function Navbar() {
                       ) : (
                         <motion.a
                           key={`section-${item.id}`}
-                          href={`#${item.id}`}
+                          href={isPortfolioPage ? `/` : `#${item.id}`}
                           className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
                           whileHover={{ scale: 1.05 }}
                           transition={{ duration: 0.2 }}
+                          onClick={(e) => {
+                            if (isPortfolioPage) {
+                              e.preventDefault();
+                              window.location.href = `/#${item.id}`;
+                            }
+                          }}
                         >
                           {item.label}
                         </motion.a>
@@ -224,9 +248,15 @@ export default function Navbar() {
                 ) : (
                   <a 
                     key={`mobile-${item.id}`}
-                    href={`#${item.id}`}
+                    href={isPortfolioPage ? `/` : `#${item.id}`}
                     className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10"
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={(e) => {
+                      setMobileMenuOpen(false);
+                      if (isPortfolioPage) {
+                        e.preventDefault();
+                        window.location.href = `/#${item.id}`;
+                      }
+                    }}
                   >
                     {item.label}
                   </a>
