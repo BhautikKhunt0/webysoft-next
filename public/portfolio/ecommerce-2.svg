@@ -1,0 +1,20 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#6D28D9"/>
+  <rect opacity="0.1" width="600" height="400" fill="url(#paint0_linear)"/>
+  <path d="M180 120H260V200H180V120Z" fill="white" fill-opacity="0.2"/>
+  <path d="M270 120H420V160H270V120Z" fill="white" fill-opacity="0.1"/>
+  <path d="M270 170H420V200H270V170Z" fill="white" fill-opacity="0.1"/>
+  <path d="M180 210H260V280H180V210Z" fill="white" fill-opacity="0.2"/>
+  <path d="M270 210H420V250H270V210Z" fill="white" fill-opacity="0.1"/>
+  <path d="M270 260H420V280H270V260Z" fill="white" fill-opacity="0.1"/>
+  <path d="M180 290H260V350H180V290Z" fill="white" fill-opacity="0.2"/>
+  <path d="M270 290H420V330H270V290Z" fill="white" fill-opacity="0.1"/>
+  <path d="M270 340H420V350H270V340Z" fill="white" fill-opacity="0.1"/>
+  <text x="300" y="50" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Tech Gadgets Pro</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="600" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -205,12 +205,12 @@ export default function Footer() {
                         </a>
                       </li>
                       <li>
-                        <a
-                          href="#portfolio"
+                        <Link
+                          to="/portfolio"
                           className="text-foreground/70 hover:text-primary transition-colors inline-block py-1"
                         >
                           Portfolio
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
@@ -353,12 +353,12 @@ export default function Footer() {
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="#portfolio"
+                      <Link
+                        to="/portfolio"
                         className="text-foreground/70 hover:text-primary transition-colors hover:translate-x-1 inline-block"
                       >
                         Portfolio
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
