@@ -127,41 +127,6 @@ export default function Portfolio() {
         </div>
       </section>
       
-      {/* CTA Section */}
-      <section className="py-20 relative">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-background to-secondary/30 -z-10"></div>
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
-            className="max-w-2xl mx-auto"
-          >
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-              Ready to Build Your Next <span className="text-primary text-glow">Digital Success</span>?
-            </h2>
-            <p className="text-xl text-foreground/70 mb-8">
-              Get in touch with us today to discuss how we can help you create a stunning website that engages your audience and drives results.
-            </p>
-            <motion.div
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
-              }}
-              transition={{ duration: 0.2 }}
-            >
-              <Link 
-                to="/#contact"
-                className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-medium shadow-lg inline-block"
-              >
-                Start Your Project
-              </Link>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-      
       <Footer />
     </motion.div>
   );
