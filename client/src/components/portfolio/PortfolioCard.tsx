@@ -58,19 +58,6 @@ export default function PortfolioCard({ item, index }: PortfolioCardProps) {
             </Badge>
           </div>
           
-          {/* Technologies */}
-          <div className="flex flex-wrap gap-1 mb-4">
-            {item.technologies.map((tech, i) => (
-              <Badge 
-                key={i} 
-                variant="secondary" 
-                className="text-xs bg-secondary/30"
-              >
-                {tech}
-              </Badge>
-            ))}
-          </div>
-          
           {/* Actions */}
           <div className="flex gap-2 mt-auto">
             <Button 
