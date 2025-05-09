@@ -308,7 +308,7 @@ export default function ContactSection() {
                 <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
                   <FiGlobe className="text-xl text-white" />
                 </div>
-                <h3 className="font-semibold text-lg">Our Locations</h3>
+                <h3 className="font-semibold text-lg">Our Locations Across India</h3>
               </div>
               <div className="flex space-x-2">
                 {officeLocations.map((location, index) => (
@@ -332,13 +332,20 @@ export default function ContactSection() {
             <div className="grid md:grid-cols-5">
               {/* Map Visualization */}
               <div className="col-span-3 relative bg-secondary/10 min-h-[300px] p-4">
-                <div className="absolute inset-0 bg-[url('https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/72.8777,19.0760,10,0/600x300?access_token=placeholder')] bg-cover bg-center opacity-70"></div>
+                <div className="absolute inset-0 bg-[url('https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/79.0882,22.2587,4,0/600x300?access_token=placeholder')] bg-cover bg-center opacity-70"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+                
+                {/* Map Title Overlay */}
+                <div className="absolute top-4 left-4 bg-background/80 backdrop-blur-sm p-2 rounded-md text-xs text-foreground/80 shadow-md border border-primary/20">
+                  <h4 className="font-semibold">WebySoft: Static Website Agency</h4>
+                  <p>Serving all states across India</p>
+                </div>
 
                 {/* Location Markers */}
                 <div className="relative h-full w-full">
+                  {/* Surat Marker */}
                   <motion.div
-                    className="absolute top-1/3 left-1/4"
+                    className="absolute top-[55%] left-[15%]"
                     custom={0}
                     variants={mapLocationVariants}
                     initial="hidden"
@@ -354,14 +361,15 @@ export default function ContactSection() {
                     >
                       <FiNavigation2 className="text-white text-xs" />
                       <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-primary/90 text-white px-2 py-1 text-xs rounded whitespace-nowrap">
-                        Surat, India
+                        Surat, Gujarat
                       </span>
                       <div className="absolute inset-0 rounded-full bg-primary/30" />
                     </motion.div>
                   </motion.div>
 
+                  {/* Mumbai Marker */}
                   <motion.div
-                    className="absolute top-1/2 right-1/3"
+                    className="absolute top-[60%] left-[18%]"
                     custom={1}
                     variants={mapLocationVariants}
                     initial="hidden"
@@ -377,9 +385,81 @@ export default function ContactSection() {
                     >
                       <FiNavigation2 className="text-white text-xs" />
                       <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-accent/90 text-white px-2 py-1 text-xs rounded whitespace-nowrap">
-                        Mumbai, India
+                        Mumbai, Maharashtra
                       </span>
                       <div className="absolute inset-0 rounded-full bg-accent/30" />
+                    </motion.div>
+                  </motion.div>
+
+                  {/* Delhi Marker */}
+                  <motion.div
+                    className="absolute top-[35%] left-[30%]"
+                    custom={2}
+                    variants={mapLocationVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                  >
+                    <motion.div
+                      className={`w-6 h-6 rounded-full bg-green-500 flex items-center justify-center cursor-pointer relative ${
+                        selectedLocation === 2 ? "ring-4 ring-green-500/30" : ""
+                      }`}
+                      onClick={() => setSelectedLocation(2)}
+                      whileHover={{ scale: 1.2 }}
+                    >
+                      <FiNavigation2 className="text-white text-xs" />
+                      <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-green-500/90 text-white px-2 py-1 text-xs rounded whitespace-nowrap">
+                        Delhi NCR
+                      </span>
+                      <div className="absolute inset-0 rounded-full bg-green-500/30" />
+                    </motion.div>
+                  </motion.div>
+
+                  {/* Bangalore Marker */}
+                  <motion.div
+                    className="absolute top-[75%] left-[25%]"
+                    custom={3}
+                    variants={mapLocationVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                  >
+                    <motion.div
+                      className={`w-6 h-6 rounded-full bg-cyan-500 flex items-center justify-center cursor-pointer relative ${
+                        selectedLocation === 3 ? "ring-4 ring-cyan-500/30" : ""
+                      }`}
+                      onClick={() => setSelectedLocation(3)}
+                      whileHover={{ scale: 1.2 }}
+                    >
+                      <FiNavigation2 className="text-white text-xs" />
+                      <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-cyan-500/90 text-white px-2 py-1 text-xs rounded whitespace-nowrap">
+                        Bangalore, Karnataka
+                      </span>
+                      <div className="absolute inset-0 rounded-full bg-cyan-500/30" />
+                    </motion.div>
+                  </motion.div>
+
+                  {/* Chennai Marker */}
+                  <motion.div
+                    className="absolute top-[80%] left-[35%]"
+                    custom={4}
+                    variants={mapLocationVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                  >
+                    <motion.div
+                      className={`w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center cursor-pointer relative ${
+                        selectedLocation === 4 ? "ring-4 ring-purple-500/30" : ""
+                      }`}
+                      onClick={() => setSelectedLocation(4)}
+                      whileHover={{ scale: 1.2 }}
+                    >
+                      <FiNavigation2 className="text-white text-xs" />
+                      <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-purple-500/90 text-white px-2 py-1 text-xs rounded whitespace-nowrap">
+                        Chennai, Tamil Nadu
+                      </span>
+                      <div className="absolute inset-0 rounded-full bg-purple-500/30" />
                     </motion.div>
                   </motion.div>
                 </div>
@@ -451,126 +531,53 @@ export default function ContactSection() {
                         </div>
                       </div>
                     </div>
+
+                    <div className="flex items-start">
+                      <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent mr-3 mt-1 flex-shrink-0">
+                        <BiSolidQuoteLeft className="text-xl" />
+                      </div>
+                      <div>
+                        <h4 className="text-base font-medium mb-1">
+                          Client Quote
+                        </h4>
+                        <div
+                          className="text-sm text-foreground/70 italic cursor-pointer"
+                          onClick={rotateQuotes}
+                        >
+                          "{testimonialQuotes[activeQuote].quote}"
+                          <div className="mt-2 font-medium text-accent">
+                            - {testimonialQuotes[activeQuote].author},{" "}
+                            {testimonialQuotes[activeQuote].company}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 pt-6 border-t border-white/10">
+                    <h4 className="text-sm font-semibold uppercase tracking-wider mb-3 text-primary/70">
+                      Connect with us
+                    </h4>
+                    <div className="flex space-x-3">
+                      {socialLinks.map((link) => (
+                        <motion.a
+                          key={link.id}
+                          href={link.href}
+                          className="w-10 h-10 bg-white/5 hover:bg-white/10 rounded-full flex items-center justify-center text-foreground/70 hover:text-primary transition-colors"
+                          whileHover={{ scale: 1.1 }}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: link.delay }}
+                        >
+                          {link.icon}
+                        </motion.a>
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
               </div>
             </div>
           </GlassCard>
-        </motion.div>
-
-        {/* Testimonial Quote Carousel */}
-        <motion.div
-          className="mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-        >
-          <GlassCard className="p-8 text-center relative max-w-3xl mx-auto">
-            <div className="absolute top-4 left-4 text-3xl text-primary/30">
-              <BiSolidQuoteLeft />
-            </div>
-            <div className="absolute bottom-4 right-4 text-3xl text-primary/30">
-              <BiSolidQuoteRight />
-            </div>
-
-            <div className="h-[120px] flex items-center justify-center">
-              <motion.div
-                key={testimonialQuotes[activeQuote].id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-                className="text-xl italic px-8"
-              >
-                "{testimonialQuotes[activeQuote].quote}"
-              </motion.div>
-            </div>
-
-            <motion.div
-              className="mt-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-            >
-              <div className="font-bold text-lg text-primary">
-                {testimonialQuotes[activeQuote].author}
-              </div>
-              <div className="text-foreground/70 text-sm">
-                {testimonialQuotes[activeQuote].company}
-              </div>
-            </motion.div>
-
-            <div className="mt-6 flex justify-center space-x-2">
-              {testimonialQuotes.map((_, index) => (
-                <button
-                  key={index}
-                  className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                    index === activeQuote ? "bg-primary" : "bg-foreground/20"
-                  }`}
-                  onClick={() => setActiveQuote(index)}
-                />
-              ))}
-            </div>
-          </GlassCard>
-        </motion.div>
-
-        {/* Social Media Links */}
-        <motion.div
-          className="flex justify-center items-center space-x-4 mb-10"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          {socialLinks.map((social) => (
-            <motion.a
-              key={social.id}
-              href={social.href}
-              className="w-12 h-12 rounded-full bg-secondary/50 flex items-center justify-center text-foreground/70 hover:bg-primary/20 hover:text-primary transition-colors duration-300 hover:scale-110"
-              variants={itemVariants}
-              transition={{ delay: social.delay }}
-              whileHover={{ y: -4, scale: 1.1 }}
-            >
-              <span className="text-2xl">{social.icon}</span>
-              <span className="sr-only">{social.name}</span>
-            </motion.a>
-          ))}
-        </motion.div>
-
-        {/* CTA */}
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <p className="text-foreground/70 mb-6">
-            Prefer direct contact? Send us an email at{" "}
-            <span className="font-semibold">info@webysoft.com</span> or{" "}
-            <span className="font-semibold">support@webysoft.com</span>
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-lg px-8"
-              onClick={() =>
-                (window.location.href = "mailto:info@webysoft.com")
-              }
-            >
-              General Inquiries
-            </Button>
-            <Button
-              size="lg"
-              className="bg-secondary hover:bg-secondary/90 text-lg px-8 border border-primary/30"
-              onClick={() =>
-                (window.location.href = "mailto:support@webysoft.com")
-              }
-            >
-              Technical Support
-            </Button>
-          </div>
         </motion.div>
       </div>
     </section>
