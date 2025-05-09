@@ -229,21 +229,21 @@ export default function ContactSection() {
     // Create the WhatsApp contact card
     const whatsAppCard = {
       id: 5,
-      title: "WhatsApp Direct",
-      description: "Instant support via WhatsApp",
+      title: "WhatsApp Support",
+      description: "Get instant help via WhatsApp",
       info: (
-        <div className="flex items-center">
+        <div className="flex items-center w-full">
           <div 
-            className="whatsapp-badge cursor-pointer"
+            className="whatsapp-button"
             onClick={(e) => {
               e.stopPropagation();
               handleWhatsAppClick();
             }}
           >
-            <FaWhatsapp className="text-lg text-green-500" />
-            <span className="pulse-number">
-              +91 8849 990 393
+            <span className="whatsapp-icon">
+              <FaWhatsapp className="text-xs" />
             </span>
+            <span className="button-text">Chat Now</span>
           </div>
         </div>
       ),
