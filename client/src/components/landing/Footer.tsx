@@ -398,39 +398,7 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Social Media Icons */}
-            <div className="flex justify-center mb-12">
-              <div className="flex space-x-6">
-                <a
-                  href="#"
-                  aria-label="Twitter"
-                  className="text-foreground/70 hover:text-primary transition-colors"
-                >
-                  <i className="ri-twitter-fill text-2xl"></i>
-                </a>
-                <a
-                  href="#"
-                  aria-label="Facebook"
-                  className="text-foreground/70 hover:text-primary transition-colors"
-                >
-                  <i className="ri-facebook-fill text-2xl"></i>
-                </a>
-                <a
-                  href="#"
-                  aria-label="Instagram"
-                  className="text-foreground/70 hover:text-primary transition-colors"
-                >
-                  <i className="ri-instagram-fill text-2xl"></i>
-                </a>
-                <a
-                  href="#"
-                  aria-label="LinkedIn"
-                  className="text-foreground/70 hover:text-primary transition-colors"
-                >
-                  <i className="ri-linkedin-fill text-2xl"></i>
-                </a>
-              </div>
-            </div>
+            {/* Social Media section removed as per client request */}
 
             {/* Separator */}
             <div className="relative h-px w-full max-w-4xl mx-auto mb-10 bg-gradient-to-r from-transparent via-foreground/20 to-transparent overflow-hidden">
