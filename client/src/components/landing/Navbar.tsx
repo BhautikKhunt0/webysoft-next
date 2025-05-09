@@ -9,6 +9,7 @@ const MENU_ITEMS = [
   { id: 'features', label: 'Features' },
   { id: 'how-it-works', label: 'How It Works' },
   { id: 'pricing', label: 'Pricing' },
+  { path: '/portfolio', label: 'Portfolio', isPageLink: true },
   { id: 'testimonials', label: 'Testimonials' },
   { id: 'faq', label: 'FAQ' }
 ];
@@ -84,15 +85,31 @@ export default function Navbar() {
                 <div className="hidden md:flex items-center justify-between flex-1">
                   <div className="flex items-center gap-8 ml-12">
                     {MENU_ITEMS.map((item, index) => (
-                      <motion.a
-                        key={item.id}
-                        href={`#${item.id}`}
-                        className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        {item.label}
-                      </motion.a>
+                      item.isPageLink ? (
+                        <motion.div key={`page-${item.path}`}>
+                          <Link 
+                            to={item.path}
+                            className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
+                          >
+                            <motion.span
+                              whileHover={{ scale: 1.05 }}
+                              transition={{ duration: 0.2 }}
+                            >
+                              {item.label}
+                            </motion.span>
+                          </Link>
+                        </motion.div>
+                      ) : (
+                        <motion.a
+                          key={`section-${item.id}`}
+                          href={`#${item.id}`}
+                          className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
+                          whileHover={{ scale: 1.05 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {item.label}
+                        </motion.a>
+                      )
                     ))}
                   </div>
                   
@@ -126,15 +143,31 @@ export default function Navbar() {
                 <div className="hidden md:flex items-center justify-between">
                   <div className="flex items-center md:space-x-2 lg:space-x-8">
                     {MENU_ITEMS.map((item, index) => (
-                      <motion.a
-                        key={item.id}
-                        href={`#${item.id}`}
-                        className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        {item.label}
-                      </motion.a>
+                      item.isPageLink ? (
+                        <motion.div key={`page-${item.path}`}>
+                          <Link 
+                            to={item.path}
+                            className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
+                          >
+                            <motion.span
+                              whileHover={{ scale: 1.05 }}
+                              transition={{ duration: 0.2 }}
+                            >
+                              {item.label}
+                            </motion.span>
+                          </Link>
+                        </motion.div>
+                      ) : (
+                        <motion.a
+                          key={`section-${item.id}`}
+                          href={`#${item.id}`}
+                          className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
+                          whileHover={{ scale: 1.05 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {item.label}
+                        </motion.a>
+                      )
                     ))}
                   </div>
                   
@@ -179,14 +212,25 @@ export default function Navbar() {
           >
             <div className="flex flex-col space-y-4 mt-2">
               {MENU_ITEMS.map((item) => (
-                <a 
-                  key={item.id}
-                  href={`#${item.id}`}
-                  className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
+                item.isPageLink ? (
+                  <Link 
+                    key={`mobile-${item.path}`}
+                    to={item.path}
+                    className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <a 
+                    key={`mobile-${item.id}`}
+                    href={`#${item.id}`}
+                    className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                )
               ))}
               <a 
                 href="#contact" 

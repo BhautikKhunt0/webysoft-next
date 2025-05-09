@@ -102,8 +102,9 @@ export function getFeaturedPortfolioItems(): PortfolioItem[] {
 
 // Get all unique categories
 export function getAllCategories(): string[] {
-  const categories = portfolioItems.map(item => item.category);
-  return [...new Set(categories)];
+  const categoriesSet = new Set<string>();
+  portfolioItems.forEach(item => categoriesSet.add(item.category));
+  return Array.from(categoriesSet);
 }
 
 // Get all available types
