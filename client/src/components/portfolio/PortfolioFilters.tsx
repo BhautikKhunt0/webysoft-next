@@ -4,9 +4,7 @@ import { Badge } from '@/components/ui/badge';
 
 interface PortfolioFiltersProps {
   selectedType: PortfolioItemType | 'All';
-  selectedCategory: string | 'All';
   onTypeChange: (type: PortfolioItemType | 'All') => void;
-  onCategoryChange: (category: string | 'All') => void;
 }
 
 export default function PortfolioFilters({ 

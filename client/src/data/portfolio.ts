@@ -1,5 +1,5 @@
 // Portfolio data file to manage showcase items
-export type PortfolioItemType = 'Service' | 'Legal' | 'Local Shop' | 'Academy';
+export type PortfolioItemType = "Service" | "Legal" | "Local Shop" | "Academy";
 
 export interface PortfolioItem {
   id: string;
@@ -13,97 +13,138 @@ export interface PortfolioItem {
   featured: boolean;
 }
 
-// Export portfolio data
+// Import image assets
+import hrWebsiteImg from '@/assets/hr_website.png';
+import accountantFirmImg from '@/assets/accountant_firm.png';
+import boxingImg from '@/assets/boxing.png';
+import carRepairingImg from '@/assets/car_repairing.png';
+import ecommerceImg from '@/assets/ecommerce.png';
+import plumberImg from '@/assets/plumber.png';
+import restaurantImg from '@/assets/restaurant.png';
+import salonImg from '@/assets/salon.png';
+
 export const portfolioItems: PortfolioItem[] = [
   {
     id: "service-1",
     title: "Creative Digital Agency",
-    description: "Modern service website for a digital agency with interactive portfolio showcase and service offerings.",
+    description:
+      "Modern service website for a digital agency with interactive portfolio showcase and service offerings.",
     type: "Service",
-    imageUrl: "/portfolio/creative-service.svg",
+    imageUrl: hrWebsiteImg,
     previewLink: "https://example.com/creative-digital",
     technologies: ["React", "Tailwind CSS", "Framer Motion", "Next.js"],
     category: "Creative",
-    featured: true
+    featured: true,
   },
   {
     id: "legal-1",
-    title: "Law Associates",
-    description: "Professional legal services website with client portal, attorney profiles, and case studies.",
+    title: "Accountant Firm",
+    description:
+      "Professional accounting services website with client portal, expert profiles, and financial resources.",
     type: "Legal",
-    imageUrl: "/portfolio/legal.svg",
-    previewLink: "https://example.com/law-associates",
+    imageUrl: accountantFirmImg,
+    previewLink: "https://example.com/accountant-firm",
     technologies: ["React", "Express", "PostgreSQL", "Tailwind CSS"],
     category: "Legal",
-    featured: true
+    featured: true,
   },
   {
     id: "academy-1",
-    title: "MindCraft Academy",
-    description: "Interactive learning platform with course enrollment, progress tracking, and live webinars.",
+    title: "Boxing Academy",
+    description:
+      "Interactive fitness platform with class scheduling, progress tracking, and membership management.",
     type: "Academy",
-    imageUrl: "/portfolio/academy.svg",
-    previewLink: "https://example.com/mindcraft-academy",
+    imageUrl: boxingImg,
+    previewLink: "https://example.com/boxing-academy",
     technologies: ["React", "TypeScript", "Firebase", "Express"],
     category: "Education",
-    featured: false
+    featured: false,
   },
   {
     id: "local-1",
-    title: "Joe's Bakery",
-    description: "Local bakery website with online ordering, delivery scheduling, and interactive menu.",
+    title: "Restaurant Website",
+    description:
+      "Local restaurant website with online ordering, reservation system, and interactive menu.",
     type: "Local Shop",
-    imageUrl: "/portfolio/local-1.svg",
-    previewLink: "https://example.com/joes-bakery",
+    imageUrl: restaurantImg,
+    previewLink: "https://example.com/restaurant",
     technologies: ["React", "Firebase", "Tailwind CSS"],
     category: "Food & Beverage",
-    featured: true
+    featured: true,
   },
   {
     id: "service-2",
-    title: "Green Gardens Landscaping",
-    description: "Service business website with project gallery, client testimonials, and online consultation booking.",
+    title: "Car Repair Service",
+    description:
+      "Auto repair service website with appointment booking, service catalog, and maintenance tips.",
     type: "Service",
-    imageUrl: "/portfolio/garden-service.svg",
-    previewLink: "https://example.com/green-gardens",
+    imageUrl: carRepairingImg,
+    previewLink: "https://example.com/car-repair",
     technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    category: "Home & Garden",
-    featured: false
+    category: "Automotive",
+    featured: false,
   },
   {
     id: "academy-2",
-    title: "CodeMaster Institute",
-    description: "Online programming school with interactive code editors, student projects, and mentor matching.",
-    type: "Academy",
-    imageUrl: "/portfolio/academy.svg",
-    previewLink: "https://example.com/codemaster",
+    title: "Beauty Salon",
+    description:
+      "Full-service beauty salon website with stylists profiles, service offerings, and online booking.",
+    type: "Local Shop",
+    imageUrl: salonImg,
+    previewLink: "https://example.com/salon",
     technologies: ["React", "Express", "MySQL", "Socket.IO"],
-    category: "Technology",
-    featured: false
-  }
+    category: "Beauty",
+    featured: false,
+  },
+  {
+    id: "service-3",
+    title: "Plumbing Service",
+    description:
+      "Professional plumbing service website with emergency request form, service areas, and testimonials.",
+    type: "Service",
+    imageUrl: plumberImg,
+    previewLink: "https://example.com/plumbing",
+    technologies: ["React", "Node.js", "Express", "MongoDB"],
+    category: "Home Services",
+    featured: false,
+  },
+  {
+    id: "ecommerce-1",
+    title: "Fashion Store",
+    description:
+      "Modern e-commerce platform with product catalog, secure checkout, and customer reviews.",
+    type: "Local Shop",
+    imageUrl: ecommerceImg,
+    previewLink: "https://example.com/fashion-store",
+    technologies: ["React", "Node.js", "Stripe", "MongoDB"],
+    category: "Retail",
+    featured: true,
+  },
 ];
 
 // Helper functions to work with portfolio data
-export function getPortfolioItemsByType(type: PortfolioItemType): PortfolioItem[] {
-  return portfolioItems.filter(item => item.type === type);
+export function getPortfolioItemsByType(
+  type: PortfolioItemType,
+): PortfolioItem[] {
+  return portfolioItems.filter((item) => item.type === type);
 }
 
 export function getPortfolioItemsByCategory(category: string): PortfolioItem[] {
-  return portfolioItems.filter(item => item.category === category);
+  return portfolioItems.filter((item) => item.category === category);
 }
 
 export function getPortfolioItemById(id: string): PortfolioItem | undefined {
-  return portfolioItems.find(item => item.id === id);
+  return portfolioItems.find((item) => item.id === id);
 }
 
 export function getFeaturedPortfolioItems(): PortfolioItem[] {
-  return portfolioItems.filter(item => item.featured);
+  return portfolioItems.filter((item) => item.featured);
 }
 
 // Get all unique categories
 export function getAllCategories(): string[] {
   const categoriesSet = new Set<string>();
-  portfolioItems.forEach(item => categoriesSet.add(item.category));
+  portfolioItems.forEach((item) => categoriesSet.add(item.category));
   return Array.from(categoriesSet);
 }
 
