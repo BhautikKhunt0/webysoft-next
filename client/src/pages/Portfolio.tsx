@@ -11,7 +11,6 @@ import BackgroundParticles from '@/components/landing/BackgroundParticles';
 export default function Portfolio() {
   // State for filtering
   const [selectedType, setSelectedType] = useState<PortfolioItemType | 'All'>('All');
-  const [selectedCategory, setSelectedCategory] = useState<string | 'All'>('All');
   const [filteredItems, setFilteredItems] = useState(portfolioItems);
   
   // Filter items when selection changes
@@ -23,13 +22,8 @@ export default function Portfolio() {
       filtered = filtered.filter(item => item.type === selectedType);
     }
     
-    // Apply category filter
-    if (selectedCategory !== 'All') {
-      filtered = filtered.filter(item => item.category === selectedCategory);
-    }
-    
     setFilteredItems(filtered);
-  }, [selectedType, selectedCategory]);
+  }, [selectedType]);
   
   // Update document metadata
   useEffect(() => {
@@ -81,9 +75,7 @@ export default function Portfolio() {
           {/* Filters */}
           <PortfolioFilters 
             selectedType={selectedType} 
-            selectedCategory={selectedCategory}
             onTypeChange={setSelectedType}
-            onCategoryChange={setSelectedCategory}
           />
           
           {/* Empty state */}
@@ -99,10 +91,7 @@ export default function Portfolio() {
                 No projects match your current filter selection. Try adjusting your filters.
               </p>
               <button
-                onClick={() => {
-                  setSelectedType('All');
-                  setSelectedCategory('All');
-                }}
+                onClick={() => setSelectedType('All')}
                 className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-medium"
               >
                 Reset Filters
