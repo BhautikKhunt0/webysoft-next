@@ -8,6 +8,8 @@
     />
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#6366f1" />
     <title>WebySoft - Top Static Website Agency in Surat, India | Serving All Indian States</title>
     <meta
       name="description"
@@ -205,6 +207,7 @@
           "Features",
           "How It Works",
           "Pricing",
+          "Portfolio",
           "Testimonials",
           "FAQ",
           "Contact"
@@ -214,6 +217,7 @@
           "https://webysoft.com#features",
           "https://webysoft.com#how-it-works",
           "https://webysoft.com#pricing",
+          "https://webysoft.com/portfolio",
           "https://webysoft.com#testimonials",
           "https://webysoft.com#faq",
           "https://webysoft.com#contact"
@@ -300,16 +304,50 @@
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "Services",
-            "item": "https://webysoft.com/services/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Static Website Development",
-            "item": "https://webysoft.com/services/static-website-development/"
+            "name": "Portfolio",
+            "item": "https://webysoft.com/portfolio"
           }
         ]
+      }
+    </script>
+    
+    <!-- Structured data for the Portfolio page -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "WebySoft Portfolio - Professional Website Examples",
+        "description": "Explore WebySoft's portfolio featuring stunning websites for service businesses, legal firms, local shops, and educational academies.",
+        "url": "https://webysoft.com/portfolio",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "WebySoft",
+          "url": "https://webysoft.com/"
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "numberOfItems": 9,
+          "itemListElement": [
+            {
+              "@type": "WebSite",
+              "position": 1,
+              "url": "https://webysoft.com/portfolio/creative-service",
+              "name": "Creative Service Agency Website"
+            },
+            {
+              "@type": "WebSite",
+              "position": 2,
+              "url": "https://webysoft.com/portfolio/legal",
+              "name": "Legal Services Website"
+            },
+            {
+              "@type": "WebSite",
+              "position": 3,
+              "url": "https://webysoft.com/portfolio/ecommerce-1",
+              "name": "E-commerce Website Example"
+            }
+          ]
+        }
       }
     </script>
   </head>

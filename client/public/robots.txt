@@ -1,4 +1,28 @@
+# WebySoft robots.txt
+# Last updated: May 9, 2025
+
+# Allow all crawlers full access
 User-agent: *
 Allow: /
 
+# Specific rules for better crawling
+User-agent: Googlebot
+Allow: /*.js
+Allow: /*.css
+Allow: /*.svg
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+
+User-agent: Googlebot-Image
+Allow: /*.svg
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+
+# Prevent excessive crawler requests
+User-agent: *
+Crawl-delay: 10
+
+# Sitemap location
 Sitemap: https://webysoft.com/sitemap.xml
