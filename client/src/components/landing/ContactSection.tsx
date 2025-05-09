@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import GlassCard from "./GlassCard";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { FiMap, FiMail, FiClock, FiGlobe, FiNavigation2 } from "react-icons/fi";
+import { FiMap, FiMail, FiClock, FiGlobe, FiNavigation2, FiMessageCircle, FiPhone } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
 import {
   BiSolidTimeFive,
   BiSolidQuoteLeft,
@@ -68,6 +69,30 @@ const contactMethods = [
     href: "#",
   },
 ];
+
+// Add a WhatsApp card to the contact methods with a pulse animation
+const whatsAppCard = {
+  id: 5,
+  title: "WhatsApp Direct",
+  description: "Message us directly for quick responses",
+  info: (
+    <div className="flex items-center">
+      <span 
+        className="pulse-number cursor-pointer hover:underline"
+        onClick={() => window.open("https://wa.me/918849990393", "_blank")}
+      >
+        +91 8849 990 393
+      </span>
+    </div>
+  ),
+  icon: <FaWhatsapp className="text-3xl text-green-500" />,
+  color: "green",
+  delay: 0.4,
+  href: "https://wa.me/918849990393",
+};
+
+// Insert the WhatsApp card into the contact methods
+contactMethods.push(whatsAppCard);
 
 // No social media links per client request
 const socialLinks: any[] = [];
