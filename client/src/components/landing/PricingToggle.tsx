@@ -23,7 +23,7 @@ const features = [
   { title: "Domain registration", icon: MdOutlineMarkEmailRead },
   { title: "Priority customer support", icon: MdOutlineSupportAgent },
   { title: "Social media integration", icon: BsSearch },
-  { title: "Up to 4 revisions per month", icon: MdOutlineEventRepeat },
+  { title: "Up to 2 revisions per month", icon: MdOutlineEventRepeat },
   { title: "Free hosting", icon: BsFileEarmarkBarGraph },
 ];
 
@@ -176,7 +176,7 @@ export default function PricingToggle() {
                         } transition-colors duration-500`}
                       />
                     </div>
-                    <div className="flex items-center">
+                    <div>
                       <span className="font-medium">{feature.title}</span>
                     </div>
                   </div>
