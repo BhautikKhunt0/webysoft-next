@@ -37,6 +37,9 @@ export default function Portfolio() {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute('content', 'Browse WebySoft\'s diverse portfolio of websites across service businesses, legal websites, local shops, and educational academies.');
+    
+    // Always scroll to top when portfolio page loads
+    window.scrollTo(0, 0);
   }, []);
   
   return (

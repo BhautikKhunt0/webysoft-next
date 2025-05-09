@@ -42,6 +42,20 @@ export default function Navbar() {
     }
   };
   
+  // Better navigation handling to sections
+  const navigateToSection = (sectionId: string) => {
+    if (isPortfolioPage) {
+      // From portfolio page to home page section
+      window.location.href = `/#${sectionId}`;
+    } else {
+      // Already on home page, just scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+  
   // Close mobile menu on navigation or resize
   useEffect(() => {
     const handleResize = () => {
