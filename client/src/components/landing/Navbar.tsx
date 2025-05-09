@@ -133,13 +133,19 @@ export default function Navbar() {
                   
                   {/* CTA Button - For tablets and above - Always visible */}
                   <motion.a 
-                    href="#contact" 
+                    href={isPortfolioPage ? "/" : "#contact"}
                     className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg whitespace-nowrap"
                     whileHover={{ 
                       scale: 1.05,
                       boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
                     }}
                     transition={{ duration: 0.2 }}
+                    onClick={(e) => {
+                      if (isPortfolioPage) {
+                        e.preventDefault();
+                        window.location.href = "/#contact";
+                      }
+                    }}
                   >
                     Get Started
                   </motion.a>
@@ -197,13 +203,19 @@ export default function Navbar() {
                   
                   {/* CTA Button */}
                   <motion.a 
-                    href="#contact" 
+                    href={isPortfolioPage ? "/" : "#contact"}
                     className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg ml-3 md:ml-4 lg:ml-6 whitespace-nowrap"
                     whileHover={{ 
                       scale: 1.05,
                       boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
                     }}
                     transition={{ duration: 0.2 }}
+                    onClick={(e) => {
+                      if (isPortfolioPage) {
+                        e.preventDefault();
+                        window.location.href = "/#contact";
+                      }
+                    }}
                   >
                     Get Started
                   </motion.a>
@@ -263,17 +275,29 @@ export default function Navbar() {
                 )
               ))}
               <a 
-                href="#contact" 
+                href={isPortfolioPage ? "/" : "#contact"} 
                 className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => {
+                  setMobileMenuOpen(false);
+                  if (isPortfolioPage) {
+                    e.preventDefault();
+                    window.location.href = "/#contact";
+                  }
+                }}
               >
                 Contact
               </a>
               <div className="pt-4">
                 <a 
-                  href="#contact" 
+                  href={isPortfolioPage ? "/" : "#contact"} 
                   className="bg-primary hover:bg-opacity-90 text-white px-6 py-3 rounded-full font-medium text-center block w-full"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    setMobileMenuOpen(false);
+                    if (isPortfolioPage) {
+                      e.preventDefault();
+                      window.location.href = "/#contact";
+                    }
+                  }}
                 >
                   Get Started
                 </a>
