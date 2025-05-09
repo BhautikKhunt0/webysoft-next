@@ -87,7 +87,7 @@ const socialLinks = [
   { id: 4, icon: <BiLogoFacebook />, href: "#", name: "Facebook", delay: 0.3 },
 ];
 
-// Office locations
+// Office locations across India
 const officeLocations = [
   {
     id: 1,
@@ -104,6 +104,33 @@ const officeLocations = [
     country: "India",
     address: "WeWork, Bandra Kurla Complex, Mumbai, Maharashtra, 400051",
     delay: 0.1,
+    hours: "Monday-Friday: 9:00 AM - 6:00 PM",
+    weekends: "Saturday: 10:00 AM - 2:00 PM (Closed on Sunday)",
+  },
+  {
+    id: 3,
+    city: "Delhi",
+    country: "India",
+    address: "Connaught Place, New Delhi, Delhi NCR, 110001",
+    delay: 0.2,
+    hours: "Monday-Friday: 9:00 AM - 6:00 PM",
+    weekends: "Saturday: 10:00 AM - 2:00 PM (Closed on Sunday)",
+  },
+  {
+    id: 4,
+    city: "Bangalore",
+    country: "India",
+    address: "Koramangala, Bangalore, Karnataka, 560034",
+    delay: 0.3,
+    hours: "Monday-Friday: 9:00 AM - 6:00 PM",
+    weekends: "Saturday: 10:00 AM - 2:00 PM (Closed on Sunday)",
+  },
+  {
+    id: 5,
+    city: "Chennai",
+    country: "India",
+    address: "Anna Nagar, Chennai, Tamil Nadu, 600040",
+    delay: 0.4,
     hours: "Monday-Friday: 9:00 AM - 6:00 PM",
     weekends: "Saturday: 10:00 AM - 2:00 PM (Closed on Sunday)",
   },
