@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import GlassCard from "./GlassCard";
 import { Button } from "@/components/ui/button";
@@ -70,29 +70,8 @@ const contactMethods = [
   },
 ];
 
-// Add a WhatsApp card to the contact methods with a pulse animation
-const whatsAppCard = {
-  id: 5,
-  title: "WhatsApp Direct",
-  description: "Message us directly for quick responses",
-  info: (
-    <div className="flex items-center">
-      <span 
-        className="pulse-number cursor-pointer hover:underline"
-        onClick={() => window.open("https://wa.me/918849990393", "_blank")}
-      >
-        +91 8849 990 393
-      </span>
-    </div>
-  ),
-  icon: <FaWhatsapp className="text-3xl text-green-500" />,
-  color: "green",
-  delay: 0.4,
-  href: "https://wa.me/918849990393",
-};
-
-// Insert the WhatsApp card into the contact methods
-contactMethods.push(whatsAppCard);
+// We'll define the WhatsApp card in the component function
+// after the click handler is defined
 
 // No social media links per client request
 const socialLinks: any[] = [];
@@ -174,6 +153,7 @@ const testimonialQuotes = [
 export default function ContactSection() {
   const [activeQuote, setActiveQuote] = useState(0);
   const [selectedLocation, setSelectedLocation] = useState(0);
+  const [allContactMethods, setAllContactMethods] = useState(contactMethods);
   const { toast } = useToast();
 
   // Function to handle quote rotation
@@ -233,6 +213,49 @@ export default function ContactSection() {
       });
     });
   };
+  
+  // Handle WhatsApp click with notification
+  const handleWhatsAppClick = () => {
+    toast({
+      title: "Opening WhatsApp",
+      description: "Connecting you directly with our support team...",
+      variant: "default",
+    });
+    window.open("https://wa.me/918849990393", "_blank");
+  };
+  
+  // Add WhatsApp contact card with animation
+  useEffect(() => {
+    // Create the WhatsApp contact card
+    const whatsAppCard = {
+      id: 5,
+      title: "WhatsApp Direct",
+      description: "Instant support via WhatsApp",
+      info: (
+        <div className="flex items-center">
+          <div 
+            className="whatsapp-badge cursor-pointer"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleWhatsAppClick();
+            }}
+          >
+            <FaWhatsapp className="text-lg text-green-500" />
+            <span className="pulse-number">
+              +91 8849 990 393
+            </span>
+          </div>
+        </div>
+      ),
+      icon: <FaWhatsapp className="text-3xl text-green-500" />,
+      color: "green",
+      delay: 0.4,
+      href: "#",
+    };
+    
+    // Add the WhatsApp card to the contact methods
+    setAllContactMethods([...contactMethods, whatsAppCard]);
+  }, []);
 
   return (
     <section id="contact" className="py-20 relative overflow-hidden">
