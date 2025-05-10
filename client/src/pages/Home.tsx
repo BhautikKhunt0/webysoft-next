@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import Navbar from "@/components/landing/NavbarNew";
 import HeroSection from "@/components/landing/HeroSection";
 import ProblemSolutionSection from "@/components/landing/ProblemSolutionSection";

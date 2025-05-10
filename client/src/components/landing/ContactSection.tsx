@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import GlassCard from "./GlassCard";
 import { Button } from "@/components/ui/button";

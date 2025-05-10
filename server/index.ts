@@ -1,6 +1,8 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import { initSSRDevServer, ssrDevMiddleware } from "./ssr-dev";
+import { initSSRProd, ssrProdMiddleware } from "./ssr-prod";
 
 const app = express();
 app.use(express.json());
@@ -51,9 +53,26 @@ app.use((req, res, next) => {
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
+    // Initialize SSR dev server for development
+    await initSSRDevServer();
+    
+    // Try to use SSR in development mode first
+    app.use(ssrDevMiddleware());
+    
+    // Fall back to standard Vite dev server if SSR fails
     await setupVite(app, server);
   } else {
+    // For production: serve static assets first
     serveStatic(app);
+    
+    // Then try to initialize and use the SSR production middleware
+    const initialized = await initSSRProd();
+    if (initialized) {
+      log("SSR production mode enabled");
+      app.use(ssrProdMiddleware());
+    } else {
+      log("SSR production initialization failed, using client-side rendering only");
+    }
   }
 
   // ALWAYS serve the app on port 5000
