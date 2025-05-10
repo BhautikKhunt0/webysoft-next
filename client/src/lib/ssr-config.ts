@@ -4,7 +4,7 @@
  */
 
 // Set this to false if SSR causes issues with certain components
-export const SSR_ENABLED = true;
+export const SSR_ENABLED = false;
 
 // The mode of SSR to use
 export type SSRMode = 'full' | 'hybrid' | 'static';

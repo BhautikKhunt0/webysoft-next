@@ -50,7 +50,7 @@ export function render({ url }: RenderOptions) {
     const html = ReactDOMServer.renderToString(
       <React.StrictMode>
         <QueryClientProvider client={queryClient}>
-          <App serverUrl={url} />
+          <App />
         </QueryClientProvider>
       </React.StrictMode>
     );
