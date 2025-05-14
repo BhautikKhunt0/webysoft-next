@@ -37,8 +37,8 @@ export default function Navbar() {
   // Handle logo click based on current page
   const handleLogoClick = () => {
     if (isPortfolioPage) {
-      // Navigate to home page if on portfolio page
-      window.location.href = '/';
+      // Navigate to home page if on portfolio page - use origin for more reliable navigation
+      window.location.href = window.location.origin + '/';
     } else {
       // Just scroll to top if already on home page
       scrollToTop();
@@ -48,8 +48,10 @@ export default function Navbar() {
   // Better navigation handling to sections
   const navigateToSection = (sectionId: string) => {
     if (isPortfolioPage) {
-      // From portfolio page to home page section
-      window.location.href = `/#${sectionId}`;
+      // From portfolio page to home page section - use full URL with origin to ensure reliable navigation
+      const homeUrl = window.location.origin + `/#${sectionId}`;
+      // Force a full page load to ensure the hash fragment is properly handled
+      window.location.href = homeUrl;
     } else {
       // Already on home page, just scroll to section
       const element = document.getElementById(sectionId);
@@ -63,7 +65,9 @@ export default function Navbar() {
   const handleContactClick = (e: React.MouseEvent) => {
     e.preventDefault();
     if (isPortfolioPage) {
-      window.location.href = '/#contact';
+      // Use full URL with origin for more reliable navigation
+      const contactUrl = window.location.origin + '/#contact';
+      window.location.href = contactUrl;
     } else {
       const element = document.getElementById('contact');
       if (element) {
