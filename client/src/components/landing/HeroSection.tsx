@@ -53,7 +53,7 @@ export default function HeroSection() {
           </motion.p>
 
           <motion.div
-            className="flex justify-center gap-4 mb-16"
+            className="flex flex-col sm:flex-row justify-center gap-4 mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6 }}
@@ -64,19 +64,20 @@ export default function HeroSection() {
                 e.preventDefault();
                 scrollToSection("contact");
               }}
-              className="royal-border bg-primary hover:bg-primary/90 text-white px-12 py-4 rounded-md font-medium text-lg transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-primary/30 flex items-center justify-center"
+              className="royal-border bg-primary hover:bg-primary/90 text-white px-6 sm:px-12 py-3.5 sm:py-4 rounded-xl font-medium text-base sm:text-lg transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-primary/30 flex items-center justify-center"
             >
               <span>Get Started</span>
               <i className="ri-arrow-right-line ml-2"></i>
             </a>
             <button
               onClick={() => window.open("https://wa.me/918849990393", "_blank")}
-              className="whatsapp-button font-medium text-lg"
+              className="premium-chat-button font-medium text-base sm:text-lg"
+              aria-label="Chat on WhatsApp"
             >
-              <span className="whatsapp-icon">
-                <FaWhatsapp className="text-xl" />
+              <span className="chat-icon">
+                <FaWhatsapp className="text-lg sm:text-xl" />
               </span>
-              <span className="button-text">Chat Now</span>
+              <span className="button-text">Chat with an Expert</span>
             </button>
           </motion.div>
         </div>
