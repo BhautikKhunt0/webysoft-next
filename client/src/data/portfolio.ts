@@ -60,6 +60,7 @@ export const portfolioItems: PortfolioItem[] = [
     category: "Education",
     featured: false,
   },
+  /* Commented out due to example.com link
   {
     id: "local-1",
     title: "Restaurant Website",
@@ -72,6 +73,7 @@ export const portfolioItems: PortfolioItem[] = [
     category: "Food & Beverage",
     featured: true,
   },
+  */
   {
     id: "service-2",
     title: "Car Repair Service",
@@ -84,6 +86,7 @@ export const portfolioItems: PortfolioItem[] = [
     category: "Automotive",
     featured: false,
   },
+  /* Commented out due to example.com link
   {
     id: "academy-2",
     title: "Beauty Salon",
@@ -96,6 +99,8 @@ export const portfolioItems: PortfolioItem[] = [
     category: "Beauty",
     featured: false,
   },
+  */
+  /* Commented out due to example.com link
   {
     id: "service-3",
     title: "Plumbing Service",
@@ -108,6 +113,8 @@ export const portfolioItems: PortfolioItem[] = [
     category: "Home Services",
     featured: false,
   },
+  */
+  /* Commented out due to example.com link
   {
     id: "ecommerce-1",
     title: "Fashion Store",
@@ -120,6 +127,7 @@ export const portfolioItems: PortfolioItem[] = [
     category: "Retail",
     featured: true,
   },
+  */
 ];
 
 // Helper functions to work with portfolio data
