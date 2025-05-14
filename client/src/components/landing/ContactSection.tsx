@@ -363,143 +363,170 @@ export default function ContactSection() {
             </div>
 
             <div className="grid md:grid-cols-5">
-              {/* Map Visualization */}
-              <div className="col-span-3 relative bg-secondary/10 min-h-[300px] p-4">
-                <div className="absolute inset-0 bg-[url('https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/79.0882,22.2587,4,0/600x300?access_token=placeholder')] bg-cover bg-center opacity-70"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+              {/* Map Visualization - Redesigned */}
+              <div className="col-span-3 relative bg-gradient-to-br from-background to-secondary/20 min-h-[300px] rounded-l-xl overflow-hidden">
+                {/* India Map Stylized Background */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-20">
+                  <svg width="80%" height="80%" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path 
+                      d="M200,100 Q240,120 280,100 Q320,80 340,120 Q360,160 320,180 Q280,200 300,240 Q320,280 280,300 Q240,320 200,280 Q160,240 120,260 Q80,280 60,240 Q40,200 80,160 Q120,120 160,140 Q200,160 200,100 Z" 
+                      fill="url(#indiaGradient)" 
+                    />
+                    <defs>
+                      <linearGradient id="indiaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="var(--primary)" stopOpacity="0.3" />
+                        <stop offset="100%" stopColor="var(--accent)" stopOpacity="0.2" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
                 
                 {/* Map Title Overlay */}
-                <div className="absolute top-4 left-4 bg-background/80 backdrop-blur-sm p-2 rounded-md text-xs text-foreground/80 shadow-md border border-primary/20">
-                  <h4 className="font-semibold">WebySoft: Static Website Agency</h4>
-                  <p>Serving all states across India</p>
+                <div className="absolute top-6 left-6 bg-background/40 backdrop-blur-md p-3 rounded-lg shadow-lg border border-primary/20 z-10">
+                  <h4 className="font-semibold text-sm">WebySoft Locations</h4>
+                  <p className="text-xs text-foreground/70">Interactive office directory</p>
                 </div>
+
+                {/* Grid Lines Background */}
+                <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
                 {/* Location Markers */}
                 <div className="relative h-full w-full">
-                  {/* Surat Marker */}
-                  <motion.div
-                    className="absolute top-[55%] left-[15%]"
-                    custom={0}
-                    variants={mapLocationVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                  >
-                    <motion.div
-                      className={`w-6 h-6 rounded-full bg-primary flex items-center justify-center cursor-pointer relative ${
-                        selectedLocation === 0 ? "ring-4 ring-primary/30" : ""
-                      }`}
-                      onClick={() => setSelectedLocation(0)}
-                      whileHover={{ scale: 1.2 }}
-                    >
-                      <FiNavigation2 className="text-white text-xs" />
-                      <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-primary/90 text-white px-2 py-1 text-xs rounded whitespace-nowrap">
-                        Surat, Gujarat
-                      </span>
-                      <div className="absolute inset-0 rounded-full bg-primary/30" />
-                    </motion.div>
-                  </motion.div>
+                  {/* Location selector tabs */}
+                  <div className="absolute left-0 right-0 top-20 flex justify-center z-10">
+                    <div className="flex bg-background/40 backdrop-blur-md rounded-full p-1 shadow-lg border border-white/10">
+                      {officeLocations.map((location, index) => (
+                        <button
+                          key={location.id}
+                          onClick={() => setSelectedLocation(index)}
+                          className={`px-3 py-1.5 text-xs font-medium rounded-full transition-all ${
+                            selectedLocation === index 
+                              ? "bg-primary text-white shadow-md" 
+                              : "text-foreground/70 hover:bg-white/10"
+                          }`}
+                        >
+                          {location.city}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
 
-                  {/* Mumbai Marker */}
+                  {/* Stylized Location Indicators */}
+                  <div className="absolute inset-0 mt-20">
+                    {officeLocations.map((location, index) => {
+                      // Calculate position based on index
+                      const positions = [
+                        { top: "50%", left: "25%" },
+                        { top: "60%", left: "35%" },
+                        { top: "30%", left: "45%" },
+                        { top: "70%", left: "40%" },
+                        { top: "75%", left: "50%" }
+                      ];
+                      
+                      // Get dynamic classes based on index
+                      const getMarkerClasses = (idx: number) => {
+                        switch(idx) {
+                          case 0: 
+                            return {
+                              bg: selectedLocation === idx ? "bg-primary" : "bg-primary/50",
+                              pulse: selectedLocation === idx ? "bg-primary/30" : "bg-primary/10",
+                              ring: "ring-primary/30"
+                            };
+                          case 1:
+                            return {
+                              bg: selectedLocation === idx ? "bg-accent" : "bg-accent/50",
+                              pulse: selectedLocation === idx ? "bg-accent/30" : "bg-accent/10",
+                              ring: "ring-accent/30"
+                            };
+                          case 2:
+                            return {
+                              bg: selectedLocation === idx ? "bg-green-500" : "bg-green-500/50",
+                              pulse: selectedLocation === idx ? "bg-green-500/30" : "bg-green-500/10",
+                              ring: "ring-green-500/30"
+                            };
+                          case 3:
+                            return {
+                              bg: selectedLocation === idx ? "bg-cyan-500" : "bg-cyan-500/50",
+                              pulse: selectedLocation === idx ? "bg-cyan-500/30" : "bg-cyan-500/10",
+                              ring: "ring-cyan-500/30"
+                            };
+                          case 4:
+                            return {
+                              bg: selectedLocation === idx ? "bg-purple-500" : "bg-purple-500/50",
+                              pulse: selectedLocation === idx ? "bg-purple-500/30" : "bg-purple-500/10",
+                              ring: "ring-purple-500/30"
+                            };
+                          default:
+                            return {
+                              bg: "bg-primary",
+                              pulse: "bg-primary/30",
+                              ring: "ring-primary/30"
+                            };
+                        }
+                      };
+                      
+                      const markerClasses = getMarkerClasses(index);
+                      
+                      return (
+                        <motion.div
+                          key={location.id}
+                          className="absolute"
+                          style={{ 
+                            top: positions[index].top, 
+                            left: positions[index].left,
+                          }}
+                          custom={index}
+                          variants={mapLocationVariants}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: true }}
+                        >
+                          <motion.div
+                            className={`w-20 h-20 -ml-10 -mt-10 absolute opacity-20 rounded-full ${markerClasses.pulse} ${
+                              selectedLocation === index ? "animate-ping-slow" : ""
+                            }`}
+                            style={{
+                              animationDelay: `${index * 0.2}s`
+                            }}
+                          ></motion.div>
+                          <motion.div
+                            className={`w-4 h-4 -ml-2 -mt-2 absolute rounded-full ${markerClasses.bg} ${
+                              selectedLocation === index ? "ring-4" : ""
+                            } ${markerClasses.ring} shadow-lg`}
+                            whileHover={{ scale: 1.5 }}
+                          ></motion.div>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                  
+                  {/* Selected location highlight */}
                   <motion.div
-                    className="absolute top-[60%] left-[18%]"
-                    custom={1}
-                    variants={mapLocationVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
+                    className="absolute bottom-6 left-6 right-6 bg-background/40 backdrop-blur-md p-3 rounded-lg shadow-lg border border-primary/10"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                    key={officeLocations[selectedLocation].id}
                   >
-                    <motion.div
-                      className={`w-6 h-6 rounded-full bg-accent flex items-center justify-center cursor-pointer relative ${
-                        selectedLocation === 1 ? "ring-4 ring-accent/30" : ""
-                      }`}
-                      onClick={() => setSelectedLocation(1)}
-                      whileHover={{ scale: 1.2 }}
-                    >
-                      <FiNavigation2 className="text-white text-xs" />
-                      <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-accent/90 text-white px-2 py-1 text-xs rounded whitespace-nowrap">
-                        Mumbai, Maharashtra
-                      </span>
-                      <div className="absolute inset-0 rounded-full bg-accent/30" />
-                    </motion.div>
-                  </motion.div>
-
-                  {/* Delhi Marker */}
-                  <motion.div
-                    className="absolute top-[35%] left-[30%]"
-                    custom={2}
-                    variants={mapLocationVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                  >
-                    <motion.div
-                      className={`w-6 h-6 rounded-full bg-green-500 flex items-center justify-center cursor-pointer relative ${
-                        selectedLocation === 2 ? "ring-4 ring-green-500/30" : ""
-                      }`}
-                      onClick={() => setSelectedLocation(2)}
-                      whileHover={{ scale: 1.2 }}
-                    >
-                      <FiNavigation2 className="text-white text-xs" />
-                      <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-green-500/90 text-white px-2 py-1 text-xs rounded whitespace-nowrap">
-                        Delhi NCR
-                      </span>
-                      <div className="absolute inset-0 rounded-full bg-green-500/30" />
-                    </motion.div>
-                  </motion.div>
-
-                  {/* Bangalore Marker */}
-                  <motion.div
-                    className="absolute top-[75%] left-[25%]"
-                    custom={3}
-                    variants={mapLocationVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                  >
-                    <motion.div
-                      className={`w-6 h-6 rounded-full bg-cyan-500 flex items-center justify-center cursor-pointer relative ${
-                        selectedLocation === 3 ? "ring-4 ring-cyan-500/30" : ""
-                      }`}
-                      onClick={() => setSelectedLocation(3)}
-                      whileHover={{ scale: 1.2 }}
-                    >
-                      <FiNavigation2 className="text-white text-xs" />
-                      <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-cyan-500/90 text-white px-2 py-1 text-xs rounded whitespace-nowrap">
-                        Bangalore, Karnataka
-                      </span>
-                      <div className="absolute inset-0 rounded-full bg-cyan-500/30" />
-                    </motion.div>
-                  </motion.div>
-
-                  {/* Chennai Marker */}
-                  <motion.div
-                    className="absolute top-[80%] left-[35%]"
-                    custom={4}
-                    variants={mapLocationVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                  >
-                    <motion.div
-                      className={`w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center cursor-pointer relative ${
-                        selectedLocation === 4 ? "ring-4 ring-purple-500/30" : ""
-                      }`}
-                      onClick={() => setSelectedLocation(4)}
-                      whileHover={{ scale: 1.2 }}
-                    >
-                      <FiNavigation2 className="text-white text-xs" />
-                      <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-purple-500/90 text-white px-2 py-1 text-xs rounded whitespace-nowrap">
-                        Chennai, Tamil Nadu
-                      </span>
-                      <div className="absolute inset-0 rounded-full bg-purple-500/30" />
-                    </motion.div>
+                    <div className="flex items-center gap-3">
+                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center bg-primary/20 text-primary`}>
+                        <FiMap className="text-xl" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-sm">
+                          {officeLocations[selectedLocation].city}, {officeLocations[selectedLocation].country}
+                        </h3>
+                        <p className="text-xs text-foreground/70">
+                          {officeLocations[selectedLocation].address}
+                        </p>
+                      </div>
+                    </div>
                   </motion.div>
                 </div>
               </div>
 
               {/* Location Details */}
-              <div className="col-span-2 p-6 border-l border-white/10">
+              <div className="col-span-2 p-6 border-l border-white/10 bg-background/40 backdrop-blur-md rounded-r-xl">
                 <motion.div
                   key={officeLocations[selectedLocation].id}
                   initial={{ opacity: 0, x: 20 }}
