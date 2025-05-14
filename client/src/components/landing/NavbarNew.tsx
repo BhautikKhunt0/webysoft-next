@@ -116,7 +116,7 @@ export default function Navbar() {
         <motion.div key={`page-${item.path}`}>
           <Link 
             to={item.path}
-            className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
+            className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-0.5 lg:px-3 relative whitespace-nowrap`}
           >
             <motion.span
               whileHover={{ scale: 1.05 }}
@@ -131,7 +131,7 @@ export default function Navbar() {
       return (
         <motion.button
           key={`section-${item.id}`}
-          className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-1 lg:px-3 relative whitespace-nowrap`}
+          className={`text-base font-medium text-foreground hover:text-primary py-2 ${index === 0 ? 'pl-0' : ''} md:px-0.5 lg:px-3 relative whitespace-nowrap`}
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
           onClick={() => navigateToSection(item.id as string)}
@@ -201,7 +201,7 @@ export default function Navbar() {
             className="w-full"
           >
             {isScrolled ? (
-              <div className="mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 md:py-3 lg:py-3 px-5 md:px-5 lg:px-8 flex items-center justify-between shadow-lg">
+              <div className="mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 md:py-3 lg:py-3 px-5 md:px-3 lg:px-8 flex items-center justify-between shadow-lg">
                 {/* Logo */}
                 <motion.button 
                   onClick={handleLogoClick}
@@ -214,7 +214,7 @@ export default function Navbar() {
                 
                 {/* Navigation - Centered (adapts for tablet) */}
                 <div className="hidden md:flex items-center justify-between flex-1">
-                  <div className="flex items-center gap-8 ml-12">
+                  <div className="flex items-center md:gap-2 lg:gap-8 md:ml-2 lg:ml-12">
                     {MENU_ITEMS.map((item, index) => renderSectionLink(item, index))}
                   </div>
                   
@@ -246,13 +246,13 @@ export default function Navbar() {
                 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center justify-between">
-                  <div className="flex items-center md:space-x-2 lg:space-x-8">
+                  <div className="flex items-center md:gap-2 lg:gap-8">
                     {MENU_ITEMS.map((item, index) => renderSectionLink(item, index))}
                   </div>
                   
                   {/* CTA Button */}
                   <motion.button 
-                    className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg ml-3 md:ml-4 lg:ml-6 whitespace-nowrap"
+                    className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg md:ml-2 lg:ml-6 whitespace-nowrap"
                     whileHover={{ 
                       scale: 1.05,
                       boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
