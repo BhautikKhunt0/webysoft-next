@@ -96,33 +96,6 @@ const officeLocations = [
     hours: "Monday-Friday: 9:00 AM - 6:00 PM",
     weekends: "Saturday: 10:00 AM - 2:00 PM (Closed on Sunday)",
   },
-  {
-    id: 3,
-    city: "Delhi",
-    country: "India",
-    address: "Connaught Place, New Delhi, Delhi NCR, 110001",
-    delay: 0.2,
-    hours: "Monday-Friday: 9:00 AM - 6:00 PM",
-    weekends: "Saturday: 10:00 AM - 2:00 PM (Closed on Sunday)",
-  },
-  {
-    id: 4,
-    city: "Bangalore",
-    country: "India",
-    address: "Koramangala, Bangalore, Karnataka, 560034",
-    delay: 0.3,
-    hours: "Monday-Friday: 9:00 AM - 6:00 PM",
-    weekends: "Saturday: 10:00 AM - 2:00 PM (Closed on Sunday)",
-  },
-  {
-    id: 5,
-    city: "Chennai",
-    country: "India",
-    address: "Anna Nagar, Chennai, Tamil Nadu, 600040",
-    delay: 0.4,
-    hours: "Monday-Friday: 9:00 AM - 6:00 PM",
-    weekends: "Saturday: 10:00 AM - 2:00 PM (Closed on Sunday)",
-  },
 ];
 
 // Quote slider data
@@ -416,11 +389,8 @@ export default function ContactSection() {
                     {officeLocations.map((location, index) => {
                       // Calculate position based on index
                       const positions = [
-                        { top: "50%", left: "25%" },
-                        { top: "60%", left: "35%" },
-                        { top: "30%", left: "45%" },
-                        { top: "70%", left: "40%" },
-                        { top: "75%", left: "50%" }
+                        { top: "55%", left: "40%" }, // Surat
+                        { top: "45%", left: "25%" }  // Mumbai
                       ];
                       
                       // Get dynamic classes based on index
@@ -437,24 +407,6 @@ export default function ContactSection() {
                               bg: selectedLocation === idx ? "bg-accent" : "bg-accent/50",
                               pulse: selectedLocation === idx ? "bg-accent/30" : "bg-accent/10",
                               ring: "ring-accent/30"
-                            };
-                          case 2:
-                            return {
-                              bg: selectedLocation === idx ? "bg-green-500" : "bg-green-500/50",
-                              pulse: selectedLocation === idx ? "bg-green-500/30" : "bg-green-500/10",
-                              ring: "ring-green-500/30"
-                            };
-                          case 3:
-                            return {
-                              bg: selectedLocation === idx ? "bg-cyan-500" : "bg-cyan-500/50",
-                              pulse: selectedLocation === idx ? "bg-cyan-500/30" : "bg-cyan-500/10",
-                              ring: "ring-cyan-500/30"
-                            };
-                          case 4:
-                            return {
-                              bg: selectedLocation === idx ? "bg-purple-500" : "bg-purple-500/50",
-                              pulse: selectedLocation === idx ? "bg-purple-500/30" : "bg-purple-500/10",
-                              ring: "ring-purple-500/30"
                             };
                           default:
                             return {
