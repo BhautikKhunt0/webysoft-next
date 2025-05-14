@@ -72,7 +72,7 @@ export default function Navbar() {
     }
   };
   
-  // Close mobile menu on navigation or resize
+  // Close mobile menu on navigation, resize, or outside click
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -80,9 +80,30 @@ export default function Navbar() {
       }
     };
     
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileMenuOpen) {
+        // Check if click is outside menu and not on the menu button
+        const target = event.target as HTMLElement;
+        const isMenuButton = target.closest('button') && 
+          (target.closest('button')?.getAttribute('aria-label')?.includes('menu') || 
+           target.closest('button')?.getAttribute('aria-label')?.includes('Close'));
+        
+        const isInsideMenu = target.closest('.mobile-menu-container');
+        
+        if (!isMenuButton && !isInsideMenu) {
+          setMobileMenuOpen(false);
+        }
+      }
+    };
+    
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+    document.addEventListener('mousedown', handleClickOutside);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [mobileMenuOpen]);
   
   // Render section link based on item
   const renderSectionLink = (item: typeof MENU_ITEMS[0], index: number) => {
@@ -244,21 +265,36 @@ export default function Navbar() {
         </AnimatePresence>
         
         {/* Mobile Menu Button - Only visible on mobile screens */}
-        <button 
-          className="md:hidden text-white focus:outline-none absolute top-1/2 right-6 transform -translate-y-1/2 z-50 p-2 bg-background/70 backdrop-blur-md rounded-md border border-white/10"
+        <motion.button 
+          animate={{ 
+            backgroundColor: isScrolled ? "rgba(0, 0, 0, 0)" : "rgba(10, 10, 10, 0.7)",
+            backdropFilter: isScrolled ? "none" : "blur(8px)",
+            borderWidth: isScrolled ? "0px" : "1px",
+            borderRadius: isScrolled ? "0px" : "6px",
+            right: isScrolled ? "16px" : "24px"
+          }}
+          transition={{ 
+            duration: 0.4, 
+            ease: [0.22, 1, 0.36, 1] 
+          }}
+          className="md:hidden text-white focus:outline-none absolute top-1/2 transform -translate-y-1/2 z-50 p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        </motion.button>
       </motion.div>
       
       {/* Mobile Navigation */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div 
-            className="md:hidden p-6 fixed top-[80px] left-0 w-full shadow-lg border-t border-white/10 bg-background/95 backdrop-blur-lg max-h-[calc(100vh-80px)] overflow-y-auto z-40"
+            className="md:hidden p-6 fixed left-0 w-full shadow-lg border-t border-white/10 bg-background/95 backdrop-blur-lg overflow-y-auto z-40 mobile-menu-container"
+            style={{ 
+              top: isScrolled ? '60px' : '80px',
+              maxHeight: isScrolled ? 'calc(100vh - 60px)' : 'calc(100vh - 80px)'
+            }}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
