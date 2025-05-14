@@ -271,13 +271,13 @@ export default function Navbar() {
             backdropFilter: isScrolled ? "none" : "blur(8px)",
             borderWidth: isScrolled ? "0px" : "1px",
             borderRadius: isScrolled ? "0px" : "6px",
-            right: isScrolled ? "16px" : "24px"
+            right: isScrolled ? "20px" : "24px"
           }}
           transition={{ 
             duration: 0.4, 
             ease: [0.22, 1, 0.36, 1] 
           }}
-          className="md:hidden text-white focus:outline-none absolute top-1/2 transform -translate-y-1/2 z-50 p-2"
+          className="md:hidden text-white focus:outline-none absolute top-1/2 transform -translate-y-1/2 z-50 p-3 pr-4"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
