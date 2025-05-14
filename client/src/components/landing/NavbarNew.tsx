@@ -3,6 +3,7 @@ import { Link, useLocation } from 'wouter';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import { useScreenSize } from '@/hooks/use-mobile';
+import { Menu, X } from 'lucide-react';
 
 // Menu items for navigation
 const MENU_ITEMS = [
@@ -118,11 +119,11 @@ export default function Navbar() {
   };
   
   // Render mobile section link
-  const renderMobileSectionLink = (item: typeof MENU_ITEMS[0]) => {
+  const renderMobileSectionLink = (item: typeof MENU_ITEMS[0], index: number) => {
     if (item.isPageLink && item.path) {
       return (
         <Link 
-          key={`mobile-${item.path}`}
+          key={`mobile-${item.path}-${index}`}
           to={item.path}
           className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10"
           onClick={() => setMobileMenuOpen(false)}
@@ -133,7 +134,7 @@ export default function Navbar() {
     } else if (item.id) {
       return (
         <button 
-          key={`mobile-${item.id}`}
+          key={`mobile-${item.id}-${index}`}
           className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10 w-full text-left"
           onClick={() => {
             setMobileMenuOpen(false);
@@ -244,12 +245,12 @@ export default function Navbar() {
         
         {/* Mobile Menu Button - Only visible on mobile screens */}
         <button 
-          className="md:hidden text-white focus:outline-none absolute top-1/2 right-6 transform -translate-y-1/2 z-50 p-2"
+          className="md:hidden text-white focus:outline-none absolute top-1/2 right-6 transform -translate-y-1/2 z-50 p-2 bg-background/70 backdrop-blur-md rounded-md border border-white/10"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
         >
-          <i className={`ri-${mobileMenuOpen ? 'close' : 'menu'}-line text-2xl`}></i>
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </motion.div>
       
@@ -257,15 +258,16 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div 
-            className="md:hidden p-6 absolute w-full left-0 shadow-lg border-t border-white/10 bg-background/90 backdrop-blur-lg"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden p-6 fixed top-[80px] left-0 w-full shadow-lg border-t border-white/10 bg-background/95 backdrop-blur-lg max-h-[calc(100vh-80px)] overflow-y-auto z-40"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
           >
             <div className="flex flex-col space-y-4 mt-2">
-              {MENU_ITEMS.map(item => renderMobileSectionLink(item))}
+              {MENU_ITEMS.map((item, index) => renderMobileSectionLink(item, index))}
               <button 
+                key="mobile-contact"
                 className="text-base font-medium hover:text-primary px-4 py-3 border-b border-white/10 w-full text-left"
                 onClick={() => {
                   setMobileMenuOpen(false);
@@ -276,6 +278,7 @@ export default function Navbar() {
               </button>
               <div className="pt-4">
                 <button 
+                  key="mobile-get-started"
                   className="bg-primary hover:bg-opacity-90 text-white px-6 py-3 rounded-full font-medium text-center block w-full"
                   onClick={() => {
                     setMobileMenuOpen(false);
