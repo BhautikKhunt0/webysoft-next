@@ -50,8 +50,8 @@ export default function Navbar() {
     if (isPortfolioPage) {
       // From portfolio page to home page section - use full URL with origin to ensure reliable navigation
       const homeUrl = window.location.origin + `/#${sectionId}`;
-      // Force a full page load to ensure the hash fragment is properly handled
-      window.location.href = homeUrl;
+      // Use replace for cleaner navigation history
+      window.location.replace(homeUrl);
     } else {
       // Already on home page, just scroll to section
       const element = document.getElementById(sectionId);

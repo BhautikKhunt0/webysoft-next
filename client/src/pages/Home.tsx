@@ -14,8 +14,12 @@ import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
 import BackgroundParticles from "@/components/landing/BackgroundParticles";
 import { motion } from "framer-motion";
+import { useHashNavigation } from "@/hooks/useHashNavigation";
 
 export default function Home() {
+  // Use the hash navigation hook to handle section scrolling
+  useHashNavigation();
+  
   // Update document metadata
   useEffect(() => {
     document.title = "WebySoft - Turn Ideas Into High-Converting Experiences";
