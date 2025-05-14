@@ -191,82 +191,76 @@ export default function Navbar() {
           ease: [0.22, 1, 0.36, 1] // custom bezier curve for smooth transition
         }}
       >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={isScrolled ? "scrolled" : "top"}
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="w-full"
+        {/* Single navbar container with layout transitions */}
+        <motion.div 
+          className="w-full"
+          layout
+          transition={{ 
+            layout: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+            default: { duration: 0.4 }
+          }}
+        >
+          <motion.div 
+            className={`
+              ${isScrolled ? 
+                'mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 md:py-3 lg:py-3 px-5 md:px-3 lg:px-8 shadow-lg' : 
+                ''}
+              flex items-center justify-between
+            `}
+            layout
+            transition={{ 
+              layout: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+              default: { duration: 0.4 }
+            }}
           >
-            {isScrolled ? (
-              <div className="mx-auto max-w-6xl rounded-full border border-white/10 bg-background/80 backdrop-blur-lg py-3 md:py-3 lg:py-3 px-5 md:px-3 lg:px-8 flex items-center justify-between shadow-lg">
-                {/* Logo */}
-                <motion.button 
-                  onClick={handleLogoClick}
-                  className="text-xl font-display font-bold text-glow text-white flex items-center mr-3 md:mr-2 lg:mr-6 cursor-pointer"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  Weby<span className="text-primary">Soft</span>
-                </motion.button>
-                
-                {/* Navigation - Centered (adapts for tablet) */}
-                <div className="hidden md:flex items-center justify-between flex-1">
-                  <div className="flex items-center md:gap-2 lg:gap-8 md:ml-2 lg:ml-12">
-                    {MENU_ITEMS.map((item, index) => renderSectionLink(item, index))}
-                  </div>
-                  
-                  {/* CTA Button - For tablets and above - Always visible */}
-                  <motion.button 
-                    className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg whitespace-nowrap"
-                    whileHover={{ 
-                      scale: 1.05,
-                      boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
-                    }}
-                    transition={{ duration: 0.2 }}
-                    onClick={handleContactClick}
-                  >
-                    Get Started
-                  </motion.button>
-                </div>
-              </div>
-            ) : (
-              <div className="flex items-center justify-between">
-                {/* Logo */}
-                <motion.button
-                  onClick={handleLogoClick}
-                  className="text-2xl font-display font-bold text-glow text-white cursor-pointer"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  Weby<span className="text-primary">Soft</span>
-                </motion.button>
-                
-                {/* Desktop Navigation */}
-                <div className="hidden md:flex items-center justify-between">
-                  <div className="flex items-center md:gap-2 lg:gap-8">
-                    {MENU_ITEMS.map((item, index) => renderSectionLink(item, index))}
-                  </div>
-                  
-                  {/* CTA Button */}
-                  <motion.button 
-                    className="bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg md:ml-2 lg:ml-6 whitespace-nowrap"
-                    whileHover={{ 
-                      scale: 1.05,
-                      boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
-                    }}
-                    transition={{ duration: 0.2 }}
-                    onClick={handleContactClick}
-                  >
-                    Get Started
-                  </motion.button>
-                </div>
-              </div>
-            )}
+            {/* Logo - with layout animation */}
+            <motion.button
+              onClick={handleLogoClick}
+              className={`font-display font-bold text-glow text-white cursor-pointer
+                ${isScrolled ? 
+                  'text-xl flex items-center mr-3 md:mr-2 lg:mr-6' : 
+                  'text-2xl'
+                }`}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+              layout
+            >
+              Weby<span className="text-primary">Soft</span>
+            </motion.button>
+            
+            {/* Navigation - with layout animation */}
+            <motion.div 
+              className="hidden md:flex items-center justify-between"
+              layout
+              transition={{ 
+                layout: { duration: 0.5, ease: [0.22, 1, 0.36, 1] }
+              }}
+            >
+              <motion.div 
+                className={`flex items-center md:gap-2 lg:gap-8 ${isScrolled ? 'md:ml-2 lg:ml-12' : ''}`}
+                layout
+              >
+                {MENU_ITEMS.map((item, index) => renderSectionLink(item, index))}
+              </motion.div>
+              
+              {/* CTA Button */}
+              <motion.button 
+                className={`bg-primary hover:bg-primary/90 text-white px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full font-medium shadow-lg whitespace-nowrap
+                  ${isScrolled ? '' : 'md:ml-2 lg:ml-6'}
+                `}
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.4)" 
+                }}
+                transition={{ duration: 0.2 }}
+                onClick={handleContactClick}
+                layout
+              >
+                Get Started
+              </motion.button>
+            </motion.div>
           </motion.div>
-        </AnimatePresence>
+        </motion.div>
         
         {/* Mobile Menu Button - Only visible on mobile screens */}
         <motion.button 
