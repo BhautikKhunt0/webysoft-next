@@ -183,7 +183,7 @@ export default function HeroSection() {
                       }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <div className="aspect-[4/3] rounded-xl border border-primary/30 relative overflow-hidden shadow-lg bg-gradient-to-br from-background to-secondary/30">
+                      <div className="aspect-[4/3] rounded-lg md:rounded-xl border border-primary/30 relative overflow-hidden shadow-lg bg-gradient-to-br from-background to-secondary/30">
                         <img 
                           src={item.imageUrl}
                           alt={item.title}
@@ -192,18 +192,18 @@ export default function HeroSection() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
 
                         {/* Category Badge */}
-                        <div className="absolute top-3 left-3">
+                        <div className="absolute top-2 md:top-3 left-2 md:left-3">
                           <span className="px-2 py-1 bg-primary/90 backdrop-blur-sm text-white text-xs font-medium rounded-full">
                             {item.type}
                           </span>
                         </div>
 
                         {/* Content */}
-                        <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
+                        <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 z-10">
                           <p className="text-sm font-bold text-white mb-1 group-hover:text-accent transition-colors">
                             {item.title}
                           </p>
-                          <p className="text-xs text-white/80 mb-2 line-clamp-2">
+                          <p className="text-xs text-white/80 mb-2 line-clamp-2 hidden sm:block">
                             {item.description}
                           </p>
                           <div className="flex items-center justify-between">
@@ -228,10 +228,10 @@ export default function HeroSection() {
               </div>
 
               {/* Enhanced CTA Button */}
-              <div className="mt-8 text-center">
+              <div className="mt-6 md:mt-8 text-center">
                 <Link href="/portfolio">
                   <motion.button
-                    className="relative px-8 py-3 bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-full shadow-lg overflow-hidden group"
+                    className="relative px-6 md:px-8 py-2.5 md:py-3 bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-full shadow-lg overflow-hidden group text-sm md:text-base"
                     whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
                     whileTap={{ scale: 0.95 }}
                     initial={{ opacity: 0, y: 20 }}
@@ -241,7 +241,7 @@ export default function HeroSection() {
                     <span className="relative z-10 flex items-center space-x-2">
                       <span>Explore Full Portfolio</span>
                       <motion.svg 
-                        className="w-4 h-4" 
+                        className="w-3.5 h-3.5 md:w-4 md:h-4" 
                         fill="none" 
                         stroke="currentColor" 
                         viewBox="0 0 24 24"
