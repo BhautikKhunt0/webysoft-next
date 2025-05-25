@@ -136,12 +136,12 @@ export default function HeroSection() {
                   <span className="text-xs text-green-500 font-medium">Online</span>
                 </div>
               </div>
-              
+
               <div className="mt-3 flex justify-center">
                 <div className="bg-background/80 backdrop-blur-sm rounded-full px-4 py-2 border border-primary/20">
                   <span className="text-xs font-mono text-foreground/70">
                     <span className="text-primary font-semibold">webysoft</span>
-                    .digital
+                    .com
                     <span className="text-accent">/portfolio</span>
                   </span>
                 </div>
@@ -161,7 +161,7 @@ export default function HeroSection() {
                 </motion.h3>
                 <p className="text-sm text-foreground/70">Real projects, real results across multiple industries</p>
               </div>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 {showcaseItems.map((item, index) => (
                   <a 
@@ -190,14 +190,14 @@ export default function HeroSection() {
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                        
+
                         {/* Category Badge */}
                         <div className="absolute top-3 left-3">
                           <span className="px-2 py-1 bg-primary/90 backdrop-blur-sm text-white text-xs font-medium rounded-full">
                             {item.type}
                           </span>
                         </div>
-                        
+
                         {/* Content */}
                         <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
                           <p className="text-sm font-bold text-white mb-1 group-hover:text-accent transition-colors">
@@ -226,7 +226,7 @@ export default function HeroSection() {
                   </a>
                 ))}
               </div>
-              
+
               {/* Enhanced CTA Button */}
               <div className="mt-8 text-center">
                 <Link href="/portfolio">
