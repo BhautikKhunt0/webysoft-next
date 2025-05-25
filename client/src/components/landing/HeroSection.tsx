@@ -106,39 +106,39 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <div className="glass rounded-2xl overflow-hidden border border-primary/20 shadow-2xl royal-border bg-gradient-to-br from-background/95 to-secondary/30 backdrop-blur-md">
+          <div className="glass rounded-xl md:rounded-2xl overflow-hidden border border-primary/20 shadow-2xl royal-border bg-gradient-to-br from-background/95 to-secondary/30 backdrop-blur-md">
             {/* Modern Header with Animated Dots */}
-            <div className="relative bg-gradient-to-r from-secondary/80 to-primary/10 p-4 border-b border-primary/20">
+            <div className="relative bg-gradient-to-r from-secondary/80 to-primary/10 p-3 md:p-4 border-b border-primary/20">
               <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <div className="flex space-x-2">
+                <div className="flex items-center space-x-2 md:space-x-3">
+                  <div className="flex space-x-1.5 md:space-x-2">
                     <motion.div 
-                      className="w-3 h-3 rounded-full bg-red-500"
+                      className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-red-500"
                       animate={{ scale: [1, 1.2, 1] }}
                       transition={{ duration: 2, repeat: Infinity, delay: 0 }}
                     />
                     <motion.div 
-                      className="w-3 h-3 rounded-full bg-yellow-500"
+                      className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-500"
                       animate={{ scale: [1, 1.2, 1] }}
                       transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
                     />
                     <motion.div 
-                      className="w-3 h-3 rounded-full bg-green-500"
+                      className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-green-500"
                       animate={{ scale: [1, 1.2, 1] }}
                       transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}
                     />
                   </div>
-                  <div className="h-4 w-px bg-primary/30"></div>
-                  <span className="text-xs font-medium text-foreground/60">Live Portfolio</span>
+                  <div className="h-3 md:h-4 w-px bg-primary/30"></div>
+                  <span className="text-xs font-medium text-foreground/60 hidden sm:block">Live Portfolio</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <div className="flex items-center space-x-1.5 md:space-x-2">
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-green-500 rounded-full animate-pulse"></div>
                   <span className="text-xs text-green-500 font-medium">Online</span>
                 </div>
               </div>
 
-              <div className="mt-3 flex justify-center">
-                <div className="bg-background/80 backdrop-blur-sm rounded-full px-4 py-2 border border-primary/20">
+              <div className="mt-2 md:mt-3 flex justify-center">
+                <div className="bg-background/80 backdrop-blur-sm rounded-full px-3 py-1.5 md:px-4 md:py-2 border border-primary/20">
                   <span className="text-xs font-mono text-foreground/70">
                     <span className="text-primary font-semibold">webysoft</span>
                     .com
@@ -149,20 +149,20 @@ export default function HeroSection() {
             </div>
 
             {/* Enhanced Projects Showcase */}
-            <div className="p-6 space-y-6">
+            <div className="p-4 md:p-6 space-y-4 md:space-y-6">
               <div className="text-center">
                 <motion.h3 
-                  className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2"
+                  className="text-lg md:text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
                 >
                   Latest Success Stories
                 </motion.h3>
-                <p className="text-sm text-foreground/70">Real projects, real results across multiple industries</p>
+                <p className="text-xs md:text-sm text-foreground/70">Real projects, real results across multiple industries</p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                 {showcaseItems.map((item, index) => (
                   <a 
                     key={item.id} 
