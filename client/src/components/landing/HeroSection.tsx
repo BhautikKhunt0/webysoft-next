@@ -164,7 +164,13 @@ export default function HeroSection() {
               
               <div className="grid grid-cols-2 gap-4">
                 {showcaseItems.map((item, index) => (
-                  <Link key={item.id} href="/portfolio">
+                  <a 
+                    key={item.id} 
+                    href={item.previewLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
                     <motion.div 
                       className="relative group cursor-pointer"
                       initial={{ opacity: 0, y: 30 }}
@@ -217,7 +223,7 @@ export default function HeroSection() {
                         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-primary/20 to-accent/20 rounded-xl"></div>
                       </div>
                     </motion.div>
-                  </Link>
+                  </a>
                 ))}
               </div>
               
