@@ -200,12 +200,10 @@ export default function HeroSection() {
 
                         {/* Content */}
                         <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 z-10">
-                          <p className="text-sm font-bold text-white mb-1 group-hover:text-accent transition-colors">
-                            {item.title}
-                          </p>
-
                           <div className="flex items-center justify-between">
-
+                            <p className="text-sm font-bold text-white group-hover:text-accent transition-colors">
+                              {item.title}
+                            </p>
                             <motion.div 
                               className="w-6 h-6 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-accent/80 transition-colors"
                               whileHover={{ rotate: 45 }}
