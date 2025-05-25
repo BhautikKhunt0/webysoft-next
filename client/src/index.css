@@ -206,13 +206,4 @@
   .decorated-heading::after {
     left: calc(100% + 20px);
   }
-
-  /* Custom utilities for animated backgrounds */
-  .bg-size-200 {
-    background-size: 200% 200%;
-  }
-  
-  .bg-pos-0 {
-    background-position: 0% 50%;
-  }
 }

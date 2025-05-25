@@ -100,208 +100,88 @@ export default function HeroSection() {
         </div>
 
         {/* 3D Mockup Device */}
-        {/* Creative Projects Showcase */}
         <motion.div
-          className="relative max-w-7xl mx-auto"
-          initial={{ opacity: 0, y: 60 }}
+          className="relative max-w-4xl mx-auto card-3d"
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
         >
-          {/* Floating Elements Background */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <motion.div
-              className="absolute -top-10 left-1/4 w-20 h-20 bg-primary/10 rounded-full blur-xl"
-              animate={{ 
-                y: [0, -20, 0],
-                x: [0, 10, 0],
-                scale: [1, 1.1, 1]
-              }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <motion.div
-              className="absolute -bottom-10 right-1/4 w-32 h-32 bg-accent/10 rounded-full blur-xl"
-              animate={{ 
-                y: [0, 20, 0],
-                x: [0, -15, 0],
-                scale: [1, 0.9, 1]
-              }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            />
-          </div>
-
-          {/* Main Content */}
-          <div className="relative z-10">
-            {/* Header with Animated Text */}
-            <motion.div 
-              className="text-center mb-12"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1 }}
-            >
-              <div className="relative inline-block">
-                <motion.h2 
-                  className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent bg-size-200 bg-pos-0"
-                  animate={{ backgroundPosition: ['0%', '100%', '0%'] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-                >
-                  Our Digital Masterpieces
-                </motion.h2>
-                <motion.div 
-                  className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 bg-gradient-to-r from-transparent via-primary to-transparent"
-                  initial={{ width: 0 }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 0.8, delay: 1.3 }}
-                />
+          <div className="glass rounded-xl overflow-hidden border border-primary/20 shadow-2xl royal-border">
+            <div className="bg-secondary p-3 border-b border-primary/20 flex items-center">
+              <div className="flex space-x-2">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
               </div>
-              <motion.p 
-                className="mt-4 text-lg text-foreground/70"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.5 }}
-              >
-                Transforming visions into digital reality
-              </motion.p>
-            </motion.div>
-
-            {/* Creative Grid Layout */}
-            <div className="relative">
-              {/* Main Featured Project - Large Center */}
-              <motion.div
-                className="relative mb-8"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
-              >
-                <Link href="/portfolio">
-                  <motion.div 
-                    className="relative group cursor-pointer max-w-3xl mx-auto"
-                    whileHover={{ y: -10 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="relative overflow-hidden rounded-3xl border border-primary/20 shadow-2xl">
-                      {/* Glow Effect */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      
-                      {/* Featured Project */}
-                      {showcaseItems[0] && (
-                        <>
-                          <div className="relative aspect-[16/10] overflow-hidden">
-                            <img 
-                              src={showcaseItems[0].imageUrl}
-                              alt={showcaseItems[0].title}
-                              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                          </div>
-                          
-                          {/* Project Info Overlay */}
-                          <motion.div 
-                            className="absolute bottom-0 left-0 right-0 p-8 text-white"
-                            initial={{ y: 20, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 1.8 }}
-                          >
-                            <span className="inline-block px-3 py-1 bg-primary/20 backdrop-blur-sm rounded-full text-sm font-medium mb-3">
-                              Featured Project
-                            </span>
-                            <h3 className="text-2xl font-bold mb-2">{showcaseItems[0].title}</h3>
-                            <p className="text-white/80 mb-4">{showcaseItems[0].description}</p>
-                            <div className="flex items-center justify-between">
-                              <span className="text-primary font-medium">{showcaseItems[0].type}</span>
-                              <motion.div 
-                                className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors"
-                                whileHover={{ scale: 1.1 }}
-                              >
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                </svg>
-                              </motion.div>
-                            </div>
-                          </motion.div>
-                        </>
-                      )}
-                    </div>
-                  </motion.div>
-                </Link>
-              </motion.div>
-
-              {/* Secondary Projects Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                {showcaseItems.slice(1).map((item, index) => (
-                  <motion.div
-                    key={item.id}
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 1.5 + (index * 0.2) }}
-                  >
-                    <Link href="/portfolio">
-                      <motion.div 
-                        className="relative group cursor-pointer"
-                        whileHover={{ y: -5 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <div className="relative overflow-hidden rounded-2xl border border-primary/10 shadow-xl bg-gradient-to-br from-background/50 to-secondary/30 backdrop-blur-sm">
-                          <div className="aspect-[4/3] overflow-hidden">
-                            <img 
-                              src={item.imageUrl}
-                              alt={item.title}
-                              className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                          </div>
-                          
-                          <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                            <h4 className="font-semibold mb-1 truncate">{item.title}</h4>
-                            <p className="text-xs text-white/70 truncate">{item.type}</p>
-                          </div>
-                          
-                          <div className="absolute top-3 right-3 w-8 h-8 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                          </div>
+              <div className="mx-auto bg-background/50 rounded-full px-4 py-1 text-xs text-foreground/70">
+                <span className="text-primary">www.</span>youramazingsite
+                <span className="text-primary">.com</span>
+              </div>
+            </div>
+            {/* Projects Showcase Section */}
+            <div className="p-6 bg-gradient-to-br from-background/80 to-secondary/50">
+              <div className="text-center mb-6">
+                <h3 className="text-xl font-bold text-primary mb-2">Our Latest Projects</h3>
+                <p className="text-sm text-foreground/70">Crafting digital excellence across industries</p>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4">
+                {showcaseItems.map((item, index) => (
+                  <Link key={item.id} href="/portfolio">
+                    <motion.div 
+                      className="relative group cursor-pointer"
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <div className="aspect-video rounded-lg border border-primary/30 relative overflow-hidden">
+                        <img 
+                          src={item.imageUrl}
+                          alt={item.title}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                        <div className="absolute bottom-0 left-0 right-0 p-3 z-10">
+                          <p className="text-xs font-semibold text-white truncate">{item.title}</p>
+                          <p className="text-xs text-white/70 truncate">{item.type}</p>
                         </div>
-                      </motion.div>
-                    </Link>
-                  </motion.div>
+                        <div className="absolute top-2 right-2 w-6 h-6 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                          <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </Link>
                 ))}
               </div>
-
-              {/* Call to Action */}
-              <motion.div 
-                className="text-center"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 2.2 }}
-              >
+              
+              <div className="mt-6 text-center">
                 <Link href="/portfolio">
                   <motion.button
-                    className="group relative px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-full shadow-lg overflow-hidden"
+                    className="px-6 py-2 bg-primary/20 border border-primary/30 rounded-full text-sm font-medium text-primary hover:bg-primary/30 transition-colors"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <span className="relative z-10 flex items-center gap-2">
-                      Explore All Projects
-                      <motion.svg 
-                        className="w-5 h-5" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                      </motion.svg>
-                    </span>
-                    <motion.div 
-                      className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      initial={false}
-                    />
+                    View All Projects
                   </motion.button>
                 </Link>
-              </motion.div>
+              </div>
             </div>
           </div>
+
+          {/* Decorative corner accents */}
+          <motion.div
+            className="absolute -top-2 -left-2 w-10 h-10 border-t-2 border-l-2 border-accent"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 1.2 }}
+          ></motion.div>
+          <motion.div
+            className="absolute -bottom-2 -right-2 w-10 h-10 border-b-2 border-r-2 border-accent"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 1.2 }}
+          ></motion.div>
         </motion.div>
 
         {/* Scroll Indicator - Now Clickable */}
