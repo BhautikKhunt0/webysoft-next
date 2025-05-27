@@ -151,7 +151,7 @@ export default function PricingSection() {
                   className="absolute top-1.5 bottom-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-lg"
                   initial={false}
                   animate={{
-                    width: isYearly ? '55%' : '45%',
+                    width: isYearly ? 'calc(55% - 6px)' : '45%',
                     left: isYearly ? '45%' : '6px',
                   }}
                   transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
