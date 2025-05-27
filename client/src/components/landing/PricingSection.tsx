@@ -175,10 +175,8 @@ export default function PricingSection() {
                 <motion.div
                   className="absolute inset-y-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-lg"
                   animate={{
-                    x: isYearly ? '100%' : '0%'
-                  }}
-                  style={{
-                    width: '50%'
+                    x: isYearly ? '40%' : '0%',
+                    width: isYearly ? '60%' : '40%'
                   }}
                   transition={{ 
                     type: "spring", 
