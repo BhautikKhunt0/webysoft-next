@@ -175,8 +175,10 @@ export default function PricingSection() {
                 <motion.div
                   className="absolute inset-y-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-lg"
                   animate={{
-                    x: isYearly ? '50%' : '0%',
-                    width: isYearly ? '50%' : '50%'
+                    x: isYearly ? '100%' : '0%'
+                  }}
+                  style={{
+                    width: '50%'
                   }}
                   transition={{ 
                     type: "spring", 
@@ -264,6 +266,7 @@ export default function PricingSection() {
 
                   {/* CTA Button */}
                   <motion.button
+                    onClick={() => window.open("https://wa.me/918849990393", "_blank")}
                     className={`w-full bg-gradient-to-r ${colors.gradient} hover:shadow-xl hover:${colors.shadow} text-white font-semibold py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group`}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}

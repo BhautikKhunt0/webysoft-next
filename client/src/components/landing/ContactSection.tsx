@@ -142,13 +142,13 @@ export default function ContactSection() {
             })}
           </div>
 
-          {/* Quick Contact Buttons */}
+          {/* Quick Contact Button */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            className="flex justify-center items-center mb-12"
           >
             <motion.button
               onClick={() => window.open("https://wa.me/918849990393", "_blank")}
@@ -158,16 +158,6 @@ export default function ContactSection() {
             >
               <FaWhatsapp className="w-5 h-5" />
               Start WhatsApp Chat
-            </motion.button>
-            
-            <motion.button
-              onClick={() => window.open("https://linkedin.com/company/webysoft", "_blank")}
-              className="flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/25"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <FaLinkedin className="w-5 h-5" />
-              Connect on LinkedIn
             </motion.button>
           </motion.div>
 

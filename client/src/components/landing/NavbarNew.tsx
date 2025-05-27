@@ -124,7 +124,7 @@ export default function Navbar() {
           {/* Professional CTA Button - Desktop */}
           {!isTabletOrMobile && (
             <motion.button
-              onClick={() => navigateToSection('contact')}
+              onClick={() => window.open("https://wa.me/918849990393", "_blank")}
               className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/25"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

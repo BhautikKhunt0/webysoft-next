@@ -183,29 +183,18 @@ export default function Footer() {
               ))}
             </ul>
 
-            {/* Social Links */}
+            {/* Contact Action */}
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
-              <div className="flex gap-4">
-                {[
-                  { icon: FaWhatsapp, href: 'https://wa.me/918849990393', color: 'text-green-400 hover:text-green-300' },
-                  { icon: FaLinkedin, href: 'https://linkedin.com/company/webysoft', color: 'text-blue-400 hover:text-blue-300' },
-                  { icon: FaTwitter, href: 'https://twitter.com/webysoft', color: 'text-blue-400 hover:text-blue-300' },
-                  { icon: FaGithub, href: 'https://github.com/webysoft', color: 'text-gray-400 hover:text-gray-300' }
-                ].map((social, index) => (
-                  <motion.a
-                    key={index}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg ${social.color} transition-all duration-300 hover:bg-slate-700/50 hover:scale-110`}
-                    whileHover={{ y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </motion.a>
-                ))}
-              </div>
+              <h4 className="text-lg font-semibold text-white mb-4">Get In Touch</h4>
+              <motion.button
+                onClick={() => window.open("https://wa.me/918849990393", "_blank")}
+                className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl hover:shadow-green-500/25"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <FaWhatsapp className="w-5 h-5" />
+                Start WhatsApp Chat
+              </motion.button>
             </div>
           </motion.div>
         </div>
