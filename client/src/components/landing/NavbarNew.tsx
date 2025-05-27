@@ -45,6 +45,7 @@ export default function Navbar() {
   
   // Better navigation handling to sections
   const navigateToSection = (sectionId: string) => {
+    setMobileMenuOpen(false);
     if (isPortfolioPage) {
       window.location.href = `/#${sectionId}`;
     } else {
@@ -56,8 +57,23 @@ export default function Navbar() {
         });
       }
     }
-    setMobileMenuOpen(false);
   };
+
+  // Close mobile menu when location changes or window resizes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setMobileMenuOpen(false);
+      }
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <motion.nav
@@ -160,7 +176,7 @@ export default function Navbar() {
               transition={{ duration: 0.3 }}
               className="overflow-hidden bg-slate-900/95 backdrop-blur-md border-t border-slate-700/50"
             >
-              <div className="py-6 space-y-4">
+              <div className="py-6 px-4 space-y-2">
                 {MENU_ITEMS.map((item, index) => (
                   item.isPageLink ? (
                     <Link key={item.path} to={item.path}>
@@ -168,14 +184,14 @@ export default function Navbar() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.1 }}
-                        className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-slate-800/50 rounded-lg font-medium transition-all duration-200"
+                        className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-slate-800/50 rounded-lg font-medium transition-all duration-200 cursor-pointer"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.label}
                       </motion.div>
                     </Link>
                   ) : (
-                    <motion.button
+                    <motion.div
                       key={item.id}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -184,12 +200,11 @@ export default function Navbar() {
                         if (item.id) {
                           navigateToSection(item.id);
                         }
-                        setMobileMenuOpen(false);
                       }}
-                      className="block w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-slate-800/50 rounded-lg font-medium transition-all duration-200"
+                      className="block w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-slate-800/50 rounded-lg font-medium transition-all duration-200 cursor-pointer"
                     >
                       {item.label}
-                    </motion.button>
+                    </motion.div>
                   )
                 ))}
                 
