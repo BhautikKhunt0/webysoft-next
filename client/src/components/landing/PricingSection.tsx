@@ -170,15 +170,13 @@ export default function PricingSection() {
                     Save 17%
                   </span>
                 </button>
-                
+
                 {/* Sliding Background */}
                 <motion.div
                   className="absolute inset-y-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-lg"
                   animate={{
-                    x: isYearly ? '100%' : '0%'
-                  }}
-                  style={{
-                    width: '50%'
+                    x: isYearly ? '50%' : '0%',
+                    width: isYearly ? '50%' : '50%'
                   }}
                   transition={{ 
                     type: "spring", 
@@ -196,7 +194,7 @@ export default function PricingSection() {
           {plans.map((plan, index) => {
             const colors = colorClasses[plan.color as keyof typeof colorClasses];
             const price = isYearly ? plan.yearlyPrice : plan.monthlyPrice;
-            
+
             return (
               <motion.div
                 key={index}
@@ -225,13 +223,13 @@ export default function PricingSection() {
                     ? 'border-indigo-500/50 shadow-indigo-500/20' 
                     : 'hover:border-slate-600/50'
                 } transition-all duration-300`}>
-                  
+
                   {/* Plan Header */}
                   <div className="text-center mb-8">
                     <div className={`inline-flex p-4 rounded-xl ${colors.bg} ${colors.border} border mb-4`}>
                       <plan.icon className={`w-8 h-8 ${colors.text}`} />
                     </div>
-                    
+
                     <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
                     <p className="text-gray-400 text-sm leading-relaxed">{plan.description}</p>
                   </div>
