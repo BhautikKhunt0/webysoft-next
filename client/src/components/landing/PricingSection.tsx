@@ -159,13 +159,13 @@ export default function PricingSection() {
                 </button>
                 <button
                   onClick={() => setIsYearly(true)}
-                  className={`relative z-10 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center gap-2 ${
+                  className={`relative z-10 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center gap-3 ${
                     isYearly 
                       ? 'text-white' 
                       : 'text-gray-400 hover:text-gray-300'
                   }`}
                 >
-                  Yearly
+                  <span className="pr-1">Yearly</span>
                   <span className="bg-green-500/20 border border-green-500/30 text-green-400 text-xs px-2 py-0.5 rounded-full">
                     Save 17%
                   </span>
