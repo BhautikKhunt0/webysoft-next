@@ -427,7 +427,7 @@ export default function PricingSection() {
           })}
         </div>
 
-        {/* Additional Trust Section */}
+        {/* Enhanced Trust Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -435,27 +435,44 @@ export default function PricingSection() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-20 text-center"
         >
-          <div className="bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              All Plans Include Enterprise Standards
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
-              <div className="text-center">
-                <Shield className="w-8 h-8 text-green-400 mx-auto mb-2" />
-                <p className="text-sm text-gray-300">ISO Security</p>
-              </div>
-              <div className="text-center">
-                <Award className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
-                <p className="text-sm text-gray-300">Quality Certified</p>
-              </div>
-              <div className="text-center">
-                <Crown className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-                <p className="text-sm text-gray-300">Premium Support</p>
-              </div>
-              <div className="text-center">
-                <Check className="w-8 h-8 text-blue-400 mx-auto mb-2" />
-                <p className="text-sm text-gray-300">Guaranteed ROI</p>
-              </div>
+          <div className="relative bg-slate-800/40 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-700/10 via-transparent to-slate-800/10"></div>
+            
+            <motion.h3 
+              className="text-3xl font-bold text-white mb-6 relative z-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1 }}
+            >
+              All Plans Include <span className="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">Enterprise Standards</span>
+            </motion.h3>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-8 relative z-10">
+              {[
+                { icon: Shield, text: "ISO Security", color: "text-green-400", bg: "bg-green-500/10", border: "border-green-500/20" },
+                { icon: Award, text: "Quality Certified", color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20" },
+                { icon: Crown, text: "Premium Support", color: "text-purple-400", bg: "bg-purple-500/10", border: "border-purple-500/20" },
+                { icon: Check, text: "Guaranteed ROI", color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20" }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="text-center group"
+                  initial={{ opacity: 0, y: 30, scale: 0.8 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 1.2 + index * 0.1, type: "spring", bounce: 0.3 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                >
+                  <motion.div 
+                    className={`inline-flex p-4 rounded-xl ${item.bg} ${item.border} border mb-3 group-hover:shadow-lg transition-all duration-300`}
+                    whileHover={{ rotate: 5 }}
+                  >
+                    <item.icon className={`w-8 h-8 ${item.color}`} />
+                  </motion.div>
+                  <p className="text-sm text-gray-300 group-hover:text-white transition-colors font-medium">{item.text}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </motion.div>
