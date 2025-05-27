@@ -151,8 +151,8 @@ export default function PricingSection() {
                   className="absolute top-1.5 bottom-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-lg"
                   initial={false}
                   animate={{
-                    left: isYearly ? '50%' : '6px',
-                    right: isYearly ? '6px' : '50%',
+                    width: isYearly ? 'calc(50% - 3px)' : 'calc(50% - 3px)',
+                    left: isYearly ? 'calc(50% + 3px)' : '6px',
                   }}
                   transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
                 />
@@ -160,7 +160,7 @@ export default function PricingSection() {
                 {/* Monthly Button */}
                 <motion.button
                   onClick={() => setIsYearly(false)}
-                  className={`relative z-10 px-8 py-4 rounded-lg font-semibold text-sm transition-all duration-300 ${
+                  className={`relative z-10 px-8 py-4 rounded-lg font-semibold text-sm transition-all duration-300 flex-1 ${
                     !isYearly 
                       ? 'text-white' 
                       : 'text-gray-400 hover:text-gray-300'
@@ -174,7 +174,7 @@ export default function PricingSection() {
                 {/* Yearly Button */}
                 <motion.button
                   onClick={() => setIsYearly(true)}
-                  className={`relative z-10 px-8 py-4 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center gap-3 ${
+                  className={`relative z-10 px-8 py-4 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-3 flex-1 ${
                     isYearly 
                       ? 'text-white' 
                       : 'text-gray-400 hover:text-gray-300'
