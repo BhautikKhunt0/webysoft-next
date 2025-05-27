@@ -136,7 +136,6 @@ export default function PricingSection() {
             Choose the perfect investment level for your enterprise needs. All plans include ISO-certified quality, enterprise security, and professional support.
           </motion.p>
 
-          {/* Billing Toggle */}
           {/* Enhanced Pricing Toggle */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -145,47 +144,51 @@ export default function PricingSection() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex items-center justify-center mb-12"
           >
-            <div className="bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-xl p-2 shadow-2xl">
-              <div className="relative flex items-center">
+            <div className="bg-slate-800/60 backdrop-blur-xl border border-slate-600/40 rounded-2xl p-1.5 shadow-2xl">
+              <div className="relative flex items-center gap-1">
+                {/* Sliding Background */}
+                <motion.div
+                  className="absolute inset-y-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-xl"
+                  animate={{
+                    x: isYearly ? '100%' : '0%',
+                    width: isYearly ? 'calc(100% - 0.375rem)' : 'calc(50% - 0.25rem)'
+                  }}
+                  transition={{ 
+                    type: "spring", 
+                    stiffness: 400, 
+                    damping: 35,
+                    mass: 0.8
+                  }}
+                />
+                
                 <button
                   onClick={() => setIsYearly(false)}
-                  className={`relative z-10 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 ${
+                  className={`relative z-10 px-8 py-4 rounded-xl font-semibold text-sm transition-all duration-300 whitespace-nowrap ${
                     !isYearly 
-                      ? 'text-white' 
-                      : 'text-gray-400 hover:text-gray-300'
+                      ? 'text-white shadow-lg' 
+                      : 'text-gray-400 hover:text-gray-200'
                   }`}
                 >
                   Monthly
                 </button>
+                
                 <button
                   onClick={() => setIsYearly(true)}
-                  className={`relative z-10 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center gap-3 ml-2 ${
+                  className={`relative z-10 px-6 py-4 rounded-xl font-semibold text-sm transition-all duration-300 flex items-center gap-2 whitespace-nowrap ${
                     isYearly 
-                      ? 'text-white' 
-                      : 'text-gray-400 hover:text-gray-300'
+                      ? 'text-white shadow-lg' 
+                      : 'text-gray-400 hover:text-gray-200'
                   }`}
                 >
-                  <span className="pr-1">Yearly</span>
-                  <span className="bg-green-500/20 border border-green-500/30 text-green-400 text-xs px-2 py-0.5 rounded-full">
+                  <span>Yearly</span>
+                  <motion.span 
+                    className="bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs px-2.5 py-1 rounded-full font-medium"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
                     Save 17%
-                  </span>
+                  </motion.span>
                 </button>
-                
-                {/* Sliding Background */}
-                <motion.div
-                  className="absolute inset-y-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-lg"
-                  animate={{
-                    x: isYearly ? '100%' : '0%'
-                  }}
-                  style={{
-                    width: '50%'
-                  }}
-                  transition={{ 
-                    type: "spring", 
-                    stiffness: 300, 
-                    damping: 30 
-                  }}
-                />
               </div>
             </div>
           </motion.div>
