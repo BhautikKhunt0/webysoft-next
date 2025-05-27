@@ -1,577 +1,367 @@
-import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import GlassCard from "./GlassCard";
-import { Button } from "@/components/ui/button";
-import { useToast } from "@/hooks/use-toast";
-import { FiMap, FiMail, FiClock, FiGlobe, FiNavigation2, FiMessageCircle, FiPhone } from "react-icons/fi";
-import { FaWhatsapp } from "react-icons/fa";
-import {
-  BiSolidTimeFive,
-  BiSolidQuoteLeft,
-  BiSolidQuoteRight,
-} from "react-icons/bi";
+import { Mail, Phone, MapPin, Clock, Shield, Award, Send, CheckCircle } from "lucide-react";
+import { FaWhatsapp, FaLinkedin } from "react-icons/fa";
+import { useState } from "react";
 
-// Array of contact methods with animations
-const contactMethods = [
+const contactInfo = [
   {
-    id: 1,
-    title: "Email",
-    description: "For general inquiries and project discussions",
-    info: (
-      <div className="flex flex-col">
-        <span
-          className="cursor-pointer hover:underline"
-          onClick={() => (window.location.href = "mailto:info@webysoft.com")}
-        >
-          info@webysoft.com
-        </span>
-        <span
-          className="cursor-pointer hover:underline"
-          onClick={() => (window.location.href = "mailto:support@webysoft.com")}
-        >
-          support@webysoft.com
-        </span>
-      </div>
-    ),
-    icon: <FiMail className="text-3xl" />,
-    color: "primary",
-    delay: 0,
-    href: "#",
+    icon: Phone,
+    title: "24/7 Enterprise Support",
+    details: "+91 88499 90393",
+    description: "Immediate response for enterprise clients",
+    color: "blue"
   },
   {
-    id: 2,
-    title: "Chat",
-    description: "Connect with our team via live chat",
-    info: "Available 24/7 for your questions",
-    icon: <BiSolidQuoteLeft className="text-3xl" />,
-    color: "accent",
-    delay: 0.1,
-    href: "#",
+    icon: Mail,
+    title: "Business Inquiries",
+    details: "enterprise@webysoft.com",
+    description: "Professional consultation requests",
+    color: "indigo"
   },
   {
-    id: 3,
-    title: "Visit",
-    description: "Drop by our office during business hours",
-    info: "301-303 Silver Business Hub, Surat, India",
-    icon: <FiMap className="text-3xl" />,
-    color: "cyan",
-    delay: 0.2,
-    href: "https://maps.google.com/?q=Silver+Business+Hub+Surat",
+    icon: MapPin,
+    title: "Global Headquarters",
+    details: "Surat & Mumbai, India",
+    description: "Serving clients worldwide",
+    color: "purple"
   },
   {
-    id: 4,
-    title: "Schedule",
-    description: "Book a free 30-minute consultation",
-    info: "Available Mon-Fri (9AM - 6PM)",
-    icon: <FiClock className="text-3xl" />,
-    color: "green",
-    delay: 0.3,
-    href: "#",
-  },
+    icon: Clock,
+    title: "Business Hours",
+    details: "24/7 Available",
+    description: "Round-the-clock enterprise support",
+    color: "green"
+  }
 ];
 
-// We'll define the WhatsApp card in the component function
-// after the click handler is defined
-
-// No social media links per client request
-const socialLinks: any[] = [];
-
-// Office locations across India
-const officeLocations = [
-  {
-    id: 1,
-    city: "Surat",
-    country: "India",
-    address: "301-303 Silver Business Hub, Surat, Gujarat, 395010",
-    delay: 0,
-    hours: "Monday-Friday: 9:00 AM - 6:00 PM",
-    weekends: "Saturday-Sunday: 10:00 AM - 4:00 PM",
+const colorClasses = {
+  blue: {
+    bg: "bg-blue-500/10",
+    text: "text-blue-400",
+    border: "border-blue-500/20"
   },
-  {
-    id: 2,
-    city: "Mumbai",
-    country: "India",
-    address: "WeWork, Bandra Kurla Complex, Mumbai, Maharashtra, 400051",
-    delay: 0.1,
-    hours: "Monday-Friday: 9:00 AM - 6:00 PM",
-    weekends: "Saturday: 10:00 AM - 2:00 PM (Closed on Sunday)",
+  indigo: {
+    bg: "bg-indigo-500/10",
+    text: "text-indigo-400",
+    border: "border-indigo-500/20"
   },
-];
-
-// Quote slider data
-const testimonialQuotes = [
-  {
-    id: 1,
-    quote:
-      "The WebySoft team was incredibly responsive to our needs. They made the whole process effortless.",
-    author: "Sarah Johnson",
-    company: "TechStart Inc.",
+  purple: {
+    bg: "bg-purple-500/10",
+    text: "text-purple-400",
+    border: "border-purple-500/20"
   },
-  {
-    id: 2,
-    quote:
-      "WebySoft transformed our outdated website into a modern masterpiece. Couldn't be happier!",
-    author: "Michael Chen",
-    company: "Innovate Solutions",
-  },
-  {
-    id: 3,
-    quote:
-      "Their attention to detail and technical expertise is unmatched. Absolutely recommended!",
-    author: "Priya Sharma",
-    company: "Global Ventures",
-  },
-];
+  green: {
+    bg: "bg-green-500/10",
+    text: "text-green-400",
+    border: "border-green-500/20"
+  }
+};
 
 export default function ContactSection() {
-  const [activeQuote, setActiveQuote] = useState(0);
-  const [selectedLocation, setSelectedLocation] = useState(0);
-  const [allContactMethods, setAllContactMethods] = useState(contactMethods);
-  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    phone: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // Function to handle quote rotation
-  const rotateQuotes = () => {
-    setActiveQuote((prev) => (prev + 1) % testimonialQuotes.length);
-  };
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        duration: 0.5,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.5 },
-    },
-  };
-
-  const mapLocationVariants = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: (i: number) => ({
-      scale: 1,
-      opacity: 1,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.3,
-        type: "spring",
-        stiffness: 200,
-      },
-    }),
-  };
-
-  // For color classes based on the contact method
-  const colorClasses = {
-    primary: "bg-primary/10 text-primary border-primary/30",
-    accent: "bg-accent/10 text-accent border-accent/30",
-    cyan: "bg-cyan-500/10 text-cyan-500 border-cyan-500/30",
-    green: "bg-green-500/10 text-green-500 border-green-500/30",
-  };
-
-  // Copy email to clipboard
-  const copyToClipboard = (text: string, type: string) => {
-    navigator.clipboard.writeText(text).then(() => {
-      toast({
-        title: `${type} copied to clipboard!`,
-        description: `${text} is now in your clipboard.`,
-      });
-    });
-  };
-  
-  // Handle WhatsApp click with notification
-  const handleWhatsAppClick = () => {
-    toast({
-      title: "Opening WhatsApp",
-      description: "Connecting you directly with our support team...",
-      variant: "default",
-    });
-    window.open("https://wa.me/918849990393", "_blank");
-  };
-  
-  // Add WhatsApp contact card with animation
-  useEffect(() => {
-    // Create the WhatsApp contact card
-    const whatsAppCard = {
-      id: 5,
-      title: "WhatsApp Support",
-      description: "Get instant help via WhatsApp",
-      info: (
-        <div className="flex items-center w-full">
-          <div 
-            className="whatsapp-button"
-            onClick={(e) => {
-              e.stopPropagation();
-              handleWhatsAppClick();
-            }}
-          >
-            <span className="whatsapp-icon">
-              <FaWhatsapp className="text-xs" />
-            </span>
-            <span className="button-text">Chat Now</span>
-          </div>
-        </div>
-      ),
-      icon: <FaWhatsapp className="text-3xl text-green-500" />,
-      color: "green",
-      delay: 0.4,
-      href: "#",
-    };
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
     
-    // Add the WhatsApp card to the contact methods
-    setAllContactMethods([...contactMethods, whatsAppCard]);
-  }, []);
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    
+    // Reset form after 3 seconds
+    setTimeout(() => {
+      setIsSubmitted(false);
+      setFormData({ name: '', email: '', company: '', phone: '', message: '' });
+    }, 3000);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
 
   return (
     <section id="contact" className="py-20 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-background to-secondary/30 -z-10"></div>
+      {/* Professional Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]"></div>
 
-      {/* Animated Orbs */}
-      <div className="absolute top-20 right-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl opacity-60 -z-10"></div>
-      <div className="absolute bottom-10 left-20 w-80 h-80 bg-accent/20 rounded-full blur-3xl opacity-60 -z-10"></div>
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 text-sm font-medium text-blue-400 mb-6"
+          >
+            <Shield className="w-4 h-4" />
+            <span>Enterprise Contact</span>
+          </motion.div>
 
-      <div className="container mx-auto px-4">
-        <motion.h2
-          className="text-3xl md:text-5xl font-display font-bold text-center mb-6"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-        >
-          Get In <span className="text-primary text-glow">Touch</span>
-        </motion.h2>
+          <motion.h2
+            className="text-4xl md:text-6xl font-bold text-white mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Ready to{" "}
+            <span className="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">
+              Get Started?
+            </span>
+          </motion.h2>
 
-        <motion.p
-          className="text-xl text-foreground/70 text-center mb-16 max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          Ready to transform your online presence? Connect with us through any
-          of these channels.
-        </motion.p>
+          <motion.p
+            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            Connect with our certified experts for a personalized consultation. We'll assess your needs and provide a customized enterprise solution proposal.
+          </motion.p>
+        </div>
 
-        {/* Contact Methods Section */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          {allContactMethods.map((method) => (
-            <motion.div
-              key={method.id}
-              className="group"
-              variants={itemVariants}
-              transition={{ delay: method.delay }}
-              onClick={() =>
-                method.href !== "#" && window.open(method.href, "_blank")
-              }
-            >
-              <GlassCard className="h-full p-6 border transition-all duration-300 transform hover:scale-105 hover:shadow-lg cursor-pointer">
-                <div
-                  className={`w-16 h-16 rounded-xl flex items-center justify-center mb-4 ${
-                    colorClasses[method.color as keyof typeof colorClasses]
-                  }`}
-                >
-                  {method.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                  {method.title}
-                </h3>
-                <p className="text-foreground/60 mb-3 text-sm">
-                  {method.description}
-                </p>
-                <div className="text-base font-medium flex items-center space-x-1 group-hover:text-primary transition-colors">
-                  <span>{method.info}</span>
-                </div>
-              </GlassCard>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Interactive Map Section */}
-        <motion.div
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-        >
-          <GlassCard className="p-0 overflow-hidden" borderGlow="primary">
-            <div className="bg-primary/30 p-4 flex items-center justify-between backdrop-blur-sm">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-                  <FiGlobe className="text-xl text-white" />
-                </div>
-                <h3 className="font-semibold text-lg">Our Locations Across India</h3>
-              </div>
-              <div className="flex space-x-2">
-                {officeLocations.map((location, index) => (
-                  <Button
-                    key={location.id}
-                    variant={selectedLocation === index ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setSelectedLocation(index)}
-                    className={`text-sm ${
-                      selectedLocation === index
-                        ? "bg-primary"
-                        : "hover:bg-primary/10"
-                    }`}
-                  >
-                    {location.city}
-                  </Button>
-                ))}
-              </div>
+        <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
+          
+          {/* Contact Information */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="space-y-8"
+          >
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-6">Get in Touch</h3>
+              <p className="text-gray-300 leading-relaxed mb-8">
+                Our enterprise team is available 24/7 to discuss your project requirements, provide technical consultation, and deliver customized solutions that meet your business objectives.
+              </p>
             </div>
 
-            <div className="grid md:grid-cols-5">
-              {/* Map Visualization - Redesigned */}
-              <div className="col-span-3 relative bg-gradient-to-br from-background to-secondary/20 min-h-[300px] rounded-l-xl overflow-hidden">
-                {/* India Map Stylized Background */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-20">
-                  <svg width="80%" height="80%" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path 
-                      d="M200,100 Q240,120 280,100 Q320,80 340,120 Q360,160 320,180 Q280,200 300,240 Q320,280 280,300 Q240,320 200,280 Q160,240 120,260 Q80,280 60,240 Q40,200 80,160 Q120,120 160,140 Q200,160 200,100 Z" 
-                      fill="url(#indiaGradient)" 
-                    />
-                    <defs>
-                      <linearGradient id="indiaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="var(--primary)" stopOpacity="0.3" />
-                        <stop offset="100%" stopColor="var(--accent)" stopOpacity="0.2" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </div>
+            {/* Contact Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {contactInfo.map((info, index) => {
+                const colors = colorClasses[info.color as keyof typeof colorClasses];
                 
-                {/* Map Title Overlay */}
-                <div className="absolute top-6 left-6 bg-background/40 backdrop-blur-md p-3 rounded-lg shadow-lg border border-primary/20 z-10">
-                  <h4 className="font-semibold text-sm">WebySoft Locations</h4>
-                  <p className="text-xs text-foreground/70">Interactive office directory</p>
-                </div>
-
-                {/* Grid Lines Background */}
-                <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-
-                {/* Location Markers */}
-                <div className="relative h-full w-full">
-                  {/* Location selector tabs */}
-                  <div className="absolute left-0 right-0 top-20 flex justify-center z-10">
-                    <div className="flex bg-background/40 backdrop-blur-md rounded-full p-1 shadow-lg border border-white/10">
-                      {officeLocations.map((location, index) => (
-                        <button
-                          key={location.id}
-                          onClick={() => setSelectedLocation(index)}
-                          className={`px-3 py-1.5 text-xs font-medium rounded-full transition-all ${
-                            selectedLocation === index 
-                              ? "bg-primary text-white shadow-md" 
-                              : "text-foreground/70 hover:bg-white/10"
-                          }`}
-                        >
-                          {location.city}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Stylized Location Indicators */}
-                  <div className="absolute inset-0 mt-20">
-                    {officeLocations.map((location, index) => {
-                      // Calculate position based on index
-                      const positions = [
-                        { top: "55%", left: "40%" }, // Surat
-                        { top: "45%", left: "25%" }  // Mumbai
-                      ];
-                      
-                      // Get dynamic classes based on index
-                      const getMarkerClasses = (idx: number) => {
-                        switch(idx) {
-                          case 0: 
-                            return {
-                              bg: selectedLocation === idx ? "bg-primary" : "bg-primary/50",
-                              pulse: selectedLocation === idx ? "bg-primary/30" : "bg-primary/10",
-                              ring: "ring-primary/30"
-                            };
-                          case 1:
-                            return {
-                              bg: selectedLocation === idx ? "bg-accent" : "bg-accent/50",
-                              pulse: selectedLocation === idx ? "bg-accent/30" : "bg-accent/10",
-                              ring: "ring-accent/30"
-                            };
-                          default:
-                            return {
-                              bg: "bg-primary",
-                              pulse: "bg-primary/30",
-                              ring: "ring-primary/30"
-                            };
-                        }
-                      };
-                      
-                      const markerClasses = getMarkerClasses(index);
-                      
-                      return (
-                        <motion.div
-                          key={location.id}
-                          className="absolute"
-                          style={{ 
-                            top: positions[index].top, 
-                            left: positions[index].left,
-                          }}
-                          custom={index}
-                          variants={mapLocationVariants}
-                          initial="hidden"
-                          whileInView="visible"
-                          viewport={{ once: true }}
-                        >
-                          <motion.div
-                            className={`w-20 h-20 -ml-10 -mt-10 absolute opacity-20 rounded-full ${markerClasses.pulse} ${
-                              selectedLocation === index ? "animate-ping-slow" : ""
-                            }`}
-                            style={{
-                              animationDelay: `${index * 0.2}s`
-                            }}
-                          ></motion.div>
-                          <motion.div
-                            className={`w-4 h-4 -ml-2 -mt-2 absolute rounded-full ${markerClasses.bg} ${
-                              selectedLocation === index ? "ring-4" : ""
-                            } ${markerClasses.ring} shadow-lg`}
-                            whileHover={{ scale: 1.5 }}
-                          ></motion.div>
-                        </motion.div>
-                      );
-                    })}
-                  </div>
-                  
-                  {/* Selected location highlight */}
+                return (
                   <motion.div
-                    className="absolute bottom-6 left-6 right-6 bg-background/40 backdrop-blur-md p-3 rounded-lg shadow-lg border border-primary/10"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3 }}
-                    key={officeLocations[selectedLocation].id}
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-xl p-6 hover:bg-slate-700/30 transition-all duration-300 group"
                   >
-                    <div className="flex items-center gap-3">
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center bg-primary/20 text-primary`}>
-                        <FiMap className="text-xl" />
-                      </div>
-                      <div>
-                        <h3 className="font-medium text-sm">
-                          {officeLocations[selectedLocation].city}, {officeLocations[selectedLocation].country}
-                        </h3>
-                        <p className="text-xs text-foreground/70">
-                          {officeLocations[selectedLocation].address}
-                        </p>
-                      </div>
+                    <div className={`inline-flex p-3 rounded-lg ${colors.bg} ${colors.border} border mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      <info.icon className={`w-6 h-6 ${colors.text}`} />
                     </div>
+                    
+                    <h4 className="text-lg font-semibold text-white mb-2">{info.title}</h4>
+                    <p className="text-gray-300 font-medium mb-1">{info.details}</p>
+                    <p className="text-sm text-gray-400">{info.description}</p>
                   </motion.div>
+                );
+              })}
+            </div>
+
+            {/* Quick Contact Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <motion.button
+                onClick={() => window.open("https://wa.me/918849990393", "_blank")}
+                className="flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-green-500/25"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <FaWhatsapp className="w-5 h-5" />
+                WhatsApp Chat
+              </motion.button>
+              
+              <motion.button
+                onClick={() => window.open("https://linkedin.com/company/webysoft", "_blank")}
+                className="flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/25"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <FaLinkedin className="w-5 h-5" />
+                LinkedIn
+              </motion.button>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-xl p-6">
+              <h4 className="text-lg font-semibold text-white mb-4">Why Choose WebySoft?</h4>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex items-center gap-2">
+                  <Shield className="w-4 h-4 text-green-400" />
+                  <span className="text-sm text-gray-300">ISO Certified</span>
                 </div>
-              </div>
-
-              {/* Location Details */}
-              <div className="col-span-2 p-6 border-l border-white/10 bg-background/40 backdrop-blur-md rounded-r-xl">
-                <motion.div
-                  key={officeLocations[selectedLocation].id}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <h3 className="text-2xl font-bold mb-2">
-                    {officeLocations[selectedLocation].city},{" "}
-                    {officeLocations[selectedLocation].country}
-                  </h3>
-                  <p className="text-foreground/70 mb-4">
-                    {officeLocations[selectedLocation].address}
-                  </p>
-
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mr-3 mt-1 flex-shrink-0">
-                        <BiSolidTimeFive className="text-xl" />
-                      </div>
-                      <div>
-                        <h4 className="text-base font-medium mb-1">
-                          Working Hours
-                        </h4>
-                        <p className="text-sm text-foreground/70">
-                          {officeLocations[selectedLocation].hours}
-                          <br />
-                          {officeLocations[selectedLocation].weekends}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start">
-                      <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center text-green-500 mr-3 mt-1 flex-shrink-0">
-                        <FiMail className="text-xl" />
-                      </div>
-                      <div>
-                        <h4 className="text-base font-medium mb-1">Email</h4>
-                        <div className="flex flex-col space-y-1">
-                          <button
-                            className="text-sm text-foreground/70 hover:text-green-500 transition-colors flex items-center"
-                            onClick={() =>
-                              copyToClipboard("info@webysoft.com", "Email")
-                            }
-                          >
-                            <span className="text-primary/70 mr-2 text-xs">
-                              General:
-                            </span>{" "}
-                            info@webysoft.com
-                          </button>
-                          <button
-                            className="text-sm text-foreground/70 hover:text-green-500 transition-colors flex items-center"
-                            onClick={() =>
-                              copyToClipboard("support@webysoft.com", "Email")
-                            }
-                          >
-                            <span className="text-primary/70 mr-2 text-xs">
-                              Support:
-                            </span>{" "}
-                            support@webysoft.com
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start">
-                      <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent mr-3 mt-1 flex-shrink-0">
-                        <BiSolidQuoteLeft className="text-xl" />
-                      </div>
-                      <div>
-                        <h4 className="text-base font-medium mb-1">
-                          Client Quote
-                        </h4>
-                        <div
-                          className="text-sm text-foreground/70 italic cursor-pointer"
-                          onClick={rotateQuotes}
-                        >
-                          "{testimonialQuotes[activeQuote].quote}"
-                          <div className="mt-2 font-medium text-accent">
-                            - {testimonialQuotes[activeQuote].author},{" "}
-                            {testimonialQuotes[activeQuote].company}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Social media links removed as requested */}
-                </motion.div>
+                <div className="flex items-center gap-2">
+                  <Award className="w-4 h-4 text-yellow-400" />
+                  <span className="text-sm text-gray-300">Award Winning</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-blue-400" />
+                  <span className="text-sm text-gray-300">500+ Projects</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-purple-400" />
+                  <span className="text-sm text-gray-300">24/7 Support</span>
+                </div>
               </div>
             </div>
-          </GlassCard>
-        </motion.div>
+          </motion.div>
+
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <div className="bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-2xl p-8 shadow-2xl">
+              {!isSubmitted ? (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-2">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full bg-slate-700/50 border border-slate-600/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                        placeholder="Your full name"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-2">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full bg-slate-700/50 border border-slate-600/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                        placeholder="your@email.com"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-2">
+                        Company Name
+                      </label>
+                      <input
+                        type="text"
+                        name="company"
+                        value={formData.company}
+                        onChange={handleChange}
+                        className="w-full bg-slate-700/50 border border-slate-600/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                        placeholder="Your company"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-2">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full bg-slate-700/50 border border-slate-600/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                        placeholder="+91 xxxxx xxxxx"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                      Project Details *
+                    </label>
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      rows={5}
+                      className="w-full bg-slate-700/50 border border-slate-600/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors resize-none"
+                      placeholder="Tell us about your project requirements, timeline, and specific needs..."
+                    />
+                  </div>
+
+                  <motion.button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-4 rounded-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-blue-500/25 flex items-center justify-center gap-3 ${
+                      isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
+                    }`}
+                    whileHover={!isSubmitting ? { scale: 1.02 } : {}}
+                    whileTap={!isSubmitting ? { scale: 0.98 } : {}}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        Sending Message...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5" />
+                        Send Message
+                      </>
+                    )}
+                  </motion.button>
+
+                  <p className="text-sm text-gray-400 text-center">
+                    <Shield className="w-4 h-4 inline mr-1" />
+                    Your information is secure and protected by enterprise-grade encryption
+                  </p>
+                </form>
+              ) : (
+                <div className="text-center py-12">
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    className="w-16 h-16 bg-green-500/20 border border-green-500/30 rounded-full flex items-center justify-center mx-auto mb-6"
+                  >
+                    <CheckCircle className="w-8 h-8 text-green-400" />
+                  </motion.div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Message Sent Successfully!</h3>
+                  <p className="text-gray-300">
+                    Thank you for reaching out. Our enterprise team will contact you within 24 hours to discuss your project requirements.
+                  </p>
+                </div>
+              )}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
