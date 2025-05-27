@@ -165,12 +165,12 @@ export default function HeroSection() {
                     {/* Infinite Horizontal Scrolling Portfolio Images */}
                     <div className="relative h-full overflow-hidden">
                       <motion.div
-                        className="flex h-full"
+                        className="flex h-full gap-3"
                         animate={{
-                          x: [0, -100 * portfolioItems.length],
+                          x: [0, -(200 + 12) * portfolioItems.length],
                         }}
                         transition={{
-                          duration: portfolioItems.length * 3,
+                          duration: portfolioItems.length * 4,
                           repeat: Infinity,
                           ease: "linear"
                         }}
@@ -179,38 +179,38 @@ export default function HeroSection() {
                         {portfolioItems.map((item, index) => (
                           <motion.div
                             key={`first-${item.id}`}
-                            className="flex-shrink-0 w-full h-full relative group cursor-pointer p-2"
+                            className="flex-shrink-0 w-[200px] h-full relative group cursor-pointer"
                             onClick={() => window.open(item.previewLink, "_blank")}
-                            whileHover={{ scale: 1.02 }}
+                            whileHover={{ scale: 1.05, z: 10 }}
                             transition={{ duration: 0.3 }}
                           >
-                            <div className="relative overflow-hidden rounded-lg border border-slate-600/50 hover:border-blue-500/50 transition-all duration-300 h-full">
+                            <div className="relative overflow-hidden rounded-lg border border-slate-600/50 hover:border-blue-500/50 transition-all duration-300 h-full shadow-lg hover:shadow-xl">
                               <img 
                                 src={item.imageUrl} 
                                 alt={item.title}
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                 loading="lazy"
                               />
-                              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <div className="absolute bottom-4 left-4 right-4">
-                                  <p className="text-white text-sm font-semibold mb-1">{item.title}</p>
+                              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div className="absolute bottom-3 left-3 right-3">
+                                  <p className="text-white text-xs font-semibold mb-1 line-clamp-1">{item.title}</p>
                                   <p className="text-blue-300 text-xs mb-2">{item.type}</p>
                                   <div className="flex flex-wrap gap-1 mb-2">
-                                    {item.technologies.slice(0, 3).map((tech, techIndex) => (
+                                    {item.technologies.slice(0, 2).map((tech, techIndex) => (
                                       <span 
                                         key={techIndex}
-                                        className="px-2 py-1 bg-slate-800/80 rounded text-xs text-gray-300"
+                                        className="px-1.5 py-0.5 bg-slate-800/90 rounded text-xs text-gray-300"
                                       >
                                         {tech}
                                       </span>
                                     ))}
                                   </div>
-                                  <div className="flex items-center gap-2">
+                                  <div className="flex items-center justify-between">
                                     <div className="flex items-center gap-1 text-green-400 text-xs">
                                       <CheckCircle className="w-3 h-3" />
-                                      <span>Live Project</span>
+                                      <span>Live</span>
                                     </div>
-                                    <ArrowRight className="w-4 h-4 text-blue-400" />
+                                    <ArrowRight className="w-3 h-3 text-blue-400" />
                                   </div>
                                 </div>
                               </div>
@@ -222,38 +222,38 @@ export default function HeroSection() {
                         {portfolioItems.map((item, index) => (
                           <motion.div
                             key={`second-${item.id}`}
-                            className="flex-shrink-0 w-full h-full relative group cursor-pointer p-2"
+                            className="flex-shrink-0 w-[200px] h-full relative group cursor-pointer"
                             onClick={() => window.open(item.previewLink, "_blank")}
-                            whileHover={{ scale: 1.02 }}
+                            whileHover={{ scale: 1.05, z: 10 }}
                             transition={{ duration: 0.3 }}
                           >
-                            <div className="relative overflow-hidden rounded-lg border border-slate-600/50 hover:border-blue-500/50 transition-all duration-300 h-full">
+                            <div className="relative overflow-hidden rounded-lg border border-slate-600/50 hover:border-blue-500/50 transition-all duration-300 h-full shadow-lg hover:shadow-xl">
                               <img 
                                 src={item.imageUrl} 
                                 alt={item.title}
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                 loading="lazy"
                               />
-                              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <div className="absolute bottom-4 left-4 right-4">
-                                  <p className="text-white text-sm font-semibold mb-1">{item.title}</p>
+                              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div className="absolute bottom-3 left-3 right-3">
+                                  <p className="text-white text-xs font-semibold mb-1 line-clamp-1">{item.title}</p>
                                   <p className="text-blue-300 text-xs mb-2">{item.type}</p>
                                   <div className="flex flex-wrap gap-1 mb-2">
-                                    {item.technologies.slice(0, 3).map((tech, techIndex) => (
+                                    {item.technologies.slice(0, 2).map((tech, techIndex) => (
                                       <span 
                                         key={techIndex}
-                                        className="px-2 py-1 bg-slate-800/80 rounded text-xs text-gray-300"
+                                        className="px-1.5 py-0.5 bg-slate-800/90 rounded text-xs text-gray-300"
                                       >
                                         {tech}
                                       </span>
                                     ))}
                                   </div>
-                                  <div className="flex items-center gap-2">
+                                  <div className="flex items-center justify-between">
                                     <div className="flex items-center gap-1 text-green-400 text-xs">
                                       <CheckCircle className="w-3 h-3" />
-                                      <span>Live Project</span>
+                                      <span>Live</span>
                                     </div>
-                                    <ArrowRight className="w-4 h-4 text-blue-400" />
+                                    <ArrowRight className="w-3 h-3 text-blue-400" />
                                   </div>
                                 </div>
                               </div>
