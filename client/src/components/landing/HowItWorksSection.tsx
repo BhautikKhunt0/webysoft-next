@@ -236,6 +236,7 @@ export default function HowItWorksSection() {
               Schedule a consultation with our certified experts to discuss your project requirements and receive a customized enterprise solution proposal.
             </p>
             <motion.button
+              onClick={() => window.open("https://wa.me/918849990393", "_blank")}
               className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-blue-500/25"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
