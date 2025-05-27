@@ -159,7 +159,7 @@ export default function PricingSection() {
                 </button>
                 <button
                   onClick={() => setIsYearly(true)}
-                  className={`relative z-10 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center gap-3 ${
+                  className={`relative z-10 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center gap-3 ml-2 ${
                     isYearly 
                       ? 'text-white' 
                       : 'text-gray-400 hover:text-gray-300'
@@ -175,8 +175,10 @@ export default function PricingSection() {
                 <motion.div
                   className="absolute inset-y-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-lg"
                   animate={{
-                    x: isYearly ? '40%' : '0%',
-                    width: isYearly ? '60%' : '40%'
+                    x: isYearly ? '100%' : '0%'
+                  }}
+                  style={{
+                    width: '50%'
                   }}
                   transition={{ 
                     type: "spring", 
