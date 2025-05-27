@@ -136,7 +136,7 @@ export default function PricingSection() {
             Choose the perfect investment level for your enterprise needs. All plans include ISO-certified quality, enterprise security, and professional support.
           </motion.p>
 
-          {/* Enhanced Pricing Toggle */}
+          {/* Simple Pricing Toggle */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -144,29 +144,30 @@ export default function PricingSection() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex items-center justify-center mb-12"
           >
-            <div className="bg-slate-800/60 backdrop-blur-xl border border-slate-600/40 rounded-2xl p-1.5 shadow-2xl">
-              <div className="relative flex items-center gap-1">
+            <div className="bg-slate-800 border border-slate-700 rounded-lg p-1">
+              <div className="relative flex items-center">
                 {/* Sliding Background */}
                 <motion.div
-                  className="absolute inset-y-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-xl"
+                  className="absolute inset-1 bg-blue-600 rounded-md"
                   animate={{
-                    x: isYearly ? '100%' : '0%',
-                    width: isYearly ? 'calc(100% - 0.375rem)' : 'calc(50% - 0.25rem)'
+                    x: isYearly ? '100%' : '0%'
+                  }}
+                  style={{
+                    width: '50%'
                   }}
                   transition={{ 
                     type: "spring", 
-                    stiffness: 400, 
-                    damping: 35,
-                    mass: 0.8
+                    stiffness: 300, 
+                    damping: 30
                   }}
                 />
                 
                 <button
                   onClick={() => setIsYearly(false)}
-                  className={`relative z-10 px-8 py-4 rounded-xl font-semibold text-sm transition-all duration-300 whitespace-nowrap ${
+                  className={`relative z-10 px-6 py-3 rounded-md font-medium text-sm transition-colors duration-200 ${
                     !isYearly 
-                      ? 'text-white shadow-lg' 
-                      : 'text-gray-400 hover:text-gray-200'
+                      ? 'text-white' 
+                      : 'text-gray-400'
                   }`}
                 >
                   Monthly
@@ -174,20 +175,16 @@ export default function PricingSection() {
                 
                 <button
                   onClick={() => setIsYearly(true)}
-                  className={`relative z-10 px-6 py-4 rounded-xl font-semibold text-sm transition-all duration-300 flex items-center gap-2 whitespace-nowrap ${
+                  className={`relative z-10 px-6 py-3 rounded-md font-medium text-sm transition-colors duration-200 flex items-center gap-2 ${
                     isYearly 
-                      ? 'text-white shadow-lg' 
-                      : 'text-gray-400 hover:text-gray-200'
+                      ? 'text-white' 
+                      : 'text-gray-400'
                   }`}
                 >
-                  <span>Yearly</span>
-                  <motion.span 
-                    className="bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs px-2.5 py-1 rounded-full font-medium"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  >
+                  Yearly
+                  <span className="bg-green-500 text-white text-xs px-2 py-0.5 rounded-full">
                     Save 17%
-                  </motion.span>
+                  </span>
                 </button>
               </div>
             </div>
