@@ -144,16 +144,17 @@ export default function PricingSection() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex items-center justify-center mb-16"
           >
-            <div className="relative bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-xl p-1.5 shadow-2xl">
+            <div className="relative bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-xl p-1.5 shadow-2xl overflow-hidden">
               <div className="relative flex items-center">
                 {/* Sliding Background */}
                 <motion.div
-                  className="absolute inset-y-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-lg"
+                  className="absolute top-1.5 bottom-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-lg"
+                  initial={false}
                   animate={{
-                    x: isYearly ? '100%' : '0%',
-                    width: isYearly ? '60%' : '40%'
+                    left: isYearly ? '50%' : '6px',
+                    right: isYearly ? '6px' : '50%',
                   }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
                 />
                 
                 {/* Monthly Button */}
