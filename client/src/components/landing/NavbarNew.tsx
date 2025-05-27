@@ -46,17 +46,21 @@ export default function Navbar() {
   // Better navigation handling to sections
   const navigateToSection = (sectionId: string) => {
     setMobileMenuOpen(false);
-    if (isPortfolioPage) {
-      window.location.href = `/#${sectionId}`;
-    } else {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
-        });
+    
+    // Add a small delay to allow the menu to close before scrolling
+    setTimeout(() => {
+      if (isPortfolioPage) {
+        window.location.href = `/#${sectionId}`;
+      } else {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
       }
-    }
+    }, 100);
   };
 
   // Close mobile menu when location changes or window resizes
