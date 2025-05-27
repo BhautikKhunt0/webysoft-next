@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link, useLocation } from "wouter";
-import NewsletterForm from "./NewsletterForm";
-import GlassCard from "./GlassCard";
+import { Shield, Mail, Phone, MapPin, Globe, Github, Linkedin, Twitter } from "lucide-react";
+import { FaWhatsapp, FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
   const [location] = useLocation();
@@ -31,429 +31,244 @@ export default function Footer() {
   };
   
   return (
-    <footer className="py-16 relative overflow-hidden">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-black/70 -z-10"></div>
+    <footer className="relative py-20 overflow-hidden">
+      {/* Professional Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.08),transparent_70%)]"></div>
+      
+      {/* Subtle decorative elements */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-10 w-40 h-40 bg-indigo-500/5 rounded-full blur-3xl"></div>
 
-      {/* Animated Glowing Orbs */}
-      <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-primary/10 blur-3xl opacity-40 animate-pulse"></div>
-      <div
-        className="absolute -bottom-20 right-0 w-72 h-72 rounded-full bg-accent/10 blur-3xl opacity-30 animate-pulse"
-        style={{ animationDelay: "2s" }}
-      ></div>
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Main Footer Content */}
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12 mb-16">
+          
+          {/* Company Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-1"
+          >
+            <motion.button 
+              onClick={scrollToTop}
+              className="flex items-center gap-3 text-white font-bold text-2xl mb-6 cursor-pointer group"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="p-2 bg-blue-500/10 rounded-lg border border-blue-500/20 group-hover:bg-blue-500/20 transition-colors">
+                <Shield className="w-6 h-6 text-blue-400" />
+              </div>
+              <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Weby<span className="text-blue-400">Soft</span>
+              </span>
+            </motion.button>
+            
+            <p className="text-gray-300 leading-relaxed mb-6 max-w-sm">
+              Transform your digital presence with enterprise-grade solutions. We deliver innovative web experiences that drive business growth.
+            </p>
+            
+            {/* Contact Info */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-gray-300">
+                <Phone className="w-4 h-4 text-blue-400" />
+                <span className="text-sm">+91 88499 90393</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <Mail className="w-4 h-4 text-blue-400" />
+                <span className="text-sm">enterprise@webysoft.com</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <MapPin className="w-4 h-4 text-blue-400" />
+                <span className="text-sm">Surat & Mumbai, India</span>
+              </div>
+            </div>
+          </motion.div>
 
-      <div className="container mx-auto px-4">
-        {/* Main Footer Content with Glass Effect */}
+          {/* Services */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <h3 className="text-xl font-bold text-white mb-6">Services</h3>
+            <ul className="space-y-3">
+              {[
+                { label: 'Web Development', href: '#features' },
+                { label: 'Mobile Apps', href: '#features' },
+                { label: 'E-commerce', href: '#features' },
+                { label: 'Digital Marketing', href: '#features' },
+                { label: 'SEO Optimization', href: '#features' },
+                { label: 'Cloud Solutions', href: '#features' }
+              ].map((item, index) => (
+                <li key={index}>
+                  <a
+                    href={item.href}
+                    onClick={(e) => navigateToSection(e, 'features')}
+                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm hover:translate-x-1 inline-block"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Company */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <h3 className="text-xl font-bold text-white mb-6">Company</h3>
+            <ul className="space-y-3">
+              {[
+                { label: 'About Us', href: '#about' },
+                { label: 'Portfolio', href: '/portfolio', isLink: true },
+                { label: 'Testimonials', href: '#testimonials' },
+                { label: 'How it Works', href: '#how-it-works' },
+                { label: 'Pricing', href: '#pricing' },
+                { label: 'Contact', href: '#contact' }
+              ].map((item, index) => (
+                <li key={index}>
+                  {item.isLink ? (
+                    <Link
+                      to={item.href}
+                      className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm hover:translate-x-1 inline-block"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={item.href}
+                      onClick={(e) => navigateToSection(e, item.href.slice(1))}
+                      className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm hover:translate-x-1 inline-block"
+                    >
+                      {item.label}
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Resources */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <h3 className="text-xl font-bold text-white mb-6">Resources</h3>
+            <ul className="space-y-3 mb-8">
+              {[
+                { label: 'FAQ', href: '#faq' },
+                { label: 'Support', href: '#contact' },
+                { label: 'Privacy Policy', href: '#privacy' },
+                { label: 'Terms of Service', href: '#terms' },
+                { label: 'Cookie Policy', href: '#cookies' }
+              ].map((item, index) => (
+                <li key={index}>
+                  <a
+                    href={item.href}
+                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm hover:translate-x-1 inline-block"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            {/* Social Links */}
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
+              <div className="flex gap-4">
+                {[
+                  { icon: FaWhatsapp, href: 'https://wa.me/918849990393', color: 'text-green-400 hover:text-green-300' },
+                  { icon: FaLinkedin, href: 'https://linkedin.com/company/webysoft', color: 'text-blue-400 hover:text-blue-300' },
+                  { icon: FaTwitter, href: 'https://twitter.com/webysoft', color: 'text-blue-400 hover:text-blue-300' },
+                  { icon: FaGithub, href: 'https://github.com/webysoft', color: 'text-gray-400 hover:text-gray-300' }
+                ].map((social, index) => (
+                  <motion.a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`p-3 bg-slate-800/50 border border-slate-700/50 rounded-lg ${social.color} transition-all duration-300 hover:bg-slate-700/50 hover:scale-110`}
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <social.icon className="w-5 h-5" />
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Bottom Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="relative z-10"
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="pt-8 border-t border-slate-700/50"
         >
-          <GlassCard
-            className="p-8 md:p-12 border border-white/10 overflow-hidden relative"
-            borderGlow="primary"
-          >
-            {/* Logo and Decorative Elements */}
-            <div className="absolute top-0 right-0 w-40 h-40 bg-primary/5 rounded-full blur-3xl -mr-20 -mt-20"></div>
-            <div className="absolute bottom-0 left-0 w-40 h-40 bg-accent/5 rounded-full blur-3xl -ml-20 -mb-20"></div>
-
-            {/* Top Section: Logo and Newsletter */}
-            <div className="mb-16 border-b border-white/10 pb-12">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-10">
-                <div className="text-center md:text-left w-full md:w-auto">
-                  <motion.button 
-                    onClick={scrollToTop}
-                    className="inline-block mb-4 cursor-pointer"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="text-3xl font-display font-bold text-glow text-white">
-                      Weby<span className="text-primary">Soft</span>
-                    </span>
-                  </motion.button>
-                  <p className="text-foreground/70 max-w-md mx-auto md:mx-0">
-                    Transform your ideas into high-converting digital
-                    experiences with our premium landing page solutions.
-                  </p>
-                </div>
-
-                <div className="w-full md:w-auto mt-8 md:mt-0">
-                  <h3 className="text-xl font-bold mb-3 text-center md:text-left">
-                    Stay Updated
-                  </h3>
-                  <div className="w-full md:w-80">
-                    <NewsletterForm />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Navigation Links - Mobile Accordion / Desktop Grid */}
-            <div className="mb-16">
-              {/* Mobile View - Accordion Style */}
-              <div className="md:hidden space-y-4">
-                {/* Product Section */}
-                <div className="border-b border-white/10 pb-4">
-                  <button
-                    className="flex justify-between items-center w-full text-left mb-2"
-                    onClick={(e) => {
-                      const content = e.currentTarget
-                        .nextElementSibling as HTMLElement;
-                      if (content)
-                        content.style.display =
-                          content.style.display === "none" ? "block" : "none";
-                    }}
-                  >
-                    <h3 className="text-lg font-semibold text-white">
-                      Product
-                    </h3>
-                    <i className="ri-arrow-down-s-line text-primary text-xl"></i>
-                  </button>
-                  <div className="pl-4">
-                    <ul className="space-y-3">
-                      <li>
-                        <a
-                          href="#features"
-                          className="text-foreground/70 hover:text-primary transition-colors inline-block py-1"
-                          onClick={(e) => navigateToSection(e, 'features')}
-                        >
-                          Features
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#how-it-works"
-                          className="text-foreground/70 hover:text-primary transition-colors inline-block py-1"
-                        >
-                          How It Works
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#pricing"
-                          className="text-foreground/70 hover:text-primary transition-colors inline-block py-1"
-                        >
-                          Pricing
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Support Section */}
-                <div className="border-b border-white/10 pb-4">
-                  <button
-                    className="flex justify-between items-center w-full text-left mb-2"
-                    onClick={(e) => {
-                      const content = e.currentTarget
-                        .nextElementSibling as HTMLElement;
-                      if (content)
-                        content.style.display =
-                          content.style.display === "none" ? "block" : "none";
-                    }}
-                  >
-                    <h3 className="text-lg font-semibold text-white">
-                      Support
-                    </h3>
-                    <i className="ri-arrow-down-s-line text-primary text-xl"></i>
-                  </button>
-                  <div className="pl-4">
-                    <ul className="space-y-3">
-                      <li>
-                        <a
-                          href="#faq"
-                          className="text-foreground/70 hover:text-primary transition-colors inline-block py-1"
-                        >
-                          FAQ
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#contact"
-                          className="text-foreground/70 hover:text-primary transition-colors inline-block py-1"
-                        >
-                          Contact
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#help"
-                          className="text-foreground/70 hover:text-primary transition-colors inline-block py-1"
-                        >
-                          Help Center
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Company Section */}
-                <div className="border-b border-white/10 pb-4">
-                  <button
-                    className="flex justify-between items-center w-full text-left mb-2"
-                    onClick={(e) => {
-                      const content = e.currentTarget
-                        .nextElementSibling as HTMLElement;
-                      if (content)
-                        content.style.display =
-                          content.style.display === "none" ? "block" : "none";
-                    }}
-                  >
-                    <h3 className="text-lg font-semibold text-white">
-                      Company
-                    </h3>
-                    <i className="ri-arrow-down-s-line text-primary text-xl"></i>
-                  </button>
-                  <div className="pl-4">
-                    <ul className="space-y-3">
-                      <li>
-                        <a
-                          href="#about"
-                          className="text-foreground/70 hover:text-primary transition-colors inline-block py-1"
-                        >
-                          About Us
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#testimonials"
-                          className="text-foreground/70 hover:text-primary transition-colors inline-block py-1"
-                        >
-                          Testimonials
-                        </a>
-                      </li>
-                      <li>
-                        <Link
-                          to="/portfolio"
-                          className="text-foreground/70 hover:text-primary transition-colors inline-block py-1"
-                        >
-                          Portfolio
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Legal Section */}
-                <div className="border-b border-white/10 pb-4">
-                  <button
-                    className="flex justify-between items-center w-full text-left mb-2"
-                    onClick={(e) => {
-                      const content = e.currentTarget
-                        .nextElementSibling as HTMLElement;
-                      if (content)
-                        content.style.display =
-                          content.style.display === "none" ? "block" : "none";
-                    }}
-                  >
-                    <h3 className="text-lg font-semibold text-white">Legal</h3>
-                    <i className="ri-arrow-down-s-line text-primary text-xl"></i>
-                  </button>
-                  <div className="pl-4">
-                    <ul className="space-y-3">
-                      <li>
-                        <a
-                          href="#privacy"
-                          className="text-foreground/70 hover:text-primary transition-colors inline-block py-1"
-                        >
-                          Privacy Policy
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#terms"
-                          className="text-foreground/70 hover:text-primary transition-colors inline-block py-1"
-                        >
-                          Terms of Service
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#cookies"
-                          className="text-foreground/70 hover:text-primary transition-colors inline-block py-1"
-                        >
-                          Cookie Policy
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* Desktop View - Grid Layout */}
-              <div className="hidden md:grid md:grid-cols-4 gap-8">
-                {/* Quick Links */}
-                <div>
-                  <h3 className="text-lg font-semibold mb-4 text-white">
-                    Product
-                  </h3>
-                  <ul className="space-y-3">
-                    <li>
-                      <a
-                        href="#features"
-                        className="text-foreground/70 hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                      >
-                        Features
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#how-it-works"
-                        className="text-foreground/70 hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                      >
-                        How It Works
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#pricing"
-                        className="text-foreground/70 hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                      >
-                        Pricing
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Support */}
-                <div>
-                  <h3 className="text-lg font-semibold mb-4 text-white">
-                    Support
-                  </h3>
-                  <ul className="space-y-3">
-                    <li>
-                      <a
-                        href="#faq"
-                        className="text-foreground/70 hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                      >
-                        FAQ
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#contact"
-                        className="text-foreground/70 hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                      >
-                        Contact
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#help"
-                        className="text-foreground/70 hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                      >
-                        Help Center
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Company */}
-                <div>
-                  <h3 className="text-lg font-semibold mb-4 text-white">
-                    Company
-                  </h3>
-                  <ul className="space-y-3">
-                    <li>
-                      <a
-                        href="#about"
-                        className="text-foreground/70 hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                      >
-                        About Us
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#testimonials"
-                        className="text-foreground/70 hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                      >
-                        Testimonials
-                      </a>
-                    </li>
-                    <li>
-                      <Link
-                        to="/portfolio"
-                        className="text-foreground/70 hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                      >
-                        Portfolio
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Legal */}
-                <div>
-                  <h3 className="text-lg font-semibold mb-4 text-white">
-                    Legal
-                  </h3>
-                  <ul className="space-y-3">
-                    <li>
-                      <a
-                        href="#privacy"
-                        className="text-foreground/70 hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                      >
-                        Privacy Policy
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#terms"
-                        className="text-foreground/70 hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                      >
-                        Terms of Service
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#cookies"
-                        className="text-foreground/70 hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                      >
-                        Cookie Policy
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Social Media section removed as per client request */}
-
-            {/* Separator */}
-            <div className="relative h-px w-full max-w-4xl mx-auto mb-10 bg-gradient-to-r from-transparent via-foreground/20 to-transparent overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent animate-shimmer"></div>
-            </div>
-
-            {/* Bottom Section with Copyright */}
-            <div className="flex flex-col md:flex-row justify-between items-center mt-8">
-              <p className="text-foreground/60 text-center md:text-left mb-8 md:mb-0 order-2 md:order-1">
-                © {new Date().getFullYear()}{" "}
-                <motion.button 
-                  onClick={scrollToTop}
-                  className="text-white cursor-pointer hover:text-primary transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  WebySoft
-                </motion.button>. All rights
-                reserved.
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <p className="text-gray-400 text-sm">
+                © 2024 WebySoft. All rights reserved.
               </p>
-
-              <div className="flex flex-col sm:flex-row items-center gap-6 sm:space-x-8 w-full md:w-auto mb-6 md:mb-0 order-1 md:order-2">
-                <p className="text-foreground/80 text-center">
-                  Made with
-                  <motion.span
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ repeat: Infinity, duration: 1.5 }}
-                    className="text-red-500 inline-block mx-1"
-                  >
-                    ❤️
-                  </motion.span>
-                  by our team
-                </p>
+              <div className="flex items-center gap-6">
+                <div className="flex items-center gap-2 text-sm text-gray-400">
+                  <Globe className="w-4 h-4 text-blue-400" />
+                  <span>Proudly serving clients worldwide</span>
+                </div>
               </div>
             </div>
-          </GlassCard>
+            
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-2 text-sm text-gray-400">
+                <Shield className="w-4 h-4 text-green-400" />
+                <span>Enterprise Security</span>
+              </div>
+              <div className="text-sm text-gray-400">
+                Made with ❤️ in India
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Newsletter CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-16 bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-2xl p-8 text-center"
+        >
+          <h3 className="text-2xl font-bold text-white mb-4">Stay Updated</h3>
+          <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+            Get the latest updates on our services, industry insights, and exclusive offers delivered to your inbox.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 bg-slate-700/50 border border-slate-600/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+            />
+            <motion.button
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 whitespace-nowrap"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Subscribe
+            </motion.button>
+          </div>
         </motion.div>
       </div>
     </footer>
