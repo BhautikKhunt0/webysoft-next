@@ -1,25 +1,37 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import GlassCard from './GlassCard';
+import { Star, Quote, Shield, Award, Building, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const testimonials = [
   {
     name: "Sarah Johnson",
-    role: "Founder, Elevate SaaS",
+    role: "Chief Technology Officer",
+    company: "Fortune 500 Financial Services",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
-    quote: "WebySoft transformed our basic landing page into a conversion machine. Sign-ups increased by 58% in the first month alone. The animations and design details make us look like a much bigger company."
+    quote: "WebySoft's enterprise-grade solutions transformed our digital infrastructure. Their ISO-certified processes and 24/7 support gave us the confidence to scale globally. ROI exceeded expectations by 300%.",
+    rating: 5,
+    verified: true,
+    industry: "Financial Services"
   },
   {
     name: "Michael Thompson",
-    role: "Marketing Director, TechFlow",
+    role: "Head of Digital Strategy",
+    company: "Leading Healthcare Corporation",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
-    quote: "Our WebySoft landing page loads in under 2 seconds and has a 90+ PageSpeed score despite all the beautiful animations. The attention to detail and conversion-focused design has made a huge difference in our ad campaigns."
+    quote: "Security and compliance were our top priorities. WebySoft delivered bank-level encryption and maintained our HIPAA compliance throughout the project. Their professional team exceeded all expectations.",
+    rating: 5,
+    verified: true,
+    industry: "Healthcare"
   },
   {
     name: "Amanda Chen",
-    role: "CEO, Bright Solutions",
+    role: "VP of Operations",
+    company: "Global Manufacturing Leader",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
-    quote: "Working with WebySoft has been a game-changer for our product launches. Their landing pages don't just look impressive—they actually drive results. We've seen higher engagement rates and better lead quality."
+    quote: "The dedicated project management and enterprise support made this the smoothest digital transformation we've ever experienced. WebySoft's certified excellence shows in every detail.",
+    rating: 5,
+    verified: true,
+    industry: "Manufacturing"
   }
 ];
 
@@ -35,129 +47,172 @@ export default function TestimonialsSection() {
   };
   
   return (
-    <section id="testimonials" className="py-20">
-      <div className="container mx-auto px-4">
-        <motion.h2 
-          className="text-3xl md:text-5xl font-display font-bold text-center mb-6"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-        >
-          What Our <span className="text-primary text-glow">Clients</span> Say
-        </motion.h2>
-        
-        <motion.p 
-          className="text-xl text-foreground/70 text-center mb-16 max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          Don't just take our word for it. Here's what others are saying about WebySoft.
-        </motion.p>
-        
-        <div className="max-w-5xl mx-auto relative">
+    <section id="testimonials" className="py-20 relative overflow-hidden">
+      {/* Professional Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(59,130,246,0.1),transparent_70%)]"></div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 text-sm font-medium text-blue-400 mb-6"
+          >
+            <Award className="w-4 h-4" />
+            <span>Client Success Stories</span>
+          </motion.div>
+
+          <motion.h2
+            className="text-4xl md:text-6xl font-bold text-white mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Trusted by{" "}
+            <span className="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">
+              Industry Leaders
+            </span>
+          </motion.h2>
+
+          <motion.p
+            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            See why Fortune 500 companies and growing enterprises trust WebySoft with their most critical digital initiatives.
+          </motion.p>
+        </div>
+
+        {/* Main Testimonial */}
+        <div className="max-w-4xl mx-auto">
           <AnimatePresence mode="wait">
-            <div className="grid md:grid-cols-2 gap-8" key={activeIndex}>
-              <motion.div
-                key={`testimonial-${activeIndex}`}
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 50 }}
-                transition={{ duration: 0.5 }}
-              >
-                <GlassCard is3D={true} className="p-8">
-                  <div className="flex items-center mb-6">
-                    <div className="w-14 h-14 rounded-full overflow-hidden mr-4">
-                      <img 
-                        src={testimonials[activeIndex].image}
-                        alt={testimonials[activeIndex].name}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div>
-                      <div className="font-bold">{testimonials[activeIndex].name}</div>
-                      <div className="text-sm text-foreground/60">{testimonials[activeIndex].role}</div>
-                    </div>
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.5 }}
+              className="relative"
+            >
+              <div className="bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-2xl p-8 md:p-12 shadow-2xl">
+                {/* Quote Icon */}
+                <div className="absolute -top-6 left-8">
+                  <div className="bg-blue-500/20 backdrop-blur border border-blue-500/30 rounded-full p-4">
+                    <Quote className="w-8 h-8 text-blue-400" />
                   </div>
-                  
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <i key={i} className="ri-star-fill text-yellow-500"></i>
-                    ))}
-                  </div>
-                  
-                  <p className="text-foreground/80 italic">{testimonials[activeIndex].quote}</p>
-                </GlassCard>
-              </motion.div>
-              
-              <motion.div
-                key={`testimonial-${(activeIndex + 1) % testimonials.length}`}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.5 }}
-              >
-                <GlassCard is3D={true} className="p-8">
-                  <div className="flex items-center mb-6">
-                    <div className="w-14 h-14 rounded-full overflow-hidden mr-4">
-                      <img 
-                        src={testimonials[(activeIndex + 1) % testimonials.length].image}
-                        alt={testimonials[(activeIndex + 1) % testimonials.length].name}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div>
-                      <div className="font-bold">{testimonials[(activeIndex + 1) % testimonials.length].name}</div>
-                      <div className="text-sm text-foreground/60">{testimonials[(activeIndex + 1) % testimonials.length].role}</div>
+                </div>
+
+                {/* Rating */}
+                <div className="flex items-center gap-1 mb-6 pt-4">
+                  {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                  <span className="ml-2 text-sm text-gray-400">Verified Review</span>
+                  <Shield className="w-4 h-4 text-green-400 ml-1" />
+                </div>
+
+                {/* Quote */}
+                <blockquote className="text-xl md:text-2xl text-gray-200 leading-relaxed mb-8 italic">
+                  "{testimonials[activeIndex].quote}"
+                </blockquote>
+
+                {/* Author Info */}
+                <div className="flex items-center gap-4">
+                  <div className="relative">
+                    <img
+                      src={testimonials[activeIndex].image}
+                      alt={testimonials[activeIndex].name}
+                      className="w-16 h-16 rounded-full border-2 border-blue-500/20"
+                    />
+                    <div className="absolute -bottom-1 -right-1 bg-blue-500/20 backdrop-blur border border-blue-500/30 rounded-full p-1">
+                      <Building className="w-3 h-3 text-blue-400" />
                     </div>
                   </div>
-                  
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <i key={i} className="ri-star-fill text-yellow-500"></i>
-                    ))}
+                  <div>
+                    <h4 className="text-lg font-semibold text-white">{testimonials[activeIndex].name}</h4>
+                    <p className="text-gray-400">{testimonials[activeIndex].role}</p>
+                    <p className="text-sm text-blue-400">{testimonials[activeIndex].company}</p>
                   </div>
-                  
-                  <p className="text-foreground/80 italic">{testimonials[(activeIndex + 1) % testimonials.length].quote}</p>
-                </GlassCard>
-              </motion.div>
-            </div>
+                  <div className="ml-auto hidden md:block">
+                    <div className="bg-slate-700/50 backdrop-blur border border-slate-600/50 rounded-lg px-4 py-2">
+                      <span className="text-xs text-gray-400">Industry</span>
+                      <p className="text-sm font-medium text-gray-300">{testimonials[activeIndex].industry}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </AnimatePresence>
-          
-          {/* Testimonial Navigation */}
-          <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-2 mt-8">
-            {testimonials.map((_, index) => (
-              <button 
-                key={index}
-                className={`w-3 h-3 rounded-full ${index === activeIndex ? 'bg-primary' : 'bg-white/30'} transition-colors`}
-                onClick={() => setActiveIndex(index)}
-                aria-label={`Go to testimonial ${index + 1}`}
-              />
-            ))}
-          </div>
-          
-          {/* Arrow navigation for larger screens */}
-          <div className="hidden md:block">
-            <button 
-              className="absolute top-1/2 -left-12 transform -translate-y-1/2 w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary/40 transition-colors"
+
+          {/* Navigation */}
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <motion.button
               onClick={handlePrev}
-              aria-label="Previous testimonial"
+              className="p-3 bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-lg text-gray-300 hover:text-white hover:bg-slate-700/50 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <i className="ri-arrow-left-s-line text-2xl"></i>
-            </button>
-            <button 
-              className="absolute top-1/2 -right-12 transform -translate-y-1/2 w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary/40 transition-colors"
+              <ChevronLeft className="w-5 h-5" />
+            </motion.button>
+
+            {/* Dots */}
+            <div className="flex gap-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveIndex(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === activeIndex
+                      ? 'bg-blue-400 scale-125'
+                      : 'bg-gray-600 hover:bg-gray-500'
+                  }`}
+                />
+              ))}
+            </div>
+
+            <motion.button
               onClick={handleNext}
-              aria-label="Next testimonial"
+              className="p-3 bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-lg text-gray-300 hover:text-white hover:bg-slate-700/50 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <i className="ri-arrow-right-s-line text-2xl"></i>
-            </button>
+              <ChevronRight className="w-5 h-5" />
+            </motion.button>
           </div>
         </div>
+
+        {/* Trust Indicators */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
+        >
+          <div className="text-center bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-xl p-6">
+            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">99.8%</div>
+            <div className="text-sm text-gray-400">Client Satisfaction</div>
+          </div>
+          <div className="text-center bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-xl p-6">
+            <div className="text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">500+</div>
+            <div className="text-sm text-gray-400">Enterprise Clients</div>
+          </div>
+          <div className="text-center bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-xl p-6">
+            <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">24/7</div>
+            <div className="text-sm text-gray-400">Expert Support</div>
+          </div>
+          <div className="text-center bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-xl p-6">
+            <div className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">A+</div>
+            <div className="text-sm text-gray-400">Security Rating</div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
