@@ -167,7 +167,7 @@ export default function HeroSection() {
                       <motion.div
                         className="flex h-full gap-3"
                         animate={{
-                          x: [0, -(200 + 12) * portfolioItems.length],
+                          x: [0, -100 * portfolioItems.length + "%"],
                         }}
                         transition={{
                           duration: portfolioItems.length * 4,
@@ -179,7 +179,7 @@ export default function HeroSection() {
                         {portfolioItems.map((item, index) => (
                           <motion.div
                             key={`first-${item.id}`}
-                            className="flex-shrink-0 w-[200px] h-full relative group cursor-pointer"
+                            className="flex-shrink-0 w-fit h-full relative group cursor-pointer"
                             onClick={() => window.open(item.previewLink, "_blank")}
                             whileHover={{ scale: 1.05, z: 10 }}
                             transition={{ duration: 0.3 }}
@@ -222,7 +222,7 @@ export default function HeroSection() {
                         {portfolioItems.map((item, index) => (
                           <motion.div
                             key={`second-${item.id}`}
-                            className="flex-shrink-0 w-[200px] h-full relative group cursor-pointer"
+                            className="flex-shrink-0 w-fit h-full relative group cursor-pointer"
                             onClick={() => window.open(item.previewLink, "_blank")}
                             whileHover={{ scale: 1.05, z: 10 }}
                             transition={{ duration: 0.3 }}
