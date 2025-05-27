@@ -146,38 +146,24 @@ export default function PricingSection() {
           >
             <div className="bg-slate-800 border border-slate-700 rounded-lg p-1">
               <div className="relative flex items-center">
-                {/* Sliding Background */}
-                <motion.div
-                  className="absolute inset-1 bg-blue-600 rounded-md"
-                  animate={{
-                    x: isYearly ? '100%' : '0%'
-                  }}
-                  style={{
-                    width: '50%'
-                  }}
-                  transition={{ 
-                    type: "spring", 
-                    stiffness: 300, 
-                    damping: 30
-                  }}
-                />
-                
+                {/* Monthly Button */}
                 <button
                   onClick={() => setIsYearly(false)}
                   className={`relative z-10 px-6 py-3 rounded-md font-medium text-sm transition-colors duration-200 ${
                     !isYearly 
-                      ? 'text-white' 
+                      ? 'bg-blue-600 text-white' 
                       : 'text-gray-400'
                   }`}
                 >
                   Monthly
                 </button>
                 
+                {/* Yearly Button */}
                 <button
                   onClick={() => setIsYearly(true)}
                   className={`relative z-10 px-6 py-3 rounded-md font-medium text-sm transition-colors duration-200 flex items-center gap-2 ${
                     isYearly 
-                      ? 'text-white' 
+                      ? 'bg-blue-600 text-white' 
                       : 'text-gray-400'
                   }`}
                 >
