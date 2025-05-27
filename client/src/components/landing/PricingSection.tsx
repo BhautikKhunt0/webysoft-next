@@ -122,7 +122,7 @@ export default function PricingSection() {
           >
             Enterprise{" "}
             <span className="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">
-              Investment Plans
+              Pricing Plans
             </span>
           </motion.h2>
 
@@ -137,36 +137,55 @@ export default function PricingSection() {
           </motion.p>
 
           {/* Billing Toggle */}
+          {/* Enhanced Pricing Toggle */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex items-center justify-center gap-4 mb-12"
+            className="flex items-center justify-center mb-12"
           >
-            <span className={`text-sm font-medium ${!isYearly ? 'text-white' : 'text-gray-400'}`}>
-              Monthly
-            </span>
-            <button
-              onClick={() => setIsYearly(!isYearly)}
-              className={`relative w-16 h-8 rounded-full transition-colors duration-300 ${
-                isYearly ? 'bg-blue-600' : 'bg-slate-700'
-              }`}
-            >
-              <motion.div
-                className="absolute top-1 left-1 w-6 h-6 bg-white rounded-full shadow-md"
-                animate={{ x: isYearly ? 32 : 0 }}
-                transition={{ duration: 0.3 }}
-              />
-            </button>
-            <span className={`text-sm font-medium ${isYearly ? 'text-white' : 'text-gray-400'}`}>
-              Yearly
-            </span>
-            {isYearly && (
-              <span className="bg-green-500/10 border border-green-500/20 text-green-400 text-xs px-2 py-1 rounded-full">
-                Save 17%
-              </span>
-            )}
+            <div className="bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-xl p-2 shadow-2xl">
+              <div className="relative flex items-center">
+                <button
+                  onClick={() => setIsYearly(false)}
+                  className={`relative z-10 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 ${
+                    !isYearly 
+                      ? 'text-white' 
+                      : 'text-gray-400 hover:text-gray-300'
+                  }`}
+                >
+                  Monthly
+                </button>
+                <button
+                  onClick={() => setIsYearly(true)}
+                  className={`relative z-10 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center gap-2 ${
+                    isYearly 
+                      ? 'text-white' 
+                      : 'text-gray-400 hover:text-gray-300'
+                  }`}
+                >
+                  Yearly
+                  <span className="bg-green-500/20 border border-green-500/30 text-green-400 text-xs px-2 py-0.5 rounded-full">
+                    Save 17%
+                  </span>
+                </button>
+                
+                {/* Sliding Background */}
+                <motion.div
+                  className="absolute inset-y-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-lg"
+                  animate={{
+                    x: isYearly ? '50%' : '0%',
+                    width: isYearly ? '50%' : '50%'
+                  }}
+                  transition={{ 
+                    type: "spring", 
+                    stiffness: 300, 
+                    damping: 30 
+                  }}
+                />
+              </div>
+            </div>
           </motion.div>
         </div>
 
@@ -218,9 +237,9 @@ export default function PricingSection() {
                   {/* Price */}
                   <div className="text-center mb-8">
                     <div className="flex items-baseline justify-center gap-2">
-                      <span className="text-sm text-gray-400">₹</span>
+                      <span className="text-sm text-gray-400">$</span>
                       <span className="text-4xl md:text-5xl font-bold text-white">
-                        {(price / 100).toLocaleString('en-IN')}
+                        {(price / 100).toLocaleString('en-US')}
                       </span>
                       <span className="text-gray-400">
                         /{isYearly ? 'year' : 'month'}
@@ -228,7 +247,7 @@ export default function PricingSection() {
                     </div>
                     {isYearly && (
                       <p className="text-sm text-green-400 mt-2">
-                        Save ₹{((plan.monthlyPrice * 12 - plan.yearlyPrice) / 100).toLocaleString('en-IN')} annually
+                        Save ${((plan.monthlyPrice * 12 - plan.yearlyPrice) / 100).toLocaleString('en-US')} annually
                       </p>
                     )}
                   </div>
