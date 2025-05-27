@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, Shield, Award, Crown, ArrowRight, Star } from "lucide-react";
+import { Check, Shield, Award, Crown, ArrowRight, Star, DollarSign } from "lucide-react";
 import { useState } from "react";
 
 const plans = [
@@ -110,7 +110,7 @@ export default function PricingSection() {
             className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 text-sm font-medium text-blue-400 mb-6"
           >
             <Crown className="w-4 h-4" />
-            <span>Investment Plans</span>
+            <span>Pricing Plans</span>
           </motion.div>
 
           <motion.h2

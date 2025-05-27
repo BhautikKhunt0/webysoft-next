@@ -234,7 +234,7 @@ export default function HeroSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
                   <div className="absolute bottom-4 left-4 right-4">
                     <p className="text-white font-semibold text-lg">Professional Excellence</p>
-                    <p className="text-gray-300 text-sm">Certified experts delivering enterprise solutions</p>
+                    <p className="text-gray-300 text-sm">Delivering enterprise solutions</p>
                   </div>
                 </div>
 
@@ -262,12 +262,8 @@ export default function HeroSection() {
                   </motion.div>
                 </div>
 
-                {/* Certifications */}
+                {/* Achievement Highlights */}
                 <div className="flex justify-between items-center pt-4 border-t border-slate-700/50">
-                  <div className="flex items-center gap-2">
-                    <Shield className="w-5 h-5 text-green-400" />
-                    <span className="text-xs text-gray-400">ISO Certified</span>
-                  </div>
                   <div className="flex items-center gap-2">
                     <Award className="w-5 h-5 text-yellow-400" />
                     <span className="text-xs text-gray-400">Industry Leader</span>
@@ -275,6 +271,10 @@ export default function HeroSection() {
                   <div className="flex items-center gap-2">
                     <Globe className="w-5 h-5 text-blue-400" />
                     <span className="text-xs text-gray-400">Global Reach</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Star className="w-5 h-5 text-purple-400" />
+                    <span className="text-xs text-gray-400">Top Rated</span>
                   </div>
                 </div>
               </div>

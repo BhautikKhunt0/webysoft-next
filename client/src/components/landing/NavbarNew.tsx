@@ -9,7 +9,7 @@ import { Menu, X, Shield, Award } from 'lucide-react';
 const MENU_ITEMS = [
   { id: 'features', label: 'Solutions' },
   { id: 'how-it-works', label: 'Process' },
-  { id: 'pricing', label: 'Investment' },
+  { id: 'pricing', label: 'Pricing' },
   { path: '/portfolio', label: 'Portfolio', isPageLink: true },
   { id: 'testimonials', label: 'Testimonials' },
   { id: 'contact', label: 'Contact' }
@@ -180,7 +180,7 @@ export default function Navbar() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      onClick={() => navigateToSection(item.id)}
+                      onClick={() => item.id && navigateToSection(item.id)}
                       className="block w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-slate-800/50 rounded-lg font-medium transition-all duration-200"
                     >
                       {item.label}
@@ -204,17 +204,7 @@ export default function Navbar() {
         </AnimatePresence>
       </div>
 
-      {/* Trust Indicator */}
-      {isScrolled && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="absolute top-full left-4 mt-2 flex items-center gap-2 bg-green-500/10 backdrop-blur border border-green-500/20 rounded-full px-3 py-1 text-xs text-green-400"
-        >
-          <Award className="w-3 h-3" />
-          <span>ISO Certified</span>
-        </motion.div>
-      )}
+
     </motion.nav>
   );
 }
