@@ -161,43 +161,117 @@ export default function HeroSection() {
                 
                 {/* Portfolio Showcase Carousel */}
                 <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-700 to-slate-800 border border-slate-600/50">
-                  <div className="aspect-[4/5] relative">
-                    {/* Scrollable Portfolio Images */}
-                    <div className="h-full overflow-y-auto scrollbar-hide space-y-4 p-4">
-                      {portfolioItems.slice(0, 6).map((item, index) => (
-                        <motion.div
-                          key={item.id}
-                          initial={{ opacity: 0, x: 20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.5, delay: index * 0.1 }}
-                          className="relative group cursor-pointer"
-                          onClick={() => window.open("https://wa.me/918849990393", "_blank")}
-                        >
-                          <div className="relative overflow-hidden rounded-lg border border-slate-600/50 hover:border-blue-500/50 transition-all duration-300">
-                            <img 
-                              src={item.imageUrl} 
-                              alt={item.title}
-                              className="w-full h-24 object-cover group-hover:scale-105 transition-transform duration-300"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                              <div className="absolute bottom-2 left-2 right-2">
-                                <p className="text-white text-xs font-semibold truncate">{item.title}</p>
-                                <p className="text-gray-300 text-xs truncate">{item.type}</p>
+                  <div className="aspect-[4/3] relative">
+                    {/* Infinite Horizontal Scrolling Portfolio Images */}
+                    <div className="relative h-full overflow-hidden">
+                      <motion.div
+                        className="flex h-full"
+                        animate={{
+                          x: [0, -100 * portfolioItems.length],
+                        }}
+                        transition={{
+                          duration: portfolioItems.length * 3,
+                          repeat: Infinity,
+                          ease: "linear"
+                        }}
+                      >
+                        {/* First set of items */}
+                        {portfolioItems.map((item, index) => (
+                          <motion.div
+                            key={`first-${item.id}`}
+                            className="flex-shrink-0 w-full h-full relative group cursor-pointer p-2"
+                            onClick={() => window.open(item.previewLink, "_blank")}
+                            whileHover={{ scale: 1.02 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <div className="relative overflow-hidden rounded-lg border border-slate-600/50 hover:border-blue-500/50 transition-all duration-300 h-full">
+                              <img 
+                                src={item.imageUrl} 
+                                alt={item.title}
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                loading="lazy"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div className="absolute bottom-4 left-4 right-4">
+                                  <p className="text-white text-sm font-semibold mb-1">{item.title}</p>
+                                  <p className="text-blue-300 text-xs mb-2">{item.type}</p>
+                                  <div className="flex flex-wrap gap-1 mb-2">
+                                    {item.technologies.slice(0, 3).map((tech, techIndex) => (
+                                      <span 
+                                        key={techIndex}
+                                        className="px-2 py-1 bg-slate-800/80 rounded text-xs text-gray-300"
+                                      >
+                                        {tech}
+                                      </span>
+                                    ))}
+                                  </div>
+                                  <div className="flex items-center gap-2">
+                                    <div className="flex items-center gap-1 text-green-400 text-xs">
+                                      <CheckCircle className="w-3 h-3" />
+                                      <span>Live Project</span>
+                                    </div>
+                                    <ArrowRight className="w-4 h-4 text-blue-400" />
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </motion.div>
-                      ))}
+                          </motion.div>
+                        ))}
+                        
+                        {/* Duplicate set for seamless infinite scroll */}
+                        {portfolioItems.map((item, index) => (
+                          <motion.div
+                            key={`second-${item.id}`}
+                            className="flex-shrink-0 w-full h-full relative group cursor-pointer p-2"
+                            onClick={() => window.open(item.previewLink, "_blank")}
+                            whileHover={{ scale: 1.02 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <div className="relative overflow-hidden rounded-lg border border-slate-600/50 hover:border-blue-500/50 transition-all duration-300 h-full">
+                              <img 
+                                src={item.imageUrl} 
+                                alt={item.title}
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                loading="lazy"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div className="absolute bottom-4 left-4 right-4">
+                                  <p className="text-white text-sm font-semibold mb-1">{item.title}</p>
+                                  <p className="text-blue-300 text-xs mb-2">{item.type}</p>
+                                  <div className="flex flex-wrap gap-1 mb-2">
+                                    {item.technologies.slice(0, 3).map((tech, techIndex) => (
+                                      <span 
+                                        key={techIndex}
+                                        className="px-2 py-1 bg-slate-800/80 rounded text-xs text-gray-300"
+                                      >
+                                        {tech}
+                                      </span>
+                                    ))}
+                                  </div>
+                                  <div className="flex items-center gap-2">
+                                    <div className="flex items-center gap-1 text-green-400 text-xs">
+                                      <CheckCircle className="w-3 h-3" />
+                                      <span>Live Project</span>
+                                    </div>
+                                    <ArrowRight className="w-4 h-4 text-blue-400" />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </motion.div>
+                        ))}
+                      </motion.div>
                     </div>
                     
-                    {/* Gradient Overlay at bottom for scroll indication */}
-                    <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-slate-800 to-transparent pointer-events-none"></div>
+                    {/* Side Gradient Overlays for infinite effect */}
+                    <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-slate-800 to-transparent pointer-events-none z-10"></div>
+                    <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-slate-800 to-transparent pointer-events-none z-10"></div>
                   </div>
                   
                   {/* Professional overlay */}
-                  <div className="absolute bottom-4 left-4 right-4 bg-slate-900/80 backdrop-blur rounded-lg p-3">
-                    <p className="text-white font-semibold text-sm">Our Portfolio</p>
-                    <p className="text-gray-300 text-xs">Click any project to get started</p>
+                  <div className="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur rounded-lg p-3 z-20">
+                    <p className="text-white font-semibold text-sm">Our Live Portfolio</p>
+                    <p className="text-gray-300 text-xs">Click any project to visit the live website</p>
                   </div>
                 </div>
 
