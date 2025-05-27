@@ -82,7 +82,7 @@ export default function HeroSection() {
             >
               {[
                 { icon: Shield, text: "Enterprise Security Standards" },
-                { icon: Award, text: "ISO 9001:2015 Certified Quality" },
+                { icon: Award, text: "Certified Quality Assurance" },
                 { icon: Users, text: "Dedicated Project Management" },
                 { icon: TrendingUp, text: "Proven ROI Enhancement" }
               ].map((feature, index) => (
@@ -344,32 +344,7 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-8 left-0 right-0 mx-auto w-fit flex flex-col items-center cursor-pointer"
-          animate={{ y: [0, 10, 0] }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          onClick={() => scrollToSection("features")}
-          role="button"
-          aria-label="Scroll to explore content"
-          tabIndex={0}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              scrollToSection("features");
-            }
-          }}
-        >
-          <span className="text-sm text-gray-400 mb-2">
-            Discover Our Services
-          </span>
-          <div className="w-8 h-8 rounded-full flex items-center justify-center border border-blue-400/30 bg-blue-500/10 hover:bg-blue-500/20 transition-colors">
-            <ArrowRight className="w-4 h-4 text-blue-400 transform rotate-90" />
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );
