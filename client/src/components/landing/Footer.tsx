@@ -251,11 +251,12 @@ export default function Footer() {
               className="flex-1 bg-slate-700/50 border border-slate-600/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
             />
             <motion.button
+              onClick={() => window.open("https://wa.me/918849990393", "_blank")}
               className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 whitespace-nowrap"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              Subscribe
+              Get Started
             </motion.button>
           </div>
         </motion.div>

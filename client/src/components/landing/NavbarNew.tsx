@@ -193,7 +193,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: MENU_ITEMS.length * 0.1 }}
-                  onClick={() => navigateToSection('contact')}
+                  onClick={() => window.open("https://wa.me/918849990393", "_blank")}
                   className="w-full mx-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-3 rounded-lg transition-all duration-300 hover:from-blue-700 hover:to-indigo-700"
                 >
                   Get Started
