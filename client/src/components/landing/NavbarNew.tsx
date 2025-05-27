@@ -180,7 +180,12 @@ export default function Navbar() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      onClick={() => item.id && navigateToSection(item.id)}
+                      onClick={() => {
+                        if (item.id) {
+                          navigateToSection(item.id);
+                        }
+                        setMobileMenuOpen(false);
+                      }}
                       className="block w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-slate-800/50 rounded-lg font-medium transition-all duration-200"
                     >
                       {item.label}
@@ -193,7 +198,10 @@ export default function Navbar() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: MENU_ITEMS.length * 0.1 }}
-                  onClick={() => window.open("https://wa.me/918849990393", "_blank")}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    window.open("https://wa.me/918849990393", "_blank");
+                  }}
                   className="w-full mx-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-3 rounded-lg transition-all duration-300 hover:from-blue-700 hover:to-indigo-700"
                 >
                   Get Started
