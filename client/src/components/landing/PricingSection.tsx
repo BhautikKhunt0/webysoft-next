@@ -174,7 +174,7 @@ export default function PricingSection() {
                 {/* Yearly Button */}
                 <motion.button
                   onClick={() => setIsYearly(true)}
-                  className={`relative z-10 px-8 py-4 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-3 flex-1 ${
+                  className={`relative z-10 px-6 py-4 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 flex-1 whitespace-nowrap ${
                     isYearly 
                       ? 'text-white' 
                       : 'text-gray-400 hover:text-gray-300'
@@ -182,9 +182,9 @@ export default function PricingSection() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Yearly
+                  <span>Yearly</span>
                   <motion.span 
-                    className="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs px-3 py-1 rounded-full font-bold shadow-lg"
+                    className="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs px-2 py-0.5 rounded-full font-bold shadow-lg flex-shrink-0"
                     animate={{ 
                       scale: isYearly ? [1, 1.1, 1] : 1,
                       boxShadow: isYearly ? 
