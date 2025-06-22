@@ -5,5 +5,3 @@ const nextConfig = {
     domains: ["localhost", "images.unsplash.com"],
   },
 };
-
-module.exports = nextConfig;
