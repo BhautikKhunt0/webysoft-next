@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a professional portfolio website for WebySoft, a digital agency specializing in web development and design services. The application is built using Next.js 15 with TypeScript, featuring a modern glass morphism design, smooth animations, and a comprehensive showcase of portfolio projects.
+This is a professional portfolio website for WebySoft, a digital agency specializing in web development and design services. The application is built using Next.js 15 with TypeScript, featuring a modern glass morphism design, smooth animations, and a comprehensive showcase of portfolio projects. The site includes Privacy Policy and Terms of Service pages with professional legal content.
 
 ## System Architecture
 
@@ -97,6 +97,7 @@ This is a professional portfolio website for WebySoft, a digital agency speciali
 ```
 Changelog:
 - June 22, 2025. Initial setup
+- June 22, 2025. Added Privacy Policy and Terms of Service pages, removed FAQ/Support/Cookie Policy from footer
 ```
 
 ## User Preferences

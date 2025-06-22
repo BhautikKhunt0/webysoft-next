@@ -169,19 +169,25 @@ export default function Footer() {
             <h3 className="text-xl font-bold text-white mb-6">Resources</h3>
             <ul className="space-y-3 mb-8">
               {[
-                { label: 'FAQ', href: '#faq' },
-                { label: 'Support', href: '#contact' },
-                { label: 'Privacy Policy', href: '#privacy' },
-                { label: 'Terms of Service', href: '#terms' },
-                { label: 'Cookie Policy', href: '#cookies' }
+                { label: 'Privacy Policy', href: '/privacy-policy', isLink: true },
+                { label: 'Terms of Service', href: '/terms-of-service', isLink: true }
               ].map((item, index) => (
                 <li key={index}>
-                  <a
-                    href={item.href}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm hover:translate-x-1 inline-block"
-                  >
-                    {item.label}
-                  </a>
+                  {item.isLink ? (
+                    <Link
+                      href={item.href}
+                      className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm hover:translate-x-1 inline-block"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={item.href}
+                      className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm hover:translate-x-1 inline-block"
+                    >
+                      {item.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

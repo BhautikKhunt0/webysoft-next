@@ -1025,6 +1025,9 @@ h1, h2, h3, h4, h5, h6 {
 .ml-3{
   margin-left: 0.75rem;
 }
+.ml-4{
+  margin-left: 1rem;
+}
 .ml-auto{
   margin-left: auto;
 }
@@ -1820,6 +1823,9 @@ h1, h2, h3, h4, h5, h6 {
 .border-slate-600\/50{
   border-color: rgb(71 85 105 / 0.5);
 }
+.border-slate-700\/30{
+  border-color: rgb(51 65 85 / 0.3);
+}
 .border-slate-700\/50{
   border-color: rgb(51 65 85 / 0.5);
 }
@@ -1999,12 +2005,19 @@ h1, h2, h3, h4, h5, h6 {
 .bg-sidebar-border{
   background-color: hsl(var(--sidebar-border));
 }
+.bg-slate-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
+}
 .bg-slate-700{
   --tw-bg-opacity: 1;
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
 }
 .bg-slate-700\/50{
   background-color: rgb(51 65 85 / 0.5);
+}
+.bg-slate-800\/20{
+  background-color: rgb(30 41 59 / 0.2);
 }
 .bg-slate-800\/30{
   background-color: rgb(30 41 59 / 0.3);
@@ -2111,6 +2124,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .from-blue-600{
   --tw-gradient-from: #2563eb var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(37 99 235 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.from-blue-600\/20{
+  --tw-gradient-from: rgb(37 99 235 / 0.2) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(37 99 235 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
@@ -2266,6 +2284,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .to-indigo-600{
   --tw-gradient-to: #4f46e5 var(--tw-gradient-to-position);
+}
+.to-indigo-600\/20{
+  --tw-gradient-to: rgb(79 70 229 / 0.2) var(--tw-gradient-to-position);
 }
 .to-indigo-700{
   --tw-gradient-to: #4338ca var(--tw-gradient-to-position);
@@ -2676,6 +2697,10 @@ h1, h2, h3, h4, h5, h6 {
 .text-muted-foreground{
   color: hsl(var(--muted-foreground));
 }
+.text-orange-400{
+  --tw-text-opacity: 1;
+  color: rgb(251 146 60 / var(--tw-text-opacity));
+}
 .text-popover-foreground{
   color: hsl(var(--popover-foreground));
 }
@@ -2691,6 +2716,10 @@ h1, h2, h3, h4, h5, h6 {
 .text-purple-400{
   --tw-text-opacity: 1;
   color: rgb(192 132 252 / var(--tw-text-opacity));
+}
+.text-red-300{
+  --tw-text-opacity: 1;
+  color: rgb(252 165 165 / var(--tw-text-opacity));
 }
 .text-red-400{
   --tw-text-opacity: 1;
@@ -3361,6 +3390,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .hover\:text-accent-foreground:hover{
   color: hsl(var(--accent-foreground));
+}
+
+.hover\:text-blue-300:hover{
+  --tw-text-opacity: 1;
+  color: rgb(147 197 253 / var(--tw-text-opacity));
 }
 
 .hover\:text-blue-400:hover{
