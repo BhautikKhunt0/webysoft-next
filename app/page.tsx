@@ -17,12 +17,8 @@ export default function Home() {
   useHashNavigation();
 
   return (
-    <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="min-h-screen bg-slate-900 text-foreground overflow-x-hidden"
-    >
+    <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
+      <div className="bg-red-500 text-white p-4 text-center">DEBUG: Page is rendering</div>
       <Navbar />
       <HeroSection />
       <FeaturesSection />
@@ -31,6 +27,6 @@ export default function Home() {
       <TestimonialsSection />
       <ContactSection />
       <Footer />
-    </motion.div>
+    </div>
   );
 }

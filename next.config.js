@@ -2,16 +2,21 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'images.unsplash.com'],
   },
-  async rewrites() {
+  async headers() {
     return [
       {
-        source: '/api/:path*',
-        destination: '/api/:path*',
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
+          },
+        ],
       },
     ];
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
