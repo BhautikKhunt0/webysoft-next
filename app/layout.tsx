@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter, Montserrat } from 'next/font/google'
 import { Toaster } from '@/components/ui/toaster'
 import { ReactQueryProvider } from '@/lib/react-query-provider'
+import GoogleTagManager from '@/components/analytics/GoogleTagManager'
 import React from 'react'
 
 const inter = Inter({ 
@@ -28,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
       <body className="font-sans antialiased">
+        <GoogleTagManager gtmId="GTM-10H5SFHWMH" />
         <ReactQueryProvider>
           {children}
           <Toaster />

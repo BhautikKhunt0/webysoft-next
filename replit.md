@@ -98,6 +98,7 @@ This is a professional portfolio website for WebySoft, a digital agency speciali
 Changelog:
 - June 22, 2025. Initial setup
 - June 22, 2025. Added Privacy Policy and Terms of Service pages, removed FAQ/Support/Cookie Policy from footer
+- June 22, 2025. Implemented Google Tag Manager for analytics tracking across all pages
 ```
 
 ## User Preferences
