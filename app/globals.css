@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animation keyframes */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes premium-shimmer {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) rotate(30deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(30deg);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite;
+}
+
+.animate-delay-1 {
+  animation-delay: 1s;
+}
+
+.animate-delay-2 {
+  animation-delay: 2s;
+}
+
+.animate-delay-3 {
+  animation-delay: 3s;
+}
+
+.animate-delay-4 {
+  animation-delay: 4s;
+}
+
+@layer base {
+  :root {
+    --background: 250 15% 8%;
+    --foreground: 210 40% 98%;
+    
+    --card: 250 15% 11%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 250 15% 8%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 271 76% 53%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 250 15% 14%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --accent: 38 98% 60%;
+    --accent-foreground: 0 0% 0%;
+    
+    --muted: 250 15% 14%;
+    --muted-foreground: 214 15% 75%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 250 15% 14%;
+    --input: 250 15% 14%;
+    --ring: 271 76% 53%;
+    
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
+    background-image: 
+      radial-gradient(circle at 25% 10%, rgba(142, 82, 232, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 75% 90%, rgba(142, 82, 232, 0.05) 0%, transparent 50%);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  .text-glow {
+    text-shadow: 0 0 15px rgba(142, 82, 232, 0.5);
+  }
+  
+  .bg-glow {
+    box-shadow: 0 0 25px rgba(142, 82, 232, 0.3);
+  }
+  
+  .glass {
+    @apply backdrop-blur-md bg-secondary/50 border border-white/10 relative;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  /* Custom animations for map visualization */
+  @keyframes ping-slow {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.2;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.3;
+    }
+    100% {
+      transform: scale(0.8);
+      opacity: 0.2;
+    }
+  }
+
+  .animate-ping-slow {
+    animation: ping-slow 3s infinite;
+  }
+
+  /* Grid pattern background */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .gradient-text {
+    @apply text-transparent bg-clip-text;
+    background-image: linear-gradient(-45deg, #9747FF, #b888ff, #8e52e8, #7038d3);
+    background-size: 300% 300%;
+    animation: gradient 8s ease infinite;
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(-45deg, #0e0b17, #1b1325, #181022, #0e0a17);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  .royal-border {
+    position: relative;
+    border: none;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .royal-border:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(142, 82, 232, 0.6), rgba(142, 82, 232, 0.1));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+  }
+  
+  .card-3d {
+    @apply transition-all duration-300;
+    transform: perspective(1000px) rotateX(0) rotateY(0);
+  }
+  
+  .card-3d:hover {
+    transform: perspective(1000px) rotateX(2deg) rotateY(5deg);
+    @apply shadow-xl shadow-primary/40;
+  }
+  
+  /* Royal decorative elements */
+  .royal-border {
+    position: relative;
+    border: 1px solid rgba(142, 82, 232, 0.3);
+  }
+  
+  .royal-border::before,
+  .royal-border::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 2px solid rgba(255, 213, 79, 0.8);
+  }
+  
+  .royal-border::before {
+    top: -2px;
+    left: -2px;
+    border-right: 0;
+    border-bottom: 0;
+  }
+  
+  .royal-border::after {
+    bottom: -2px;
+    right: -2px;
+    border-left: 0;
+    border-top: 0;
+  }
+  
+  .decorated-heading {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .decorated-heading::before,
+  .decorated-heading::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    top: 50%;
+    width: 30px;
+    background: linear-gradient(90deg, transparent, rgba(255, 213, 79, 0.8), transparent);
+  }
+  
+  .decorated-heading::before {
+    right: calc(100% + 20px);
+  }
+  
+  .decorated-heading::after {
+    left: calc(100% + 20px);
+  }
+
+  /* Premium Chat Button - Professional Design */
+  .premium-chat-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+    padding: 9px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    width: 100%;
+    max-width: 220px;
+    cursor: pointer;
+  }
+
+  .premium-chat-button:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(25, 170, 85, 0.15), rgba(25, 170, 85, 0.05));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+    border-radius: 12px;
+  }
+
+  .premium-chat-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+      0 10px 25px -5px rgba(0, 0, 0, 0.2),
+      0 0 15px rgba(25, 170, 85, 0.15);
+    border-color: rgba(25, 170, 85, 0.25);
+  }
+
+  .premium-chat-button:hover:before {
+    opacity: 1;
+  }
+
+  .premium-chat-button:active {
+    transform: translateY(0px);
+    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.2);
+  }
+
+  .premium-chat-button .chat-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.4);
+  }
+
+  .premium-chat-button:hover .chat-icon {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(37, 211, 102, 0.6);
+  }
+
+  .premium-chat-button .button-text {
+    font-weight: 500;
+    color: #f8f8f8;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .premium-chat-button:hover .button-text {
+    color: #ffffff;
+  }
+
+  .premium-chat-button .button-text:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: rgba(255, 255, 255, 0.7);
+    transition: width 0.3s ease;
+  }
+
+  .premium-chat-button:hover .button-text:after {
+    width: 100%;
+  }
+
+  /* Modern subtle shimmer effect */
+  .premium-chat-button:after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    transition: 0.5s all ease;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+  }
+
+  .premium-chat-button:hover:after {
+    opacity: 1;
+    animation: premium-shimmer 3s infinite;
+  }
+
+  /* WhatsApp button professional animations */
+  .whatsapp-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, rgba(37, 211, 102, 0.15) 0%, rgba(37, 211, 102, 0.05) 100%);
+    padding: 10px 18px;
+    border-radius: 50px;
+    border: 1px solid rgba(37, 211, 102, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    z-index: 1;
+    width: auto;
+    cursor: pointer;
+  }
+
+  .whatsapp-button:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(37, 211, 102, 0.4), rgba(37, 211, 102, 0));
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+  }
+
+  .whatsapp-button:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+      0 10px 20px -10px rgba(37, 211, 102, 0.5),
+      0 0 15px rgba(37, 211, 102, 0.2);
+  }
+
+  .whatsapp-button:hover:before {
+    opacity: 1;
+  }
+
+  .whatsapp-button:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 5px 10px -5px rgba(37, 211, 102, 0.3);
+  }
+
+  .whatsapp-button .whatsapp-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(37, 211, 102, 0.5);
+  }
+
+  .whatsapp-button:hover .whatsapp-icon {
+    transform: rotate(15deg) scale(1.1);
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.7);
+  }
+
+  .whatsapp-button .button-text {
+    font-weight: 600;
+    color: #1a624a;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .whatsapp-button:hover .button-text {
+    color: #0d3e2e;
+  }
+
+  .whatsapp-button .button-text:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #25D366;
+    transition: width 0.3s ease;
+  }
+
+  .whatsapp-button:hover .button-text:after {
+    width: 100%;
+  }
+
+  /* Shimmer effect */
+  .whatsapp-button:after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    animation: shimmer 4s infinite;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .whatsapp-button:hover:after {
+    opacity: 1;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .premium-chat-button {
+      padding: 10px 14px;
+      width: 100%;
+      max-width: none;
+    }
+  }
+}
