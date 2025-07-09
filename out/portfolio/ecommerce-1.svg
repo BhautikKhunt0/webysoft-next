@@ -1,0 +1,17 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#4F46E5"/>
+  <rect opacity="0.1" width="600" height="400" fill="url(#paint0_linear)"/>
+  <path d="M300 220C333.137 220 360 193.137 360 160C360 126.863 333.137 100 300 100C266.863 100 240 126.863 240 160C240 193.137 266.863 220 300 220Z" fill="white" fill-opacity="0.2"/>
+  <path d="M180 300H420V340H180V300Z" fill="white" fill-opacity="0.2"/>
+  <path d="M210 260H390V290H210V260Z" fill="white" fill-opacity="0.2"/>
+  <path d="M185 220H237C241.418 220 245 216.418 245 212V160C245 155.582 241.418 152 237 152H185C180.582 152 177 155.582 177 160V212C177 216.418 180.582 220 185 220Z" fill="white" fill-opacity="0.1"/>
+  <path d="M275 220H327C331.418 220 335 216.418 335 212V160C335 155.582 331.418 152 327 152H275C270.582 152 267 155.582 267 160V212C267 216.418 270.582 220 275 220Z" fill="white" fill-opacity="0.1"/>
+  <path d="M365 220H417C421.418 220 425 216.418 425 212V160C425 155.582 421.418 152 417 152H365C360.582 152 357 155.582 357 160V212C357 216.418 360.582 220 365 220Z" fill="white" fill-opacity="0.1"/>
+  <text x="300" y="50" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Fashion Nova Ecommerce</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="600" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>

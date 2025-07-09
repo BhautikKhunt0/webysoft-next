@@ -1,0 +1,17 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#0F766E"/>
+  <rect opacity="0.1" width="600" height="400" fill="url(#paint0_linear)"/>
+  <path d="M300 60C333.137 60 360 86.8629 360 120C360 153.137 333.137 180 300 180C266.863 180 240 153.137 240 120C240 86.8629 266.863 60 300 60Z" fill="white" fill-opacity="0.2"/>
+  <path d="M240 200H360V240H240V200Z" fill="white" fill-opacity="0.1"/>
+  <path d="M180 260H420V300H180V260Z" fill="white" fill-opacity="0.1"/>
+  <path d="M180 320H420V360H180V320Z" fill="white" fill-opacity="0.1"/>
+  <path d="M288 88H312V152H288V88Z" fill="white" fill-opacity="0.5"/>
+  <path d="M270 120L330 120L330 144L270 144L270 120Z" fill="white" fill-opacity="0.5"/>
+  <text x="300" y="50" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Legal Services</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="600" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>

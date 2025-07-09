@@ -1,0 +1,9 @@
+# WebySoft robots.txt
+# Last updated: May 9, 2025
+
+# Allow all crawlers full access
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://webysoft.com/sitemap.xml

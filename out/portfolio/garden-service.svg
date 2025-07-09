@@ -1,0 +1,16 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#22C55E"/>
+  <rect opacity="0.1" width="600" height="400" fill="url(#paint0_linear)"/>
+  <path d="M260 80C260 80 240 140 300 180C360 220 340 280 340 280" stroke="white" stroke-width="10" stroke-linecap="round"/>
+  <path d="M280 100C280 100, 290 120, 280 150" stroke="white" stroke-width="5" stroke-linecap="round"/>
+  <path d="M320 260C320 260, 310 240, 320 220" stroke="white" stroke-width="5" stroke-linecap="round"/>
+  <path d="M180 300H420V340H180V300Z" fill="white" fill-opacity="0.2"/>
+  <path d="M210 260H390V290H210V260Z" fill="white" fill-opacity="0.2"/>
+  <text x="300" y="50" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Garden Landscaping</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="600" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>

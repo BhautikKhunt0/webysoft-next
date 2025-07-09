@@ -1,0 +1,16 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#8B5CF6"/>
+  <rect opacity="0.1" width="600" height="400" fill="url(#paint0_linear)"/>
+  <path d="M180 120H420V180H180V120Z" fill="white" fill-opacity="0.2"/>
+  <path d="M180 200H280V340H180V200Z" fill="white" fill-opacity="0.1"/>
+  <path d="M300 200H420V250H300V200Z" fill="white" fill-opacity="0.1"/>
+  <path d="M300 270H420V340H300V270Z" fill="white" fill-opacity="0.1"/>
+  <path d="M300 143L330 160L300 177L270 160L300 143Z" fill="white"/>
+  <text x="300" y="50" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Online Academy</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="600" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>

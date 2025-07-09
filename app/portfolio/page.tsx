@@ -1,90 +1,93 @@
-'use client'
+"use client";
 
-import { useState, useMemo } from 'react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import Navbar from '@/components/landing/NavbarNew';
-import Footer from '@/components/landing/Footer';
-import { 
-  portfolioItems, 
-  getAllTypes, 
-  type PortfolioItem, 
-  type PortfolioItemType 
-} from '@/data/portfolio';
-import { 
-  Shield, 
-  Award, 
-  ExternalLink, 
-  Filter, 
-  Search, 
+import { useState, useMemo } from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import Navbar from "@/components/landing/NavbarNew";
+import Footer from "@/components/landing/Footer";
+import {
+  portfolioItems,
+  getAllTypes,
+  type PortfolioItem,
+  type PortfolioItemType,
+} from "@/data/portfolio";
+import {
+  Shield,
+  Award,
+  ExternalLink,
+  Filter,
+  Search,
   ArrowLeft,
   Building,
   Globe,
-  CheckCircle 
-} from 'lucide-react';
+  CheckCircle,
+} from "lucide-react";
 
 export default function Portfolio() {
-  const [selectedType, setSelectedType] = useState<PortfolioItemType | 'All'>('All');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedType, setSelectedType] = useState<PortfolioItemType | "All">(
+    "All"
+  );
+  const [searchQuery, setSearchQuery] = useState("");
 
   const allTypes = getAllTypes();
-  
+
   const filteredItems = useMemo(() => {
     let items = portfolioItems;
-    
-    if (selectedType !== 'All') {
-      items = items.filter(item => item.type === selectedType);
+
+    if (selectedType !== "All") {
+      items = items.filter((item) => item.type === selectedType);
     }
-    
+
     if (searchQuery) {
-      items = items.filter(item => 
-        item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.category.toLowerCase().includes(searchQuery.toLowerCase())
+      items = items.filter(
+        (item) =>
+          item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.category.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
-    
+
     return items;
   }, [selectedType, searchQuery]);
 
   const typeColors = {
-    'Service': 'blue',
-    'Legal': 'indigo', 
-    'Local Shop': 'purple',
-    'Academy': 'green'
+    Service: "blue",
+    Legal: "indigo",
+    "Local Shop": "purple",
+    Academy: "green",
   };
 
   const colorClasses = {
     blue: {
       bg: "bg-blue-500/10",
       text: "text-blue-400",
-      border: "border-blue-500/20"
+      border: "border-blue-500/20",
     },
     indigo: {
-      bg: "bg-indigo-500/10", 
+      bg: "bg-indigo-500/10",
       text: "text-indigo-400",
-      border: "border-indigo-500/20"
+      border: "border-indigo-500/20",
     },
     purple: {
       bg: "bg-purple-500/10",
-      text: "text-purple-400", 
-      border: "border-purple-500/20"
+      text: "text-purple-400",
+      border: "border-purple-500/20",
     },
     green: {
       bg: "bg-green-500/10",
       text: "text-green-400",
-      border: "border-green-500/20"
-    }
+      border: "border-green-500/20",
+    },
   };
 
   return (
     <div className="min-h-screen bg-slate-900 text-white">
       <Navbar />
-      
+
       <section className="pt-24 pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(59,130,246,0.1),transparent_70%)]"></div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -96,16 +99,18 @@ export default function Portfolio() {
               <Building className="w-4 h-4" />
               <span>Enterprise Portfolio</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
               Our{" "}
               <span className="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">
                 Success Stories
               </span>
             </h1>
-            
+
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
-              Discover how we've helped enterprises across industries achieve digital transformation with our certified solutions and professional expertise.
+              Discover how we've helped enterprises across industries achieve
+              digital transformation with our certified solutions and
+              professional expertise.
             </p>
 
             <Link href="/">
@@ -132,15 +137,21 @@ export default function Portfolio() {
               <div className="text-sm text-gray-400">Projects Delivered</div>
             </div>
             <div className="text-center bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-xl p-6">
-              <div className="text-3xl font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">100%</div>
+              <div className="text-3xl font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+                100%
+              </div>
               <div className="text-sm text-gray-400">Client Satisfaction</div>
             </div>
             <div className="text-center bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-xl p-6">
-              <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">4+</div>
+              <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+                4+
+              </div>
               <div className="text-sm text-gray-400">Industries Served</div>
             </div>
             <div className="text-center bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-xl p-6">
-              <div className="text-3xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">A+</div>
+              <div className="text-3xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                A+
+              </div>
               <div className="text-sm text-gray-400">Quality Rating</div>
             </div>
           </motion.div>
@@ -164,17 +175,18 @@ export default function Portfolio() {
             <div className="flex items-center gap-2 flex-wrap">
               <Filter className="w-5 h-5 text-gray-400 mr-2" />
               <button
-                onClick={() => setSelectedType('All')}
+                onClick={() => setSelectedType("All")}
                 className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
-                  selectedType === 'All'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-slate-800/50 text-gray-300 hover:bg-slate-700/50'
+                  selectedType === "All"
+                    ? "bg-blue-600 text-white"
+                    : "bg-slate-800/50 text-gray-300 hover:bg-slate-700/50"
                 }`}
               >
                 All Projects
               </button>
               {allTypes.map((type) => {
-                const colors = colorClasses[typeColors[type] as keyof typeof colorClasses];
+                const colors =
+                  colorClasses[typeColors[type] as keyof typeof colorClasses];
                 return (
                   <button
                     key={type}
@@ -182,7 +194,7 @@ export default function Portfolio() {
                     className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
                       selectedType === type
                         ? `${colors.bg} ${colors.text} ${colors.border} border`
-                        : 'bg-slate-800/50 text-gray-300 hover:bg-slate-700/50'
+                        : "bg-slate-800/50 text-gray-300 hover:bg-slate-700/50"
                     }`}
                   >
                     {type}
@@ -199,14 +211,21 @@ export default function Portfolio() {
           {filteredItems.length === 0 ? (
             <div className="text-center py-20">
               <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-2xl font-bold text-white mb-4">No Projects Found</h3>
-              <p className="text-gray-400">Try adjusting your search or filter criteria.</p>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                No Projects Found
+              </h3>
+              <p className="text-gray-400">
+                Try adjusting your search or filter criteria.
+              </p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredItems.map((item, index) => {
-                const colors = colorClasses[typeColors[item.type] as keyof typeof colorClasses];
-                
+                const colors =
+                  colorClasses[
+                    typeColors[item.type] as keyof typeof colorClasses
+                  ];
+
                 return (
                   <motion.div
                     key={item.id}
@@ -224,9 +243,11 @@ export default function Portfolio() {
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
-                      
+
                       <div className="absolute top-4 left-4">
-                        <span className={`px-3 py-1 rounded-full text-sm font-medium ${colors.bg} ${colors.text} ${colors.border} border backdrop-blur`}>
+                        <span
+                          className={`px-3 py-1 rounded-full text-sm font-medium ${colors.bg} ${colors.text} ${colors.border} border backdrop-blur`}
+                        >
                           {item.type}
                         </span>
                       </div>
@@ -249,7 +270,9 @@ export default function Portfolio() {
                           <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
                             {item.title}
                           </h3>
-                          <p className="text-sm text-gray-400 mb-3">{item.category}</p>
+                          <p className="text-sm text-gray-400 mb-3">
+                            {item.category}
+                          </p>
                         </div>
                       </div>
 
@@ -258,14 +281,16 @@ export default function Portfolio() {
                       </p>
 
                       <div className="flex flex-wrap gap-2 mb-6">
-                        {item.technologies.slice(0, 3).map((tech, techIndex) => (
-                          <span
-                            key={techIndex}
-                            className="px-2 py-1 bg-slate-700/50 text-gray-300 text-xs rounded-md"
-                          >
-                            {tech}
-                          </span>
-                        ))}
+                        {item.technologies
+                          .slice(0, 3)
+                          .map((tech, techIndex) => (
+                            <span
+                              key={techIndex}
+                              className="px-2 py-1 bg-slate-700/50 text-gray-300 text-xs rounded-md"
+                            >
+                              {tech}
+                            </span>
+                          ))}
                         {item.technologies.length > 3 && (
                           <span className="px-2 py-1 bg-slate-700/50 text-gray-400 text-xs rounded-md">
                             +{item.technologies.length - 3} more
@@ -274,7 +299,7 @@ export default function Portfolio() {
                       </div>
 
                       <a
-                        href={item.previewLink}
+                        // href={item.previewLink}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/25 flex items-center justify-center gap-2 group"

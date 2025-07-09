@@ -1,0 +1,16 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#F59E0B"/>
+  <rect opacity="0.1" width="600" height="400" fill="url(#paint0_linear)"/>
+  <path d="M300 120C316.569 120 330 106.569 330 90C330 73.4315 316.569 60 300 60C283.431 60 270 73.4315 270 90C270 106.569 283.431 120 300 120Z" fill="white" fill-opacity="0.2"/>
+  <path d="M180 300H420V340H180V300Z" fill="white" fill-opacity="0.2"/>
+  <path d="M210 260H390V290H210V260Z" fill="white" fill-opacity="0.2"/>
+  <path d="M250 130H350V200H250V130Z" fill="white" fill-opacity="0.1"/>
+  <path d="M220 210H380V250H220V210Z" fill="white" fill-opacity="0.1"/>
+  <text x="300" y="175" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Joe's Bakery</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="600" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>
