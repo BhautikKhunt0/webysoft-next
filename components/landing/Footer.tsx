@@ -1,26 +1,38 @@
-'use client'
+"use client";
 
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Shield, Mail, Phone, MapPin, Globe, Github, Linkedin, Twitter } from "lucide-react";
+import {
+  Shield,
+  Mail,
+  Phone,
+  MapPin,
+  Globe,
+  Github,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
 import { FaWhatsapp, FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
   const pathname = usePathname();
-  const isPortfolioPage = pathname === '/portfolio';
-  
+  const isPortfolioPage = pathname === "/portfolio";
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
-  
+
   // Helper function to handle navigation
-  const navigateToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+  const navigateToSection = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string
+  ) => {
     e.preventDefault();
-    
+
     if (isPortfolioPage) {
       // From portfolio to home section
       window.location.href = `/#${sectionId}`;
@@ -28,17 +40,17 @@ export default function Footer() {
       // Already on home page, scroll to section
       const element = document.getElementById(sectionId);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: "smooth" });
       }
     }
   };
-  
+
   return (
     <footer className="relative py-20 overflow-hidden">
       {/* Professional Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.08),transparent_70%)]"></div>
-      
+
       {/* Subtle decorative elements */}
       <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-10 w-40 h-40 bg-indigo-500/5 rounded-full blur-3xl"></div>
@@ -46,7 +58,6 @@ export default function Footer() {
       <div className="container mx-auto px-4 relative z-10">
         {/* Main Footer Content */}
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12 mb-16">
-          
           {/* Company Info */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -55,7 +66,7 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-1"
           >
-            <motion.button 
+            <motion.button
               onClick={scrollToTop}
               className="flex items-center gap-3 text-white font-bold text-2xl mb-6 cursor-pointer group"
               whileHover={{ scale: 1.05 }}
@@ -68,17 +79,14 @@ export default function Footer() {
                 Weby<span className="text-blue-400">Soft</span>
               </span>
             </motion.button>
-            
+
             <p className="text-gray-300 leading-relaxed mb-6 max-w-sm">
-              Transform your digital presence with enterprise-grade solutions. We deliver innovative web experiences that drive business growth.
+              Transform your digital presence with enterprise-grade solutions.
+              We deliver innovative web experiences that drive business growth.
             </p>
-            
+
             {/* Contact Info */}
             <div className="space-y-3">
-              <div className="flex items-center gap-3 text-gray-300">
-                <Phone className="w-4 h-4 text-blue-400" />
-                <span className="text-sm">+91 88499 90393</span>
-              </div>
               <div className="flex items-center gap-3 text-gray-300">
                 <Mail className="w-4 h-4 text-blue-400" />
                 <span className="text-sm">enterprise@webysoft.com</span>
@@ -100,17 +108,17 @@ export default function Footer() {
             <h3 className="text-xl font-bold text-white mb-6">Services</h3>
             <ul className="space-y-3">
               {[
-                { label: 'Web Development', href: '#features' },
-                { label: 'Mobile Apps', href: '#features' },
-                { label: 'E-commerce', href: '#features' },
-                { label: 'Digital Marketing', href: '#features' },
-                { label: 'SEO Optimization', href: '#features' },
-                { label: 'Cloud Solutions', href: '#features' }
+                { label: "Web Development", href: "#features" },
+                { label: "Mobile Apps", href: "#features" },
+                { label: "E-commerce", href: "#features" },
+                { label: "Digital Marketing", href: "#features" },
+                { label: "SEO Optimization", href: "#features" },
+                { label: "Cloud Solutions", href: "#features" },
               ].map((item, index) => (
                 <li key={index}>
                   <a
                     href={item.href}
-                    onClick={(e) => navigateToSection(e, 'features')}
+                    onClick={(e) => navigateToSection(e, "features")}
                     className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm hover:translate-x-1 inline-block"
                   >
                     {item.label}
@@ -130,12 +138,12 @@ export default function Footer() {
             <h3 className="text-xl font-bold text-white mb-6">Company</h3>
             <ul className="space-y-3">
               {[
-                { label: 'About Us', href: '#about' },
-                { label: 'Portfolio', href: '/portfolio', isLink: true },
-                { label: 'Testimonials', href: '#testimonials' },
-                { label: 'How it Works', href: '#how-it-works' },
-                { label: 'Pricing', href: '#pricing' },
-                { label: 'Contact', href: '#contact' }
+                { label: "About Us", href: "#about" },
+                { label: "Portfolio", href: "/portfolio", isLink: true },
+                { label: "Testimonials", href: "#testimonials" },
+                { label: "How it Works", href: "#how-it-works" },
+                { label: "Pricing", href: "#pricing" },
+                { label: "Contact", href: "#contact" },
               ].map((item, index) => (
                 <li key={index}>
                   {item.isLink ? (
@@ -169,8 +177,16 @@ export default function Footer() {
             <h3 className="text-xl font-bold text-white mb-6">Resources</h3>
             <ul className="space-y-3 mb-8">
               {[
-                { label: 'Privacy Policy', href: '/privacy-policy', isLink: true },
-                { label: 'Terms of Service', href: '/terms-of-service', isLink: true }
+                {
+                  label: "Privacy Policy",
+                  href: "/privacy-policy",
+                  isLink: true,
+                },
+                {
+                  label: "Terms of Service",
+                  href: "/terms-of-service",
+                  isLink: true,
+                },
               ].map((item, index) => (
                 <li key={index}>
                   {item.isLink ? (
@@ -194,9 +210,11 @@ export default function Footer() {
 
             {/* Contact Action */}
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Get In Touch</h4>
+              <h4 className="text-lg font-semibold text-white mb-4">
+                Get In Touch
+              </h4>
               <motion.button
-                onClick={() => window.open("https://wa.me/918849990393", "_blank")}
+                onClick={() => window.open("https://wa.me/000", "_blank")}
                 className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl hover:shadow-green-500/25"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -228,15 +246,13 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            
+
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2 text-sm text-gray-400">
                 <Shield className="w-4 h-4 text-green-400" />
                 <span>Enterprise Security</span>
               </div>
-              <div className="text-sm text-gray-400">
-                Made with ❤️ in India
-              </div>
+              <div className="text-sm text-gray-400">Made with ❤️ in India</div>
             </div>
           </div>
         </motion.div>
@@ -251,7 +267,8 @@ export default function Footer() {
         >
           <h3 className="text-2xl font-bold text-white mb-4">Stay Updated</h3>
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            Get the latest updates on our services, industry insights, and exclusive offers delivered to your inbox.
+            Get the latest updates on our services, industry insights, and
+            exclusive offers delivered to your inbox.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input
@@ -260,7 +277,7 @@ export default function Footer() {
               className="flex-1 bg-slate-700/50 border border-slate-600/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
             />
             <motion.button
-              onClick={() => window.open("https://wa.me/918849990393", "_blank")}
+              onClick={() => window.open("https://wa.me/000", "_blank")}
               className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 whitespace-nowrap"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

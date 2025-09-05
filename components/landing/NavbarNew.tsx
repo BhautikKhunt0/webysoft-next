@@ -1,21 +1,21 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useScrollPosition } from '@/hooks/useScrollPosition';
-import { useScreenSize } from '@/hooks/use-mobile';
-import { Menu, X, Shield, Award } from 'lucide-react';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import { useScrollPosition } from "@/hooks/useScrollPosition";
+import { useScreenSize } from "@/hooks/use-mobile";
+import { Menu, X, Shield, Award } from "lucide-react";
 
 // Professional menu items for navigation
 const MENU_ITEMS = [
-  { id: 'features', label: 'Solutions' },
-  { id: 'how-it-works', label: 'Process' },
-  { id: 'pricing', label: 'Pricing' },
-  { path: '/portfolio', label: 'Portfolio', isPageLink: true },
-  { id: 'testimonials', label: 'Testimonials' },
-  { id: 'contact', label: 'Contact' }
+  { id: "features", label: "Solutions" },
+  { id: "how-it-works", label: "Process" },
+  { id: "pricing", label: "Pricing" },
+  { path: "/portfolio", label: "Portfolio", isPageLink: true },
+  { id: "testimonials", label: "Testimonials" },
+  { id: "contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -24,32 +24,32 @@ export default function Navbar() {
   const isScrolled = scrollY > 50;
   const screenSize = useScreenSize();
   const pathname = usePathname();
-  
-  const isTabletOrMobile = screenSize === 'mobile' || screenSize === 'tablet';
-  const isMobileOnly = screenSize === 'mobile';
-  const isPortfolioPage = pathname === '/portfolio';
-  
+
+  const isTabletOrMobile = screenSize === "mobile" || screenSize === "tablet";
+  const isMobileOnly = screenSize === "mobile";
+  const isPortfolioPage = pathname === "/portfolio";
+
   // Scroll to top of the page
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
-  
+
   // Handle logo click based on current page
   const handleLogoClick = () => {
     if (isPortfolioPage) {
-      window.location.href = window.location.origin + '/';
+      window.location.href = window.location.origin + "/";
     } else {
       scrollToTop();
     }
   };
-  
+
   // Better navigation handling to sections
   const navigateToSection = (sectionId: string) => {
     setMobileMenuOpen(false);
-    
+
     // Add a small delay to allow the menu to close before scrolling
     setTimeout(() => {
       if (isPortfolioPage) {
@@ -57,9 +57,9 @@ export default function Navbar() {
       } else {
         const element = document.getElementById(sectionId);
         if (element) {
-          element.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
           });
         }
       }
@@ -77,17 +77,17 @@ export default function Navbar() {
         setMobileMenuOpen(false);
       }
     };
-    
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-slate-900/95 backdrop-blur-md border-b border-slate-700/50 shadow-xl' 
-          : 'bg-transparent'
+        isScrolled
+          ? "bg-slate-900/95 backdrop-blur-md border-b border-slate-700/50 shadow-xl"
+          : "bg-transparent"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -95,7 +95,6 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          
           {/* Professional Logo */}
           <motion.button
             onClick={handleLogoClick}
@@ -116,7 +115,7 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           {!isTabletOrMobile && (
             <div className="hidden lg:flex items-center space-x-8">
-              {MENU_ITEMS.map((item, index) => (
+              {MENU_ITEMS.map((item, index) =>
                 item.isPageLink ? (
                   <Link key={item.path} href={item.path}>
                     <motion.span
@@ -140,14 +139,14 @@ export default function Navbar() {
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
                   </motion.button>
                 )
-              ))}
+              )}
             </div>
           )}
 
           {/* Professional CTA Button - Desktop */}
           {!isTabletOrMobile && (
             <motion.button
-              onClick={() => window.open("https://wa.me/918849990393", "_blank")}
+              onClick={() => window.open("https://wa.me/000", "_blank")}
               className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/25"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -178,13 +177,13 @@ export default function Navbar() {
           {mobileMenuOpen && isTabletOrMobile && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
+              animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
               className="overflow-hidden bg-slate-900/95 backdrop-blur-md border-t border-slate-700/50"
             >
               <div className="py-6 px-4 space-y-2">
-                {MENU_ITEMS.map((item, index) => (
+                {MENU_ITEMS.map((item, index) =>
                   item.isPageLink ? (
                     <Link key={item.path} href={item.path}>
                       <motion.div
@@ -213,8 +212,8 @@ export default function Navbar() {
                       {item.label}
                     </motion.div>
                   )
-                ))}
-                
+                )}
+
                 {/* Mobile CTA */}
                 <motion.button
                   initial={{ opacity: 0, x: -20 }}
@@ -222,7 +221,7 @@ export default function Navbar() {
                   transition={{ delay: MENU_ITEMS.length * 0.1 }}
                   onClick={() => {
                     setMobileMenuOpen(false);
-                    window.open("https://wa.me/918849990393", "_blank");
+                    window.open("https://wa.me/000", "_blank");
                   }}
                   className="w-full mx-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-3 rounded-lg transition-all duration-300 hover:from-blue-700 hover:to-indigo-700"
                 >
@@ -233,8 +232,6 @@ export default function Navbar() {
           )}
         </AnimatePresence>
       </div>
-
-
     </motion.nav>
   );
 }

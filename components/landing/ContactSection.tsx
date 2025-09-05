@@ -1,59 +1,67 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Clock, Shield, Award, CheckCircle } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Shield,
+  Award,
+  CheckCircle,
+} from "lucide-react";
 import { FaWhatsapp, FaLinkedin } from "react-icons/fa";
 
 const contactInfo = [
   {
     icon: Phone,
     title: "24/7 Enterprise Support",
-    details: "+91 88499 90393",
+    details: "+91 000000000",
     description: "Immediate response for enterprise clients",
-    color: "blue"
+    color: "blue",
   },
   {
     icon: Mail,
     title: "Business Inquiries",
     details: "enterprise@webysoft.com",
     description: "Professional consultation requests",
-    color: "indigo"
+    color: "indigo",
   },
   {
     icon: MapPin,
     title: "Global Headquarters",
     details: "Surat & Mumbai, India",
     description: "Serving clients worldwide",
-    color: "purple"
+    color: "purple",
   },
   {
     icon: Clock,
     title: "Business Hours",
     details: "24/7 Available",
     description: "Round-the-clock enterprise support",
-    color: "green"
-  }
+    color: "green",
+  },
 ];
 
 const colorClasses = {
   blue: {
     bg: "bg-blue-500/10",
     text: "text-blue-400",
-    border: "border-blue-500/20"
+    border: "border-blue-500/20",
   },
   indigo: {
     bg: "bg-indigo-500/10",
     text: "text-indigo-400",
-    border: "border-indigo-500/20"
+    border: "border-indigo-500/20",
   },
   purple: {
     bg: "bg-purple-500/10",
     text: "text-purple-400",
-    border: "border-purple-500/20"
+    border: "border-purple-500/20",
   },
   green: {
     bg: "bg-green-500/10",
     text: "text-green-400",
-    border: "border-green-500/20"
-  }
+    border: "border-green-500/20",
+  },
 };
 
 export default function ContactSection() {
@@ -97,7 +105,9 @@ export default function ContactSection() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Connect with our experts for a personalized consultation. We'll assess your needs and provide a customized enterprise solution proposal.
+            Connect with our experts for a personalized consultation. We'll
+            assess your needs and provide a customized enterprise solution
+            proposal.
           </motion.p>
         </div>
 
@@ -110,17 +120,22 @@ export default function ContactSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl font-bold text-white mb-6">Multiple Ways to Connect</h3>
+            <h3 className="text-3xl font-bold text-white mb-6">
+              Multiple Ways to Connect
+            </h3>
             <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto">
-              Our enterprise team is available 24/7 to discuss your project requirements, provide technical consultation, and deliver customized solutions that meet your business objectives.
+              Our enterprise team is available 24/7 to discuss your project
+              requirements, provide technical consultation, and deliver
+              customized solutions that meet your business objectives.
             </p>
           </motion.div>
 
           {/* Contact Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {contactInfo.map((info, index) => {
-              const colors = colorClasses[info.color as keyof typeof colorClasses];
-              
+              const colors =
+                colorClasses[info.color as keyof typeof colorClasses];
+
               return (
                 <motion.div
                   key={index}
@@ -130,12 +145,18 @@ export default function ContactSection() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-xl p-6 hover:bg-slate-700/30 transition-all duration-300 group text-center"
                 >
-                  <div className={`inline-flex p-4 rounded-xl ${colors.bg} ${colors.border} border mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <div
+                    className={`inline-flex p-4 rounded-xl ${colors.bg} ${colors.border} border mb-4 group-hover:scale-110 transition-transform duration-300`}
+                  >
                     <info.icon className={`w-8 h-8 ${colors.text}`} />
                   </div>
-                  
-                  <h4 className="text-lg font-semibold text-white mb-2">{info.title}</h4>
-                  <p className="text-gray-300 font-medium mb-2">{info.details}</p>
+
+                  <h4 className="text-lg font-semibold text-white mb-2">
+                    {info.title}
+                  </h4>
+                  <p className="text-gray-300 font-medium mb-2">
+                    {info.details}
+                  </p>
                   <p className="text-sm text-gray-400">{info.description}</p>
                 </motion.div>
               );
@@ -151,7 +172,7 @@ export default function ContactSection() {
             className="flex justify-center items-center mb-12"
           >
             <motion.button
-              onClick={() => window.open("https://wa.me/918849990393", "_blank")}
+              onClick={() => window.open("https://wa.me/910000000", "_blank")}
               className="flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-green-500/25"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -169,23 +190,33 @@ export default function ContactSection() {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-2xl p-8 text-center"
           >
-            <h4 className="text-2xl font-bold text-white mb-6">Why Choose WebySoft?</h4>
+            <h4 className="text-2xl font-bold text-white mb-6">
+              Why Choose WebySoft?
+            </h4>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="flex flex-col items-center gap-2">
                 <Award className="w-8 h-8 text-yellow-400" />
-                <span className="text-sm text-gray-300 font-medium">Award Winning</span>
+                <span className="text-sm text-gray-300 font-medium">
+                  Award Winning
+                </span>
               </div>
               <div className="flex flex-col items-center gap-2">
                 <CheckCircle className="w-8 h-8 text-blue-400" />
-                <span className="text-sm text-gray-300 font-medium">500+ Projects</span>
+                <span className="text-sm text-gray-300 font-medium">
+                  500+ Projects
+                </span>
               </div>
               <div className="flex flex-col items-center gap-2">
                 <Clock className="w-8 h-8 text-purple-400" />
-                <span className="text-sm text-gray-300 font-medium">24/7 Support</span>
+                <span className="text-sm text-gray-300 font-medium">
+                  24/7 Support
+                </span>
               </div>
               <div className="flex flex-col items-center gap-2">
                 <Shield className="w-8 h-8 text-green-400" />
-                <span className="text-sm text-gray-300 font-medium">Enterprise Security</span>
+                <span className="text-sm text-gray-300 font-medium">
+                  Enterprise Security
+                </span>
               </div>
             </div>
           </motion.div>

@@ -7,7 +7,7 @@ export default function PricingSection() {
 
   const features = [
     "Custom Web Design",
-    "Web Development", 
+    "Web Development",
     "Hosting for 1 Year",
     "1 Year Domain",
     "24/7 Support",
@@ -16,12 +16,12 @@ export default function PricingSection() {
     "Analytics and Search Console Setup",
     "SEO Optimized Code",
     "Fast Page Speed Optimized",
-    "2 Customizations per Month"
+    "2 Customizations per Month",
   ];
 
   const monthlyPrice = 37;
   const yearlyPrice = 317;
-  const yearlySaving = (monthlyPrice * 12) - yearlyPrice;
+  const yearlySaving = monthlyPrice * 12 - yearlyPrice;
 
   return (
     <section id="pricing" className="py-20 relative overflow-hidden">
@@ -63,7 +63,8 @@ export default function PricingSection() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Complete web solution with custom design, development, and ongoing support for your business success.
+            Complete web solution with custom design, development, and ongoing
+            support for your business success.
           </motion.p>
 
           {/* Enhanced Pricing Toggle */}
@@ -81,8 +82,8 @@ export default function PricingSection() {
                   className="absolute top-1.5 bottom-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-lg"
                   initial={false}
                   animate={{
-                    width: isYearly ? 'calc(55% - 6px)' : '45%',
-                    left: isYearly ? '45%' : '6px',
+                    width: isYearly ? "calc(55% - 6px)" : "45%",
+                    left: isYearly ? "45%" : "6px",
                   }}
                   transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
                 />
@@ -91,11 +92,11 @@ export default function PricingSection() {
                 <motion.button
                   onClick={() => setIsYearly(false)}
                   className={`relative z-10 px-8 py-4 rounded-lg font-semibold text-sm transition-all duration-300 ${
-                    !isYearly 
-                      ? 'text-white' 
-                      : 'text-gray-400 hover:text-gray-300'
+                    !isYearly
+                      ? "text-white"
+                      : "text-gray-400 hover:text-gray-300"
                   }`}
-                  style={{ width: '45%' }}
+                  style={{ width: "45%" }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -106,24 +107,32 @@ export default function PricingSection() {
                 <motion.button
                   onClick={() => setIsYearly(true)}
                   className={`relative z-10 px-6 py-4 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap ${
-                    isYearly 
-                      ? 'text-white' 
-                      : 'text-gray-400 hover:text-gray-300'
+                    isYearly
+                      ? "text-white"
+                      : "text-gray-400 hover:text-gray-300"
                   }`}
-                  style={{ width: '55%' }}
+                  style={{ width: "55%" }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <span>Yearly</span>
-                  <motion.span 
+                  <motion.span
                     className="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs px-2 py-0.5 rounded-full font-bold shadow-lg flex-shrink-0"
-                    animate={{ 
+                    animate={{
                       scale: isYearly ? [1, 1.1, 1] : 1,
-                      boxShadow: isYearly ? 
-                        ['0 0 0 rgba(34, 197, 94, 0)', '0 0 20px rgba(34, 197, 94, 0.4)', '0 0 0 rgba(34, 197, 94, 0)'] 
-                        : '0 0 0 rgba(34, 197, 94, 0)'
+                      boxShadow: isYearly
+                        ? [
+                            "0 0 0 rgba(34, 197, 94, 0)",
+                            "0 0 20px rgba(34, 197, 94, 0.4)",
+                            "0 0 0 rgba(34, 197, 94, 0)",
+                          ]
+                        : "0 0 0 rgba(34, 197, 94, 0)",
                     }}
-                    transition={{ duration: 0.6, repeat: isYearly ? Infinity : 0, repeatDelay: 2 }}
+                    transition={{
+                      duration: 0.6,
+                      repeat: isYearly ? Infinity : 0,
+                      repeatDelay: 2,
+                    }}
                   >
                     Save ${yearlySaving}
                   </motion.span>
@@ -140,31 +149,40 @@ export default function PricingSection() {
             whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, type: "spring", bounce: 0.3 }}
-            whileHover={{ 
-              y: -10, 
+            whileHover={{
+              y: -10,
               scale: 1.02,
-              transition: { duration: 0.3, ease: "easeOut" }
+              transition: { duration: 0.3, ease: "easeOut" },
             }}
             className="relative group transform-gpu perspective-1000"
-            style={{ transformStyle: 'preserve-3d' }}
+            style={{ transformStyle: "preserve-3d" }}
           >
             {/* Popular Badge */}
-            <motion.div 
+            <motion.div
               className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-20"
               initial={{ opacity: 0, y: -20, scale: 0.8 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.8, type: "spring", bounce: 0.4 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.8,
+                type: "spring",
+                bounce: 0.4,
+              }}
             >
-              <motion.div 
+              <motion.div
                 className="relative bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white px-6 py-3 rounded-full text-sm font-bold flex items-center gap-2 shadow-2xl"
-                animate={{ 
+                animate={{
                   boxShadow: [
-                    '0 0 20px rgba(147, 51, 234, 0.4)',
-                    '0 0 30px rgba(147, 51, 234, 0.6)', 
-                    '0 0 20px rgba(147, 51, 234, 0.4)'
-                  ]
+                    "0 0 20px rgba(147, 51, 234, 0.4)",
+                    "0 0 30px rgba(147, 51, 234, 0.6)",
+                    "0 0 20px rgba(147, 51, 234, 0.4)",
+                  ],
                 }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
                 <motion.div
                   animate={{ rotate: 360 }}
@@ -178,7 +196,6 @@ export default function PricingSection() {
             </motion.div>
 
             <div className="relative bg-slate-800/40 backdrop-blur-xl border border-indigo-500/50 shadow-indigo-500/20 bg-gradient-to-br from-slate-800/50 to-indigo-900/20 rounded-2xl p-8 shadow-2xl h-full overflow-hidden transition-all duration-500 group-hover:shadow-3xl">
-
               {/* Animated Background Pattern */}
               <div className="absolute inset-0 opacity-5">
                 <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-purple-600/10 to-pink-600/20"></div>
@@ -191,7 +208,7 @@ export default function PricingSection() {
 
               {/* Plan Header */}
               <div className="relative text-center mb-8">
-                <motion.div 
+                <motion.div
                   className="inline-flex p-4 rounded-xl bg-indigo-500/10 border-indigo-500/20 border mb-4 relative overflow-hidden"
                   whileHover={{ scale: 1.1, rotateY: 5 }}
                   transition={{ duration: 0.3 }}
@@ -205,21 +222,23 @@ export default function PricingSection() {
                   </motion.div>
                 </motion.div>
 
-                <motion.h3 
+                <motion.h3
                   className="text-2xl font-bold text-white mb-2"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
                   Professional Plan
                 </motion.h3>
-                <p className="text-gray-400 text-sm leading-relaxed">Complete web solution for your business</p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Complete web solution for your business
+                </p>
               </div>
 
               {/* Price Display */}
               <div className="text-center mb-8">
                 <div className="flex items-baseline justify-center gap-2 mb-2">
                   <span className="text-sm text-gray-400">$</span>
-                  <motion.span 
+                  <motion.span
                     className="text-4xl md:text-5xl font-bold text-white"
                     key={`price-${isYearly}`}
                     initial={{ opacity: 0, y: 20, scale: 0.8 }}
@@ -229,7 +248,7 @@ export default function PricingSection() {
                     {isYearly ? yearlyPrice : monthlyPrice}
                   </motion.span>
                   <span className="text-gray-400">
-                    /{isYearly ? 'year' : 'month'}
+                    /{isYearly ? "year" : "month"}
                   </span>
                 </div>
 
@@ -237,21 +256,25 @@ export default function PricingSection() {
                   {isYearly && (
                     <motion.div
                       initial={{ opacity: 0, height: 0, y: -10 }}
-                      animate={{ opacity: 1, height: 'auto', y: 0 }}
+                      animate={{ opacity: 1, height: "auto", y: 0 }}
                       exit={{ opacity: 0, height: 0, y: -10 }}
                       transition={{ duration: 0.4, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <motion.p 
+                      <motion.p
                         className="text-sm text-green-400 font-semibold bg-green-500/10 border border-green-500/20 rounded-lg px-3 py-2 inline-block"
-                        animate={{ 
+                        animate={{
                           boxShadow: [
-                            '0 0 0 rgba(34, 197, 94, 0)',
-                            '0 0 15px rgba(34, 197, 94, 0.3)',
-                            '0 0 0 rgba(34, 197, 94, 0)'
-                          ]
+                            "0 0 0 rgba(34, 197, 94, 0)",
+                            "0 0 15px rgba(34, 197, 94, 0.3)",
+                            "0 0 0 rgba(34, 197, 94, 0)",
+                          ],
                         }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
                       >
                         💰 Save ${yearlySaving} annually
                       </motion.p>
@@ -263,8 +286,8 @@ export default function PricingSection() {
               {/* Features List */}
               <ul className="space-y-4 mb-8 flex-1">
                 {features.map((feature, featureIndex) => (
-                  <motion.li 
-                    key={featureIndex} 
+                  <motion.li
+                    key={featureIndex}
                     className="flex items-start gap-3 group/feature"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -288,11 +311,11 @@ export default function PricingSection() {
 
               {/* CTA Button */}
               <motion.button
-                onClick={() => window.open("https://wa.me/918849990393", "_blank")}
+                onClick={() => window.open("https://wa.me/000", "_blank")}
                 className="relative w-full bg-gradient-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 rounded-lg overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-300"
-                whileHover={{ 
+                whileHover={{
                   scale: 1.02,
-                  boxShadow: '0 20px 40px -10px rgba(99, 102, 241, 0.4)'
+                  boxShadow: "0 20px 40px -10px rgba(99, 102, 241, 0.4)",
                 }}
                 whileTap={{ scale: 0.98 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -308,7 +331,11 @@ export default function PricingSection() {
                   <span>Get Started</span>
                   <motion.div
                     animate={{ x: [0, 5, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                    transition={{
+                      duration: 1.5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
                   >
                     <ArrowRight className="w-5 h-5" />
                   </motion.div>
@@ -345,21 +372,48 @@ export default function PricingSection() {
             {/* Background Pattern */}
             <div className="absolute inset-0 bg-gradient-to-br from-slate-700/10 via-transparent to-slate-800/10"></div>
 
-            <motion.h3 
+            <motion.h3
               className="text-3xl font-bold text-white mb-6 relative z-10"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
             >
-              Why Choose <span className="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">WebySoft</span>
+              Why Choose{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">
+                WebySoft
+              </span>
             </motion.h3>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-8 relative z-10">
               {[
-                { icon: Shield, text: "Secure & Reliable", color: "text-green-400", bg: "bg-green-500/10", border: "border-green-500/20" },
-                { icon: Award, text: "Quality Assured", color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20" },
-                { icon: Crown, text: "24/7 Support", color: "text-purple-400", bg: "bg-purple-500/10", border: "border-purple-500/20" },
-                { icon: Check, text: "Satisfaction Guaranteed", color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20" }
+                {
+                  icon: Shield,
+                  text: "Secure & Reliable",
+                  color: "text-green-400",
+                  bg: "bg-green-500/10",
+                  border: "border-green-500/20",
+                },
+                {
+                  icon: Award,
+                  text: "Quality Assured",
+                  color: "text-yellow-400",
+                  bg: "bg-yellow-500/10",
+                  border: "border-yellow-500/20",
+                },
+                {
+                  icon: Crown,
+                  text: "24/7 Support",
+                  color: "text-purple-400",
+                  bg: "bg-purple-500/10",
+                  border: "border-purple-500/20",
+                },
+                {
+                  icon: Check,
+                  text: "Satisfaction Guaranteed",
+                  color: "text-blue-400",
+                  bg: "bg-blue-500/10",
+                  border: "border-blue-500/20",
+                },
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -367,16 +421,23 @@ export default function PricingSection() {
                   initial={{ opacity: 0, y: 30, scale: 0.8 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 1.2 + index * 0.1, type: "spring", bounce: 0.3 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 1.2 + index * 0.1,
+                    type: "spring",
+                    bounce: 0.3,
+                  }}
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
-                  <motion.div 
+                  <motion.div
                     className={`inline-flex p-4 rounded-xl ${item.bg} ${item.border} border mb-3 group-hover:shadow-lg transition-all duration-300`}
                     whileHover={{ rotate: 5 }}
                   >
                     <item.icon className={`w-8 h-8 ${item.color}`} />
                   </motion.div>
-                  <p className="text-sm text-gray-300 group-hover:text-white transition-colors font-medium">{item.text}</p>
+                  <p className="text-sm text-gray-300 group-hover:text-white transition-colors font-medium">
+                    {item.text}
+                  </p>
                 </motion.div>
               ))}
             </div>

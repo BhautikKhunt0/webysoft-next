@@ -125,9 +125,7 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-4 pt-6"
             >
               <motion.button
-                onClick={() =>
-                  window.open("https://wa.me/918849990393", "_blank")
-                }
+                onClick={() => window.open("https://wa.me/000", "_blank")}
                 className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 group shadow-xl hover:shadow-2xl hover:shadow-blue-500/25"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -137,9 +135,7 @@ export default function HeroSection() {
               </motion.button>
 
               <motion.button
-                onClick={() =>
-                  window.open("https://wa.me/918849990393", "_blank")
-                }
+                onClick={() => window.open("https://wa.me/000", "_blank")}
                 className="inline-flex items-center justify-center gap-3 border border-slate-600 hover:border-green-500 text-gray-300 hover:text-white hover:bg-slate-800/50 font-semibold px-8 py-4 rounded-lg transition-all duration-300 group"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

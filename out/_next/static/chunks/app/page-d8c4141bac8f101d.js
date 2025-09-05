@@ -1,1 +1,2687 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[974],{646:(e,t,a)=>{"use strict";a.d(t,{A:()=>i});let i=(0,a(9946).A)("CircleCheckBig",[["path",{d:"M21.801 10A10 10 0 1 1 17 3.335",key:"yps3ct"}],["path",{d:"m9 11 3 3L22 4",key:"1pflzl"}]])},1208:(e,t,a)=>{"use strict";a.r(t),a.d(t,{default:()=>U});var i=a(5155),r=a(2115),s=a(6505),l=a(9893),n=a(9911),o=a(5525),d=a(9946);let c=(0,d.A)("Star",[["polygon",{points:"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2",key:"8f66p6"}]]);var x=a(9037),p=a(7580);let m=(0,d.A)("TrendingUp",[["polyline",{points:"22 7 13.5 15.5 8.5 10.5 2 17",key:"126l90"}],["polyline",{points:"16 7 22 7 22 13",key:"kwv8wd"}]]),g=(0,d.A)("ArrowRight",[["path",{d:"M5 12h14",key:"1ays0h"}],["path",{d:"m12 5 7 7-7 7",key:"xquz4c"}]]);var u=a(646);let h=(0,d.A)("Clock",[["circle",{cx:"12",cy:"12",r:"10",key:"1mglay"}],["polyline",{points:"12 6 12 12 16 14",key:"68esgv"}]]);var b=a(4869),y=a(4741);function v(){return(0,i.jsxs)("section",{className:"relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden",children:[(0,i.jsx)("div",{className:"absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"}),(0,i.jsx)("div",{className:"absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.15),transparent_50%)]"}),(0,i.jsx)("div",{className:"absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(99,102,241,0.1),transparent_50%)]"}),(0,i.jsx)("div",{className:"absolute top-20 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl animate-pulse"}),(0,i.jsx)("div",{className:"absolute bottom-20 right-10 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-1000"}),(0,i.jsx)("div",{className:"container mx-auto px-4 relative z-10",children:(0,i.jsxs)("div",{className:"grid lg:grid-cols-2 gap-16 items-center",children:[(0,i.jsxs)(l.P.div,{initial:{opacity:0,x:-50},animate:{opacity:1,x:0},transition:{duration:.8,delay:.2},className:"space-y-8",children:[(0,i.jsxs)(l.P.div,{initial:{opacity:0,y:20},animate:{opacity:1,y:0},transition:{duration:.6,delay:.4},className:"inline-flex items-center gap-3 bg-blue-500/10 border border-blue-500/20 rounded-full px-6 py-3 text-sm font-medium text-blue-400 backdrop-blur-sm",children:[(0,i.jsx)(o.A,{className:"w-4 h-4"}),(0,i.jsx)("span",{children:"Trusted by 500+ Businesses Worldwide"}),(0,i.jsx)("div",{className:"flex gap-1",children:[void 0,void 0,void 0,void 0,void 0].map((e,t)=>(0,i.jsx)(c,{className:"w-3 h-3 fill-yellow-400 text-yellow-400"},t))})]}),(0,i.jsxs)(l.P.h1,{initial:{opacity:0,y:30},animate:{opacity:1,y:0},transition:{duration:.8,delay:.6},className:"text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white",children:["Professional"," ",(0,i.jsx)("span",{className:"bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",children:"Digital Solutions"})," ","That Drive Results"]}),(0,i.jsx)(l.P.p,{initial:{opacity:0,y:30},animate:{opacity:1,y:0},transition:{duration:.8,delay:.8},className:"text-xl md:text-2xl text-gray-300 leading-relaxed",children:"Partner with WebySoft for enterprise-grade web solutions. We deliver measurable ROI through strategic design, proven methodologies, and cutting-edge technology."}),(0,i.jsx)(l.P.div,{initial:{opacity:0,y:30},animate:{opacity:1,y:0},transition:{duration:.8,delay:1},className:"grid grid-cols-1 md:grid-cols-2 gap-4",children:[{icon:o.A,text:"Enterprise Security Standards"},{icon:x.A,text:"Certified Quality Assurance"},{icon:p.A,text:"Dedicated Project Management"},{icon:m,text:"Proven ROI Enhancement"}].map((e,t)=>(0,i.jsxs)(l.P.div,{className:"flex items-center gap-3 p-3 rounded-lg bg-slate-800/50 border border-slate-700/50 backdrop-blur-sm hover:bg-slate-700/50 transition-all duration-300",whileHover:{scale:1.02,x:5},children:[(0,i.jsx)("div",{className:"p-2 bg-blue-500/10 rounded-lg",children:(0,i.jsx)(e.icon,{className:"w-5 h-5 text-blue-400"})}),(0,i.jsx)("span",{className:"text-gray-300 font-medium",children:e.text})]},t))}),(0,i.jsxs)(l.P.div,{initial:{opacity:0,y:30},animate:{opacity:1,y:0},transition:{duration:.8,delay:1.2},className:"flex flex-col sm:flex-row gap-4 pt-6",children:[(0,i.jsxs)(l.P.button,{onClick:()=>window.open("https://wa.me/918849990393","_blank"),className:"inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 group shadow-xl hover:shadow-2xl hover:shadow-blue-500/25",whileHover:{scale:1.02},whileTap:{scale:.98},children:["Schedule Consultation",(0,i.jsx)(g,{className:"w-5 h-5 group-hover:translate-x-1 transition-transform"})]}),(0,i.jsxs)(l.P.button,{onClick:()=>window.open("https://wa.me/918849990393","_blank"),className:"inline-flex items-center justify-center gap-3 border border-slate-600 hover:border-green-500 text-gray-300 hover:text-white hover:bg-slate-800/50 font-semibold px-8 py-4 rounded-lg transition-all duration-300 group",whileHover:{scale:1.02},whileTap:{scale:.98},children:[(0,i.jsx)(n.EcP,{className:"w-5 h-5 text-green-500"}),"Chat with Expert"]})]}),(0,i.jsxs)(l.P.div,{initial:{opacity:0,y:30},animate:{opacity:1,y:0},transition:{duration:.8,delay:1.4},className:"grid grid-cols-3 gap-8 pt-8 border-t border-slate-700/50",children:[(0,i.jsxs)("div",{className:"text-center",children:[(0,i.jsx)("div",{className:"text-3xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",children:"500+"}),(0,i.jsx)("div",{className:"text-sm text-gray-400",children:"Projects Delivered"})]}),(0,i.jsxs)("div",{className:"text-center",children:[(0,i.jsx)("div",{className:"text-3xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",children:"99.8%"}),(0,i.jsx)("div",{className:"text-sm text-gray-400",children:"Uptime Guarantee"})]}),(0,i.jsxs)("div",{className:"text-center",children:[(0,i.jsx)("div",{className:"text-3xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",children:"24/7"}),(0,i.jsx)("div",{className:"text-sm text-gray-400",children:"Support Available"})]})]})]}),(0,i.jsxs)(l.P.div,{initial:{opacity:0,x:50},animate:{opacity:1,x:0},transition:{duration:.8,delay:.4},className:"relative",children:[(0,i.jsx)("div",{className:"relative bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-2xl p-8 shadow-2xl",children:(0,i.jsxs)("div",{className:"space-y-6",children:[(0,i.jsxs)("div",{className:"relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-700 to-slate-800 border border-slate-600/50",children:[(0,i.jsxs)("div",{className:"aspect-[4/3] relative",children:[(0,i.jsx)("div",{className:"relative h-full overflow-hidden",children:(0,i.jsxs)(l.P.div,{className:"flex h-full gap-3",animate:{x:[0,-100*y.LN.length+"%"]},transition:{duration:4*y.LN.length,repeat:1/0,ease:"linear"},children:[y.LN.map((e,t)=>(0,i.jsx)(l.P.div,{className:"flex-shrink-0 w-fit h-full relative group cursor-pointer",whileHover:{scale:1.05,z:10},transition:{duration:.3},children:(0,i.jsxs)("div",{className:"relative overflow-hidden rounded-lg border border-slate-600/50 hover:border-blue-500/50 transition-all duration-300 h-full shadow-lg hover:shadow-xl",children:[(0,i.jsx)("img",{src:e.imageUrl,alt:e.title,className:"w-full h-full object-cover group-hover:scale-110 transition-transform duration-500",loading:"lazy"}),(0,i.jsx)("div",{className:"absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300",children:(0,i.jsxs)("div",{className:"absolute bottom-3 left-3 right-3",children:[(0,i.jsx)("p",{className:"text-white text-xs font-semibold mb-1 line-clamp-1",children:e.title}),(0,i.jsx)("p",{className:"text-blue-300 text-xs mb-2",children:e.type}),(0,i.jsx)("div",{className:"flex flex-wrap gap-1 mb-2",children:e.technologies.slice(0,2).map((e,t)=>(0,i.jsx)("span",{className:"px-1.5 py-0.5 bg-slate-800/90 rounded text-xs text-gray-300",children:e},t))}),(0,i.jsxs)("div",{className:"flex items-center justify-between",children:[(0,i.jsxs)("div",{className:"flex items-center gap-1 text-green-400 text-xs",children:[(0,i.jsx)(u.A,{className:"w-3 h-3"}),(0,i.jsx)("span",{children:"Live"})]}),(0,i.jsx)(g,{className:"w-3 h-3 text-blue-400"})]})]})})]})},"first-".concat(e.id))),y.LN.map((e,t)=>(0,i.jsx)(l.P.div,{className:"flex-shrink-0 w-fit h-full relative group cursor-pointer",whileHover:{scale:1.05,z:10},transition:{duration:.3},children:(0,i.jsxs)("div",{className:"relative overflow-hidden rounded-lg border border-slate-600/50 hover:border-blue-500/50 transition-all duration-300 h-full shadow-lg hover:shadow-xl",children:[(0,i.jsx)("img",{src:e.imageUrl,alt:e.title,className:"w-full h-full object-cover group-hover:scale-110 transition-transform duration-500",loading:"lazy"}),(0,i.jsx)("div",{className:"absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300",children:(0,i.jsxs)("div",{className:"absolute bottom-3 left-3 right-3",children:[(0,i.jsx)("p",{className:"text-white text-xs font-semibold mb-1 line-clamp-1",children:e.title}),(0,i.jsx)("p",{className:"text-blue-300 text-xs mb-2",children:e.type}),(0,i.jsx)("div",{className:"flex flex-wrap gap-1 mb-2",children:e.technologies.slice(0,2).map((e,t)=>(0,i.jsx)("span",{className:"px-1.5 py-0.5 bg-slate-800/90 rounded text-xs text-gray-300",children:e},t))}),(0,i.jsxs)("div",{className:"flex items-center justify-between",children:[(0,i.jsxs)("div",{className:"flex items-center gap-1 text-green-400 text-xs",children:[(0,i.jsx)(u.A,{className:"w-3 h-3"}),(0,i.jsx)("span",{children:"Live"})]}),(0,i.jsx)(g,{className:"w-3 h-3 text-blue-400"})]})]})})]})},"second-".concat(e.id)))]})}),(0,i.jsx)("div",{className:"absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-slate-800 to-transparent pointer-events-none z-10"}),(0,i.jsx)("div",{className:"absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-slate-800 to-transparent pointer-events-none z-10"})]}),(0,i.jsxs)("div",{className:"absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur rounded-lg p-3 z-20",children:[(0,i.jsx)("p",{className:"text-white font-semibold text-sm",children:"Our Live Portfolio"}),(0,i.jsx)("p",{className:"text-gray-300 text-xs",children:"Click any project to visit the live website"})]})]}),(0,i.jsxs)("div",{className:"grid grid-cols-2 gap-4",children:[(0,i.jsxs)(l.P.div,{className:"bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-lg p-4 text-center hover:bg-slate-700/60 transition-all duration-300",whileHover:{scale:1.05},children:[(0,i.jsx)("div",{className:"flex items-center justify-center mb-2",children:(0,i.jsx)(o.A,{className:"w-5 h-5 text-green-400"})}),(0,i.jsx)("div",{className:"text-xl font-bold text-green-400",children:"A+"}),(0,i.jsx)("div",{className:"text-xs text-gray-400",children:"Security Rating"})]}),(0,i.jsxs)(l.P.div,{className:"bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-lg p-4 text-center hover:bg-slate-700/60 transition-all duration-300",whileHover:{scale:1.05},children:[(0,i.jsx)("div",{className:"flex items-center justify-center mb-2",children:(0,i.jsx)(h,{className:"w-5 h-5 text-blue-400"})}),(0,i.jsx)("div",{className:"text-xl font-bold text-blue-400",children:"24/7"}),(0,i.jsx)("div",{className:"text-xs text-gray-400",children:"Expert Support"})]})]}),(0,i.jsxs)("div",{className:"flex justify-between items-center pt-4 border-t border-slate-700/50",children:[(0,i.jsxs)("div",{className:"flex items-center gap-2",children:[(0,i.jsx)(x.A,{className:"w-5 h-5 text-yellow-400"}),(0,i.jsx)("span",{className:"text-xs text-gray-400",children:"Industry Leader"})]}),(0,i.jsxs)("div",{className:"flex items-center gap-2",children:[(0,i.jsx)(b.A,{className:"w-5 h-5 text-blue-400"}),(0,i.jsx)("span",{className:"text-xs text-gray-400",children:"Global Reach"})]}),(0,i.jsxs)("div",{className:"flex items-center gap-2",children:[(0,i.jsx)(c,{className:"w-5 h-5 text-purple-400"}),(0,i.jsx)("span",{className:"text-xs text-gray-400",children:"Top Rated"})]})]})]})}),(0,i.jsx)(l.P.div,{animate:{y:[-10,10,-10],rotate:[0,5,0]},transition:{duration:6,repeat:1/0,ease:"easeInOut"},className:"absolute -top-6 -right-6 bg-green-500/20 backdrop-blur border border-green-500/30 rounded-full p-3 shadow-lg",children:(0,i.jsx)(u.A,{className:"w-6 h-6 text-green-400"})}),(0,i.jsx)(l.P.div,{animate:{y:[10,-10,10],rotate:[0,-5,0]},transition:{duration:8,repeat:1/0,ease:"easeInOut",delay:1},className:"absolute -bottom-6 -left-6 bg-blue-500/20 backdrop-blur border border-blue-500/30 rounded-full p-3 shadow-lg",children:(0,i.jsx)(o.A,{className:"w-6 h-6 text-blue-400"})}),(0,i.jsx)(l.P.div,{animate:{y:[5,-5,5],rotate:[0,10,0]},transition:{duration:7,repeat:1/0,ease:"easeInOut",delay:2},className:"absolute top-1/2 -left-8 bg-yellow-500/20 backdrop-blur border border-yellow-500/30 rounded-full p-3 shadow-lg",children:(0,i.jsx)(x.A,{className:"w-6 h-6 text-yellow-400"})})]})]})})]})}let w=(0,d.A)("Zap",[["path",{d:"M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z",key:"1xq2db"}]]),j=[{icon:o.A,color:"blue",title:"Enterprise Security",description:"Bank-level security protocols and ISO 27001 compliance ensure your data is always protected with military-grade encryption."},{icon:x.A,color:"yellow",title:"Certified Excellence",description:"ISO 9001:2015 certified processes and award-winning team delivering consistently exceptional results for global clients."},{icon:p.A,color:"green",title:"Dedicated Support",description:"Personal project manager and 24/7 expert support team ensuring seamless communication throughout your project lifecycle."},{icon:m,color:"indigo",title:"Proven ROI Growth",description:"Average 250% ROI increase for clients through strategic optimization, data-driven decisions, and conversion-focused design."},{icon:w,color:"purple",title:"Lightning Performance",description:"Sub-2 second load times guaranteed with advanced optimization techniques and global CDN infrastructure deployment."},{icon:b.A,color:"cyan",title:"Global Scalability",description:"Enterprise-grade infrastructure supporting millions of users with 99.99% uptime SLA and international compliance standards."}],f={blue:{bg:"bg-blue-500/10",text:"text-blue-400",border:"border-blue-500/20",glow:"group-hover:shadow-blue-500/25"},yellow:{bg:"bg-yellow-500/10",text:"text-yellow-400",border:"border-yellow-500/20",glow:"group-hover:shadow-yellow-500/25"},green:{bg:"bg-green-500/10",text:"text-green-400",border:"border-green-500/20",glow:"group-hover:shadow-green-500/25"},indigo:{bg:"bg-indigo-500/10",text:"text-indigo-400",border:"border-indigo-500/20",glow:"group-hover:shadow-indigo-500/25"},purple:{bg:"bg-purple-500/10",text:"text-purple-400",border:"border-purple-500/20",glow:"group-hover:shadow-purple-500/25"},cyan:{bg:"bg-cyan-500/10",text:"text-cyan-400",border:"border-cyan-500/20",glow:"group-hover:shadow-cyan-500/25"}};function N(){return(0,i.jsxs)("section",{id:"features",className:"py-20 relative overflow-hidden",children:[(0,i.jsx)("div",{className:"absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"}),(0,i.jsx)("div",{className:"absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]"}),(0,i.jsxs)("div",{className:"container mx-auto px-4 relative z-10",children:[(0,i.jsxs)("div",{className:"text-center mb-16",children:[(0,i.jsxs)(l.P.div,{initial:{opacity:0,y:20},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.6},className:"inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 text-sm font-medium text-blue-400 mb-6",children:[(0,i.jsx)(u.A,{className:"w-4 h-4"}),(0,i.jsx)("span",{children:"Why Choose WebySoft"})]}),(0,i.jsxs)(l.P.h2,{className:"text-4xl md:text-6xl font-bold text-white mb-6",initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.8,delay:.2},children:["Enterprise-Grade"," ",(0,i.jsx)("span",{className:"bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",children:"Solutions"})]}),(0,i.jsx)(l.P.p,{className:"text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed",initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.8,delay:.4},children:"Trusted by Fortune 500 companies and growing startups alike. Our certified professionals deliver measurable results through proven methodologies and cutting-edge technology."})]}),(0,i.jsx)("div",{className:"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",children:j.map((e,t)=>{let a=f[e.color];return(0,i.jsxs)(l.P.div,{initial:{opacity:0,y:50},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-50px"},transition:{duration:.6,delay:.1*t},whileHover:{y:-5},className:"group relative bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-2xl p-8 hover:bg-slate-700/30 transition-all duration-300 shadow-lg hover:shadow-xl ".concat(a.glow),children:[(0,i.jsx)("div",{className:"inline-flex p-4 rounded-xl ".concat(a.bg," ").concat(a.border," border mb-6 group-hover:scale-110 transition-transform duration-300"),children:(0,i.jsx)(e.icon,{className:"w-8 h-8 ".concat(a.text)})}),(0,i.jsx)("h3",{className:"text-xl font-semibold text-white mb-4 group-hover:text-gray-100 transition-colors",children:e.title}),(0,i.jsx)("p",{className:"text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors",children:e.description}),(0,i.jsx)("div",{className:"absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 ".concat(a.bg," ").concat(a.border," border")})]},t)})}),(0,i.jsx)(l.P.div,{initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.8,delay:.8},className:"mt-20 text-center",children:(0,i.jsxs)("div",{className:"bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-2xl p-8",children:[(0,i.jsx)("p",{className:"text-gray-400 mb-6",children:"Trusted by industry leaders worldwide"}),(0,i.jsxs)("div",{className:"grid grid-cols-2 md:grid-cols-4 gap-8",children:[(0,i.jsxs)("div",{className:"text-center",children:[(0,i.jsx)("div",{className:"text-3xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",children:"500+"}),(0,i.jsx)("div",{className:"text-sm text-gray-500",children:"Enterprise Clients"})]}),(0,i.jsxs)("div",{className:"text-center",children:[(0,i.jsx)("div",{className:"text-3xl font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent",children:"99.99%"}),(0,i.jsx)("div",{className:"text-sm text-gray-500",children:"Uptime SLA"})]}),(0,i.jsxs)("div",{className:"text-center",children:[(0,i.jsx)("div",{className:"text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent",children:"250%"}),(0,i.jsx)("div",{className:"text-sm text-gray-500",children:"Average ROI"})]}),(0,i.jsxs)("div",{className:"text-center",children:[(0,i.jsx)("div",{className:"text-3xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent",children:"24/7"}),(0,i.jsx)("div",{className:"text-sm text-gray-500",children:"Expert Support"})]})]})]})})]})]})}let P=(0,d.A)("Target",[["circle",{cx:"12",cy:"12",r:"10",key:"1mglay"}],["circle",{cx:"12",cy:"12",r:"6",key:"1vlfrh"}],["circle",{cx:"12",cy:"12",r:"2",key:"1c9p78"}]]),k=(0,d.A)("Rocket",[["path",{d:"M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z",key:"m3kijz"}],["path",{d:"m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z",key:"1fmvmk"}],["path",{d:"M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0",key:"1f8sc4"}],["path",{d:"M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5",key:"qeys4"}]]),A=[{number:"01",title:"Strategic Consultation",description:"Our certified experts conduct comprehensive analysis of your business objectives, technical requirements, and compliance needs to develop a tailored roadmap.",icon:p.A,color:"blue",features:["Business Analysis","Technical Assessment","Compliance Review","Risk Evaluation"]},{number:"02",title:"Enterprise Planning",description:"We design scalable architecture with security-first approach, ensuring your solution meets enterprise standards and regulatory compliance from day one.",icon:P,color:"indigo",features:["Architecture Design","Security Planning","Scalability Mapping","Integration Strategy"]},{number:"03",title:"Development & Testing",description:"Our ISO-certified development process includes rigorous testing, quality assurance, and security audits to deliver enterprise-grade solutions.",icon:o.A,color:"purple",features:["Agile Development","Security Testing","Quality Assurance","Performance Optimization"]},{number:"04",title:"Launch & Support",description:"Seamless deployment with 24/7 monitoring, dedicated support team, and ongoing optimization to ensure continued success and growth.",icon:k,color:"green",features:["Deployment","24/7 Monitoring","Ongoing Support","Performance Analytics"]}],S={blue:{bg:"bg-blue-500/10",text:"text-blue-400",border:"border-blue-500/20",gradient:"from-blue-400 to-blue-600"},indigo:{bg:"bg-indigo-500/10",text:"text-indigo-400",border:"border-indigo-500/20",gradient:"from-indigo-400 to-indigo-600"},purple:{bg:"bg-purple-500/10",text:"text-purple-400",border:"border-purple-500/20",gradient:"from-purple-400 to-purple-600"},green:{bg:"bg-green-500/10",text:"text-green-400",border:"border-green-500/20",gradient:"from-green-400 to-green-600"}};function I(){return(0,i.jsxs)("section",{id:"how-it-works",className:"py-20 relative overflow-hidden",children:[(0,i.jsx)("div",{className:"absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"}),(0,i.jsx)("div",{className:"absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(59,130,246,0.1),transparent_70%)]"}),(0,i.jsxs)("div",{className:"container mx-auto px-4 relative z-10",children:[(0,i.jsxs)("div",{className:"text-center mb-20",children:[(0,i.jsxs)(l.P.div,{initial:{opacity:0,y:20},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.6},className:"inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 text-sm font-medium text-blue-400 mb-6",children:[(0,i.jsx)(u.A,{className:"w-4 h-4"}),(0,i.jsx)("span",{children:"Our Proven Process"})]}),(0,i.jsxs)(l.P.h2,{className:"text-4xl md:text-6xl font-bold text-white mb-6",initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.8,delay:.2},children:["Enterprise"," ",(0,i.jsx)("span",{className:"bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",children:"Development Process"})]}),(0,i.jsx)(l.P.p,{className:"text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed",initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.8,delay:.4},children:"Our ISO-certified methodology ensures consistent delivery of enterprise-grade solutions with guaranteed security, scalability, and compliance standards."})]}),(0,i.jsx)("div",{className:"space-y-12",children:A.map((e,t)=>{let a=S[e.color],r=t%2==0;return(0,i.jsxs)(l.P.div,{initial:{opacity:0,y:50},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-50px"},transition:{duration:.6,delay:.1*t},className:"grid lg:grid-cols-2 gap-12 items-center ".concat(r?"":"lg:grid-flow-col-dense"),children:[(0,i.jsxs)("div",{className:"space-y-6 ".concat(r?"":"lg:col-start-2"),children:[(0,i.jsxs)("div",{className:"flex items-center gap-4",children:[(0,i.jsx)("div",{className:"text-6xl font-bold bg-gradient-to-r ".concat(a.gradient," bg-clip-text text-transparent opacity-50"),children:e.number}),(0,i.jsx)("div",{className:"p-3 rounded-xl ".concat(a.bg," ").concat(a.border," border"),children:(0,i.jsx)(e.icon,{className:"w-8 h-8 ".concat(a.text)})})]}),(0,i.jsx)("h3",{className:"text-3xl font-bold text-white",children:e.title}),(0,i.jsx)("p",{className:"text-lg text-gray-300 leading-relaxed",children:e.description}),(0,i.jsx)("div",{className:"grid grid-cols-2 gap-3",children:e.features.map((e,t)=>(0,i.jsxs)("div",{className:"flex items-center gap-2",children:[(0,i.jsx)(u.A,{className:"w-4 h-4 ".concat(a.text)}),(0,i.jsx)("span",{className:"text-sm text-gray-400",children:e})]},t))})]}),(0,i.jsx)("div",{className:"relative ".concat(r?"":"lg:col-start-1"),children:(0,i.jsx)("div",{className:"bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-2xl p-8 shadow-2xl",children:(0,i.jsxs)("div",{className:"space-y-6",children:[(0,i.jsxs)("div",{className:"h-64 rounded-xl ".concat(a.bg," ").concat(a.border," border flex items-center justify-center relative overflow-hidden"),children:[(0,i.jsx)("div",{className:"absolute inset-0 opacity-10",children:(0,i.jsx)("div",{className:"grid grid-cols-4 h-full",children:[...Array(16)].map((e,t)=>(0,i.jsx)("div",{className:"border-r border-b ".concat(a.border)},t))})}),(0,i.jsx)("div",{className:"relative z-10 p-6 rounded-full ".concat(a.bg," ").concat(a.border," border"),children:(0,i.jsx)(e.icon,{className:"w-16 h-16 ".concat(a.text)})}),(0,i.jsx)(l.P.div,{animate:{y:[-10,10,-10],rotate:[0,5,0]},transition:{duration:4,repeat:1/0,ease:"easeInOut"},className:"absolute top-4 right-4 w-3 h-3 rounded-full ".concat(a.text.replace("text-","bg-"))}),(0,i.jsx)(l.P.div,{animate:{y:[10,-10,10],rotate:[0,-5,0]},transition:{duration:5,repeat:1/0,ease:"easeInOut",delay:1},className:"absolute bottom-4 left-4 w-2 h-2 rounded-full ".concat(a.text.replace("text-","bg-"))})]}),(0,i.jsxs)("div",{className:"flex items-center justify-between",children:[(0,i.jsx)("span",{className:"text-sm text-gray-400",children:"Progress"}),(0,i.jsx)("div",{className:"flex-1 mx-4 bg-slate-700 rounded-full h-2 overflow-hidden",children:(0,i.jsx)(l.P.div,{className:"h-full bg-gradient-to-r ".concat(a.gradient," rounded-full"),initial:{width:0},whileInView:{width:"".concat((t+1)/A.length*100,"%")},viewport:{once:!0},transition:{duration:1,delay:.5}})}),(0,i.jsxs)("span",{className:"text-sm text-gray-400",children:[Math.round((t+1)/A.length*100),"%"]})]})]})})}),t<A.length-1&&(0,i.jsx)("div",{className:"lg:col-span-2 flex justify-center py-6",children:(0,i.jsx)(l.P.div,{animate:{y:[0,10,0]},transition:{duration:2,repeat:1/0,ease:"easeInOut"},className:"p-3 bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-full",children:(0,i.jsx)(g,{className:"w-6 h-6 text-blue-400 transform rotate-90"})})})]},t)})}),(0,i.jsx)(l.P.div,{initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.8,delay:.6},className:"text-center mt-20",children:(0,i.jsxs)("div",{className:"bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-2xl p-8",children:[(0,i.jsx)("h3",{className:"text-2xl font-bold text-white mb-4",children:"Ready to Start Your Enterprise Journey?"}),(0,i.jsx)("p",{className:"text-gray-300 mb-6 max-w-2xl mx-auto",children:"Schedule a consultation with our certified experts to discuss your project requirements and receive a customized enterprise solution proposal."}),(0,i.jsx)(l.P.button,{onClick:()=>window.open("https://wa.me/918849990393","_blank"),className:"bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-blue-500/25",whileHover:{scale:1.05},whileTap:{scale:.95},children:"Schedule Consultation"})]})})]})]})}var C=a(760);let z=(0,d.A)("Crown",[["path",{d:"M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z",key:"1vdc57"}],["path",{d:"M5 21h14",key:"11awu3"}]]),O=(0,d.A)("Check",[["path",{d:"M20 6 9 17l-5-5",key:"1gmf2c"}]]);function V(){let[e,t]=(0,r.useState)(!1);return(0,i.jsxs)("section",{id:"pricing",className:"py-20 relative overflow-hidden",children:[(0,i.jsx)("div",{className:"absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"}),(0,i.jsx)("div",{className:"absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]"}),(0,i.jsxs)("div",{className:"container mx-auto px-4 relative z-10",children:[(0,i.jsxs)("div",{className:"text-center mb-16",children:[(0,i.jsxs)(l.P.div,{initial:{opacity:0,y:20},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.6},className:"inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 text-sm font-medium text-blue-400 mb-6",children:[(0,i.jsx)(z,{className:"w-4 h-4"}),(0,i.jsx)("span",{children:"Pricing Plans"})]}),(0,i.jsxs)(l.P.h2,{className:"text-4xl md:text-6xl font-bold text-white mb-6",initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.8,delay:.2},children:["Professional"," ",(0,i.jsx)("span",{className:"bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",children:"Web Solutions"})]}),(0,i.jsx)(l.P.p,{className:"text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10",initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.8,delay:.4},children:"Complete web solution with custom design, development, and ongoing support for your business success."}),(0,i.jsx)(l.P.div,{initial:{opacity:0,y:20},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.6,delay:.6},className:"flex items-center justify-center mb-16",children:(0,i.jsx)("div",{className:"relative bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-xl p-1.5 shadow-2xl overflow-hidden",children:(0,i.jsxs)("div",{className:"relative flex items-center",children:[(0,i.jsx)(l.P.div,{className:"absolute top-1.5 bottom-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-lg",initial:!1,animate:{width:e?"calc(55% - 6px)":"45%",left:e?"45%":"6px"},transition:{duration:.4,ease:[.23,1,.32,1]}}),(0,i.jsx)(l.P.button,{onClick:()=>t(!1),className:"relative z-10 px-8 py-4 rounded-lg font-semibold text-sm transition-all duration-300 ".concat(e?"text-gray-400 hover:text-gray-300":"text-white"),style:{width:"45%"},whileHover:{scale:1.05},whileTap:{scale:.95},children:"Monthly"}),(0,i.jsxs)(l.P.button,{onClick:()=>t(!0),className:"relative z-10 px-6 py-4 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap ".concat(e?"text-white":"text-gray-400 hover:text-gray-300"),style:{width:"55%"},whileHover:{scale:1.05},whileTap:{scale:.95},children:[(0,i.jsx)("span",{children:"Yearly"}),(0,i.jsxs)(l.P.span,{className:"bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs px-2 py-0.5 rounded-full font-bold shadow-lg flex-shrink-0",animate:{scale:e?[1,1.1,1]:1,boxShadow:e?["0 0 0 rgba(34, 197, 94, 0)","0 0 20px rgba(34, 197, 94, 0.4)","0 0 0 rgba(34, 197, 94, 0)"]:"0 0 0 rgba(34, 197, 94, 0)"},transition:{duration:.6,repeat:e?1/0:0,repeatDelay:2},children:["Save $",127]})]})]})})})]}),(0,i.jsx)("div",{className:"max-w-md mx-auto",children:(0,i.jsxs)(l.P.div,{initial:{opacity:0,y:50,rotateX:15},whileInView:{opacity:1,y:0,rotateX:0},viewport:{once:!0,margin:"-50px"},transition:{duration:.8,type:"spring",bounce:.3},whileHover:{y:-10,scale:1.02,transition:{duration:.3,ease:"easeOut"}},className:"relative group transform-gpu perspective-1000",style:{transformStyle:"preserve-3d"},children:[(0,i.jsx)(l.P.div,{className:"absolute -top-6 left-1/2 transform -translate-x-1/2 z-20",initial:{opacity:0,y:-20,scale:.8},whileInView:{opacity:1,y:0,scale:1},transition:{duration:.6,delay:.8,type:"spring",bounce:.4},children:(0,i.jsxs)(l.P.div,{className:"relative bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white px-6 py-3 rounded-full text-sm font-bold flex items-center gap-2 shadow-2xl",animate:{boxShadow:["0 0 20px rgba(147, 51, 234, 0.4)","0 0 30px rgba(147, 51, 234, 0.6)","0 0 20px rgba(147, 51, 234, 0.4)"]},transition:{duration:2,repeat:1/0,ease:"easeInOut"},children:[(0,i.jsx)(l.P.div,{animate:{rotate:360},transition:{duration:3,repeat:1/0,ease:"linear"},children:(0,i.jsx)(c,{className:"w-4 h-4 fill-current"})}),"Best Value",(0,i.jsx)("div",{className:"absolute -inset-1 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-full opacity-20 animate-pulse"})]})}),(0,i.jsxs)("div",{className:"relative bg-slate-800/40 backdrop-blur-xl border border-indigo-500/50 shadow-indigo-500/20 bg-gradient-to-br from-slate-800/50 to-indigo-900/20 rounded-2xl p-8 shadow-2xl h-full overflow-hidden transition-all duration-500 group-hover:shadow-3xl",children:[(0,i.jsx)("div",{className:"absolute inset-0 opacity-5",children:(0,i.jsx)("div",{className:"absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-purple-600/10 to-pink-600/20"})}),(0,i.jsx)("div",{className:"absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500",children:(0,i.jsx)("div",{className:"absolute inset-0 bg-gradient-to-r from-indigo-600 to-indigo-700 opacity-5 blur-xl"})}),(0,i.jsxs)("div",{className:"relative text-center mb-8",children:[(0,i.jsxs)(l.P.div,{className:"inline-flex p-4 rounded-xl bg-indigo-500/10 border-indigo-500/20 border mb-4 relative overflow-hidden",whileHover:{scale:1.1,rotateY:5},transition:{duration:.3},children:[(0,i.jsx)("div",{className:"absolute inset-0 bg-gradient-to-r from-indigo-600 to-indigo-700 opacity-20 blur-md"}),(0,i.jsx)(l.P.div,{whileHover:{rotate:360},transition:{duration:.6,ease:"easeInOut"},children:(0,i.jsx)(x.A,{className:"w-8 h-8 text-indigo-400 relative z-10"})})]}),(0,i.jsx)(l.P.h3,{className:"text-2xl font-bold text-white mb-2",whileHover:{scale:1.05},transition:{duration:.2},children:"Professional Plan"}),(0,i.jsx)("p",{className:"text-gray-400 text-sm leading-relaxed",children:"Complete web solution for your business"})]}),(0,i.jsxs)("div",{className:"text-center mb-8",children:[(0,i.jsxs)("div",{className:"flex items-baseline justify-center gap-2 mb-2",children:[(0,i.jsx)("span",{className:"text-sm text-gray-400",children:"$"}),(0,i.jsx)(l.P.span,{className:"text-4xl md:text-5xl font-bold text-white",initial:{opacity:0,y:20,scale:.8},animate:{opacity:1,y:0,scale:1},transition:{duration:.5,type:"spring",bounce:.3},children:e?317:37},"price-".concat(e)),(0,i.jsxs)("span",{className:"text-gray-400",children:["/",e?"year":"month"]})]}),(0,i.jsx)(C.N,{mode:"wait",children:e&&(0,i.jsx)(l.P.div,{initial:{opacity:0,height:0,y:-10},animate:{opacity:1,height:"auto",y:0},exit:{opacity:0,height:0,y:-10},transition:{duration:.4,ease:"easeInOut"},className:"overflow-hidden",children:(0,i.jsxs)(l.P.p,{className:"text-sm text-green-400 font-semibold bg-green-500/10 border border-green-500/20 rounded-lg px-3 py-2 inline-block",animate:{boxShadow:["0 0 0 rgba(34, 197, 94, 0)","0 0 15px rgba(34, 197, 94, 0.3)","0 0 0 rgba(34, 197, 94, 0)"]},transition:{duration:2,repeat:1/0,ease:"easeInOut"},children:["\uD83D\uDCB0 Save $",127," annually"]})})})]}),(0,i.jsx)("ul",{className:"space-y-4 mb-8 flex-1",children:["Custom Web Design","Web Development","Hosting for 1 Year","1 Year Domain","24/7 Support","SSL Certificate","Mobile Responsive","Analytics and Search Console Setup","SEO Optimized Code","Fast Page Speed Optimized","2 Customizations per Month"].map((e,t)=>(0,i.jsxs)(l.P.li,{className:"flex items-start gap-3 group/feature",initial:{opacity:0,x:-20},whileInView:{opacity:1,x:0},viewport:{once:!0},transition:{duration:.4,delay:.1*t},whileHover:{x:5},children:[(0,i.jsx)(l.P.div,{className:"w-5 h-5 flex-shrink-0 mt-0.5 rounded-full bg-indigo-500/10 border-indigo-500/20 border flex items-center justify-center",whileHover:{scale:1.2,rotate:90},transition:{duration:.2},children:(0,i.jsx)(O,{className:"w-3 h-3 text-indigo-400"})}),(0,i.jsx)("span",{className:"text-gray-300 text-sm group-hover/feature:text-white transition-colors duration-200",children:e})]},t))}),(0,i.jsxs)(l.P.button,{onClick:()=>window.open("https://wa.me/918849990393","_blank"),className:"relative w-full bg-gradient-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 rounded-lg overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-300",whileHover:{scale:1.02,boxShadow:"0 20px 40px -10px rgba(99, 102, 241, 0.4)"},whileTap:{scale:.98},initial:{opacity:0,y:20},whileInView:{opacity:1,y:0},viewport:{once:!0},transition:{duration:.5,delay:.8},children:[(0,i.jsx)("div",{className:"absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"}),(0,i.jsxs)("div",{className:"relative z-10 flex items-center justify-center gap-3",children:[(0,i.jsx)("span",{children:"Get Started"}),(0,i.jsx)(l.P.div,{animate:{x:[0,5,0]},transition:{duration:1.5,repeat:1/0,ease:"easeInOut"},children:(0,i.jsx)(g,{className:"w-5 h-5"})})]}),(0,i.jsxs)("div",{className:"absolute inset-0 opacity-30",children:[(0,i.jsx)("div",{className:"absolute top-2 right-4 w-1 h-1 bg-white rounded-full animate-ping"}),(0,i.jsx)("div",{className:"absolute bottom-3 left-6 w-1 h-1 bg-white rounded-full animate-ping delay-500"}),(0,i.jsx)("div",{className:"absolute top-1/2 right-8 w-0.5 h-0.5 bg-white rounded-full animate-ping delay-1000"})]})]}),(0,i.jsx)("div",{className:"mt-4 text-center",children:(0,i.jsxs)("p",{className:"text-xs text-gray-500",children:[(0,i.jsx)(o.A,{className:"w-3 h-3 inline mr-1"}),"Professional Quality & 24/7 Support Included"]})})]})]})}),(0,i.jsx)(l.P.div,{initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.8,delay:.8},className:"mt-20 text-center",children:(0,i.jsxs)("div",{className:"relative bg-slate-800/40 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 overflow-hidden",children:[(0,i.jsx)("div",{className:"absolute inset-0 bg-gradient-to-br from-slate-700/10 via-transparent to-slate-800/10"}),(0,i.jsxs)(l.P.h3,{className:"text-3xl font-bold text-white mb-6 relative z-10",initial:{opacity:0,y:20},whileInView:{opacity:1,y:0},transition:{duration:.6,delay:1},children:["Why Choose ",(0,i.jsx)("span",{className:"bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",children:"WebySoft"})]}),(0,i.jsx)("div",{className:"grid grid-cols-2 md:grid-cols-4 gap-8 mt-8 relative z-10",children:[{icon:o.A,text:"Secure & Reliable",color:"text-green-400",bg:"bg-green-500/10",border:"border-green-500/20"},{icon:x.A,text:"Quality Assured",color:"text-yellow-400",bg:"bg-yellow-500/10",border:"border-yellow-500/20"},{icon:z,text:"24/7 Support",color:"text-purple-400",bg:"bg-purple-500/10",border:"border-purple-500/20"},{icon:O,text:"Satisfaction Guaranteed",color:"text-blue-400",bg:"bg-blue-500/10",border:"border-blue-500/20"}].map((e,t)=>(0,i.jsxs)(l.P.div,{className:"text-center group",initial:{opacity:0,y:30,scale:.8},whileInView:{opacity:1,y:0,scale:1},viewport:{once:!0},transition:{duration:.6,delay:1.2+.1*t,type:"spring",bounce:.3},whileHover:{scale:1.05,y:-5},children:[(0,i.jsx)(l.P.div,{className:"inline-flex p-4 rounded-xl ".concat(e.bg," ").concat(e.border," border mb-3 group-hover:shadow-lg transition-all duration-300"),whileHover:{rotate:5},children:(0,i.jsx)(e.icon,{className:"w-8 h-8 ".concat(e.color)})}),(0,i.jsx)("p",{className:"text-sm text-gray-300 group-hover:text-white transition-colors font-medium",children:e.text})]},t))})]})})]})]})}let _=(0,d.A)("Quote",[["path",{d:"M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z",key:"rib7q0"}],["path",{d:"M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z",key:"1ymkrd"}]]);var H=a(8136);let E=(0,d.A)("ChevronLeft",[["path",{d:"m15 18-6-6 6-6",key:"1wnfg3"}]]),M=(0,d.A)("ChevronRight",[["path",{d:"m9 18 6-6-6-6",key:"mthhwq"}]]),T=[{name:"Sarah Johnson",role:"Chief Technology Officer",company:"Fortune 500 Financial Services",image:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",quote:"WebySoft's enterprise-grade solutions transformed our digital infrastructure. Their ISO-certified processes and 24/7 support gave us the confidence to scale globally. ROI exceeded expectations by 300%.",rating:5,verified:!0,industry:"Financial Services"},{name:"Michael Thompson",role:"Head of Digital Strategy",company:"Leading Healthcare Corporation",image:"https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",quote:"Security and compliance were our top priorities. WebySoft delivered bank-level encryption and maintained our HIPAA compliance throughout the project. Their professional team exceeded all expectations.",rating:5,verified:!0,industry:"Healthcare"},{name:"Amanda Chen",role:"VP of Operations",company:"Global Manufacturing Leader",image:"https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",quote:"The dedicated project management and enterprise support made this the smoothest digital transformation we've ever experienced. WebySoft's certified excellence shows in every detail.",rating:5,verified:!0,industry:"Manufacturing"}];function L(){let[e,t]=(0,r.useState)(0);return(0,i.jsxs)("section",{id:"testimonials",className:"py-20 relative overflow-hidden",children:[(0,i.jsx)("div",{className:"absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"}),(0,i.jsx)("div",{className:"absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(59,130,246,0.1),transparent_70%)]"}),(0,i.jsxs)("div",{className:"container mx-auto px-4 relative z-10",children:[(0,i.jsxs)("div",{className:"text-center mb-16",children:[(0,i.jsxs)(l.P.div,{initial:{opacity:0,y:20},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.6},className:"inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 text-sm font-medium text-blue-400 mb-6",children:[(0,i.jsx)(x.A,{className:"w-4 h-4"}),(0,i.jsx)("span",{children:"Client Success Stories"})]}),(0,i.jsxs)(l.P.h2,{className:"text-4xl md:text-6xl font-bold text-white mb-6",initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.8,delay:.2},children:["Trusted by"," ",(0,i.jsx)("span",{className:"bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",children:"Industry Leaders"})]}),(0,i.jsx)(l.P.p,{className:"text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed",initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.8,delay:.4},children:"See why Fortune 500 companies and growing enterprises trust WebySoft with their most critical digital initiatives."})]}),(0,i.jsxs)("div",{className:"max-w-4xl mx-auto",children:[(0,i.jsx)(C.N,{mode:"wait",children:(0,i.jsx)(l.P.div,{initial:{opacity:0,x:100},animate:{opacity:1,x:0},exit:{opacity:0,x:-100},transition:{duration:.5},className:"relative",children:(0,i.jsxs)("div",{className:"bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-2xl p-8 md:p-12 shadow-2xl",children:[(0,i.jsx)("div",{className:"absolute -top-6 left-8",children:(0,i.jsx)("div",{className:"bg-blue-500/20 backdrop-blur border border-blue-500/30 rounded-full p-4",children:(0,i.jsx)(_,{className:"w-8 h-8 text-blue-400"})})}),(0,i.jsxs)("div",{className:"flex items-center gap-1 mb-6 pt-4",children:[[...Array(T[e].rating)].map((e,t)=>(0,i.jsx)(c,{className:"w-5 h-5 fill-yellow-400 text-yellow-400"},t)),(0,i.jsx)("span",{className:"ml-2 text-sm text-gray-400",children:"Verified Review"}),(0,i.jsx)(o.A,{className:"w-4 h-4 text-green-400 ml-1"})]}),(0,i.jsxs)("blockquote",{className:"text-xl md:text-2xl text-gray-200 leading-relaxed mb-8 italic",children:['"',T[e].quote,'"']}),(0,i.jsxs)("div",{className:"flex items-center gap-4",children:[(0,i.jsxs)("div",{className:"relative",children:[(0,i.jsx)("img",{src:T[e].image,alt:T[e].name,className:"w-16 h-16 rounded-full border-2 border-blue-500/20"}),(0,i.jsx)("div",{className:"absolute -bottom-1 -right-1 bg-blue-500/20 backdrop-blur border border-blue-500/30 rounded-full p-1",children:(0,i.jsx)(H.A,{className:"w-3 h-3 text-blue-400"})})]}),(0,i.jsxs)("div",{children:[(0,i.jsx)("h4",{className:"text-lg font-semibold text-white",children:T[e].name}),(0,i.jsx)("p",{className:"text-gray-400",children:T[e].role}),(0,i.jsx)("p",{className:"text-sm text-blue-400",children:T[e].company})]}),(0,i.jsx)("div",{className:"ml-auto hidden md:block",children:(0,i.jsxs)("div",{className:"bg-slate-700/50 backdrop-blur border border-slate-600/50 rounded-lg px-4 py-2",children:[(0,i.jsx)("span",{className:"text-xs text-gray-400",children:"Industry"}),(0,i.jsx)("p",{className:"text-sm font-medium text-gray-300",children:T[e].industry})]})})]})]})},e)}),(0,i.jsxs)("div",{className:"flex items-center justify-center gap-4 mt-8",children:[(0,i.jsx)(l.P.button,{onClick:()=>{t(e=>(e-1+T.length)%T.length)},className:"p-3 bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-lg text-gray-300 hover:text-white hover:bg-slate-700/50 transition-all duration-300",whileHover:{scale:1.05},whileTap:{scale:.95},children:(0,i.jsx)(E,{className:"w-5 h-5"})}),(0,i.jsx)("div",{className:"flex gap-2",children:T.map((a,r)=>(0,i.jsx)("button",{onClick:()=>t(r),className:"w-3 h-3 rounded-full transition-all duration-300 ".concat(r===e?"bg-blue-400 scale-125":"bg-gray-600 hover:bg-gray-500")},r))}),(0,i.jsx)(l.P.button,{onClick:()=>{t(e=>(e+1)%T.length)},className:"p-3 bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-lg text-gray-300 hover:text-white hover:bg-slate-700/50 transition-all duration-300",whileHover:{scale:1.05},whileTap:{scale:.95},children:(0,i.jsx)(M,{className:"w-5 h-5"})})]})]}),(0,i.jsxs)(l.P.div,{initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.8,delay:.6},className:"mt-16 grid grid-cols-2 md:grid-cols-4 gap-6",children:[(0,i.jsxs)("div",{className:"text-center bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-xl p-6",children:[(0,i.jsx)("div",{className:"text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",children:"99.8%"}),(0,i.jsx)("div",{className:"text-sm text-gray-400",children:"Client Satisfaction"})]}),(0,i.jsxs)("div",{className:"text-center bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-xl p-6",children:[(0,i.jsx)("div",{className:"text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent",children:"500+"}),(0,i.jsx)("div",{className:"text-sm text-gray-400",children:"Enterprise Clients"})]}),(0,i.jsxs)("div",{className:"text-center bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-xl p-6",children:[(0,i.jsx)("div",{className:"text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent",children:"24/7"}),(0,i.jsx)("div",{className:"text-sm text-gray-400",children:"Expert Support"})]}),(0,i.jsxs)("div",{className:"text-center bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-xl p-6",children:[(0,i.jsx)("div",{className:"text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent",children:"A+"}),(0,i.jsx)("div",{className:"text-sm text-gray-400",children:"Security Rating"})]})]})]})]})}var q=a(9420),R=a(8883),W=a(4516);let D=[{icon:q.A,title:"24/7 Enterprise Support",details:"+91 88499 90393",description:"Immediate response for enterprise clients",color:"blue"},{icon:R.A,title:"Business Inquiries",details:"enterprise@webysoft.com",description:"Professional consultation requests",color:"indigo"},{icon:W.A,title:"Global Headquarters",details:"Surat & Mumbai, India",description:"Serving clients worldwide",color:"purple"},{icon:h,title:"Business Hours",details:"24/7 Available",description:"Round-the-clock enterprise support",color:"green"}],G={blue:{bg:"bg-blue-500/10",text:"text-blue-400",border:"border-blue-500/20"},indigo:{bg:"bg-indigo-500/10",text:"text-indigo-400",border:"border-indigo-500/20"},purple:{bg:"bg-purple-500/10",text:"text-purple-400",border:"border-purple-500/20"},green:{bg:"bg-green-500/10",text:"text-green-400",border:"border-green-500/20"}};function B(){return(0,i.jsxs)("section",{id:"contact",className:"py-20 relative overflow-hidden",children:[(0,i.jsx)("div",{className:"absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"}),(0,i.jsx)("div",{className:"absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]"}),(0,i.jsxs)("div",{className:"container mx-auto px-4 relative z-10",children:[(0,i.jsxs)("div",{className:"text-center mb-16",children:[(0,i.jsxs)(l.P.div,{initial:{opacity:0,y:20},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.6},className:"inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 text-sm font-medium text-blue-400 mb-6",children:[(0,i.jsx)(o.A,{className:"w-4 h-4"}),(0,i.jsx)("span",{children:"Enterprise Contact"})]}),(0,i.jsxs)(l.P.h2,{className:"text-4xl md:text-6xl font-bold text-white mb-6",initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.8,delay:.2},children:["Ready to"," ",(0,i.jsx)("span",{className:"bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",children:"Get Started?"})]}),(0,i.jsx)(l.P.p,{className:"text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed",initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.8,delay:.4},children:"Connect with our experts for a personalized consultation. We'll assess your needs and provide a customized enterprise solution proposal."})]}),(0,i.jsxs)("div",{className:"max-w-6xl mx-auto",children:[(0,i.jsxs)(l.P.div,{initial:{opacity:0,y:50},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.8,delay:.2},className:"text-center mb-12",children:[(0,i.jsx)("h3",{className:"text-3xl font-bold text-white mb-6",children:"Multiple Ways to Connect"}),(0,i.jsx)("p",{className:"text-gray-300 leading-relaxed max-w-3xl mx-auto",children:"Our enterprise team is available 24/7 to discuss your project requirements, provide technical consultation, and deliver customized solutions that meet your business objectives."})]}),(0,i.jsx)("div",{className:"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12",children:D.map((e,t)=>{let a=G[e.color];return(0,i.jsxs)(l.P.div,{initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-50px"},transition:{duration:.6,delay:.1*t},className:"bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-xl p-6 hover:bg-slate-700/30 transition-all duration-300 group text-center",children:[(0,i.jsx)("div",{className:"inline-flex p-4 rounded-xl ".concat(a.bg," ").concat(a.border," border mb-4 group-hover:scale-110 transition-transform duration-300"),children:(0,i.jsx)(e.icon,{className:"w-8 h-8 ".concat(a.text)})}),(0,i.jsx)("h4",{className:"text-lg font-semibold text-white mb-2",children:e.title}),(0,i.jsx)("p",{className:"text-gray-300 font-medium mb-2",children:e.details}),(0,i.jsx)("p",{className:"text-sm text-gray-400",children:e.description})]},t)})}),(0,i.jsx)(l.P.div,{initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-50px"},transition:{duration:.6,delay:.6},className:"flex justify-center items-center mb-12",children:(0,i.jsxs)(l.P.button,{onClick:()=>window.open("https://wa.me/918849990393","_blank"),className:"flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-green-500/25",whileHover:{scale:1.02},whileTap:{scale:.98},children:[(0,i.jsx)(n.EcP,{className:"w-5 h-5"}),"Start WhatsApp Chat"]})}),(0,i.jsxs)(l.P.div,{initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-50px"},transition:{duration:.6,delay:.8},className:"bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-2xl p-8 text-center",children:[(0,i.jsx)("h4",{className:"text-2xl font-bold text-white mb-6",children:"Why Choose WebySoft?"}),(0,i.jsxs)("div",{className:"grid grid-cols-2 md:grid-cols-4 gap-6",children:[(0,i.jsxs)("div",{className:"flex flex-col items-center gap-2",children:[(0,i.jsx)(x.A,{className:"w-8 h-8 text-yellow-400"}),(0,i.jsx)("span",{className:"text-sm text-gray-300 font-medium",children:"Award Winning"})]}),(0,i.jsxs)("div",{className:"flex flex-col items-center gap-2",children:[(0,i.jsx)(u.A,{className:"w-8 h-8 text-blue-400"}),(0,i.jsx)("span",{className:"text-sm text-gray-300 font-medium",children:"500+ Projects"})]}),(0,i.jsxs)("div",{className:"flex flex-col items-center gap-2",children:[(0,i.jsx)(h,{className:"w-8 h-8 text-purple-400"}),(0,i.jsx)("span",{className:"text-sm text-gray-300 font-medium",children:"24/7 Support"})]}),(0,i.jsxs)("div",{className:"flex flex-col items-center gap-2",children:[(0,i.jsx)(o.A,{className:"w-8 h-8 text-green-400"}),(0,i.jsx)("span",{className:"text-sm text-gray-300 font-medium",children:"Enterprise Security"})]})]})]})]})]})]})}var F=a(7718);function U(){return(0,r.useEffect)(()=>{let e=()=>{let e=window.location.hash.substring(1);e&&setTimeout(()=>{let t=document.getElementById(e);t&&t.scrollIntoView({behavior:"smooth"})},500)};return e(),window.addEventListener("hashchange",e),()=>window.removeEventListener("hashchange",e)},[]),(0,i.jsxs)("div",{className:"min-h-screen bg-slate-900 text-white overflow-x-hidden",children:[(0,i.jsx)(s.A,{}),(0,i.jsx)(v,{}),(0,i.jsx)(N,{}),(0,i.jsx)(I,{}),(0,i.jsx)(V,{}),(0,i.jsx)(L,{}),(0,i.jsx)(B,{}),(0,i.jsx)(F.A,{})]})}},1700:(e,t,a)=>{Promise.resolve().then(a.bind(a,1208))},7580:(e,t,a)=>{"use strict";a.d(t,{A:()=>i});let i=(0,a(9946).A)("Users",[["path",{d:"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2",key:"1yyitq"}],["circle",{cx:"9",cy:"7",r:"4",key:"nufk8"}],["path",{d:"M22 21v-2a4 4 0 0 0-3-3.87",key:"kshegd"}],["path",{d:"M16 3.13a4 4 0 0 1 0 7.75",key:"1da9ce"}]])}},e=>{var t=t=>e(e.s=t);e.O(0,[711,375,157,318,441,684,358],()=>t(1700)),_N_E=e.O()}]);
+(self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
+  [974],
+  {
+    646: (e, t, a) => {
+      "use strict";
+      a.d(t, { A: () => i });
+      let i = (0, a(9946).A)("CircleCheckBig", [
+        ["path", { d: "M21.801 10A10 10 0 1 1 17 3.335", key: "yps3ct" }],
+        ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }],
+      ]);
+    },
+    1208: (e, t, a) => {
+      "use strict";
+      a.r(t), a.d(t, { default: () => U });
+      var i = a(5155),
+        r = a(2115),
+        s = a(6505),
+        l = a(9893),
+        n = a(9911),
+        o = a(5525),
+        d = a(9946);
+      let c = (0, d.A)("Star", [
+        [
+          "polygon",
+          {
+            points:
+              "12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2",
+            key: "8f66p6",
+          },
+        ],
+      ]);
+      var x = a(9037),
+        p = a(7580);
+      let m = (0, d.A)("TrendingUp", [
+          [
+            "polyline",
+            { points: "22 7 13.5 15.5 8.5 10.5 2 17", key: "126l90" },
+          ],
+          ["polyline", { points: "16 7 22 7 22 13", key: "kwv8wd" }],
+        ]),
+        g = (0, d.A)("ArrowRight", [
+          ["path", { d: "M5 12h14", key: "1ays0h" }],
+          ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }],
+        ]);
+      var u = a(646);
+      let h = (0, d.A)("Clock", [
+        ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+        ["polyline", { points: "12 6 12 12 16 14", key: "68esgv" }],
+      ]);
+      var b = a(4869),
+        y = a(4741);
+      function v() {
+        return (0, i.jsxs)("section", {
+          className:
+            "relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden",
+          children: [
+            (0, i.jsx)("div", {
+              className:
+                "absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900",
+            }),
+            (0, i.jsx)("div", {
+              className:
+                "absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.15),transparent_50%)]",
+            }),
+            (0, i.jsx)("div", {
+              className:
+                "absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(99,102,241,0.1),transparent_50%)]",
+            }),
+            (0, i.jsx)("div", {
+              className:
+                "absolute top-20 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl animate-pulse",
+            }),
+            (0, i.jsx)("div", {
+              className:
+                "absolute bottom-20 right-10 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-1000",
+            }),
+            (0, i.jsx)("div", {
+              className: "container mx-auto px-4 relative z-10",
+              children: (0, i.jsxs)("div", {
+                className: "grid lg:grid-cols-2 gap-16 items-center",
+                children: [
+                  (0, i.jsxs)(l.P.div, {
+                    initial: { opacity: 0, x: -50 },
+                    animate: { opacity: 1, x: 0 },
+                    transition: { duration: 0.8, delay: 0.2 },
+                    className: "space-y-8",
+                    children: [
+                      (0, i.jsxs)(l.P.div, {
+                        initial: { opacity: 0, y: 20 },
+                        animate: { opacity: 1, y: 0 },
+                        transition: { duration: 0.6, delay: 0.4 },
+                        className:
+                          "inline-flex items-center gap-3 bg-blue-500/10 border border-blue-500/20 rounded-full px-6 py-3 text-sm font-medium text-blue-400 backdrop-blur-sm",
+                        children: [
+                          (0, i.jsx)(o.A, { className: "w-4 h-4" }),
+                          (0, i.jsx)("span", {
+                            children: "Trusted by 500+ Businesses Worldwide",
+                          }),
+                          (0, i.jsx)("div", {
+                            className: "flex gap-1",
+                            children: [
+                              void 0,
+                              void 0,
+                              void 0,
+                              void 0,
+                              void 0,
+                            ].map((e, t) =>
+                              (0, i.jsx)(
+                                c,
+                                {
+                                  className:
+                                    "w-3 h-3 fill-yellow-400 text-yellow-400",
+                                },
+                                t
+                              )
+                            ),
+                          }),
+                        ],
+                      }),
+                      (0, i.jsxs)(l.P.h1, {
+                        initial: { opacity: 0, y: 30 },
+                        animate: { opacity: 1, y: 0 },
+                        transition: { duration: 0.8, delay: 0.6 },
+                        className:
+                          "text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white",
+                        children: [
+                          "Professional",
+                          " ",
+                          (0, i.jsx)("span", {
+                            className:
+                              "bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",
+                            children: "Digital Solutions",
+                          }),
+                          " ",
+                          "That Drive Results",
+                        ],
+                      }),
+                      (0, i.jsx)(l.P.p, {
+                        initial: { opacity: 0, y: 30 },
+                        animate: { opacity: 1, y: 0 },
+                        transition: { duration: 0.8, delay: 0.8 },
+                        className:
+                          "text-xl md:text-2xl text-gray-300 leading-relaxed",
+                        children:
+                          "Partner with WebySoft for enterprise-grade web solutions. We deliver measurable ROI through strategic design, proven methodologies, and cutting-edge technology.",
+                      }),
+                      (0, i.jsx)(l.P.div, {
+                        initial: { opacity: 0, y: 30 },
+                        animate: { opacity: 1, y: 0 },
+                        transition: { duration: 0.8, delay: 1 },
+                        className: "grid grid-cols-1 md:grid-cols-2 gap-4",
+                        children: [
+                          { icon: o.A, text: "Enterprise Security Standards" },
+                          { icon: x.A, text: "Certified Quality Assurance" },
+                          { icon: p.A, text: "Dedicated Project Management" },
+                          { icon: m, text: "Proven ROI Enhancement" },
+                        ].map((e, t) =>
+                          (0, i.jsxs)(
+                            l.P.div,
+                            {
+                              className:
+                                "flex items-center gap-3 p-3 rounded-lg bg-slate-800/50 border border-slate-700/50 backdrop-blur-sm hover:bg-slate-700/50 transition-all duration-300",
+                              whileHover: { scale: 1.02, x: 5 },
+                              children: [
+                                (0, i.jsx)("div", {
+                                  className: "p-2 bg-blue-500/10 rounded-lg",
+                                  children: (0, i.jsx)(e.icon, {
+                                    className: "w-5 h-5 text-blue-400",
+                                  }),
+                                }),
+                                (0, i.jsx)("span", {
+                                  className: "text-gray-300 font-medium",
+                                  children: e.text,
+                                }),
+                              ],
+                            },
+                            t
+                          )
+                        ),
+                      }),
+                      (0, i.jsxs)(l.P.div, {
+                        initial: { opacity: 0, y: 30 },
+                        animate: { opacity: 1, y: 0 },
+                        transition: { duration: 0.8, delay: 1.2 },
+                        className: "flex flex-col sm:flex-row gap-4 pt-6",
+                        children: [
+                          (0, i.jsxs)(l.P.button, {
+                            onClick: () =>
+                              window.open("https://wa.me/000", "_blank"),
+                            className:
+                              "inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 group shadow-xl hover:shadow-2xl hover:shadow-blue-500/25",
+                            whileHover: { scale: 1.02 },
+                            whileTap: { scale: 0.98 },
+                            children: [
+                              "Schedule Consultation",
+                              (0, i.jsx)(g, {
+                                className:
+                                  "w-5 h-5 group-hover:translate-x-1 transition-transform",
+                              }),
+                            ],
+                          }),
+                          (0, i.jsxs)(l.P.button, {
+                            onClick: () =>
+                              window.open("https://wa.me/000", "_blank"),
+                            className:
+                              "inline-flex items-center justify-center gap-3 border border-slate-600 hover:border-green-500 text-gray-300 hover:text-white hover:bg-slate-800/50 font-semibold px-8 py-4 rounded-lg transition-all duration-300 group",
+                            whileHover: { scale: 1.02 },
+                            whileTap: { scale: 0.98 },
+                            children: [
+                              (0, i.jsx)(n.EcP, {
+                                className: "w-5 h-5 text-green-500",
+                              }),
+                              "Chat with Expert",
+                            ],
+                          }),
+                        ],
+                      }),
+                      (0, i.jsxs)(l.P.div, {
+                        initial: { opacity: 0, y: 30 },
+                        animate: { opacity: 1, y: 0 },
+                        transition: { duration: 0.8, delay: 1.4 },
+                        className:
+                          "grid grid-cols-3 gap-8 pt-8 border-t border-slate-700/50",
+                        children: [
+                          (0, i.jsxs)("div", {
+                            className: "text-center",
+                            children: [
+                              (0, i.jsx)("div", {
+                                className:
+                                  "text-3xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",
+                                children: "500+",
+                              }),
+                              (0, i.jsx)("div", {
+                                className: "text-sm text-gray-400",
+                                children: "Projects Delivered",
+                              }),
+                            ],
+                          }),
+                          (0, i.jsxs)("div", {
+                            className: "text-center",
+                            children: [
+                              (0, i.jsx)("div", {
+                                className:
+                                  "text-3xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",
+                                children: "99.8%",
+                              }),
+                              (0, i.jsx)("div", {
+                                className: "text-sm text-gray-400",
+                                children: "Uptime Guarantee",
+                              }),
+                            ],
+                          }),
+                          (0, i.jsxs)("div", {
+                            className: "text-center",
+                            children: [
+                              (0, i.jsx)("div", {
+                                className:
+                                  "text-3xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",
+                                children: "24/7",
+                              }),
+                              (0, i.jsx)("div", {
+                                className: "text-sm text-gray-400",
+                                children: "Support Available",
+                              }),
+                            ],
+                          }),
+                        ],
+                      }),
+                    ],
+                  }),
+                  (0, i.jsxs)(l.P.div, {
+                    initial: { opacity: 0, x: 50 },
+                    animate: { opacity: 1, x: 0 },
+                    transition: { duration: 0.8, delay: 0.4 },
+                    className: "relative",
+                    children: [
+                      (0, i.jsx)("div", {
+                        className:
+                          "relative bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-2xl p-8 shadow-2xl",
+                        children: (0, i.jsxs)("div", {
+                          className: "space-y-6",
+                          children: [
+                            (0, i.jsxs)("div", {
+                              className:
+                                "relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-700 to-slate-800 border border-slate-600/50",
+                              children: [
+                                (0, i.jsxs)("div", {
+                                  className: "aspect-[4/3] relative",
+                                  children: [
+                                    (0, i.jsx)("div", {
+                                      className:
+                                        "relative h-full overflow-hidden",
+                                      children: (0, i.jsxs)(l.P.div, {
+                                        className: "flex h-full gap-3",
+                                        animate: {
+                                          x: [0, -100 * y.LN.length + "%"],
+                                        },
+                                        transition: {
+                                          duration: 4 * y.LN.length,
+                                          repeat: 1 / 0,
+                                          ease: "linear",
+                                        },
+                                        children: [
+                                          y.LN.map((e, t) =>
+                                            (0, i.jsx)(
+                                              l.P.div,
+                                              {
+                                                className:
+                                                  "flex-shrink-0 w-fit h-full relative group cursor-pointer",
+                                                whileHover: {
+                                                  scale: 1.05,
+                                                  z: 10,
+                                                },
+                                                transition: { duration: 0.3 },
+                                                children: (0, i.jsxs)("div", {
+                                                  className:
+                                                    "relative overflow-hidden rounded-lg border border-slate-600/50 hover:border-blue-500/50 transition-all duration-300 h-full shadow-lg hover:shadow-xl",
+                                                  children: [
+                                                    (0, i.jsx)("img", {
+                                                      src: e.imageUrl,
+                                                      alt: e.title,
+                                                      className:
+                                                        "w-full h-full object-cover group-hover:scale-110 transition-transform duration-500",
+                                                      loading: "lazy",
+                                                    }),
+                                                    (0, i.jsx)("div", {
+                                                      className:
+                                                        "absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300",
+                                                      children: (0, i.jsxs)(
+                                                        "div",
+                                                        {
+                                                          className:
+                                                            "absolute bottom-3 left-3 right-3",
+                                                          children: [
+                                                            (0, i.jsx)("p", {
+                                                              className:
+                                                                "text-white text-xs font-semibold mb-1 line-clamp-1",
+                                                              children: e.title,
+                                                            }),
+                                                            (0, i.jsx)("p", {
+                                                              className:
+                                                                "text-blue-300 text-xs mb-2",
+                                                              children: e.type,
+                                                            }),
+                                                            (0, i.jsx)("div", {
+                                                              className:
+                                                                "flex flex-wrap gap-1 mb-2",
+                                                              children:
+                                                                e.technologies
+                                                                  .slice(0, 2)
+                                                                  .map((e, t) =>
+                                                                    (0, i.jsx)(
+                                                                      "span",
+                                                                      {
+                                                                        className:
+                                                                          "px-1.5 py-0.5 bg-slate-800/90 rounded text-xs text-gray-300",
+                                                                        children:
+                                                                          e,
+                                                                      },
+                                                                      t
+                                                                    )
+                                                                  ),
+                                                            }),
+                                                            (0, i.jsxs)("div", {
+                                                              className:
+                                                                "flex items-center justify-between",
+                                                              children: [
+                                                                (0, i.jsxs)(
+                                                                  "div",
+                                                                  {
+                                                                    className:
+                                                                      "flex items-center gap-1 text-green-400 text-xs",
+                                                                    children: [
+                                                                      (0,
+                                                                      i.jsx)(
+                                                                        u.A,
+                                                                        {
+                                                                          className:
+                                                                            "w-3 h-3",
+                                                                        }
+                                                                      ),
+                                                                      (0,
+                                                                      i.jsx)(
+                                                                        "span",
+                                                                        {
+                                                                          children:
+                                                                            "Live",
+                                                                        }
+                                                                      ),
+                                                                    ],
+                                                                  }
+                                                                ),
+                                                                (0, i.jsx)(g, {
+                                                                  className:
+                                                                    "w-3 h-3 text-blue-400",
+                                                                }),
+                                                              ],
+                                                            }),
+                                                          ],
+                                                        }
+                                                      ),
+                                                    }),
+                                                  ],
+                                                }),
+                                              },
+                                              "first-".concat(e.id)
+                                            )
+                                          ),
+                                          y.LN.map((e, t) =>
+                                            (0, i.jsx)(
+                                              l.P.div,
+                                              {
+                                                className:
+                                                  "flex-shrink-0 w-fit h-full relative group cursor-pointer",
+                                                whileHover: {
+                                                  scale: 1.05,
+                                                  z: 10,
+                                                },
+                                                transition: { duration: 0.3 },
+                                                children: (0, i.jsxs)("div", {
+                                                  className:
+                                                    "relative overflow-hidden rounded-lg border border-slate-600/50 hover:border-blue-500/50 transition-all duration-300 h-full shadow-lg hover:shadow-xl",
+                                                  children: [
+                                                    (0, i.jsx)("img", {
+                                                      src: e.imageUrl,
+                                                      alt: e.title,
+                                                      className:
+                                                        "w-full h-full object-cover group-hover:scale-110 transition-transform duration-500",
+                                                      loading: "lazy",
+                                                    }),
+                                                    (0, i.jsx)("div", {
+                                                      className:
+                                                        "absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300",
+                                                      children: (0, i.jsxs)(
+                                                        "div",
+                                                        {
+                                                          className:
+                                                            "absolute bottom-3 left-3 right-3",
+                                                          children: [
+                                                            (0, i.jsx)("p", {
+                                                              className:
+                                                                "text-white text-xs font-semibold mb-1 line-clamp-1",
+                                                              children: e.title,
+                                                            }),
+                                                            (0, i.jsx)("p", {
+                                                              className:
+                                                                "text-blue-300 text-xs mb-2",
+                                                              children: e.type,
+                                                            }),
+                                                            (0, i.jsx)("div", {
+                                                              className:
+                                                                "flex flex-wrap gap-1 mb-2",
+                                                              children:
+                                                                e.technologies
+                                                                  .slice(0, 2)
+                                                                  .map((e, t) =>
+                                                                    (0, i.jsx)(
+                                                                      "span",
+                                                                      {
+                                                                        className:
+                                                                          "px-1.5 py-0.5 bg-slate-800/90 rounded text-xs text-gray-300",
+                                                                        children:
+                                                                          e,
+                                                                      },
+                                                                      t
+                                                                    )
+                                                                  ),
+                                                            }),
+                                                            (0, i.jsxs)("div", {
+                                                              className:
+                                                                "flex items-center justify-between",
+                                                              children: [
+                                                                (0, i.jsxs)(
+                                                                  "div",
+                                                                  {
+                                                                    className:
+                                                                      "flex items-center gap-1 text-green-400 text-xs",
+                                                                    children: [
+                                                                      (0,
+                                                                      i.jsx)(
+                                                                        u.A,
+                                                                        {
+                                                                          className:
+                                                                            "w-3 h-3",
+                                                                        }
+                                                                      ),
+                                                                      (0,
+                                                                      i.jsx)(
+                                                                        "span",
+                                                                        {
+                                                                          children:
+                                                                            "Live",
+                                                                        }
+                                                                      ),
+                                                                    ],
+                                                                  }
+                                                                ),
+                                                                (0, i.jsx)(g, {
+                                                                  className:
+                                                                    "w-3 h-3 text-blue-400",
+                                                                }),
+                                                              ],
+                                                            }),
+                                                          ],
+                                                        }
+                                                      ),
+                                                    }),
+                                                  ],
+                                                }),
+                                              },
+                                              "second-".concat(e.id)
+                                            )
+                                          ),
+                                        ],
+                                      }),
+                                    }),
+                                    (0, i.jsx)("div", {
+                                      className:
+                                        "absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-slate-800 to-transparent pointer-events-none z-10",
+                                    }),
+                                    (0, i.jsx)("div", {
+                                      className:
+                                        "absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-slate-800 to-transparent pointer-events-none z-10",
+                                    }),
+                                  ],
+                                }),
+                                (0, i.jsxs)("div", {
+                                  className:
+                                    "absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur rounded-lg p-3 z-20",
+                                  children: [
+                                    (0, i.jsx)("p", {
+                                      className:
+                                        "text-white font-semibold text-sm",
+                                      children: "Our Live Portfolio",
+                                    }),
+                                    (0, i.jsx)("p", {
+                                      className: "text-gray-300 text-xs",
+                                      children:
+                                        "Click any project to visit the live website",
+                                    }),
+                                  ],
+                                }),
+                              ],
+                            }),
+                            (0, i.jsxs)("div", {
+                              className: "grid grid-cols-2 gap-4",
+                              children: [
+                                (0, i.jsxs)(l.P.div, {
+                                  className:
+                                    "bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-lg p-4 text-center hover:bg-slate-700/60 transition-all duration-300",
+                                  whileHover: { scale: 1.05 },
+                                  children: [
+                                    (0, i.jsx)("div", {
+                                      className:
+                                        "flex items-center justify-center mb-2",
+                                      children: (0, i.jsx)(o.A, {
+                                        className: "w-5 h-5 text-green-400",
+                                      }),
+                                    }),
+                                    (0, i.jsx)("div", {
+                                      className:
+                                        "text-xl font-bold text-green-400",
+                                      children: "A+",
+                                    }),
+                                    (0, i.jsx)("div", {
+                                      className: "text-xs text-gray-400",
+                                      children: "Security Rating",
+                                    }),
+                                  ],
+                                }),
+                                (0, i.jsxs)(l.P.div, {
+                                  className:
+                                    "bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-lg p-4 text-center hover:bg-slate-700/60 transition-all duration-300",
+                                  whileHover: { scale: 1.05 },
+                                  children: [
+                                    (0, i.jsx)("div", {
+                                      className:
+                                        "flex items-center justify-center mb-2",
+                                      children: (0, i.jsx)(h, {
+                                        className: "w-5 h-5 text-blue-400",
+                                      }),
+                                    }),
+                                    (0, i.jsx)("div", {
+                                      className:
+                                        "text-xl font-bold text-blue-400",
+                                      children: "24/7",
+                                    }),
+                                    (0, i.jsx)("div", {
+                                      className: "text-xs text-gray-400",
+                                      children: "Expert Support",
+                                    }),
+                                  ],
+                                }),
+                              ],
+                            }),
+                            (0, i.jsxs)("div", {
+                              className:
+                                "flex justify-between items-center pt-4 border-t border-slate-700/50",
+                              children: [
+                                (0, i.jsxs)("div", {
+                                  className: "flex items-center gap-2",
+                                  children: [
+                                    (0, i.jsx)(x.A, {
+                                      className: "w-5 h-5 text-yellow-400",
+                                    }),
+                                    (0, i.jsx)("span", {
+                                      className: "text-xs text-gray-400",
+                                      children: "Industry Leader",
+                                    }),
+                                  ],
+                                }),
+                                (0, i.jsxs)("div", {
+                                  className: "flex items-center gap-2",
+                                  children: [
+                                    (0, i.jsx)(b.A, {
+                                      className: "w-5 h-5 text-blue-400",
+                                    }),
+                                    (0, i.jsx)("span", {
+                                      className: "text-xs text-gray-400",
+                                      children: "Global Reach",
+                                    }),
+                                  ],
+                                }),
+                                (0, i.jsxs)("div", {
+                                  className: "flex items-center gap-2",
+                                  children: [
+                                    (0, i.jsx)(c, {
+                                      className: "w-5 h-5 text-purple-400",
+                                    }),
+                                    (0, i.jsx)("span", {
+                                      className: "text-xs text-gray-400",
+                                      children: "Top Rated",
+                                    }),
+                                  ],
+                                }),
+                              ],
+                            }),
+                          ],
+                        }),
+                      }),
+                      (0, i.jsx)(l.P.div, {
+                        animate: { y: [-10, 10, -10], rotate: [0, 5, 0] },
+                        transition: {
+                          duration: 6,
+                          repeat: 1 / 0,
+                          ease: "easeInOut",
+                        },
+                        className:
+                          "absolute -top-6 -right-6 bg-green-500/20 backdrop-blur border border-green-500/30 rounded-full p-3 shadow-lg",
+                        children: (0, i.jsx)(u.A, {
+                          className: "w-6 h-6 text-green-400",
+                        }),
+                      }),
+                      (0, i.jsx)(l.P.div, {
+                        animate: { y: [10, -10, 10], rotate: [0, -5, 0] },
+                        transition: {
+                          duration: 8,
+                          repeat: 1 / 0,
+                          ease: "easeInOut",
+                          delay: 1,
+                        },
+                        className:
+                          "absolute -bottom-6 -left-6 bg-blue-500/20 backdrop-blur border border-blue-500/30 rounded-full p-3 shadow-lg",
+                        children: (0, i.jsx)(o.A, {
+                          className: "w-6 h-6 text-blue-400",
+                        }),
+                      }),
+                      (0, i.jsx)(l.P.div, {
+                        animate: { y: [5, -5, 5], rotate: [0, 10, 0] },
+                        transition: {
+                          duration: 7,
+                          repeat: 1 / 0,
+                          ease: "easeInOut",
+                          delay: 2,
+                        },
+                        className:
+                          "absolute top-1/2 -left-8 bg-yellow-500/20 backdrop-blur border border-yellow-500/30 rounded-full p-3 shadow-lg",
+                        children: (0, i.jsx)(x.A, {
+                          className: "w-6 h-6 text-yellow-400",
+                        }),
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+            }),
+          ],
+        });
+      }
+      let w = (0, d.A)("Zap", [
+          [
+            "path",
+            {
+              d: "M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z",
+              key: "1xq2db",
+            },
+          ],
+        ]),
+        j = [
+          {
+            icon: o.A,
+            color: "blue",
+            title: "Enterprise Security",
+            description:
+              "Bank-level security protocols and ISO 27001 compliance ensure your data is always protected with military-grade encryption.",
+          },
+          {
+            icon: x.A,
+            color: "yellow",
+            title: "Certified Excellence",
+            description:
+              "ISO 9001:2015 certified processes and award-winning team delivering consistently exceptional results for global clients.",
+          },
+          {
+            icon: p.A,
+            color: "green",
+            title: "Dedicated Support",
+            description:
+              "Personal project manager and 24/7 expert support team ensuring seamless communication throughout your project lifecycle.",
+          },
+          {
+            icon: m,
+            color: "indigo",
+            title: "Proven ROI Growth",
+            description:
+              "Average 250% ROI increase for clients through strategic optimization, data-driven decisions, and conversion-focused design.",
+          },
+          {
+            icon: w,
+            color: "purple",
+            title: "Lightning Performance",
+            description:
+              "Sub-2 second load times guaranteed with advanced optimization techniques and global CDN infrastructure deployment.",
+          },
+          {
+            icon: b.A,
+            color: "cyan",
+            title: "Global Scalability",
+            description:
+              "Enterprise-grade infrastructure supporting millions of users with 99.99% uptime SLA and international compliance standards.",
+          },
+        ],
+        f = {
+          blue: {
+            bg: "bg-blue-500/10",
+            text: "text-blue-400",
+            border: "border-blue-500/20",
+            glow: "group-hover:shadow-blue-500/25",
+          },
+          yellow: {
+            bg: "bg-yellow-500/10",
+            text: "text-yellow-400",
+            border: "border-yellow-500/20",
+            glow: "group-hover:shadow-yellow-500/25",
+          },
+          green: {
+            bg: "bg-green-500/10",
+            text: "text-green-400",
+            border: "border-green-500/20",
+            glow: "group-hover:shadow-green-500/25",
+          },
+          indigo: {
+            bg: "bg-indigo-500/10",
+            text: "text-indigo-400",
+            border: "border-indigo-500/20",
+            glow: "group-hover:shadow-indigo-500/25",
+          },
+          purple: {
+            bg: "bg-purple-500/10",
+            text: "text-purple-400",
+            border: "border-purple-500/20",
+            glow: "group-hover:shadow-purple-500/25",
+          },
+          cyan: {
+            bg: "bg-cyan-500/10",
+            text: "text-cyan-400",
+            border: "border-cyan-500/20",
+            glow: "group-hover:shadow-cyan-500/25",
+          },
+        };
+      function N() {
+        return (0, i.jsxs)("section", {
+          id: "features",
+          className: "py-20 relative overflow-hidden",
+          children: [
+            (0, i.jsx)("div", {
+              className:
+                "absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900",
+            }),
+            (0, i.jsx)("div", {
+              className:
+                "absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]",
+            }),
+            (0, i.jsxs)("div", {
+              className: "container mx-auto px-4 relative z-10",
+              children: [
+                (0, i.jsxs)("div", {
+                  className: "text-center mb-16",
+                  children: [
+                    (0, i.jsxs)(l.P.div, {
+                      initial: { opacity: 0, y: 20 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: !0, margin: "-100px" },
+                      transition: { duration: 0.6 },
+                      className:
+                        "inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 text-sm font-medium text-blue-400 mb-6",
+                      children: [
+                        (0, i.jsx)(u.A, { className: "w-4 h-4" }),
+                        (0, i.jsx)("span", { children: "Why Choose WebySoft" }),
+                      ],
+                    }),
+                    (0, i.jsxs)(l.P.h2, {
+                      className:
+                        "text-4xl md:text-6xl font-bold text-white mb-6",
+                      initial: { opacity: 0, y: 30 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: !0, margin: "-100px" },
+                      transition: { duration: 0.8, delay: 0.2 },
+                      children: [
+                        "Enterprise-Grade",
+                        " ",
+                        (0, i.jsx)("span", {
+                          className:
+                            "bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",
+                          children: "Solutions",
+                        }),
+                      ],
+                    }),
+                    (0, i.jsx)(l.P.p, {
+                      className:
+                        "text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed",
+                      initial: { opacity: 0, y: 30 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: !0, margin: "-100px" },
+                      transition: { duration: 0.8, delay: 0.4 },
+                      children:
+                        "Trusted by Fortune 500 companies and growing startups alike. Our certified professionals deliver measurable results through proven methodologies and cutting-edge technology.",
+                    }),
+                  ],
+                }),
+                (0, i.jsx)("div", {
+                  className:
+                    "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
+                  children: j.map((e, t) => {
+                    let a = f[e.color];
+                    return (0, i.jsxs)(
+                      l.P.div,
+                      {
+                        initial: { opacity: 0, y: 50 },
+                        whileInView: { opacity: 1, y: 0 },
+                        viewport: { once: !0, margin: "-50px" },
+                        transition: { duration: 0.6, delay: 0.1 * t },
+                        whileHover: { y: -5 },
+                        className:
+                          "group relative bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-2xl p-8 hover:bg-slate-700/30 transition-all duration-300 shadow-lg hover:shadow-xl ".concat(
+                            a.glow
+                          ),
+                        children: [
+                          (0, i.jsx)("div", {
+                            className: "inline-flex p-4 rounded-xl "
+                              .concat(a.bg, " ")
+                              .concat(
+                                a.border,
+                                " border mb-6 group-hover:scale-110 transition-transform duration-300"
+                              ),
+                            children: (0, i.jsx)(e.icon, {
+                              className: "w-8 h-8 ".concat(a.text),
+                            }),
+                          }),
+                          (0, i.jsx)("h3", {
+                            className:
+                              "text-xl font-semibold text-white mb-4 group-hover:text-gray-100 transition-colors",
+                            children: e.title,
+                          }),
+                          (0, i.jsx)("p", {
+                            className:
+                              "text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors",
+                            children: e.description,
+                          }),
+                          (0, i.jsx)("div", {
+                            className:
+                              "absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 "
+                                .concat(a.bg, " ")
+                                .concat(a.border, " border"),
+                          }),
+                        ],
+                      },
+                      t
+                    );
+                  }),
+                }),
+                (0, i.jsx)(l.P.div, {
+                  initial: { opacity: 0, y: 30 },
+                  whileInView: { opacity: 1, y: 0 },
+                  viewport: { once: !0, margin: "-100px" },
+                  transition: { duration: 0.8, delay: 0.8 },
+                  className: "mt-20 text-center",
+                  children: (0, i.jsxs)("div", {
+                    className:
+                      "bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-2xl p-8",
+                    children: [
+                      (0, i.jsx)("p", {
+                        className: "text-gray-400 mb-6",
+                        children: "Trusted by industry leaders worldwide",
+                      }),
+                      (0, i.jsxs)("div", {
+                        className: "grid grid-cols-2 md:grid-cols-4 gap-8",
+                        children: [
+                          (0, i.jsxs)("div", {
+                            className: "text-center",
+                            children: [
+                              (0, i.jsx)("div", {
+                                className:
+                                  "text-3xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",
+                                children: "500+",
+                              }),
+                              (0, i.jsx)("div", {
+                                className: "text-sm text-gray-500",
+                                children: "Enterprise Clients",
+                              }),
+                            ],
+                          }),
+                          (0, i.jsxs)("div", {
+                            className: "text-center",
+                            children: [
+                              (0, i.jsx)("div", {
+                                className:
+                                  "text-3xl font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent",
+                                children: "99.99%",
+                              }),
+                              (0, i.jsx)("div", {
+                                className: "text-sm text-gray-500",
+                                children: "Uptime SLA",
+                              }),
+                            ],
+                          }),
+                          (0, i.jsxs)("div", {
+                            className: "text-center",
+                            children: [
+                              (0, i.jsx)("div", {
+                                className:
+                                  "text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent",
+                                children: "250%",
+                              }),
+                              (0, i.jsx)("div", {
+                                className: "text-sm text-gray-500",
+                                children: "Average ROI",
+                              }),
+                            ],
+                          }),
+                          (0, i.jsxs)("div", {
+                            className: "text-center",
+                            children: [
+                              (0, i.jsx)("div", {
+                                className:
+                                  "text-3xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent",
+                                children: "24/7",
+                              }),
+                              (0, i.jsx)("div", {
+                                className: "text-sm text-gray-500",
+                                children: "Expert Support",
+                              }),
+                            ],
+                          }),
+                        ],
+                      }),
+                    ],
+                  }),
+                }),
+              ],
+            }),
+          ],
+        });
+      }
+      let P = (0, d.A)("Target", [
+          ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+          ["circle", { cx: "12", cy: "12", r: "6", key: "1vlfrh" }],
+          ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }],
+        ]),
+        k = (0, d.A)("Rocket", [
+          [
+            "path",
+            {
+              d: "M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z",
+              key: "m3kijz",
+            },
+          ],
+          [
+            "path",
+            {
+              d: "m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z",
+              key: "1fmvmk",
+            },
+          ],
+          [
+            "path",
+            { d: "M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0", key: "1f8sc4" },
+          ],
+          [
+            "path",
+            { d: "M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5", key: "qeys4" },
+          ],
+        ]),
+        A = [
+          {
+            number: "01",
+            title: "Strategic Consultation",
+            description:
+              "Our certified experts conduct comprehensive analysis of your business objectives, technical requirements, and compliance needs to develop a tailored roadmap.",
+            icon: p.A,
+            color: "blue",
+            features: [
+              "Business Analysis",
+              "Technical Assessment",
+              "Compliance Review",
+              "Risk Evaluation",
+            ],
+          },
+          {
+            number: "02",
+            title: "Enterprise Planning",
+            description:
+              "We design scalable architecture with security-first approach, ensuring your solution meets enterprise standards and regulatory compliance from day one.",
+            icon: P,
+            color: "indigo",
+            features: [
+              "Architecture Design",
+              "Security Planning",
+              "Scalability Mapping",
+              "Integration Strategy",
+            ],
+          },
+          {
+            number: "03",
+            title: "Development & Testing",
+            description:
+              "Our ISO-certified development process includes rigorous testing, quality assurance, and security audits to deliver enterprise-grade solutions.",
+            icon: o.A,
+            color: "purple",
+            features: [
+              "Agile Development",
+              "Security Testing",
+              "Quality Assurance",
+              "Performance Optimization",
+            ],
+          },
+          {
+            number: "04",
+            title: "Launch & Support",
+            description:
+              "Seamless deployment with 24/7 monitoring, dedicated support team, and ongoing optimization to ensure continued success and growth.",
+            icon: k,
+            color: "green",
+            features: [
+              "Deployment",
+              "24/7 Monitoring",
+              "Ongoing Support",
+              "Performance Analytics",
+            ],
+          },
+        ],
+        S = {
+          blue: {
+            bg: "bg-blue-500/10",
+            text: "text-blue-400",
+            border: "border-blue-500/20",
+            gradient: "from-blue-400 to-blue-600",
+          },
+          indigo: {
+            bg: "bg-indigo-500/10",
+            text: "text-indigo-400",
+            border: "border-indigo-500/20",
+            gradient: "from-indigo-400 to-indigo-600",
+          },
+          purple: {
+            bg: "bg-purple-500/10",
+            text: "text-purple-400",
+            border: "border-purple-500/20",
+            gradient: "from-purple-400 to-purple-600",
+          },
+          green: {
+            bg: "bg-green-500/10",
+            text: "text-green-400",
+            border: "border-green-500/20",
+            gradient: "from-green-400 to-green-600",
+          },
+        };
+      function I() {
+        return (0, i.jsxs)("section", {
+          id: "how-it-works",
+          className: "py-20 relative overflow-hidden",
+          children: [
+            (0, i.jsx)("div", {
+              className:
+                "absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900",
+            }),
+            (0, i.jsx)("div", {
+              className:
+                "absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(59,130,246,0.1),transparent_70%)]",
+            }),
+            (0, i.jsxs)("div", {
+              className: "container mx-auto px-4 relative z-10",
+              children: [
+                (0, i.jsxs)("div", {
+                  className: "text-center mb-20",
+                  children: [
+                    (0, i.jsxs)(l.P.div, {
+                      initial: { opacity: 0, y: 20 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: !0, margin: "-100px" },
+                      transition: { duration: 0.6 },
+                      className:
+                        "inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 text-sm font-medium text-blue-400 mb-6",
+                      children: [
+                        (0, i.jsx)(u.A, { className: "w-4 h-4" }),
+                        (0, i.jsx)("span", { children: "Our Proven Process" }),
+                      ],
+                    }),
+                    (0, i.jsxs)(l.P.h2, {
+                      className:
+                        "text-4xl md:text-6xl font-bold text-white mb-6",
+                      initial: { opacity: 0, y: 30 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: !0, margin: "-100px" },
+                      transition: { duration: 0.8, delay: 0.2 },
+                      children: [
+                        "Enterprise",
+                        " ",
+                        (0, i.jsx)("span", {
+                          className:
+                            "bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",
+                          children: "Development Process",
+                        }),
+                      ],
+                    }),
+                    (0, i.jsx)(l.P.p, {
+                      className:
+                        "text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed",
+                      initial: { opacity: 0, y: 30 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: !0, margin: "-100px" },
+                      transition: { duration: 0.8, delay: 0.4 },
+                      children:
+                        "Our ISO-certified methodology ensures consistent delivery of enterprise-grade solutions with guaranteed security, scalability, and compliance standards.",
+                    }),
+                  ],
+                }),
+                (0, i.jsx)("div", {
+                  className: "space-y-12",
+                  children: A.map((e, t) => {
+                    let a = S[e.color],
+                      r = t % 2 == 0;
+                    return (0, i.jsxs)(
+                      l.P.div,
+                      {
+                        initial: { opacity: 0, y: 50 },
+                        whileInView: { opacity: 1, y: 0 },
+                        viewport: { once: !0, margin: "-50px" },
+                        transition: { duration: 0.6, delay: 0.1 * t },
+                        className:
+                          "grid lg:grid-cols-2 gap-12 items-center ".concat(
+                            r ? "" : "lg:grid-flow-col-dense"
+                          ),
+                        children: [
+                          (0, i.jsxs)("div", {
+                            className: "space-y-6 ".concat(
+                              r ? "" : "lg:col-start-2"
+                            ),
+                            children: [
+                              (0, i.jsxs)("div", {
+                                className: "flex items-center gap-4",
+                                children: [
+                                  (0, i.jsx)("div", {
+                                    className:
+                                      "text-6xl font-bold bg-gradient-to-r ".concat(
+                                        a.gradient,
+                                        " bg-clip-text text-transparent opacity-50"
+                                      ),
+                                    children: e.number,
+                                  }),
+                                  (0, i.jsx)("div", {
+                                    className: "p-3 rounded-xl "
+                                      .concat(a.bg, " ")
+                                      .concat(a.border, " border"),
+                                    children: (0, i.jsx)(e.icon, {
+                                      className: "w-8 h-8 ".concat(a.text),
+                                    }),
+                                  }),
+                                ],
+                              }),
+                              (0, i.jsx)("h3", {
+                                className: "text-3xl font-bold text-white",
+                                children: e.title,
+                              }),
+                              (0, i.jsx)("p", {
+                                className:
+                                  "text-lg text-gray-300 leading-relaxed",
+                                children: e.description,
+                              }),
+                              (0, i.jsx)("div", {
+                                className: "grid grid-cols-2 gap-3",
+                                children: e.features.map((e, t) =>
+                                  (0, i.jsxs)(
+                                    "div",
+                                    {
+                                      className: "flex items-center gap-2",
+                                      children: [
+                                        (0, i.jsx)(u.A, {
+                                          className: "w-4 h-4 ".concat(a.text),
+                                        }),
+                                        (0, i.jsx)("span", {
+                                          className: "text-sm text-gray-400",
+                                          children: e,
+                                        }),
+                                      ],
+                                    },
+                                    t
+                                  )
+                                ),
+                              }),
+                            ],
+                          }),
+                          (0, i.jsx)("div", {
+                            className: "relative ".concat(
+                              r ? "" : "lg:col-start-1"
+                            ),
+                            children: (0, i.jsx)("div", {
+                              className:
+                                "bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-2xl p-8 shadow-2xl",
+                              children: (0, i.jsxs)("div", {
+                                className: "space-y-6",
+                                children: [
+                                  (0, i.jsxs)("div", {
+                                    className: "h-64 rounded-xl "
+                                      .concat(a.bg, " ")
+                                      .concat(
+                                        a.border,
+                                        " border flex items-center justify-center relative overflow-hidden"
+                                      ),
+                                    children: [
+                                      (0, i.jsx)("div", {
+                                        className:
+                                          "absolute inset-0 opacity-10",
+                                        children: (0, i.jsx)("div", {
+                                          className: "grid grid-cols-4 h-full",
+                                          children: [...Array(16)].map((e, t) =>
+                                            (0, i.jsx)(
+                                              "div",
+                                              {
+                                                className:
+                                                  "border-r border-b ".concat(
+                                                    a.border
+                                                  ),
+                                              },
+                                              t
+                                            )
+                                          ),
+                                        }),
+                                      }),
+                                      (0, i.jsx)("div", {
+                                        className:
+                                          "relative z-10 p-6 rounded-full "
+                                            .concat(a.bg, " ")
+                                            .concat(a.border, " border"),
+                                        children: (0, i.jsx)(e.icon, {
+                                          className: "w-16 h-16 ".concat(
+                                            a.text
+                                          ),
+                                        }),
+                                      }),
+                                      (0, i.jsx)(l.P.div, {
+                                        animate: {
+                                          y: [-10, 10, -10],
+                                          rotate: [0, 5, 0],
+                                        },
+                                        transition: {
+                                          duration: 4,
+                                          repeat: 1 / 0,
+                                          ease: "easeInOut",
+                                        },
+                                        className:
+                                          "absolute top-4 right-4 w-3 h-3 rounded-full ".concat(
+                                            a.text.replace("text-", "bg-")
+                                          ),
+                                      }),
+                                      (0, i.jsx)(l.P.div, {
+                                        animate: {
+                                          y: [10, -10, 10],
+                                          rotate: [0, -5, 0],
+                                        },
+                                        transition: {
+                                          duration: 5,
+                                          repeat: 1 / 0,
+                                          ease: "easeInOut",
+                                          delay: 1,
+                                        },
+                                        className:
+                                          "absolute bottom-4 left-4 w-2 h-2 rounded-full ".concat(
+                                            a.text.replace("text-", "bg-")
+                                          ),
+                                      }),
+                                    ],
+                                  }),
+                                  (0, i.jsxs)("div", {
+                                    className:
+                                      "flex items-center justify-between",
+                                    children: [
+                                      (0, i.jsx)("span", {
+                                        className: "text-sm text-gray-400",
+                                        children: "Progress",
+                                      }),
+                                      (0, i.jsx)("div", {
+                                        className:
+                                          "flex-1 mx-4 bg-slate-700 rounded-full h-2 overflow-hidden",
+                                        children: (0, i.jsx)(l.P.div, {
+                                          className:
+                                            "h-full bg-gradient-to-r ".concat(
+                                              a.gradient,
+                                              " rounded-full"
+                                            ),
+                                          initial: { width: 0 },
+                                          whileInView: {
+                                            width: "".concat(
+                                              ((t + 1) / A.length) * 100,
+                                              "%"
+                                            ),
+                                          },
+                                          viewport: { once: !0 },
+                                          transition: {
+                                            duration: 1,
+                                            delay: 0.5,
+                                          },
+                                        }),
+                                      }),
+                                      (0, i.jsxs)("span", {
+                                        className: "text-sm text-gray-400",
+                                        children: [
+                                          Math.round(
+                                            ((t + 1) / A.length) * 100
+                                          ),
+                                          "%",
+                                        ],
+                                      }),
+                                    ],
+                                  }),
+                                ],
+                              }),
+                            }),
+                          }),
+                          t < A.length - 1 &&
+                            (0, i.jsx)("div", {
+                              className:
+                                "lg:col-span-2 flex justify-center py-6",
+                              children: (0, i.jsx)(l.P.div, {
+                                animate: { y: [0, 10, 0] },
+                                transition: {
+                                  duration: 2,
+                                  repeat: 1 / 0,
+                                  ease: "easeInOut",
+                                },
+                                className:
+                                  "p-3 bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-full",
+                                children: (0, i.jsx)(g, {
+                                  className:
+                                    "w-6 h-6 text-blue-400 transform rotate-90",
+                                }),
+                              }),
+                            }),
+                        ],
+                      },
+                      t
+                    );
+                  }),
+                }),
+                (0, i.jsx)(l.P.div, {
+                  initial: { opacity: 0, y: 30 },
+                  whileInView: { opacity: 1, y: 0 },
+                  viewport: { once: !0, margin: "-100px" },
+                  transition: { duration: 0.8, delay: 0.6 },
+                  className: "text-center mt-20",
+                  children: (0, i.jsxs)("div", {
+                    className:
+                      "bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-2xl p-8",
+                    children: [
+                      (0, i.jsx)("h3", {
+                        className: "text-2xl font-bold text-white mb-4",
+                        children: "Ready to Start Your Enterprise Journey?",
+                      }),
+                      (0, i.jsx)("p", {
+                        className: "text-gray-300 mb-6 max-w-2xl mx-auto",
+                        children:
+                          "Schedule a consultation with our certified experts to discuss your project requirements and receive a customized enterprise solution proposal.",
+                      }),
+                      (0, i.jsx)(l.P.button, {
+                        onClick: () =>
+                          window.open("https://wa.me/000", "_blank"),
+                        className:
+                          "bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-blue-500/25",
+                        whileHover: { scale: 1.05 },
+                        whileTap: { scale: 0.95 },
+                        children: "Schedule Consultation",
+                      }),
+                    ],
+                  }),
+                }),
+              ],
+            }),
+          ],
+        });
+      }
+      var C = a(760);
+      let z = (0, d.A)("Crown", [
+          [
+            "path",
+            {
+              d: "M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z",
+              key: "1vdc57",
+            },
+          ],
+          ["path", { d: "M5 21h14", key: "11awu3" }],
+        ]),
+        O = (0, d.A)("Check", [
+          ["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }],
+        ]);
+      function V() {
+        let [e, t] = (0, r.useState)(!1);
+        return (0, i.jsxs)("section", {
+          id: "pricing",
+          className: "py-20 relative overflow-hidden",
+          children: [
+            (0, i.jsx)("div", {
+              className:
+                "absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900",
+            }),
+            (0, i.jsx)("div", {
+              className:
+                "absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]",
+            }),
+            (0, i.jsxs)("div", {
+              className: "container mx-auto px-4 relative z-10",
+              children: [
+                (0, i.jsxs)("div", {
+                  className: "text-center mb-16",
+                  children: [
+                    (0, i.jsxs)(l.P.div, {
+                      initial: { opacity: 0, y: 20 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: !0, margin: "-100px" },
+                      transition: { duration: 0.6 },
+                      className:
+                        "inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 text-sm font-medium text-blue-400 mb-6",
+                      children: [
+                        (0, i.jsx)(z, { className: "w-4 h-4" }),
+                        (0, i.jsx)("span", { children: "Pricing Plans" }),
+                      ],
+                    }),
+                    (0, i.jsxs)(l.P.h2, {
+                      className:
+                        "text-4xl md:text-6xl font-bold text-white mb-6",
+                      initial: { opacity: 0, y: 30 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: !0, margin: "-100px" },
+                      transition: { duration: 0.8, delay: 0.2 },
+                      children: [
+                        "Professional",
+                        " ",
+                        (0, i.jsx)("span", {
+                          className:
+                            "bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",
+                          children: "Web Solutions",
+                        }),
+                      ],
+                    }),
+                    (0, i.jsx)(l.P.p, {
+                      className:
+                        "text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10",
+                      initial: { opacity: 0, y: 30 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: !0, margin: "-100px" },
+                      transition: { duration: 0.8, delay: 0.4 },
+                      children:
+                        "Complete web solution with custom design, development, and ongoing support for your business success.",
+                    }),
+                    (0, i.jsx)(l.P.div, {
+                      initial: { opacity: 0, y: 20 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: !0, margin: "-100px" },
+                      transition: { duration: 0.6, delay: 0.6 },
+                      className: "flex items-center justify-center mb-16",
+                      children: (0, i.jsx)("div", {
+                        className:
+                          "relative bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-xl p-1.5 shadow-2xl overflow-hidden",
+                        children: (0, i.jsxs)("div", {
+                          className: "relative flex items-center",
+                          children: [
+                            (0, i.jsx)(l.P.div, {
+                              className:
+                                "absolute top-1.5 bottom-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-lg",
+                              initial: !1,
+                              animate: {
+                                width: e ? "calc(55% - 6px)" : "45%",
+                                left: e ? "45%" : "6px",
+                              },
+                              transition: {
+                                duration: 0.4,
+                                ease: [0.23, 1, 0.32, 1],
+                              },
+                            }),
+                            (0, i.jsx)(l.P.button, {
+                              onClick: () => t(!1),
+                              className:
+                                "relative z-10 px-8 py-4 rounded-lg font-semibold text-sm transition-all duration-300 ".concat(
+                                  e
+                                    ? "text-gray-400 hover:text-gray-300"
+                                    : "text-white"
+                                ),
+                              style: { width: "45%" },
+                              whileHover: { scale: 1.05 },
+                              whileTap: { scale: 0.95 },
+                              children: "Monthly",
+                            }),
+                            (0, i.jsxs)(l.P.button, {
+                              onClick: () => t(!0),
+                              className:
+                                "relative z-10 px-6 py-4 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap ".concat(
+                                  e
+                                    ? "text-white"
+                                    : "text-gray-400 hover:text-gray-300"
+                                ),
+                              style: { width: "55%" },
+                              whileHover: { scale: 1.05 },
+                              whileTap: { scale: 0.95 },
+                              children: [
+                                (0, i.jsx)("span", { children: "Yearly" }),
+                                (0, i.jsxs)(l.P.span, {
+                                  className:
+                                    "bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs px-2 py-0.5 rounded-full font-bold shadow-lg flex-shrink-0",
+                                  animate: {
+                                    scale: e ? [1, 1.1, 1] : 1,
+                                    boxShadow: e
+                                      ? [
+                                          "0 0 0 rgba(34, 197, 94, 0)",
+                                          "0 0 20px rgba(34, 197, 94, 0.4)",
+                                          "0 0 0 rgba(34, 197, 94, 0)",
+                                        ]
+                                      : "0 0 0 rgba(34, 197, 94, 0)",
+                                  },
+                                  transition: {
+                                    duration: 0.6,
+                                    repeat: e ? 1 / 0 : 0,
+                                    repeatDelay: 2,
+                                  },
+                                  children: ["Save $", 127],
+                                }),
+                              ],
+                            }),
+                          ],
+                        }),
+                      }),
+                    }),
+                  ],
+                }),
+                (0, i.jsx)("div", {
+                  className: "max-w-md mx-auto",
+                  children: (0, i.jsxs)(l.P.div, {
+                    initial: { opacity: 0, y: 50, rotateX: 15 },
+                    whileInView: { opacity: 1, y: 0, rotateX: 0 },
+                    viewport: { once: !0, margin: "-50px" },
+                    transition: { duration: 0.8, type: "spring", bounce: 0.3 },
+                    whileHover: {
+                      y: -10,
+                      scale: 1.02,
+                      transition: { duration: 0.3, ease: "easeOut" },
+                    },
+                    className: "relative group transform-gpu perspective-1000",
+                    style: { transformStyle: "preserve-3d" },
+                    children: [
+                      (0, i.jsx)(l.P.div, {
+                        className:
+                          "absolute -top-6 left-1/2 transform -translate-x-1/2 z-20",
+                        initial: { opacity: 0, y: -20, scale: 0.8 },
+                        whileInView: { opacity: 1, y: 0, scale: 1 },
+                        transition: {
+                          duration: 0.6,
+                          delay: 0.8,
+                          type: "spring",
+                          bounce: 0.4,
+                        },
+                        children: (0, i.jsxs)(l.P.div, {
+                          className:
+                            "relative bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white px-6 py-3 rounded-full text-sm font-bold flex items-center gap-2 shadow-2xl",
+                          animate: {
+                            boxShadow: [
+                              "0 0 20px rgba(147, 51, 234, 0.4)",
+                              "0 0 30px rgba(147, 51, 234, 0.6)",
+                              "0 0 20px rgba(147, 51, 234, 0.4)",
+                            ],
+                          },
+                          transition: {
+                            duration: 2,
+                            repeat: 1 / 0,
+                            ease: "easeInOut",
+                          },
+                          children: [
+                            (0, i.jsx)(l.P.div, {
+                              animate: { rotate: 360 },
+                              transition: {
+                                duration: 3,
+                                repeat: 1 / 0,
+                                ease: "linear",
+                              },
+                              children: (0, i.jsx)(c, {
+                                className: "w-4 h-4 fill-current",
+                              }),
+                            }),
+                            "Best Value",
+                            (0, i.jsx)("div", {
+                              className:
+                                "absolute -inset-1 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-full opacity-20 animate-pulse",
+                            }),
+                          ],
+                        }),
+                      }),
+                      (0, i.jsxs)("div", {
+                        className:
+                          "relative bg-slate-800/40 backdrop-blur-xl border border-indigo-500/50 shadow-indigo-500/20 bg-gradient-to-br from-slate-800/50 to-indigo-900/20 rounded-2xl p-8 shadow-2xl h-full overflow-hidden transition-all duration-500 group-hover:shadow-3xl",
+                        children: [
+                          (0, i.jsx)("div", {
+                            className: "absolute inset-0 opacity-5",
+                            children: (0, i.jsx)("div", {
+                              className:
+                                "absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-purple-600/10 to-pink-600/20",
+                            }),
+                          }),
+                          (0, i.jsx)("div", {
+                            className:
+                              "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500",
+                            children: (0, i.jsx)("div", {
+                              className:
+                                "absolute inset-0 bg-gradient-to-r from-indigo-600 to-indigo-700 opacity-5 blur-xl",
+                            }),
+                          }),
+                          (0, i.jsxs)("div", {
+                            className: "relative text-center mb-8",
+                            children: [
+                              (0, i.jsxs)(l.P.div, {
+                                className:
+                                  "inline-flex p-4 rounded-xl bg-indigo-500/10 border-indigo-500/20 border mb-4 relative overflow-hidden",
+                                whileHover: { scale: 1.1, rotateY: 5 },
+                                transition: { duration: 0.3 },
+                                children: [
+                                  (0, i.jsx)("div", {
+                                    className:
+                                      "absolute inset-0 bg-gradient-to-r from-indigo-600 to-indigo-700 opacity-20 blur-md",
+                                  }),
+                                  (0, i.jsx)(l.P.div, {
+                                    whileHover: { rotate: 360 },
+                                    transition: {
+                                      duration: 0.6,
+                                      ease: "easeInOut",
+                                    },
+                                    children: (0, i.jsx)(x.A, {
+                                      className:
+                                        "w-8 h-8 text-indigo-400 relative z-10",
+                                    }),
+                                  }),
+                                ],
+                              }),
+                              (0, i.jsx)(l.P.h3, {
+                                className: "text-2xl font-bold text-white mb-2",
+                                whileHover: { scale: 1.05 },
+                                transition: { duration: 0.2 },
+                                children: "Professional Plan",
+                              }),
+                              (0, i.jsx)("p", {
+                                className:
+                                  "text-gray-400 text-sm leading-relaxed",
+                                children:
+                                  "Complete web solution for your business",
+                              }),
+                            ],
+                          }),
+                          (0, i.jsxs)("div", {
+                            className: "text-center mb-8",
+                            children: [
+                              (0, i.jsxs)("div", {
+                                className:
+                                  "flex items-baseline justify-center gap-2 mb-2",
+                                children: [
+                                  (0, i.jsx)("span", {
+                                    className: "text-sm text-gray-400",
+                                    children: "$",
+                                  }),
+                                  (0, i.jsx)(
+                                    l.P.span,
+                                    {
+                                      className:
+                                        "text-4xl md:text-5xl font-bold text-white",
+                                      initial: {
+                                        opacity: 0,
+                                        y: 20,
+                                        scale: 0.8,
+                                      },
+                                      animate: { opacity: 1, y: 0, scale: 1 },
+                                      transition: {
+                                        duration: 0.5,
+                                        type: "spring",
+                                        bounce: 0.3,
+                                      },
+                                      children: e ? 317 : 37,
+                                    },
+                                    "price-".concat(e)
+                                  ),
+                                  (0, i.jsxs)("span", {
+                                    className: "text-gray-400",
+                                    children: ["/", e ? "year" : "month"],
+                                  }),
+                                ],
+                              }),
+                              (0, i.jsx)(C.N, {
+                                mode: "wait",
+                                children:
+                                  e &&
+                                  (0, i.jsx)(l.P.div, {
+                                    initial: { opacity: 0, height: 0, y: -10 },
+                                    animate: {
+                                      opacity: 1,
+                                      height: "auto",
+                                      y: 0,
+                                    },
+                                    exit: { opacity: 0, height: 0, y: -10 },
+                                    transition: {
+                                      duration: 0.4,
+                                      ease: "easeInOut",
+                                    },
+                                    className: "overflow-hidden",
+                                    children: (0, i.jsxs)(l.P.p, {
+                                      className:
+                                        "text-sm text-green-400 font-semibold bg-green-500/10 border border-green-500/20 rounded-lg px-3 py-2 inline-block",
+                                      animate: {
+                                        boxShadow: [
+                                          "0 0 0 rgba(34, 197, 94, 0)",
+                                          "0 0 15px rgba(34, 197, 94, 0.3)",
+                                          "0 0 0 rgba(34, 197, 94, 0)",
+                                        ],
+                                      },
+                                      transition: {
+                                        duration: 2,
+                                        repeat: 1 / 0,
+                                        ease: "easeInOut",
+                                      },
+                                      children: [
+                                        "\uD83D\uDCB0 Save $",
+                                        127,
+                                        " annually",
+                                      ],
+                                    }),
+                                  }),
+                              }),
+                            ],
+                          }),
+                          (0, i.jsx)("ul", {
+                            className: "space-y-4 mb-8 flex-1",
+                            children: [
+                              "Custom Web Design",
+                              "Web Development",
+                              "Hosting for 1 Year",
+                              "1 Year Domain",
+                              "24/7 Support",
+                              "SSL Certificate",
+                              "Mobile Responsive",
+                              "Analytics and Search Console Setup",
+                              "SEO Optimized Code",
+                              "Fast Page Speed Optimized",
+                              "2 Customizations per Month",
+                            ].map((e, t) =>
+                              (0, i.jsxs)(
+                                l.P.li,
+                                {
+                                  className:
+                                    "flex items-start gap-3 group/feature",
+                                  initial: { opacity: 0, x: -20 },
+                                  whileInView: { opacity: 1, x: 0 },
+                                  viewport: { once: !0 },
+                                  transition: { duration: 0.4, delay: 0.1 * t },
+                                  whileHover: { x: 5 },
+                                  children: [
+                                    (0, i.jsx)(l.P.div, {
+                                      className:
+                                        "w-5 h-5 flex-shrink-0 mt-0.5 rounded-full bg-indigo-500/10 border-indigo-500/20 border flex items-center justify-center",
+                                      whileHover: { scale: 1.2, rotate: 90 },
+                                      transition: { duration: 0.2 },
+                                      children: (0, i.jsx)(O, {
+                                        className: "w-3 h-3 text-indigo-400",
+                                      }),
+                                    }),
+                                    (0, i.jsx)("span", {
+                                      className:
+                                        "text-gray-300 text-sm group-hover/feature:text-white transition-colors duration-200",
+                                      children: e,
+                                    }),
+                                  ],
+                                },
+                                t
+                              )
+                            ),
+                          }),
+                          (0, i.jsxs)(l.P.button, {
+                            onClick: () =>
+                              window.open("https://wa.me/000", "_blank"),
+                            className:
+                              "relative w-full bg-gradient-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 rounded-lg overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-300",
+                            whileHover: {
+                              scale: 1.02,
+                              boxShadow:
+                                "0 20px 40px -10px rgba(99, 102, 241, 0.4)",
+                            },
+                            whileTap: { scale: 0.98 },
+                            initial: { opacity: 0, y: 20 },
+                            whileInView: { opacity: 1, y: 0 },
+                            viewport: { once: !0 },
+                            transition: { duration: 0.5, delay: 0.8 },
+                            children: [
+                              (0, i.jsx)("div", {
+                                className:
+                                  "absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300",
+                              }),
+                              (0, i.jsxs)("div", {
+                                className:
+                                  "relative z-10 flex items-center justify-center gap-3",
+                                children: [
+                                  (0, i.jsx)("span", {
+                                    children: "Get Started",
+                                  }),
+                                  (0, i.jsx)(l.P.div, {
+                                    animate: { x: [0, 5, 0] },
+                                    transition: {
+                                      duration: 1.5,
+                                      repeat: 1 / 0,
+                                      ease: "easeInOut",
+                                    },
+                                    children: (0, i.jsx)(g, {
+                                      className: "w-5 h-5",
+                                    }),
+                                  }),
+                                ],
+                              }),
+                              (0, i.jsxs)("div", {
+                                className: "absolute inset-0 opacity-30",
+                                children: [
+                                  (0, i.jsx)("div", {
+                                    className:
+                                      "absolute top-2 right-4 w-1 h-1 bg-white rounded-full animate-ping",
+                                  }),
+                                  (0, i.jsx)("div", {
+                                    className:
+                                      "absolute bottom-3 left-6 w-1 h-1 bg-white rounded-full animate-ping delay-500",
+                                  }),
+                                  (0, i.jsx)("div", {
+                                    className:
+                                      "absolute top-1/2 right-8 w-0.5 h-0.5 bg-white rounded-full animate-ping delay-1000",
+                                  }),
+                                ],
+                              }),
+                            ],
+                          }),
+                          (0, i.jsx)("div", {
+                            className: "mt-4 text-center",
+                            children: (0, i.jsxs)("p", {
+                              className: "text-xs text-gray-500",
+                              children: [
+                                (0, i.jsx)(o.A, {
+                                  className: "w-3 h-3 inline mr-1",
+                                }),
+                                "Professional Quality & 24/7 Support Included",
+                              ],
+                            }),
+                          }),
+                        ],
+                      }),
+                    ],
+                  }),
+                }),
+                (0, i.jsx)(l.P.div, {
+                  initial: { opacity: 0, y: 30 },
+                  whileInView: { opacity: 1, y: 0 },
+                  viewport: { once: !0, margin: "-100px" },
+                  transition: { duration: 0.8, delay: 0.8 },
+                  className: "mt-20 text-center",
+                  children: (0, i.jsxs)("div", {
+                    className:
+                      "relative bg-slate-800/40 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 overflow-hidden",
+                    children: [
+                      (0, i.jsx)("div", {
+                        className:
+                          "absolute inset-0 bg-gradient-to-br from-slate-700/10 via-transparent to-slate-800/10",
+                      }),
+                      (0, i.jsxs)(l.P.h3, {
+                        className:
+                          "text-3xl font-bold text-white mb-6 relative z-10",
+                        initial: { opacity: 0, y: 20 },
+                        whileInView: { opacity: 1, y: 0 },
+                        transition: { duration: 0.6, delay: 1 },
+                        children: [
+                          "Why Choose ",
+                          (0, i.jsx)("span", {
+                            className:
+                              "bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",
+                            children: "WebySoft",
+                          }),
+                        ],
+                      }),
+                      (0, i.jsx)("div", {
+                        className:
+                          "grid grid-cols-2 md:grid-cols-4 gap-8 mt-8 relative z-10",
+                        children: [
+                          {
+                            icon: o.A,
+                            text: "Secure & Reliable",
+                            color: "text-green-400",
+                            bg: "bg-green-500/10",
+                            border: "border-green-500/20",
+                          },
+                          {
+                            icon: x.A,
+                            text: "Quality Assured",
+                            color: "text-yellow-400",
+                            bg: "bg-yellow-500/10",
+                            border: "border-yellow-500/20",
+                          },
+                          {
+                            icon: z,
+                            text: "24/7 Support",
+                            color: "text-purple-400",
+                            bg: "bg-purple-500/10",
+                            border: "border-purple-500/20",
+                          },
+                          {
+                            icon: O,
+                            text: "Satisfaction Guaranteed",
+                            color: "text-blue-400",
+                            bg: "bg-blue-500/10",
+                            border: "border-blue-500/20",
+                          },
+                        ].map((e, t) =>
+                          (0, i.jsxs)(
+                            l.P.div,
+                            {
+                              className: "text-center group",
+                              initial: { opacity: 0, y: 30, scale: 0.8 },
+                              whileInView: { opacity: 1, y: 0, scale: 1 },
+                              viewport: { once: !0 },
+                              transition: {
+                                duration: 0.6,
+                                delay: 1.2 + 0.1 * t,
+                                type: "spring",
+                                bounce: 0.3,
+                              },
+                              whileHover: { scale: 1.05, y: -5 },
+                              children: [
+                                (0, i.jsx)(l.P.div, {
+                                  className: "inline-flex p-4 rounded-xl "
+                                    .concat(e.bg, " ")
+                                    .concat(
+                                      e.border,
+                                      " border mb-3 group-hover:shadow-lg transition-all duration-300"
+                                    ),
+                                  whileHover: { rotate: 5 },
+                                  children: (0, i.jsx)(e.icon, {
+                                    className: "w-8 h-8 ".concat(e.color),
+                                  }),
+                                }),
+                                (0, i.jsx)("p", {
+                                  className:
+                                    "text-sm text-gray-300 group-hover:text-white transition-colors font-medium",
+                                  children: e.text,
+                                }),
+                              ],
+                            },
+                            t
+                          )
+                        ),
+                      }),
+                    ],
+                  }),
+                }),
+              ],
+            }),
+          ],
+        });
+      }
+      let _ = (0, d.A)("Quote", [
+        [
+          "path",
+          {
+            d: "M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z",
+            key: "rib7q0",
+          },
+        ],
+        [
+          "path",
+          {
+            d: "M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z",
+            key: "1ymkrd",
+          },
+        ],
+      ]);
+      var H = a(8136);
+      let E = (0, d.A)("ChevronLeft", [
+          ["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }],
+        ]),
+        M = (0, d.A)("ChevronRight", [
+          ["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }],
+        ]),
+        T = [
+          {
+            name: "Sarah Johnson",
+            role: "Chief Technology Officer",
+            company: "Fortune 500 Financial Services",
+            image:
+              "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+            quote:
+              "WebySoft's enterprise-grade solutions transformed our digital infrastructure. Their ISO-certified processes and 24/7 support gave us the confidence to scale globally. ROI exceeded expectations by 300%.",
+            rating: 5,
+            verified: !0,
+            industry: "Financial Services",
+          },
+          {
+            name: "Michael Thompson",
+            role: "Head of Digital Strategy",
+            company: "Leading Healthcare Corporation",
+            image:
+              "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+            quote:
+              "Security and compliance were our top priorities. WebySoft delivered bank-level encryption and maintained our HIPAA compliance throughout the project. Their professional team exceeded all expectations.",
+            rating: 5,
+            verified: !0,
+            industry: "Healthcare",
+          },
+          {
+            name: "Amanda Chen",
+            role: "VP of Operations",
+            company: "Global Manufacturing Leader",
+            image:
+              "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+            quote:
+              "The dedicated project management and enterprise support made this the smoothest digital transformation we've ever experienced. WebySoft's certified excellence shows in every detail.",
+            rating: 5,
+            verified: !0,
+            industry: "Manufacturing",
+          },
+        ];
+      function L() {
+        let [e, t] = (0, r.useState)(0);
+        return (0, i.jsxs)("section", {
+          id: "testimonials",
+          className: "py-20 relative overflow-hidden",
+          children: [
+            (0, i.jsx)("div", {
+              className:
+                "absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900",
+            }),
+            (0, i.jsx)("div", {
+              className:
+                "absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(59,130,246,0.1),transparent_70%)]",
+            }),
+            (0, i.jsxs)("div", {
+              className: "container mx-auto px-4 relative z-10",
+              children: [
+                (0, i.jsxs)("div", {
+                  className: "text-center mb-16",
+                  children: [
+                    (0, i.jsxs)(l.P.div, {
+                      initial: { opacity: 0, y: 20 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: !0, margin: "-100px" },
+                      transition: { duration: 0.6 },
+                      className:
+                        "inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 text-sm font-medium text-blue-400 mb-6",
+                      children: [
+                        (0, i.jsx)(x.A, { className: "w-4 h-4" }),
+                        (0, i.jsx)("span", {
+                          children: "Client Success Stories",
+                        }),
+                      ],
+                    }),
+                    (0, i.jsxs)(l.P.h2, {
+                      className:
+                        "text-4xl md:text-6xl font-bold text-white mb-6",
+                      initial: { opacity: 0, y: 30 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: !0, margin: "-100px" },
+                      transition: { duration: 0.8, delay: 0.2 },
+                      children: [
+                        "Trusted by",
+                        " ",
+                        (0, i.jsx)("span", {
+                          className:
+                            "bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",
+                          children: "Industry Leaders",
+                        }),
+                      ],
+                    }),
+                    (0, i.jsx)(l.P.p, {
+                      className:
+                        "text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed",
+                      initial: { opacity: 0, y: 30 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: !0, margin: "-100px" },
+                      transition: { duration: 0.8, delay: 0.4 },
+                      children:
+                        "See why Fortune 500 companies and growing enterprises trust WebySoft with their most critical digital initiatives.",
+                    }),
+                  ],
+                }),
+                (0, i.jsxs)("div", {
+                  className: "max-w-4xl mx-auto",
+                  children: [
+                    (0, i.jsx)(C.N, {
+                      mode: "wait",
+                      children: (0, i.jsx)(
+                        l.P.div,
+                        {
+                          initial: { opacity: 0, x: 100 },
+                          animate: { opacity: 1, x: 0 },
+                          exit: { opacity: 0, x: -100 },
+                          transition: { duration: 0.5 },
+                          className: "relative",
+                          children: (0, i.jsxs)("div", {
+                            className:
+                              "bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-2xl p-8 md:p-12 shadow-2xl",
+                            children: [
+                              (0, i.jsx)("div", {
+                                className: "absolute -top-6 left-8",
+                                children: (0, i.jsx)("div", {
+                                  className:
+                                    "bg-blue-500/20 backdrop-blur border border-blue-500/30 rounded-full p-4",
+                                  children: (0, i.jsx)(_, {
+                                    className: "w-8 h-8 text-blue-400",
+                                  }),
+                                }),
+                              }),
+                              (0, i.jsxs)("div", {
+                                className: "flex items-center gap-1 mb-6 pt-4",
+                                children: [
+                                  [...Array(T[e].rating)].map((e, t) =>
+                                    (0, i.jsx)(
+                                      c,
+                                      {
+                                        className:
+                                          "w-5 h-5 fill-yellow-400 text-yellow-400",
+                                      },
+                                      t
+                                    )
+                                  ),
+                                  (0, i.jsx)("span", {
+                                    className: "ml-2 text-sm text-gray-400",
+                                    children: "Verified Review",
+                                  }),
+                                  (0, i.jsx)(o.A, {
+                                    className: "w-4 h-4 text-green-400 ml-1",
+                                  }),
+                                ],
+                              }),
+                              (0, i.jsxs)("blockquote", {
+                                className:
+                                  "text-xl md:text-2xl text-gray-200 leading-relaxed mb-8 italic",
+                                children: ['"', T[e].quote, '"'],
+                              }),
+                              (0, i.jsxs)("div", {
+                                className: "flex items-center gap-4",
+                                children: [
+                                  (0, i.jsxs)("div", {
+                                    className: "relative",
+                                    children: [
+                                      (0, i.jsx)("img", {
+                                        src: T[e].image,
+                                        alt: T[e].name,
+                                        className:
+                                          "w-16 h-16 rounded-full border-2 border-blue-500/20",
+                                      }),
+                                      (0, i.jsx)("div", {
+                                        className:
+                                          "absolute -bottom-1 -right-1 bg-blue-500/20 backdrop-blur border border-blue-500/30 rounded-full p-1",
+                                        children: (0, i.jsx)(H.A, {
+                                          className: "w-3 h-3 text-blue-400",
+                                        }),
+                                      }),
+                                    ],
+                                  }),
+                                  (0, i.jsxs)("div", {
+                                    children: [
+                                      (0, i.jsx)("h4", {
+                                        className:
+                                          "text-lg font-semibold text-white",
+                                        children: T[e].name,
+                                      }),
+                                      (0, i.jsx)("p", {
+                                        className: "text-gray-400",
+                                        children: T[e].role,
+                                      }),
+                                      (0, i.jsx)("p", {
+                                        className: "text-sm text-blue-400",
+                                        children: T[e].company,
+                                      }),
+                                    ],
+                                  }),
+                                  (0, i.jsx)("div", {
+                                    className: "ml-auto hidden md:block",
+                                    children: (0, i.jsxs)("div", {
+                                      className:
+                                        "bg-slate-700/50 backdrop-blur border border-slate-600/50 rounded-lg px-4 py-2",
+                                      children: [
+                                        (0, i.jsx)("span", {
+                                          className: "text-xs text-gray-400",
+                                          children: "Industry",
+                                        }),
+                                        (0, i.jsx)("p", {
+                                          className:
+                                            "text-sm font-medium text-gray-300",
+                                          children: T[e].industry,
+                                        }),
+                                      ],
+                                    }),
+                                  }),
+                                ],
+                              }),
+                            ],
+                          }),
+                        },
+                        e
+                      ),
+                    }),
+                    (0, i.jsxs)("div", {
+                      className: "flex items-center justify-center gap-4 mt-8",
+                      children: [
+                        (0, i.jsx)(l.P.button, {
+                          onClick: () => {
+                            t((e) => (e - 1 + T.length) % T.length);
+                          },
+                          className:
+                            "p-3 bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-lg text-gray-300 hover:text-white hover:bg-slate-700/50 transition-all duration-300",
+                          whileHover: { scale: 1.05 },
+                          whileTap: { scale: 0.95 },
+                          children: (0, i.jsx)(E, { className: "w-5 h-5" }),
+                        }),
+                        (0, i.jsx)("div", {
+                          className: "flex gap-2",
+                          children: T.map((a, r) =>
+                            (0, i.jsx)(
+                              "button",
+                              {
+                                onClick: () => t(r),
+                                className:
+                                  "w-3 h-3 rounded-full transition-all duration-300 ".concat(
+                                    r === e
+                                      ? "bg-blue-400 scale-125"
+                                      : "bg-gray-600 hover:bg-gray-500"
+                                  ),
+                              },
+                              r
+                            )
+                          ),
+                        }),
+                        (0, i.jsx)(l.P.button, {
+                          onClick: () => {
+                            t((e) => (e + 1) % T.length);
+                          },
+                          className:
+                            "p-3 bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-lg text-gray-300 hover:text-white hover:bg-slate-700/50 transition-all duration-300",
+                          whileHover: { scale: 1.05 },
+                          whileTap: { scale: 0.95 },
+                          children: (0, i.jsx)(M, { className: "w-5 h-5" }),
+                        }),
+                      ],
+                    }),
+                  ],
+                }),
+                (0, i.jsxs)(l.P.div, {
+                  initial: { opacity: 0, y: 30 },
+                  whileInView: { opacity: 1, y: 0 },
+                  viewport: { once: !0, margin: "-100px" },
+                  transition: { duration: 0.8, delay: 0.6 },
+                  className: "mt-16 grid grid-cols-2 md:grid-cols-4 gap-6",
+                  children: [
+                    (0, i.jsxs)("div", {
+                      className:
+                        "text-center bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-xl p-6",
+                      children: [
+                        (0, i.jsx)("div", {
+                          className:
+                            "text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",
+                          children: "99.8%",
+                        }),
+                        (0, i.jsx)("div", {
+                          className: "text-sm text-gray-400",
+                          children: "Client Satisfaction",
+                        }),
+                      ],
+                    }),
+                    (0, i.jsxs)("div", {
+                      className:
+                        "text-center bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-xl p-6",
+                      children: [
+                        (0, i.jsx)("div", {
+                          className:
+                            "text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent",
+                          children: "500+",
+                        }),
+                        (0, i.jsx)("div", {
+                          className: "text-sm text-gray-400",
+                          children: "Enterprise Clients",
+                        }),
+                      ],
+                    }),
+                    (0, i.jsxs)("div", {
+                      className:
+                        "text-center bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-xl p-6",
+                      children: [
+                        (0, i.jsx)("div", {
+                          className:
+                            "text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent",
+                          children: "24/7",
+                        }),
+                        (0, i.jsx)("div", {
+                          className: "text-sm text-gray-400",
+                          children: "Expert Support",
+                        }),
+                      ],
+                    }),
+                    (0, i.jsxs)("div", {
+                      className:
+                        "text-center bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-xl p-6",
+                      children: [
+                        (0, i.jsx)("div", {
+                          className:
+                            "text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent",
+                          children: "A+",
+                        }),
+                        (0, i.jsx)("div", {
+                          className: "text-sm text-gray-400",
+                          children: "Security Rating",
+                        }),
+                      ],
+                    }),
+                  ],
+                }),
+              ],
+            }),
+          ],
+        });
+      }
+      var q = a(9420),
+        R = a(8883),
+        W = a(4516);
+      let D = [
+          {
+            icon: q.A,
+            title: "24/7 Enterprise Support",
+            details: "+91 000",
+            description: "Immediate response for enterprise clients",
+            color: "blue",
+          },
+          {
+            icon: R.A,
+            title: "Business Inquiries",
+            details: "enterprise@webysoft.com",
+            description: "Professional consultation requests",
+            color: "indigo",
+          },
+          {
+            icon: W.A,
+            title: "Global Headquarters",
+            details: "Surat & Mumbai, India",
+            description: "Serving clients worldwide",
+            color: "purple",
+          },
+          {
+            icon: h,
+            title: "Business Hours",
+            details: "24/7 Available",
+            description: "Round-the-clock enterprise support",
+            color: "green",
+          },
+        ],
+        G = {
+          blue: {
+            bg: "bg-blue-500/10",
+            text: "text-blue-400",
+            border: "border-blue-500/20",
+          },
+          indigo: {
+            bg: "bg-indigo-500/10",
+            text: "text-indigo-400",
+            border: "border-indigo-500/20",
+          },
+          purple: {
+            bg: "bg-purple-500/10",
+            text: "text-purple-400",
+            border: "border-purple-500/20",
+          },
+          green: {
+            bg: "bg-green-500/10",
+            text: "text-green-400",
+            border: "border-green-500/20",
+          },
+        };
+      function B() {
+        return (0, i.jsxs)("section", {
+          id: "contact",
+          className: "py-20 relative overflow-hidden",
+          children: [
+            (0, i.jsx)("div", {
+              className:
+                "absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900",
+            }),
+            (0, i.jsx)("div", {
+              className:
+                "absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]",
+            }),
+            (0, i.jsxs)("div", {
+              className: "container mx-auto px-4 relative z-10",
+              children: [
+                (0, i.jsxs)("div", {
+                  className: "text-center mb-16",
+                  children: [
+                    (0, i.jsxs)(l.P.div, {
+                      initial: { opacity: 0, y: 20 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: !0, margin: "-100px" },
+                      transition: { duration: 0.6 },
+                      className:
+                        "inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 text-sm font-medium text-blue-400 mb-6",
+                      children: [
+                        (0, i.jsx)(o.A, { className: "w-4 h-4" }),
+                        (0, i.jsx)("span", { children: "Enterprise Contact" }),
+                      ],
+                    }),
+                    (0, i.jsxs)(l.P.h2, {
+                      className:
+                        "text-4xl md:text-6xl font-bold text-white mb-6",
+                      initial: { opacity: 0, y: 30 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: !0, margin: "-100px" },
+                      transition: { duration: 0.8, delay: 0.2 },
+                      children: [
+                        "Ready to",
+                        " ",
+                        (0, i.jsx)("span", {
+                          className:
+                            "bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",
+                          children: "Get Started?",
+                        }),
+                      ],
+                    }),
+                    (0, i.jsx)(l.P.p, {
+                      className:
+                        "text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed",
+                      initial: { opacity: 0, y: 30 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: !0, margin: "-100px" },
+                      transition: { duration: 0.8, delay: 0.4 },
+                      children:
+                        "Connect with our experts for a personalized consultation. We'll assess your needs and provide a customized enterprise solution proposal.",
+                    }),
+                  ],
+                }),
+                (0, i.jsxs)("div", {
+                  className: "max-w-6xl mx-auto",
+                  children: [
+                    (0, i.jsxs)(l.P.div, {
+                      initial: { opacity: 0, y: 50 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: !0, margin: "-100px" },
+                      transition: { duration: 0.8, delay: 0.2 },
+                      className: "text-center mb-12",
+                      children: [
+                        (0, i.jsx)("h3", {
+                          className: "text-3xl font-bold text-white mb-6",
+                          children: "Multiple Ways to Connect",
+                        }),
+                        (0, i.jsx)("p", {
+                          className:
+                            "text-gray-300 leading-relaxed max-w-3xl mx-auto",
+                          children:
+                            "Our enterprise team is available 24/7 to discuss your project requirements, provide technical consultation, and deliver customized solutions that meet your business objectives.",
+                        }),
+                      ],
+                    }),
+                    (0, i.jsx)("div", {
+                      className:
+                        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12",
+                      children: D.map((e, t) => {
+                        let a = G[e.color];
+                        return (0, i.jsxs)(
+                          l.P.div,
+                          {
+                            initial: { opacity: 0, y: 30 },
+                            whileInView: { opacity: 1, y: 0 },
+                            viewport: { once: !0, margin: "-50px" },
+                            transition: { duration: 0.6, delay: 0.1 * t },
+                            className:
+                              "bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-xl p-6 hover:bg-slate-700/30 transition-all duration-300 group text-center",
+                            children: [
+                              (0, i.jsx)("div", {
+                                className: "inline-flex p-4 rounded-xl "
+                                  .concat(a.bg, " ")
+                                  .concat(
+                                    a.border,
+                                    " border mb-4 group-hover:scale-110 transition-transform duration-300"
+                                  ),
+                                children: (0, i.jsx)(e.icon, {
+                                  className: "w-8 h-8 ".concat(a.text),
+                                }),
+                              }),
+                              (0, i.jsx)("h4", {
+                                className:
+                                  "text-lg font-semibold text-white mb-2",
+                                children: e.title,
+                              }),
+                              (0, i.jsx)("p", {
+                                className: "text-gray-300 font-medium mb-2",
+                                children: e.details,
+                              }),
+                              (0, i.jsx)("p", {
+                                className: "text-sm text-gray-400",
+                                children: e.description,
+                              }),
+                            ],
+                          },
+                          t
+                        );
+                      }),
+                    }),
+                    (0, i.jsx)(l.P.div, {
+                      initial: { opacity: 0, y: 30 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: !0, margin: "-50px" },
+                      transition: { duration: 0.6, delay: 0.6 },
+                      className: "flex justify-center items-center mb-12",
+                      children: (0, i.jsxs)(l.P.button, {
+                        onClick: () =>
+                          window.open("https://wa.me/9000", "_blank"),
+                        className:
+                          "flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-green-500/25",
+                        whileHover: { scale: 1.02 },
+                        whileTap: { scale: 0.98 },
+                        children: [
+                          (0, i.jsx)(n.EcP, { className: "w-5 h-5" }),
+                          "Start WhatsApp Chat",
+                        ],
+                      }),
+                    }),
+                    (0, i.jsxs)(l.P.div, {
+                      initial: { opacity: 0, y: 30 },
+                      whileInView: { opacity: 1, y: 0 },
+                      viewport: { once: !0, margin: "-50px" },
+                      transition: { duration: 0.6, delay: 0.8 },
+                      className:
+                        "bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-2xl p-8 text-center",
+                      children: [
+                        (0, i.jsx)("h4", {
+                          className: "text-2xl font-bold text-white mb-6",
+                          children: "Why Choose WebySoft?",
+                        }),
+                        (0, i.jsxs)("div", {
+                          className: "grid grid-cols-2 md:grid-cols-4 gap-6",
+                          children: [
+                            (0, i.jsxs)("div", {
+                              className: "flex flex-col items-center gap-2",
+                              children: [
+                                (0, i.jsx)(x.A, {
+                                  className: "w-8 h-8 text-yellow-400",
+                                }),
+                                (0, i.jsx)("span", {
+                                  className:
+                                    "text-sm text-gray-300 font-medium",
+                                  children: "Award Winning",
+                                }),
+                              ],
+                            }),
+                            (0, i.jsxs)("div", {
+                              className: "flex flex-col items-center gap-2",
+                              children: [
+                                (0, i.jsx)(u.A, {
+                                  className: "w-8 h-8 text-blue-400",
+                                }),
+                                (0, i.jsx)("span", {
+                                  className:
+                                    "text-sm text-gray-300 font-medium",
+                                  children: "500+ Projects",
+                                }),
+                              ],
+                            }),
+                            (0, i.jsxs)("div", {
+                              className: "flex flex-col items-center gap-2",
+                              children: [
+                                (0, i.jsx)(h, {
+                                  className: "w-8 h-8 text-purple-400",
+                                }),
+                                (0, i.jsx)("span", {
+                                  className:
+                                    "text-sm text-gray-300 font-medium",
+                                  children: "24/7 Support",
+                                }),
+                              ],
+                            }),
+                            (0, i.jsxs)("div", {
+                              className: "flex flex-col items-center gap-2",
+                              children: [
+                                (0, i.jsx)(o.A, {
+                                  className: "w-8 h-8 text-green-400",
+                                }),
+                                (0, i.jsx)("span", {
+                                  className:
+                                    "text-sm text-gray-300 font-medium",
+                                  children: "Enterprise Security",
+                                }),
+                              ],
+                            }),
+                          ],
+                        }),
+                      ],
+                    }),
+                  ],
+                }),
+              ],
+            }),
+          ],
+        });
+      }
+      var F = a(7718);
+      function U() {
+        return (
+          (0, r.useEffect)(() => {
+            let e = () => {
+              let e = window.location.hash.substring(1);
+              e &&
+                setTimeout(() => {
+                  let t = document.getElementById(e);
+                  t && t.scrollIntoView({ behavior: "smooth" });
+                }, 500);
+            };
+            return (
+              e(),
+              window.addEventListener("hashchange", e),
+              () => window.removeEventListener("hashchange", e)
+            );
+          }, []),
+          (0, i.jsxs)("div", {
+            className: "min-h-screen bg-slate-900 text-white overflow-x-hidden",
+            children: [
+              (0, i.jsx)(s.A, {}),
+              (0, i.jsx)(v, {}),
+              (0, i.jsx)(N, {}),
+              (0, i.jsx)(I, {}),
+              (0, i.jsx)(V, {}),
+              (0, i.jsx)(L, {}),
+              (0, i.jsx)(B, {}),
+              (0, i.jsx)(F.A, {}),
+            ],
+          })
+        );
+      }
+    },
+    1700: (e, t, a) => {
+      Promise.resolve().then(a.bind(a, 1208));
+    },
+    7580: (e, t, a) => {
+      "use strict";
+      a.d(t, { A: () => i });
+      let i = (0, a(9946).A)("Users", [
+        [
+          "path",
+          { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" },
+        ],
+        ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }],
+        ["path", { d: "M22 21v-2a4 4 0 0 0-3-3.87", key: "kshegd" }],
+        ["path", { d: "M16 3.13a4 4 0 0 1 0 7.75", key: "1da9ce" }],
+      ]);
+    },
+  },
+  (e) => {
+    var t = (t) => e((e.s = t));
+    e.O(0, [711, 375, 157, 318, 441, 684, 358], () => t(1700)), (_N_E = e.O());
+  },
+]);
