@@ -6,7 +6,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "24/7 Enterprise Support",
-    details: "+91 88499 90393",
+    details: "+91 0000000000",
     description: "Immediate response for enterprise clients",
     color: "blue"
   },
